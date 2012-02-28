@@ -8,9 +8,9 @@ header_map = {
 3:'NCES_ID',
 4:'LATITUDE',
 5:'LONGITUDE',
-6:'CTIY',
+6:'CITY',
 7:'STATE',
-8:'ZIP',
+8:'ZIPCODE',
 10:'DISTRICT',
 27:'POVERTY_LEVEL',
 28:'GRADE_LEVEL',
@@ -56,7 +56,7 @@ def build_address_statement(data):
   line_one = "INSERT INTO Addresses\n"
   line_two = "(latitude, longitude, streetNumber, streetName, zipcode)\n"
   line_three = "VALUES\n"
-  line_four = "(%(LATITUDE),%(LONGITUDE),'14','Junk St.',%(ZIPCODE))" % data
+  line_four = "(%(LATITUDE)s,%(LONGITUDE)s,'14','Junk St.',%(ZIPCODE)s)\n" % data
   return line_one + line_two + line_three + line_four
 
 def build_district_statement(data):
@@ -74,7 +74,7 @@ if __name__ == "__main__":
   #project_out = file("../data/project_insert_statements.sql", "w")
   #teacher_out = file("../data/teacher_insert_statements.sql", "w")
   #school_out = file("../data/school_insert_statements.sql", "w")
-  #address_out = file("../data/address_insert_statements.sql", "w")
+  address_out = file("../data/address_insert_statements.sql", "w")
   #district_out = file("../data/district_insert_statements.sql", "w")
 
   # skip header:
@@ -89,10 +89,10 @@ if __name__ == "__main__":
         data_map["%s" % header_map[i]] = project[i]
       else:
         data_map["%i" % i] = project[i]
+
     if (valid(data_map)):
       data = build_address_statement(data_map)
-      print data
-      #address_out.write(data)
+      address_out.write(data)
       #data = build_district_statement(data_map)
       #district_out.write(data)
       #data = build_teacher_statement(data_map)
