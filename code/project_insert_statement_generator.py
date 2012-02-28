@@ -20,38 +20,7 @@ header_map = {
 45:'EXPIRATION_DATE'
 }
 
-data_file = file("../data/donorschoose-org-1may2011-v1-projects.csv", "r")
-#project_out = file("../data/project_insert_statements.sql", "w")
-#teacher_out = file("../data/teacher_insert_statements.sql", "w")
-#school_out = file("../data/school_insert_statements.sql", "w")
-#address_out = file("../data/address_insert_statements.sql", "w")
-#district_out = file("../data/district_insert_statements.sql", "w")
-
-# skip header:
-data_file.readline()
-
-# process data:
-for line in data_file.readlines():
-  project = line.split(',')
-  data_map = {}
-  for i in range(len(project)):
-    if (header_map.has_key(i)):
-      data_map["%s" % header_map[i]] = project[i]
-    else:
-      data_map["%i" % i] = project[i]
-  if (valid(data_map)):
-    data = build_address_statement(data_map)
-    print data
-    #address_out.write(data)
-    #data = build_district_statement(data_map)
-    #district_out.write(data)
-    #data = build_teacher_statement(data_map)
-    #teacher_out.write(data)
-    #data = build_school_statement(data_map)
-    #school_out.write(data)
-    #data = build_project_statement(data_map)
-    #project_out.write(data)
-
+# Function Definitions:
 def valid(project_map):
   return data_map['CITY'] == "\"New York\"" and data_map['STATE'] == 'NY'
 
@@ -96,3 +65,39 @@ def build_district_statement(data):
   line_three = "VALUES\n"
   line_four = "(0.0, 0.0,)" % data
   return line_one + line_two + line_three + line_four
+
+# Main:
+
+if __name__ == "__main__":
+
+  data_file = file("../data/donorschoose-org-1may2011-v1-projects.csv", "r")
+  #project_out = file("../data/project_insert_statements.sql", "w")
+  #teacher_out = file("../data/teacher_insert_statements.sql", "w")
+  #school_out = file("../data/school_insert_statements.sql", "w")
+  #address_out = file("../data/address_insert_statements.sql", "w")
+  #district_out = file("../data/district_insert_statements.sql", "w")
+
+  # skip header:
+  data_file.readline()
+
+  # process data:
+  for line in data_file.readlines():
+    project = line.split(',')
+    data_map = {}
+    for i in range(len(project)):
+      if (header_map.has_key(i)):
+        data_map["%s" % header_map[i]] = project[i]
+      else:
+        data_map["%i" % i] = project[i]
+    if (valid(data_map)):
+      data = build_address_statement(data_map)
+      print data
+      #address_out.write(data)
+      #data = build_district_statement(data_map)
+      #district_out.write(data)
+      #data = build_teacher_statement(data_map)
+      #teacher_out.write(data)
+      #data = build_school_statement(data_map)
+      #school_out.write(data)
+      #data = build_project_statement(data_map)
+      #project_out.write(data)
