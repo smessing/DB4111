@@ -1,6 +1,24 @@
 #!/usr/bin/python
 # author: Samuel Messing <sbm2158@columbia.edu>
 
+PROJECT_ID = 0
+TEACHER_ACCT_ID = 1
+SCHOOL_ID = 2
+NCES_ID = 3
+LATITUDE = 4
+LONGITUDE = 5
+CTIY = 6
+STATE = 7
+ZIP = 8
+DISTRICT = 10
+POVERTY_LEVEL = 27
+GRADE_LEVEL = 28
+TOTAL_PRICE = 34
+TOTAL_DONATIONS = 37
+NUM_DONORS = 38
+EXPIRATION_DATE = 45
+
+
 data = file("../data/donorschoose-org-1may2011-v1-projects.csv", "r")
 project_out = file("../data/project_insert_statements.sql", "w")
 teacher_out = file("../data/teacher_insert_statements.sql", "w")
@@ -13,18 +31,24 @@ data.readline()
 
 # process data:
 for line in data.readlines():
-  if (valid(line)):
-    project = line.split(',')
-    data = build_district_statement(project)
+  project = line.split(',')
+  data_map = {}
+  for i in range(len(project)):
+    data_map[i] = project[i]
+  if (valid(data_map)):
+    data = build_district_statement(data_map)
     district_out.write(data)
-    data = build_address_statement(project)
+    data = build_address_statement(data_map)
     address_out.write(data)
-    data = build_teacher_statement(project)
+    data = build_teacher_statement(data_map)
     teacher_out.write(data)
-    data = build_school_statement(project)
+    data = build_school_statement(data_map)
     school_out.write(data)
-    data = build_project_statement(project)
+    data = build_project_statement(data_map)
     project_out.write(data)
+
+def valid(project_map):
+  return data_map[CITY] = "\"New York\"" and data_map[STATE] = 'NY'
 
 
 def build_project_statement(project):
