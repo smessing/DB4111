@@ -53,7 +53,7 @@ for line in data_file.readlines():
     #project_out.write(data)
 
 def valid(project_map):
-  return data_map['CITY'] = "\"New York\"" and data_map['STATE'] = 'NY'
+  return data_map['CITY'] == "\"New York\"" and data_map['STATE'] == 'NY'
 
 
 def build_project_statement(data):
