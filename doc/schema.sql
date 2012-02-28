@@ -22,22 +22,22 @@
 # learn how to implement.
 create table Projects_PROPOSE_AT(
   pid integer,
-  fundURL char(300),
-  fundingStatus char(50),
-  fulfillmentTrailer char(300),
+  fundURL varchar2,
+  fundingStatus varchar2,
+  fulfillmentTrailer varchar2,
   expirationDate date,
   totalPrice real,
-  title char(100),
-  subject char(100),
-  shortDescription char(500),
-  proposalURL char(300) not null,
+  title varchar2,
+  subject varchar2,
+  shortDescription varchar2,
+  proposalURL varchar2 not null,
   percentFunded real,
-  imageURL char(300),
+  imageURL varchar2,
   numStudents integer,
   tid int not null,
-  tName char(200) not null,
-  ncesId char(300) not null,
-  primary key (pid),
+  tName varchar2 not null,
+  ncesId varchar2 not null,
+  primary key (pid, tid),
   unique (proposalURL),
   foreign key (tid, tName) references Teachers (tid, name)
                       on delete no action
@@ -69,7 +69,7 @@ create table Donations_FUND(
   donationDate date,
   did int,
   primary key (did),
-  foreign key (tid, pid) references PROPOSE(tid, pid),
+  foreign key (tid, pid) references Projects_PROPOSE_AT(tid, pid),
   foreign key (email) references Users
 );
 
@@ -83,7 +83,7 @@ create table Comments_ABOUT(
   foreign key (email) references Users
                         on delete no action
                         on update cascade,
-  foreign key (tid, pid) references PROPOSE(tid, pid)
+  foreign key (tid, pid) references Projects_PROPOSE_AT(tid, pid)
                         on delete cascade
                         on update cascade
 );
@@ -97,7 +97,7 @@ create table VOTE(
   foreign key (email) references Users
                       on delete no action
                       on update cascade,
-  foreign key (tid, pid) references PROPOSE(tid, pid)
+  foreign key (tid, pid) references Projects_PROPOSE_AT(tid, pid)
                       on delete cascade
                       on update cascade
 );
