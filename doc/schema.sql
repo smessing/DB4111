@@ -44,7 +44,10 @@ create table Projects_PROPOSE_AT(
                       on update cascade,
   foreign key (ncesId) references Schools (ncesId)
                       on delete no action
-                      on update cascade
+                      on update cascade,
+  check (numStudents >= 0),
+  check (percentFunded >= 0 AND percentFunded <= 1),
+  check (totalPrice >= 0)
 );
 
 create table Teachers(
@@ -58,7 +61,8 @@ create table Users(
   displayName varchar2 not null,
   password varchar2 not null,
   passwordSalt varchar2 not null,
-  primary key (email)
+  primary key (email),
+  check (REGEXP_LIKE (email, '\w+@\w+(\.\w+)+') > 0)
 );
 
 create table Donations_FUND(
@@ -70,7 +74,8 @@ create table Donations_FUND(
   did int,
   primary key (did),
   foreign key (tid, pid) references Projects_PROPOSE_AT(tid, pid),
-  foreign key (email) references Users
+  foreign key (email) references Users,
+  check (amount >= 0)
 );
 
 create table Comments_ABOUT(
@@ -125,7 +130,12 @@ create table Schools_S_IN_S_HAVE(
   foreign key (streetNumber, streetName, zipcode) references 
                           Addresses(streetNumber, streetName, zipCode)
                           on delete no action
-                          on update cascade
+                          on update cascade,
+  check (avgClassSize is null OR avgClassSize >= 0),
+  check (avgMathSATScore is null OR (avgMathSATScore >= 200 AND avgMathSATScore <= 800)),
+  check (avgReadingSATScore is null OR (avgReadingSATScore >= 200 AND avgReadingSATScore <= 800)),
+  check (avgWritingSATScore is null OR (avgWritingSATScore >= 200 AND avgWritingSATScore <= 800)),
+  check (percentAPAbove2 is null OR (percentAPAbove2 >= 0 AND percentAPAbove2 <= 1))
 );
 
 create table Addresses(
@@ -134,7 +144,10 @@ create table Addresses(
   streetNumber varchar2,
   streetName varchar2,
   zipcode int,
-  primary key (streetNumber, streetName, zipcode)
+  primary key (streetNumber, streetName, zipcode),
+  check (latitude >= -90 AND latitude <= 90),
+  check (longitude >= -90 AND longitude <= 90),
+  check (REGEXP_LIKE (zipcode, '/d{5}') > 0)
 );
 
 create table Districts_D_IN(
@@ -143,7 +156,9 @@ create table Districts_D_IN(
   dNumber int,
   bName varchar2 not null,
   primary key (dNumber),
-  foreign key (bName) references Boroughs
+  foreign key (bName) references Boroughs,
+  check (percentRecvPublicAsst is null OR (percentRecvPublicAsst >= 0 AND percentRecvPublicAsst <= 1)),
+  check (avgAttendance is null OR (avgAttendance >= 0 AND avgAttendance <= 1))
 );
 
 create table Boroughs(
