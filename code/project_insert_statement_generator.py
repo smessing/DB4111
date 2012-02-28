@@ -23,7 +23,8 @@ header_map = {
 
 # Function Definitions:
 def valid(project_map):
-  return data_map['CITY'] == "\"New York\"" and data_map['STATE'] == 'NY'
+  return data_map['CITY'] == "\"New York\"" and data_map['STATE'] == 'NY' and \
+         data_map['NCES_ID'] != ""
 
 
 def build_project_statement(data):
@@ -64,7 +65,7 @@ def build_district_statement(data):
   line_one = "INSERT INTO Districts_D_IN\n"
   line_two = "(avgAttendance, percentRecvPublicAsst, dNumber, bName)\n"
   line_three = "VALUES\n"
-  line_four = "(0.0, 0.0,%(DISTRICT)s,%(BOROUGH)s);\n" % data
+  line_four = "(0.0, 0.0,1,%(BOROUGH)s);\n" % data
   return line_one + line_two + line_three + line_four
 
 if __name__ == "__main__":
