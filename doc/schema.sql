@@ -42,10 +42,8 @@ create table Projects_PROPOSE_AT(
   unique (proposalURL),
   constraint fk_Teachers foreign key (tid) references Teachers (tid) 
                       on delete no action 
-                      on update cascade,
   constraint fk_Schools foreign key (ncesId) references Schools (ncesId)
                       on delete no action
-                      on update cascade,
   check (numStudents >= 0),
   check (percentFunded >= 0 AND percentFunded <= 1),
   check (totalPrice >= 0)
