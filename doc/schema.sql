@@ -40,9 +40,7 @@ create table Projects_PROPOSE_AT(
   ncesId varchar2 (50) not null,
   primary key (pid, tid),
   unique (proposalURL),
-  foreign key (tid) references Teachers (tid)
-                      on delete no action
-                      on update cascade,
+  foreign key (tid) references Teachers (tid) on delete no action on update cascade,
   foreign key (ncesId) references Schools (ncesId)
                       on delete no action
                       on update cascade,
