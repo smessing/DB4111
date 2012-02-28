@@ -51,9 +51,11 @@ def build_school_statement(data):
   line_two = "(ncesID, name, avgClassSize, poveryLevel, avgMathSATScore," +\
              "avgReadingSATScore, avgWritingSATScore, currentGrade," + \
              "progressGrade, graduationRate, percentAPAbove2, dNumber," + \
-             "streetNumber, streetName, zipcode)\n"
+             "latitdue, longitude)\n"
   line_three = "VALUES\n"
-  line_four = "();\n"
+  line_four = "(%(NCES_ID)s,'John Smith School',0.0,'high',600," + \
+              "784,650,A," + \
+              "B,0.45,0.37,1,%(LATITUDE)s,%(LONGITUDE)s);\n" % data
   return line_one + line_two + line_three + line_four
 
 def build_address_statement(data):
@@ -67,7 +69,7 @@ def build_district_statement(data):
   line_one = "INSERT INTO Districts_D_IN\n"
   line_two = "(avgAttendance, percentRecvPublicAsst, dNumber, bName)\n"
   line_three = "VALUES\n"
-  line_four = "(0.0,0.0,%(DISTRICT)s,%(BOROUGH)s);\n" % data
+  line_four = "(0.0,0.0,1,Manhattan);\n" % data
   return line_one + line_two + line_three + line_four
 
 if __name__ == "__main__":
@@ -98,10 +100,11 @@ if __name__ == "__main__":
       address_out.write(data)
       data = build_district_statement(data_map)
       district_out.write(data)
-      data = build_teacher_statement(data_map)
-      print data
+      #data = build_teacher_statement(data_map)
+      #print data
       #teacher_out.write(data)
-      #data = build_school_statement(data_map)
+      data = build_school_statement(data_map)
+      print data
       #school_out.write(data)
       #data = build_project_statement(data_map)
       #project_out.write(data)
