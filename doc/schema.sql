@@ -138,7 +138,7 @@ create table Addresses(
   primary key (latitude, longitude),
   check (latitude >= -90 AND latitude <= 90),
   check (longitude >= -90 AND longitude <= 90),
-  check (REGEXP_LIKE (zipcode, '\d{5}'))
+  check (REGEXP_LIKE (zipcode, '[0-9]{5}'))
 );
 
 create table Districts_D_IN(
