@@ -37,11 +37,10 @@ create table Projects_PROPOSE_AT(
   imageURL varchar2 (200),
   numStudents integer,
   tid int not null,
-  tName varchar2 (50) not null,
   ncesId varchar2 (50) not null,
   primary key (pid, tid),
   unique (proposalURL),
-  foreign key (tid, tName) references Teachers (tid, name)
+  foreign key (tid) references Teachers (tid)
                       on delete no action
                       on update cascade,
   foreign key (ncesId) references Schools (ncesId)
