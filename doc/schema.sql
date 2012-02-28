@@ -139,7 +139,7 @@ create table Addresses(
 
 create table Districts_D_IN(
   avgAttendance real,
-  precentRecvPublicAsst real,
+  percentRecvPublicAsst real,
   dNumber int,
   bName varchar2 not null,
   primary key (dNumber),
