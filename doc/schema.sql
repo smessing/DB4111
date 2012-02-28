@@ -25,7 +25,7 @@ Authors:
 
 create table Projects_PROPOSE_AT(
   pid integer,
-  fundURL varchar2,
+  fundURL varchar2(,
   fundingStatus varchar2,
   fulfillmentTrailer varchar2,
   expirationDate date,
@@ -123,15 +123,14 @@ create table Schools_S_IN_S_HAVE(
   graduationRate real,
   percentAPAbove2 real,
   dNumber int not null,
-  streetNumber varchar2 not null,
-  streetName varchar2 not null,
+  latitude varchar2 not null,
+  longitude varchar2 not null,
   zipcode int not null,
   primary key (ncesId),
   foreign key (dNumber) references School_Districts_D_IN
                           on delete no action
                           on update cascade,
-  foreign key (streetNumber, streetName, zipcode) references 
-                          Addresses(streetNumber, streetName, zipCode)
+  foreign key (latitude, longitude) references Addresses (latitude, longitude)
                           on delete no action
                           on update cascade,
   check (avgClassSize is null OR avgClassSize >= 0),
@@ -147,7 +146,7 @@ create table Addresses(
   streetNumber varchar2,
   streetName varchar2,
   zipcode int,
-  primary key (streetNumber, streetName, zipcode),
+  primary key (latitude, longitude),
   check (latitude >= -90 AND latitude <= 90),
   check (longitude >= -90 AND longitude <= 90),
   check (REGEXP_LIKE (zipcode, '/d{5}') > 0)
@@ -179,12 +178,11 @@ create table After_School_Programs_A_HAVE(
   middleSchoolLevel boolean,
   highSchoolLevel boolean,
   organizationPhoneNumber varchar2,
-  streetNumber varchar2 not null,
-  streetName varchar2 not null,
+  latitude varchar2 not null,
+  longitude varchar2 not null,
   zipcode int not null,
   primary key (aid),
-  foreign key (streetNumber, streetName, zipcode) references 
-                          Addresses(streetNumber, streetName, zipCode)
+  foreign key (latitude, longitude) references Addresses (latitude, longitude)
                           on delete no action
                           on update cascade
 );
