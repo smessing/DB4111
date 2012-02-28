@@ -53,7 +53,7 @@ def build_school_statement(data):
              "progressGrade, graduationRate, percentAPAbove2, dNumber," + \
              "latitdue, longitude)\n"
   line_three = "VALUES\n"
-  line_four = "(%(NCES_ID)s,'John Smith School',0.0,'high',600," + \
+  line_four = "(%(NCES_ID)s,'John Smith School',0.0,'high',600," % data + \
               "784,650,A," + \
               "B,0.45,0.37,1,%(LATITUDE)s,%(LONGITUDE)s);\n" % data
   return line_one + line_two + line_three + line_four
@@ -77,7 +77,7 @@ if __name__ == "__main__":
   data_file = file("../data/donorschoose-org-1may2011-v1-projects.csv", "r")
   #project_out = file("../data/project_insert_statements.sql", "w")
   #teacher_out = file("../data/teacher_insert_statements.sql", "w")
-  #school_out = file("../data/school_insert_statements.sql", "w")
+  school_out = file("../data/school_insert_statements.sql", "w")
   address_out = file("../data/address_insert_statements.sql", "w")
   district_out = file("../data/district_insert_statements.sql", "w")
   district_map = {}
@@ -104,7 +104,6 @@ if __name__ == "__main__":
       #print data
       #teacher_out.write(data)
       data = build_school_statement(data_map)
-      print data
-      #school_out.write(data)
+      school_out.write(data)
       #data = build_project_statement(data_map)
       #project_out.write(data)

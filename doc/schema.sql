@@ -22,6 +22,7 @@ Authors:
  learn how to implement.
 */
 
+
 create table Projects_PROPOSE_AT(
   pid integer,
   fundURL varchar2 (200),
@@ -40,14 +41,13 @@ create table Projects_PROPOSE_AT(
   ncesId varchar2 (50) not null,
   primary key (pid, tid),
   unique (proposalURL),
-  constraint fk_Teachers foreign key (tid) references Teachers (tid) 
-                      on delete no action 
-  constraint fk_Schools foreign key (ncesId) references Schools (ncesId)
-                      on delete no action
+  constraint fk_Teachers foreign key (tid) references Teachers (tid),
+  constraint fk_Schools foreign key (ncesId) references Schools_S_IN_S_HAVE (ncesId),
   check (numStudents >= 0),
   check (percentFunded >= 0 AND percentFunded <= 1),
   check (totalPrice >= 0)
 );
+
 
 create table Teachers(
   tid int,
@@ -55,14 +55,16 @@ create table Teachers(
   primary key (tid)
 );
 
+
 create table Users(
   email varchar2 (50),
   displayName varchar2 (50) not null,
   password varchar2 (50) not null,
   passwordSalt varchar2 (50) not null,
   primary key (email),
-  check (REGEXP_LIKE (email, '\w+@\w+(\.\w+)+') > 0)
+  check (REGEXP_LIKE (email, '\w+@\w+(\.\w+)+'))
 );
+
 
 create table Donations_FUND(
   tid int not null,
@@ -80,17 +82,14 @@ create table Donations_FUND(
 create table Comments_ABOUT(
   tid int not null,
   pid int not null,
-  comment varchar2 (500) not null,
+  comments varchar2 (500) not null,
   cDate date,
   email varchar2 (50),
   primary key (cDate, email),
-  foreign key (email) references Users
-                        on delete no action
-                        on update cascade,
+  foreign key (email) references Users,
   foreign key (tid, pid) references Projects_PROPOSE_AT(tid, pid)
-                        on delete cascade
-                        on update cascade
 );
+
 
 create table VOTE(
   vDate date,
@@ -98,13 +97,10 @@ create table VOTE(
   pid int,
   email varchar2 (50),
   primary key (tid, pid, email),
-  foreign key (email) references Users
-                      on delete no action
-                      on update cascade,
+  foreign key (email) references Users,
   foreign key (tid, pid) references Projects_PROPOSE_AT(tid, pid)
-                      on delete cascade
-                      on update cascade
 );
+
 
 create table Schools_S_IN_S_HAVE(
   ncesId varchar2 (50),
@@ -119,22 +115,19 @@ create table Schools_S_IN_S_HAVE(
   graduationRate real,
   percentAPAbove2 real,
   dNumber int not null,
-  latitude varchar2 (50) not null,
-  longitude varchar2 (50) not null,
+  latitude real not null,
+  longitude real not null,
   zipcode int not null,
   primary key (ncesId),
-  foreign key (dNumber) references School_Districts_D_IN
-                          on delete no action
-                          on update cascade,
-  foreign key (latitude, longitude) references Addresses (latitude, longitude)
-                          on delete no action
-                          on update cascade,
+  foreign key (dNumber) references Districts_D_IN,
+  foreign key (latitude, longitude) references Addresses (latitude, longitude),
   check (avgClassSize is null OR avgClassSize >= 0),
   check (avgMathSATScore is null OR (avgMathSATScore >= 200 AND avgMathSATScore <= 800)),
   check (avgReadingSATScore is null OR (avgReadingSATScore >= 200 AND avgReadingSATScore <= 800)),
   check (avgWritingSATScore is null OR (avgWritingSATScore >= 200 AND avgWritingSATScore <= 800)),
   check (percentAPAbove2 is null OR (percentAPAbove2 >= 0 AND percentAPAbove2 <= 1))
 );
+
 
 create table Addresses(
   latitude real,
@@ -145,9 +138,10 @@ create table Addresses(
   primary key (latitude, longitude),
   check (latitude >= -90 AND latitude <= 90),
   check (longitude >= -90 AND longitude <= 90),
-  check (REGEXP_LIKE (zipcode, '/d{5}') > 0)
+  check (REGEXP_LIKE (zipcode, '/d{5}'))
 );
 
+-- FINE:
 create table Districts_D_IN(
   avgAttendance real,
   percentRecvPublicAsst real,
@@ -159,26 +153,27 @@ create table Districts_D_IN(
   check (avgAttendance is null OR (avgAttendance >= 0 AND avgAttendance <= 1))
 );
 
+-- FINE:
 create table Boroughs(
   bName varchar2 (50),
   primary key(bName)
 );
 
+-- FINE:
+-- note: on delete no action is default in ORACLE
 create table After_School_Programs_A_HAVE(
   aid int,
   name varchar2 (100) not null,
   programType varchar2 (100),
   agencyName varchar2 (100),
   organizationName varchar2 (100),
-  elementaryLevel boolean,
-  middleSchoolLevel boolean,
-  highSchoolLevel boolean,
+  elementaryLevel char(1) check (elementaryLevel in ('T', 'F')),
+  middleSchoolLevel char(1) check (middleSchoolLevel in ('T', 'F')),
+  highSchoolLevel char(1) check (highSchoolLevel in ('T', 'F')),
   organizationPhoneNumber varchar2 (20),
-  latitude varchar2 (50) not null,
-  longitude varchar2 (50) not null,
+  latitude real not null,
+  longitude real not null,
   zipcode int not null,
   primary key (aid),
   foreign key (latitude, longitude) references Addresses (latitude, longitude)
-                          on delete no action
-                          on update cascade
 );
