@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # author: Samuel Messing <sbm2158@columbia.edu>
 
+import random
+
 header_map = {
 0:'PROJECT_ID',
 1:'TEACHER_ACCT_ID',
@@ -65,7 +67,7 @@ def build_district_statement(data):
   line_one = "INSERT INTO Districts_D_IN\n"
   line_two = "(avgAttendance, percentRecvPublicAsst, dNumber, bName)\n"
   line_three = "VALUES\n"
-  line_four = "(0.0, 0.0,1,%(BOROUGH)s);\n" % data
+  line_four = "(0.0,0.0,%(DISTRICT)s,%(BOROUGH)s);\n" % data
   return line_one + line_two + line_three + line_four
 
 if __name__ == "__main__":
@@ -75,7 +77,8 @@ if __name__ == "__main__":
   #teacher_out = file("../data/teacher_insert_statements.sql", "w")
   #school_out = file("../data/school_insert_statements.sql", "w")
   address_out = file("../data/address_insert_statements.sql", "w")
-  #district_out = file("../data/district_insert_statements.sql", "w")
+  district_out = file("../data/district_insert_statements.sql", "w")
+  district_map = {}
 
   # skip header:
   data_file.readline()
@@ -89,14 +92,14 @@ if __name__ == "__main__":
         data_map["%s" % header_map[i]] = project[i]
       else:
         data_map["%i" % i] = project[i]
-
+      data_map['DISTRICT'] = random.randint(0,27)
     if (valid(data_map)):
       data = build_address_statement(data_map)
       address_out.write(data)
       data = build_district_statement(data_map)
+      district_out.write(data)
+      data = build_teacher_statement(data_map)
       print data
-      #district_out.write(data)
-      #data = build_teacher_statement(data_map)
       #teacher_out.write(data)
       #data = build_school_statement(data_map)
       #school_out.write(data)
