@@ -12,6 +12,7 @@ header_map = {
 7:'STATE',
 8:'ZIPCODE',
 10:'DISTRICT',
+11:'BOROUGH',
 27:'POVERTY_LEVEL',
 28:'GRADE_LEVEL',
 34:'TOTAL_PRICE',
@@ -63,7 +64,7 @@ def build_district_statement(data):
   line_one = "INSERT INTO Districts_D_IN\n"
   line_two = "(avgAttendance, percentRecvPublicAsst, dNumber, bName)\n"
   line_three = "VALUES\n"
-  line_four = "(0.0, 0.0,);\n" % data
+  line_four = "(0.0, 0.0,%(DISTRICT)s,%(BOROUGH)s);\n" % data
   return line_one + line_two + line_three + line_four
 
 if __name__ == "__main__":
@@ -91,7 +92,8 @@ if __name__ == "__main__":
     if (valid(data_map)):
       data = build_address_statement(data_map)
       address_out.write(data)
-      #data = build_district_statement(data_map)
+      data = build_district_statement(data_map)
+      print data
       #district_out.write(data)
       #data = build_teacher_statement(data_map)
       #teacher_out.write(data)
