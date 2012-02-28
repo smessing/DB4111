@@ -1,0 +1,148 @@
+\documentclass{article}
+\title{Project Description \\ COMS 4111 Databases}
+\author{Samuel Messing (sbm2158) \\ Benjamin Rapaport (bar2150)}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\pagestyle{fancy}
+\begin{document}
+\maketitle
+
+\section{Project Goal} % (fold)
+\label{sec:project_goal}
+
+Our goal is to provide potential donors to Donorschoose.org projects with additional
+information regarding the quality and character of the school environment so that
+they can maximize the utility of their donations. Currently, Donorschoose.org
+provides only one mechanism for classifying schools hosting projects: schools are
+divided into low, medium and high poverty levels. By utilizing more granular data
+released by the New York City government, we can provide more information both about
+the demographics in a school district as well as the school's performance.
+Statistics for school performance that we can provide include school attendance
+rates, AP and SAT exam scores, NY Regional Math Test scores, NY Department of
+Education (DOE) school ratings, etc.
+
+We would like to create a web front-end that would allow a user to look for
+Donorschoose.org projects based on these and other statistics, as well as by
+geographic region (including borough, school district and zipcode). We intend to
+provide data visualization using the Google Maps API.
+
+% section project_goal (end)
+
+\section{Organizational Structure} % (fold)
+\label{sec:organizational_structure}
+
+\subsection{Entity Sets} % (fold)
+\label{sub:entity_sets}
+\begin{itemize}
+  \item \framebox{Schools}
+  \begin{itemize}
+    \item \textbf{\underline{Name}}
+    \item povertyLevel (CHAR) [Poverty level of school]
+  \end{itemize}
+  \item \framebox{Projects}
+  \begin{itemize}
+    \item costToComplete (REAL)
+    \item expirationDate (CHAR)
+    \item fulfillmentTrailer (CHAR) [What money will be spent on]
+    \item fundingStatus (CHAR)
+    \item fundURL (CHAR)
+    \item \textbf{\underline{id}} (INT)
+    \item imageURL (CHAR)
+    \item percentFunded (REAL)
+    \item proposalURL (CHAR)
+    \item shortDescription (CHAR) [Explaining the goals of the project]
+    \item subject (CHAR)
+    \item title (CHAR)
+    \item totalPrice (REAL)
+  \end{itemize}
+  \item \framebox{Teachers}
+  \begin{itemize}
+    \item Name
+    \item numCurrentProjects (INT)
+    \item numTotalProjects (INT)
+    \item \underline{TID} (INT)
+  \end{itemize}
+  \item \framebox{Users}
+  \begin{itemize}
+    \item amountDonated (REAL)
+    \item \textbf{\underline{email}} (CHAR)
+    \item name (CHAR)
+    \item numDownVotes (INT)
+    \item numProjectsFunded (INT)
+    \item numUpVotes (INT)
+    \item password (CHAR)
+    \item passwordSalt (CHAR)
+  \end{itemize}
+  \item \framebox{School Districts}
+  \begin{itemize}
+    \item \textbf{\underline{districtNumber}} (INT)
+  \end{itemize}
+  \item \framebox{City Boroughs}
+  \begin{itemize}
+    \item \textbf{\underline{name}}
+  \end{itemize}
+  \item \framebox{School Surveys}
+  \begin{itemize}
+    \item \textbf{$\rightarrow$\underline{School\$Name}}
+    \item \textbf{\underline{Year}}
+  \end{itemize}
+  \item \framebox{Tests}
+  \begin{itemize}
+    \item $\rightarrow$\underline{School\$Name}
+    \item Test Type
+    \item \underline{Year}
+  \end{itemize}
+  \item \framebox{Addresses}
+  \begin{itemize}
+    \item Latitude (REAL)
+    \item Longitude (REAL)
+    \item \textbf{\underline{Street Number}}
+    \item \textbf{\underline{Street Name}}
+    \item \textbf{\underline{Zipcode}}
+  \end{itemize}
+  \item \framebox{Grade Levels}
+  \item \framebox{Votes}
+  \begin{itemize}
+    \item Type (CHAR) ['up', 'down']
+  \end{itemize}
+\end{itemize}
+% subsection entity_sets (end)
+
+\subsection{Relationship Sets} % (fold)
+\label{sub:relationship_sets}
+\begin{multicols}{2}
+\begin{itemize}
+  \item Teachers$\Rightarrow$\framebox{\textbf{PROPOSE}}---Projects
+  \item Projects$\Rightarrow$\framebox{\textbf{AT}}---Schools
+  \item Schools$\Rightarrow$\framebox{\textbf{IN}}---School Districts
+  \item School Districts$\Rightarrow$\framebox{\textbf{IN}}---City Boroughs
+  \item Schools$\Rightarrow$\framebox{\textbf{HAVE}}---Addresses
+  \item Users$\Rightarrow$\framebox{\textbf{SUBMIT}}---Votes
+  \item Users$\Rightarrow$\framebox{\textbf{MAKE}}---Donations
+  \item Votes$\Rightarrow$\framebox{\textbf{RATE}}---Projects
+  \item Donations$\Rightarrow$\framebox{\textbf{FUND}}---Projects
+    
+  
+\end{itemize}
+\end{multicols}
+
+% subsection relationship_sets (end)
+
+% section organizational_structure (end)
+
+\section{Questions} % (fold)
+\label{sec:questions}
+
+\begin{itemize}
+
+  \item Say we have an attribute of a relationship between two entities, and we want to
+  display all of these attributes for relationships associated with a particular entity
+  (i.e. relationship set = ``comments" and attribute = ``comment"), is this a sign we
+  want to model this attribute as a separate entity? Or does it not matter?
+  
+   \end{itemize}
+
+% section questions (end)
+
+
+\end{document}

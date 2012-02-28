@@ -1,0 +1,365 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>schema.sql</title>
+	<style type="text/css">
+/* Stylesheet generated from TextMate theme
+ *
+ * Slush & Poppies
+ * 
+ *
+ */
+
+/* Mostly to improve view within the TextMate HTML viewer */
+body {
+	margin: 0;
+	padding: 0;
+}
+
+pre.textmate-source {
+	margin: 0;
+	padding: 0 0 0 2px;
+	font-family: Monaco, monospace;
+	font-size: 11px;
+	line-height: 1.3em;
+	word-wrap: break-word;
+	white-space: pre;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -o-pre-wrap;
+}
+
+pre.textmate-source.slush_poppies {
+	color: #000000;
+	background-color: #F1F1F1;
+}
+
+pre.textmate-source .linenum {
+	width: 75px;
+	padding: 0.1em 1em 0.2em 0;
+	color: #888;
+	background-color: #eee;
+}
+pre.textmate-source.slush_poppies span {
+   padding-top: 0.2em;
+   padding-bottom: 0.1em;
+}
+pre.textmate-source.slush_poppies ::selection {
+	background-color: #B0B0FF;
+}
+/* Comment */
+pre.textmate-source.slush_poppies .comment {
+	color: #406040;
+}
+
+/* String */
+pre.textmate-source.slush_poppies .string {
+	color: #C03030;
+}
+
+/* Number */
+pre.textmate-source.slush_poppies .constant_numeric {
+	color: #0080A0;
+}
+
+/* OCaml floating-point constants */
+pre.textmate-source.slush_poppies .source_ocaml .constant_numeric_floating-point {
+	text-decoration: underline;
+}
+
+/* Character constants */
+pre.textmate-source.slush_poppies .constant_character {
+	color: #800000;
+}
+
+/* Built-in constant */
+pre.textmate-source.slush_poppies .constant_language {
+}
+
+/* User-defined constant */
+pre.textmate-source.slush_poppies .constant_character, pre.textmate-source.slush_poppies .constant_other {
+}
+
+/* Variable */
+pre.textmate-source.slush_poppies .variable_parameter, pre.textmate-source.slush_poppies .variable_other {
+}
+
+/* Keyword */
+pre.textmate-source.slush_poppies .keyword {
+	color: #2060A0;
+}
+
+/* Operators */
+pre.textmate-source.slush_poppies .keyword_operator {
+	color: #2060A0;
+}
+
+/* OCaml prefix f-p operators */
+pre.textmate-source.slush_poppies .source_ocaml .keyword_operator_symbol_prefix_floating-point {
+	text-decoration: underline;
+}
+
+/* OCaml infix f-p operators */
+pre.textmate-source.slush_poppies .source_ocaml .keyword_operator_symbol_infix_floating-point {
+	text-decoration: underline;
+}
+
+/* Module Keyword */
+pre.textmate-source.slush_poppies .entity_name_module, pre.textmate-source.slush_poppies . .support_other_module {
+	color: #0080FF;
+}
+
+/* Storage types */
+pre.textmate-source.slush_poppies .storage_type {
+	color: #A08000;
+}
+
+/* Storage */
+pre.textmate-source.slush_poppies .storage {
+	color: #008080;
+}
+
+/* Variant types */
+pre.textmate-source.slush_poppies .entity_name_class_variant {
+	color: #C08060;
+}
+
+/* Directives */
+pre.textmate-source.slush_poppies .keyword_other_directive {
+	font-weight: bold;
+}
+
+/* Line-number directives */
+pre.textmate-source.slush_poppies .source_ocaml .keyword_other_directive_line-number {
+}
+
+/* Inherited class */
+pre.textmate-source.slush_poppies .entity_other_inherited-class {
+}
+
+/* Function name */
+pre.textmate-source.slush_poppies .entity_name_function {
+	color: #800000;
+}
+
+/* Type name */
+pre.textmate-source.slush_poppies .storage_type_user-defined {
+	color: #800080;
+}
+
+/* Class type name */
+pre.textmate-source.slush_poppies .entity_name_type_class_type {
+	color: #8000C0;
+}
+
+/* Function argument */
+pre.textmate-source.slush_poppies .variable_parameter {
+}
+
+/* Tag name */
+pre.textmate-source.slush_poppies .entity_name_tag {
+}
+
+/* Tag attribute */
+pre.textmate-source.slush_poppies .entity_other_attribute-name {
+}
+
+/* Library function */
+pre.textmate-source.slush_poppies .support_function {
+}
+
+/* Library constant */
+pre.textmate-source.slush_poppies .support_constant {
+}
+
+/* Library class/type */
+pre.textmate-source.slush_poppies .support_type, pre.textmate-source.slush_poppies .support_class {
+}
+
+/* Library variable */
+pre.textmate-source.slush_poppies .support_variable {
+}
+
+/* Invalid */
+pre.textmate-source.slush_poppies .invalid {
+}
+
+
+
+	</style>
+</head>
+
+<body><pre class="textmate-source slush_poppies"><span class='linenum'>    1</span> <span class="source source_sql"><span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span> Authors: 
+</span><span class='linenum'>    2</span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span> - Samuel Messing &lt;sbm2158@columbia.edu&gt;
+</span><span class='linenum'>    3</span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span> - Benjamin Rapaport &lt;bar2150@columbia.edu&gt;
+</span><span class='linenum'>    4</span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span>
+</span><span class='linenum'>    5</span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span> Conventions:
+</span><span class='linenum'>    6</span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span> - Entity table names start with a single capital letter,
+</span><span class='linenum'>    7</span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span>   words separated by underscores
+</span><span class='linenum'>    8</span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span> - Relationship table names are all capitals, words separated
+</span><span class='linenum'>    9</span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span>   by underscores
+</span><span class='linenum'>   10</span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span>
+</span><span class='linenum'>   11</span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span> NOTE: there are several integrity constraints mentioned that
+</span><span class='linenum'>   12</span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span> we could not yet caputre (i.e. that the attribute "amount" in
+</span><span class='linenum'>   13</span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span> the entity set Donations be nonnegative).
+</span><span class='linenum'>   14</span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span>
+</span><span class='linenum'>   15</span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span> NOTE: the size of char attributes is subject to change, the
+</span><span class='linenum'>   16</span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span> current values were our best estimates of our needs.
+</span><span class='linenum'>   17</span> 
+<span class='linenum'>   18</span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span> NOTE: we could not fully capture the PROPOSE relationship,
+</span><span class='linenum'>   19</span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span> specifically, we could not enforce the total participation
+</span><span class='linenum'>   20</span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span> of teacher entities in the PROPOSE relationship. In order
+</span><span class='linenum'>   21</span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span> to do this, we'll need to use queries that we have yet to
+</span><span class='linenum'>   22</span> <span class="comment comment_line comment_line_number-sign comment_line_number-sign_sql"><span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_sql">#</span> learn how to implement.
+</span><span class='linenum'>   23</span> <span class="meta meta_create meta_create_sql"><span class="keyword keyword_other keyword_other_create keyword_other_create_sql">create</span> <span class="keyword keyword_other keyword_other_sql">table</span> <span class="entity entity_name entity_name_function entity_name_function_sql">Projects_PROPOSE_AT</span></span>(
+<span class='linenum'>   24</span>   pid <span class="storage storage_type storage_type_sql">integer</span>,
+<span class='linenum'>   25</span>   fundURL <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">300</span>),
+<span class='linenum'>   26</span>   fundingStatus <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">50</span>),
+<span class='linenum'>   27</span>   fulfillmentTrailer <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">300</span>),
+<span class='linenum'>   28</span>   expirationDate <span class="storage storage_type storage_type_sql">date</span>,
+<span class='linenum'>   29</span>   totalPrice <span class="storage storage_type storage_type_sql">real</span>,
+<span class='linenum'>   30</span>   title <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">100</span>),
+<span class='linenum'>   31</span>   subject <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">100</span>),
+<span class='linenum'>   32</span>   shortDescription <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">500</span>),
+<span class='linenum'>   33</span>   proposalURL <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">300</span>) <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>   34</span>   percentFunded <span class="storage storage_type storage_type_sql">real</span>,
+<span class='linenum'>   35</span>   imageURL <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">300</span>),
+<span class='linenum'>   36</span>   numStudents <span class="storage storage_type storage_type_sql">integer</span>,
+<span class='linenum'>   37</span>   tid <span class="storage storage_type storage_type_sql">int</span> <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>   38</span>   tName <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">200</span>) <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>   39</span>   ncesId <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">300</span>) <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>   40</span>   <span class="storage storage_modifier storage_modifier_sql">primary key</span> (pid),
+<span class='linenum'>   41</span>   unique (proposalURL),
+<span class='linenum'>   42</span>   <span class="storage storage_modifier storage_modifier_sql">foreign key</span> (tid, tName) <span class="storage storage_modifier storage_modifier_sql">references</span> Teachers (tid, name)
+<span class='linenum'>   43</span>                       <span class="storage storage_modifier storage_modifier_sql">on delete</span> no action
+<span class='linenum'>   44</span>                       <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">on</span> <span class="keyword keyword_other keyword_other_DML keyword_other_DML_sql">update</span> cascade,
+<span class='linenum'>   45</span>   <span class="storage storage_modifier storage_modifier_sql">foreign key</span> (ncesId) <span class="storage storage_modifier storage_modifier_sql">references</span> Schools (ncesId)
+<span class='linenum'>   46</span>                       <span class="storage storage_modifier storage_modifier_sql">on delete</span> no action
+<span class='linenum'>   47</span>                       <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">on</span> <span class="keyword keyword_other keyword_other_DML keyword_other_DML_sql">update</span> cascade
+<span class='linenum'>   48</span> );
+<span class='linenum'>   49</span> 
+<span class='linenum'>   50</span> <span class="meta meta_create meta_create_sql"><span class="keyword keyword_other keyword_other_create keyword_other_create_sql">create</span> <span class="keyword keyword_other keyword_other_sql">table</span> <span class="entity entity_name entity_name_function entity_name_function_sql">Teachers</span></span>(
+<span class='linenum'>   51</span>   tid <span class="storage storage_type storage_type_sql">int</span>,
+<span class='linenum'>   52</span>   name <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">200</span>) <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>   53</span>   <span class="storage storage_modifier storage_modifier_sql">primary key</span> (tid)
+<span class='linenum'>   54</span> );
+<span class='linenum'>   55</span> 
+<span class='linenum'>   56</span> <span class="meta meta_create meta_create_sql"><span class="keyword keyword_other keyword_other_create keyword_other_create_sql">create</span> <span class="keyword keyword_other keyword_other_sql">table</span> <span class="entity entity_name entity_name_function entity_name_function_sql">Users</span></span>(
+<span class='linenum'>   57</span>   email <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">200</span>),
+<span class='linenum'>   58</span>   displayName <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">200</span>) <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>   59</span>   password <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">128</span>) <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>   60</span>   passwordSalt <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">200</span>) <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>   61</span>   <span class="storage storage_modifier storage_modifier_sql">primary key</span> (email)
+<span class='linenum'>   62</span> );
+<span class='linenum'>   63</span> 
+<span class='linenum'>   64</span> <span class="meta meta_create meta_create_sql"><span class="keyword keyword_other keyword_other_create keyword_other_create_sql">create</span> <span class="keyword keyword_other keyword_other_sql">table</span> <span class="entity entity_name entity_name_function entity_name_function_sql">Donations_FUND</span></span>(
+<span class='linenum'>   65</span>   tid <span class="storage storage_type storage_type_sql">int</span> <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>   66</span>   pid <span class="storage storage_type storage_type_sql">int</span> <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>   67</span>   email <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">200</span>) <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>   68</span>   amount <span class="storage storage_type storage_type_sql">real</span> <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>   69</span>   donationDate <span class="storage storage_type storage_type_sql">date</span>,
+<span class='linenum'>   70</span>   did <span class="storage storage_type storage_type_sql">int</span>,
+<span class='linenum'>   71</span>   <span class="storage storage_modifier storage_modifier_sql">primary key</span> (did),
+<span class='linenum'>   72</span>   <span class="storage storage_modifier storage_modifier_sql">foreign key</span> (tid, pid) <span class="storage storage_modifier storage_modifier_sql">references</span> PROPOSE(tid, pid),
+<span class='linenum'>   73</span>   <span class="storage storage_modifier storage_modifier_sql">foreign key</span> (email) <span class="storage storage_modifier storage_modifier_sql">references</span> Users
+<span class='linenum'>   74</span> );
+<span class='linenum'>   75</span> 
+<span class='linenum'>   76</span> <span class="meta meta_create meta_create_sql"><span class="keyword keyword_other keyword_other_create keyword_other_create_sql">create</span> <span class="keyword keyword_other keyword_other_sql">table</span> <span class="entity entity_name entity_name_function entity_name_function_sql">Comments_ABOUT</span></span>(
+<span class='linenum'>   77</span>   tid <span class="storage storage_type storage_type_sql">int</span> <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>   78</span>   pid <span class="storage storage_type storage_type_sql">int</span> <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>   79</span>   comment <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">500</span>) <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>   80</span>   cDate <span class="storage storage_type storage_type_sql">date</span>,
+<span class='linenum'>   81</span>   email <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">200</span>),
+<span class='linenum'>   82</span>   <span class="storage storage_modifier storage_modifier_sql">primary key</span> (cDate, email),
+<span class='linenum'>   83</span>   <span class="storage storage_modifier storage_modifier_sql">foreign key</span> (email) <span class="storage storage_modifier storage_modifier_sql">references</span> Users
+<span class='linenum'>   84</span>                         <span class="storage storage_modifier storage_modifier_sql">on delete</span> no action
+<span class='linenum'>   85</span>                         <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">on</span> <span class="keyword keyword_other keyword_other_DML keyword_other_DML_sql">update</span> cascade,
+<span class='linenum'>   86</span>   <span class="storage storage_modifier storage_modifier_sql">foreign key</span> (tid, pid) <span class="storage storage_modifier storage_modifier_sql">references</span> PROPOSE(tid, pid)
+<span class='linenum'>   87</span>                         <span class="storage storage_modifier storage_modifier_sql">on delete cascade</span>
+<span class='linenum'>   88</span>                         <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">on</span> <span class="keyword keyword_other keyword_other_DML keyword_other_DML_sql">update</span> cascade
+<span class='linenum'>   89</span> );
+<span class='linenum'>   90</span> 
+<span class='linenum'>   91</span> <span class="meta meta_create meta_create_sql"><span class="keyword keyword_other keyword_other_create keyword_other_create_sql">create</span> <span class="keyword keyword_other keyword_other_sql">table</span> <span class="entity entity_name entity_name_function entity_name_function_sql">VOTE</span></span>(
+<span class='linenum'>   92</span>   vDate <span class="storage storage_type storage_type_sql">date</span>,
+<span class='linenum'>   93</span>   tid <span class="storage storage_type storage_type_sql">int</span>,
+<span class='linenum'>   94</span>   pid <span class="storage storage_type storage_type_sql">int</span>,
+<span class='linenum'>   95</span>   email <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">200</span>),
+<span class='linenum'>   96</span>   <span class="storage storage_modifier storage_modifier_sql">primary key</span> (tid, pid, email),
+<span class='linenum'>   97</span>   <span class="storage storage_modifier storage_modifier_sql">foreign key</span> (email) <span class="storage storage_modifier storage_modifier_sql">references</span> Users
+<span class='linenum'>   98</span>                       <span class="storage storage_modifier storage_modifier_sql">on delete</span> no action
+<span class='linenum'>   99</span>                       <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">on</span> <span class="keyword keyword_other keyword_other_DML keyword_other_DML_sql">update</span> cascade,
+<span class='linenum'>  100</span>   <span class="storage storage_modifier storage_modifier_sql">foreign key</span> (tid, pid) <span class="storage storage_modifier storage_modifier_sql">references</span> PROPOSE(tid, pid)
+<span class='linenum'>  101</span>                       <span class="storage storage_modifier storage_modifier_sql">on delete cascade</span>
+<span class='linenum'>  102</span>                       <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">on</span> <span class="keyword keyword_other keyword_other_DML keyword_other_DML_sql">update</span> cascade
+<span class='linenum'>  103</span> );
+<span class='linenum'>  104</span> 
+<span class='linenum'>  105</span> <span class="meta meta_create meta_create_sql"><span class="keyword keyword_other keyword_other_create keyword_other_create_sql">create</span> <span class="keyword keyword_other keyword_other_sql">table</span> <span class="entity entity_name entity_name_function entity_name_function_sql">Schools_S_IN_S_HAVE</span></span>(
+<span class='linenum'>  106</span>   ncesId <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">50</span>),
+<span class='linenum'>  107</span>   name <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">300</span>),
+<span class='linenum'>  108</span>   avgClassSize <span class="storage storage_type storage_type_sql">real</span>,
+<span class='linenum'>  109</span>   povertyLevel <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">50</span>),
+<span class='linenum'>  110</span>   avgMathSATScore <span class="storage storage_type storage_type_sql">int</span>,
+<span class='linenum'>  111</span>   avgReadingSATScore <span class="storage storage_type storage_type_sql">int</span>,
+<span class='linenum'>  112</span>   avgWritingSATScore <span class="storage storage_type storage_type_sql">int</span>,
+<span class='linenum'>  113</span>   currentGrade <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">2</span>),
+<span class='linenum'>  114</span>   progressGrade <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">2</span>),
+<span class='linenum'>  115</span>   graduationRate <span class="storage storage_type storage_type_sql">real</span>,
+<span class='linenum'>  116</span>   percentAPAbove2 <span class="storage storage_type storage_type_sql">real</span>,
+<span class='linenum'>  117</span>   dNumber <span class="storage storage_type storage_type_sql">int</span> <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>  118</span>   streetNumber <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">10</span>) <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>  119</span>   streetName <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">150</span>) <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>  120</span>   zipcode <span class="storage storage_type storage_type_sql">int</span> <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>  121</span>   <span class="storage storage_modifier storage_modifier_sql">primary key</span> (ncesId),
+<span class='linenum'>  122</span>   <span class="storage storage_modifier storage_modifier_sql">foreign key</span> (dNumber) <span class="storage storage_modifier storage_modifier_sql">references</span> School_Districts_D_IN
+<span class='linenum'>  123</span>                           <span class="storage storage_modifier storage_modifier_sql">on delete</span> no action
+<span class='linenum'>  124</span>                           <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">on</span> <span class="keyword keyword_other keyword_other_DML keyword_other_DML_sql">update</span> cascade,
+<span class='linenum'>  125</span>   <span class="storage storage_modifier storage_modifier_sql">foreign key</span> (streetNumber, streetName, zipcode) <span class="storage storage_modifier storage_modifier_sql">references</span> 
+<span class='linenum'>  126</span>                           Addresses(streetNumber, streetName, zipCode)
+<span class='linenum'>  127</span>                           <span class="storage storage_modifier storage_modifier_sql">on delete</span> no action
+<span class='linenum'>  128</span>                           <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">on</span> <span class="keyword keyword_other keyword_other_DML keyword_other_DML_sql">update</span> cascade
+<span class='linenum'>  129</span> );
+<span class='linenum'>  130</span> 
+<span class='linenum'>  131</span> <span class="meta meta_create meta_create_sql"><span class="keyword keyword_other keyword_other_create keyword_other_create_sql">create</span> <span class="keyword keyword_other keyword_other_sql">table</span> <span class="entity entity_name entity_name_function entity_name_function_sql">Addresses</span></span>(
+<span class='linenum'>  132</span>   latitude <span class="storage storage_type storage_type_sql">real</span>,
+<span class='linenum'>  133</span>   longitude <span class="storage storage_type storage_type_sql">real</span>,
+<span class='linenum'>  134</span>   streetNumber <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">10</span>),
+<span class='linenum'>  135</span>   streetName <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">150</span>),
+<span class='linenum'>  136</span>   zipcode <span class="storage storage_type storage_type_sql">int</span>,
+<span class='linenum'>  137</span>   <span class="storage storage_modifier storage_modifier_sql">primary key</span> (streetNumber, streetName, zipcode)
+<span class='linenum'>  138</span> );
+<span class='linenum'>  139</span> 
+<span class='linenum'>  140</span> <span class="meta meta_create meta_create_sql"><span class="keyword keyword_other keyword_other_create keyword_other_create_sql">create</span> <span class="keyword keyword_other keyword_other_sql">table</span> <span class="entity entity_name entity_name_function entity_name_function_sql">Districts_D_IN</span></span>(
+<span class='linenum'>  141</span>   avgAttendance <span class="storage storage_type storage_type_sql">real</span>,
+<span class='linenum'>  142</span>   precentRecvPublicAsst <span class="storage storage_type storage_type_sql">real</span>,
+<span class='linenum'>  143</span>   dNumber <span class="storage storage_type storage_type_sql">int</span>,
+<span class='linenum'>  144</span>   bName <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">100</span>) <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>  145</span>   <span class="storage storage_modifier storage_modifier_sql">primary key</span> (dNumber),
+<span class='linenum'>  146</span>   <span class="storage storage_modifier storage_modifier_sql">foreign key</span> (bName) <span class="storage storage_modifier storage_modifier_sql">references</span> Boroughs
+<span class='linenum'>  147</span> );
+<span class='linenum'>  148</span> 
+<span class='linenum'>  149</span> <span class="meta meta_create meta_create_sql"><span class="keyword keyword_other keyword_other_create keyword_other_create_sql">create</span> <span class="keyword keyword_other keyword_other_sql">table</span> <span class="entity entity_name entity_name_function entity_name_function_sql">Boroughs</span></span>(
+<span class='linenum'>  150</span>   bName <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">100</span>),
+<span class='linenum'>  151</span>   <span class="storage storage_modifier storage_modifier_sql">primary key</span>(bName)
+<span class='linenum'>  152</span> );
+<span class='linenum'>  153</span> 
+<span class='linenum'>  154</span> <span class="meta meta_create meta_create_sql"><span class="keyword keyword_other keyword_other_create keyword_other_create_sql">create</span> <span class="keyword keyword_other keyword_other_sql">table</span> <span class="entity entity_name entity_name_function entity_name_function_sql">After_School_Programs_A_HAVE</span></span>(
+<span class='linenum'>  155</span>   aid <span class="storage storage_type storage_type_sql">int</span>,
+<span class='linenum'>  156</span>   name <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">300</span>) <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>  157</span>   programType <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">300</span>),
+<span class='linenum'>  158</span>   agencyName <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">300</span>),
+<span class='linenum'>  159</span>   organizationName <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">300</span>),
+<span class='linenum'>  160</span>   elementaryLevel <span class="storage storage_type storage_type_sql">boolean</span>,
+<span class='linenum'>  161</span>   middleSchoolLevel <span class="storage storage_type storage_type_sql">boolean</span>,
+<span class='linenum'>  162</span>   highSchoolLevel <span class="storage storage_type storage_type_sql">boolean</span>,
+<span class='linenum'>  163</span>   organizationPhoneNumber <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">20</span>),
+<span class='linenum'>  164</span>   streetNumber <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">10</span>) <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>  165</span>   streetName <span class="storage storage_type storage_type_sql">char</span>(<span class="constant constant_numeric constant_numeric_sql">150</span>) <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>  166</span>   zipcode <span class="storage storage_type storage_type_sql">int</span> <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">not null</span>,
+<span class='linenum'>  167</span>   <span class="storage storage_modifier storage_modifier_sql">primary key</span> (aid),
+<span class='linenum'>  168</span>   <span class="storage storage_modifier storage_modifier_sql">foreign key</span> (streetNumber, streetName, zipcode) <span class="storage storage_modifier storage_modifier_sql">references</span> 
+<span class='linenum'>  169</span>                           Addresses(streetNumber, streetName, zipCode)
+<span class='linenum'>  170</span>                           <span class="storage storage_modifier storage_modifier_sql">on delete</span> no action
+<span class='linenum'>  171</span>                           <span class="keyword keyword_other keyword_other_DDL keyword_other_DDL_create keyword_other_DDL_create_II keyword_other_DDL_create_II_sql">on</span> <span class="keyword keyword_other keyword_other_DML keyword_other_DML_sql">update</span> cascade
+<span class='linenum'>  172</span> );</span></pre>
+</body>
+</html>
