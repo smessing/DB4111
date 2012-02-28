@@ -1,4 +1,5 @@
-# Authors: 
+/* 
+Authors: 
 # - Samuel Messing <sbm2158@columbia.edu>
 # - Benjamin Rapaport <bar2150@columbia.edu>
 #
@@ -20,6 +21,8 @@
 # of teacher entities in the PROPOSE relationship. In order
 # to do this, we'll need to use queries that we have yet to
 # learn how to implement.
+*/
+
 create table Projects_PROPOSE_AT(
   pid integer,
   fundURL varchar2,
