@@ -49,22 +49,22 @@ create table Projects_PROPOSE_AT(
 
 create table Teachers(
   tid int,
-  name char(200) not null,
+  name varchar2 not null,
   primary key (tid)
 );
 
 create table Users(
-  email char(200),
-  displayName char(200) not null,
-  password char(128) not null,
-  passwordSalt char(200) not null,
+  email varchar2,
+  displayName varchar2 not null,
+  password varchar2 not null,
+  passwordSalt varchar2 not null,
   primary key (email)
 );
 
 create table Donations_FUND(
   tid int not null,
   pid int not null,
-  email char(200) not null,
+  email varchar2 not null,
   amount real not null,
   donationDate date,
   did int,
@@ -76,9 +76,9 @@ create table Donations_FUND(
 create table Comments_ABOUT(
   tid int not null,
   pid int not null,
-  comment char(500) not null,
+  comment varchar2 not null,
   cDate date,
-  email char(200),
+  email varchar2,
   primary key (cDate, email),
   foreign key (email) references Users
                         on delete no action
@@ -92,7 +92,7 @@ create table VOTE(
   vDate date,
   tid int,
   pid int,
-  email char(200),
+  email varchar2,
   primary key (tid, pid, email),
   foreign key (email) references Users
                       on delete no action
@@ -103,10 +103,10 @@ create table VOTE(
 );
 
 create table Schools_S_IN_S_HAVE(
-  ncesId char(50),
-  name char(300),
+  ncesId varchar2,
+  name varchar2,
   avgClassSize real,
-  povertyLevel char(50),
+  povertyLevel varchar2,
   avgMathSATScore int,
   avgReadingSATScore int,
   avgWritingSATScore int,
@@ -115,8 +115,8 @@ create table Schools_S_IN_S_HAVE(
   graduationRate real,
   percentAPAbove2 real,
   dNumber int not null,
-  streetNumber char(10) not null,
-  streetName char(150) not null,
+  streetNumber varchar2 not null,
+  streetName varchar2 not null,
   zipcode int not null,
   primary key (ncesId),
   foreign key (dNumber) references School_Districts_D_IN
@@ -131,8 +131,8 @@ create table Schools_S_IN_S_HAVE(
 create table Addresses(
   latitude real,
   longitude real,
-  streetNumber char(10),
-  streetName char(150),
+  streetNumber varchar2,
+  streetName varchar2,
   zipcode int,
   primary key (streetNumber, streetName, zipcode)
 );
@@ -141,28 +141,28 @@ create table Districts_D_IN(
   avgAttendance real,
   precentRecvPublicAsst real,
   dNumber int,
-  bName char(100) not null,
+  bName varchar2 not null,
   primary key (dNumber),
   foreign key (bName) references Boroughs
 );
 
 create table Boroughs(
-  bName char(100),
+  bName varchar2,
   primary key(bName)
 );
 
 create table After_School_Programs_A_HAVE(
   aid int,
-  name char(300) not null,
-  programType char(300),
-  agencyName char(300),
-  organizationName char(300),
+  name varchar2 not null,
+  programType varchar2,
+  agencyName varchar2,
+  organizationName varchar2,
   elementaryLevel boolean,
   middleSchoolLevel boolean,
   highSchoolLevel boolean,
-  organizationPhoneNumber char(20),
-  streetNumber char(10) not null,
-  streetName char(150) not null,
+  organizationPhoneNumber varchar2,
+  streetNumber varchar2 not null,
+  streetName varchar2 not null,
   zipcode int not null,
   primary key (aid),
   foreign key (streetNumber, streetName, zipcode) references 
