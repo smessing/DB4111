@@ -91,7 +91,7 @@ if __name__ == "__main__":
     data_map = {}
     for i in range(len(project)):
       if (header_map.has_key(i)):
-        data_map["%s" % header_map[i]] = project[i]
+        data_map["%s" % header_map[i]] = project[i].replace('\"','')
       else:
         data_map["%i" % i] = project[i]
       data_map['DISTRICT'] = random.randint(0,27)

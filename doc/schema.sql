@@ -138,10 +138,9 @@ create table Addresses(
   primary key (latitude, longitude),
   check (latitude >= -90 AND latitude <= 90),
   check (longitude >= -90 AND longitude <= 90),
-  check (REGEXP_LIKE (zipcode, '/d{5}'))
+  check (REGEXP_LIKE (zipcode, '\d{5}'))
 );
 
--- FINE:
 create table Districts_D_IN(
   avgAttendance real,
   percentRecvPublicAsst real,
@@ -153,14 +152,11 @@ create table Districts_D_IN(
   check (avgAttendance is null OR (avgAttendance >= 0 AND avgAttendance <= 1))
 );
 
--- FINE:
 create table Boroughs(
   bName varchar2 (50),
   primary key(bName)
 );
 
--- FINE:
--- note: on delete no action is default in ORACLE
 create table After_School_Programs_A_HAVE(
   aid int,
   name varchar2 (100) not null,
