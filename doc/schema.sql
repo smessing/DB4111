@@ -1,31 +1,30 @@
 /* 
 Authors: 
-# - Samuel Messing <sbm2158@columbia.edu>
-# - Benjamin Rapaport <bar2150@columbia.edu>
-#
-# Conventions:
-# - Entity table names start with a single capital letter,
-#   words separated by underscores
-# - Relationship table names are all capitals, words separated
-#   by underscores
-#
-# NOTE: there are several integrity constraints mentioned that
-# we could not yet caputre (i.e. that the attribute "amount" in
-# the entity set Donations be nonnegative).
-#
-# NOTE: the size of char attributes is subject to change, the
-# current values were our best estimates of our needs.
+ - Samuel Messing <sbm2158@columbia.edu>
+ - Benjamin Rapaport <bar2150@columbia.edu>
 
-# NOTE: we could not fully capture the PROPOSE relationship,
-# specifically, we could not enforce the total participation
-# of teacher entities in the PROPOSE relationship. In order
-# to do this, we'll need to use queries that we have yet to
-# learn how to implement.
+ Conventions:
+ - Entity table names start with a single capital letter,
+   words separated by underscores
+ - Relationship table names are all capitals, words separated
+   by underscores
+
+ NOTE: there are several integrity constraints mentioned that
+ we could not yet caputre (i.e. that the attribute "amount" in
+ the entity set Donations be nonnegative).
+
+ NOTE: the size of char attributes is subject to change, the
+ current values were our best estimates of our needs.
+ NOTE: we could not fully capture the PROPOSE relationship,
+ specifically, we could not enforce the total participation
+ of teacher entities in the PROPOSE relationship. In order
+ to do this, we'll need to use queries that we have yet to
+ learn how to implement.
 */
 
 create table Projects_PROPOSE_AT(
   pid integer,
-  fundURL varchar2(,
+  fundURL varchar2,
   fundingStatus varchar2,
   fulfillmentTrailer varchar2,
   expirationDate date,
