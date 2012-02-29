@@ -91,11 +91,32 @@ months = {
 '12':'jan'
 }
 
+users = {
+0:'dan@fun.com',
+1:'ben@fun.com',
+2:'carl@fun.com',
+3:'clarence@fun.com',
+4:'abby@fun.com',
+5:'Hannah@fun.com',
+6:'Sam@fun.com',
+7:'David@fun.com',
+8:'debbie@fun.com',
+9:'Martin@fun.com',
+}
+
 # Function Definitions:
 def valid(project_map):
   return data_map['CITY'] == "New York" and data_map['STATE'] == 'NY' and \
          data_map['NCES_ID'] != ""
 
+
+def build_vote_statement(data):
+  line_one = "INSERT INTO Vote\n"
+  line_two = "(vDate, tid, pid, email)\n"
+  line_three = "VALUES\n"
+  line_four = "('%(DATE)s','%(TEACHER_ACCT_ID)s','%(PROJECT_ID)s'," % data + \
+              "'%s'" % users[random.randint(0,9)] + ");\n"
+  return line_one + line_two + line_three + line_four
 
 def build_project_statement(data):
   line_one = "INSERT INTO Projects_PROPOSE_AT\n"
@@ -107,7 +128,7 @@ def build_project_statement(data):
   line_four = "('%(PROJECT_ID)s'," % data + "'http://fnd.donorschoose.org/" + \
               str(random.randint(0,1000)) + "','funding','%(TRAILER)s'," % data + \
               "'%(DATE)s',%(TOTAL_PRICE)s," % data + \
-              "'Probably the best one ever','Mathematics','" % data + \
+              "'Probably the best one ever','%(SUBJECT)s','" % data + \
               "This one will make kids smarter and happier than ever.'," + \
               "'http://www.donorschoose.org/prjcts/%(PROJECT_ID)s'," % data + \
               str(random.random()) + "," + \
@@ -170,6 +191,7 @@ if __name__ == "__main__":
   #school_out = file("../data/sql/school_insert_statements.sql", "w")
   #address_out = file("../data/sql/address_insert_statements.sql", "w")
   #district_out = file("../data/sql/district_insert_statements.sql", "w")
+  vote_out = file("../data/sql/vote_insert_statements.sql", "w")
   district_map = {}
 
   # skip header:
@@ -189,6 +211,8 @@ if __name__ == "__main__":
           date = formatting.split("-")
           data_map["%s" % header_map[i]] = date[2] + "-" + months[date[1]] + \
                                           "-" + date[0][2] + date[0][3]
+        elif (header_map[i] == 'SUBJECT'):
+          data_map["%s" % header_map[i]] = project[i].replace("&",'')
         else:
           data_map["%s" % header_map[i]] = project[i].replace('\"', '')
       else:
@@ -204,4 +228,6 @@ if __name__ == "__main__":
       data = build_school_statement(data_map)
       #school_out.write(data)
       data = build_project_statement(data_map)
-      #project_out.write(data)
+      project_out.write(data)
+      data = build_vote_statement(data_map)
+      vote_out.write(data)
