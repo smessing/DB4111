@@ -25,7 +25,7 @@ header_map = {
 
 # Function Definitions:
 def valid(project_map):
-  return data_map['CITY'] == "\"New York\"" and data_map['STATE'] == 'NY' and \
+  return data_map['CITY'] == "New York" and data_map['STATE'] == 'NY' and \
          data_map['NCES_ID'] != ""
 
 
@@ -43,7 +43,7 @@ def build_teacher_statement(data):
   line_one = "INSERT INTO Teachers\n"
   line_two = "(tid, name)\n"
   line_three = "VALUES\n"
-  line_four = "();\n"
+  line_four = "(%(TEACHER_ACCT_ID)s,'James Smith');\n" % data
   return line_one + line_two + line_three + line_four
 
 def build_school_statement(data):
@@ -55,7 +55,7 @@ def build_school_statement(data):
   line_three = "VALUES\n"
   line_four = "(%(NCES_ID)s,'John Smith School',0.0,'high',600," % data + \
               "784,650,A," + \
-              "B,0.45,0.37,1,%(LATITUDE)s,%(LONGITUDE)s);\n" % data
+              "B,0.45,0.37,%(DISTRICT)s,%(LATITUDE)s,%(LONGITUDE)s);\n" % data
   return line_one + line_two + line_three + line_four
 
 def build_address_statement(data):
@@ -69,7 +69,7 @@ def build_district_statement(data):
   line_one = "INSERT INTO Districts_D_IN\n"
   line_two = "(avgAttendance, percentRecvPublicAsst, dNumber, bName)\n"
   line_three = "VALUES\n"
-  line_four = "(0.0,0.0,1,Manhattan);\n" % data
+  line_four = "(0.0,0.0,%(DISTRICT)s,'Manhattan');\n" % data
   return line_one + line_two + line_three + line_four
 
 if __name__ == "__main__":
@@ -91,19 +91,23 @@ if __name__ == "__main__":
     data_map = {}
     for i in range(len(project)):
       if (header_map.has_key(i)):
-        data_map["%s" % header_map[i]] = project[i].replace('\"','')
+        if (header_map[i] == 'ZIPCODE' or 'CITY'):
+          data_map["%s" % header_map[i]] = project[i].replace('\"', '')
+        else:
+          data_map["%s" % header_map[i]] = project[i]
       else:
         data_map["%i" % i] = project[i]
-      data_map['DISTRICT'] = random.randint(0,27)
+      data_map['DISTRICT'] = random.randint(0,10)
     if (valid(data_map)):
-      data = build_address_statement(data_map)
-      address_out.write(data)
+      #data = build_address_statement(data_map)
+      #address_out.write(data)
       data = build_district_statement(data_map)
       district_out.write(data)
-      #data = build_teacher_statement(data_map)
+      data = build_teacher_statement(data_map)
+      #print data
       #print data
       #teacher_out.write(data)
       data = build_school_statement(data_map)
-      school_out.write(data)
+      #school_out.write(data)
       #data = build_project_statement(data_map)
       #project_out.write(data)

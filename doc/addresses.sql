@@ -33,4 +33,4 @@ VALUES
 INSERT INTO Addresses
 (latitude, longitude, streetNumber, streetName, zipcode)
 VALUES
-(31.6,-89.2,'437','Brite St.','17380');
+(31.6,-89.2,'437','Brite St.','a7380');

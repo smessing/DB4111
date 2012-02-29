@@ -50,7 +50,7 @@ create table Projects_PROPOSE_AT(
 
 
 create table Teachers(
-  tid int,
+  tid varchar2 (32),
   name varchar2 (50) not null,
   primary key (tid)
 );
@@ -134,7 +134,7 @@ create table Addresses(
   longitude real,
   streetNumber varchar2 (25),
   streetName varchar2 (100),
-  zipcode int,
+  zipcode varchar2 (5),
   primary key (latitude, longitude),
   check (latitude >= -90 AND latitude <= 90),
   check (longitude >= -90 AND longitude <= 90),
