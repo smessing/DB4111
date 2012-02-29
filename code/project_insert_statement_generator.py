@@ -36,7 +36,7 @@ def build_project_statement(data):
              "proposalURL, percentFunded, imageURL, numStudents, tid, tName," + \
              "ncesId)\n"
   line_three = "VALUES\n"
-  line_four = "();\n"
+  line_four = "('%(PROJECT_ID)s','http://www.getmoneygirl.com/',);\n"
   return line_one + line_two + line_three + line_four
 
 def build_teacher_statement(data):
@@ -67,7 +67,7 @@ def build_address_statement(data):
   line_two = "(latitude, longitude, streetNumber, streetName, zipcode)\n"
   line_three = "VALUES\n"
   line_four = "(%(LATITUDE)s,%(LONGITUDE)s," % data +\
-              "'" + str(random.randInt(0,100)) + "','Junk St.',%(ZIPCODE)s);\n" % data
+              "'" + str(random.randint(0,100)) + "','Junk St.',%(ZIPCODE)s);\n" % data
   return line_one + line_two + line_three + line_four
 
 def build_district_statement(data):
@@ -104,14 +104,13 @@ if __name__ == "__main__":
         data_map["%i" % i] = project[i]
       data_map['DISTRICT'] = random.randint(0,10)
     if (valid(data_map)):
-      #data = build_address_statement(data_map)
-      #address_out.write(data)
-      #data = build_district_statement(data_map)
-      #district_out.write(data)
-      #data = build_teacher_statement(data_map)
-      #teacher_out.write(data)
+      data = build_address_statement(data_map)
+      address_out.write(data)
+      data = build_district_statement(data_map)
+      district_out.write(data)
+      data = build_teacher_statement(data_map)
+      teacher_out.write(data)
       #data = build_school_statement(data_map)
       #school_out.write(data)
-      data = build_project_statement(data_map)
-      print data
-      project_out.write(data)
+      #data = build_project_statement(data_map)
+      #project_out.write(data)
