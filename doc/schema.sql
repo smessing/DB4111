@@ -117,7 +117,6 @@ create table Schools_S_IN_S_HAVE(
   dNumber int not null,
   latitude real not null,
   longitude real not null,
-  zipcode int not null,
   primary key (ncesId),
   foreign key (dNumber) references Districts_D_IN,
   foreign key (latitude, longitude) references Addresses (latitude, longitude),
@@ -168,7 +167,6 @@ create table After_School_Programs_A_HAVE(
   organizationPhoneNumber varchar2 (20),
   latitude real not null,
   longitude real not null,
-  zipcode int not null,
   primary key (aid),
   foreign key (latitude, longitude) references Addresses (latitude, longitude)
 );

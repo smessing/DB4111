@@ -53,7 +53,9 @@ def build_school_statement(data):
              "progressGrade, graduationRate, percentAPAbove2, dNumber," + \
              "latitude, longitude, zipcode)\n"
   line_three = "VALUES\n"
-  line_four = "(%(NCES_ID)s,'John Smith School',0.0,'high',600," % data + \
+  line_four = "(%(NCES_ID)s,'John Smith School'," % data + \
+              +"'" + random.random() + "','high','" + \
+              + "'" + random.randint(200,800) + "'," + \
               "784,650,'A'," + \
               "'B',0.45,0.37,%(DISTRICT)s,%(LATITUDE)s,%(LONGITUDE)s," % data + \
               "%(ZIPCODE)s);\n" % data
@@ -63,14 +65,15 @@ def build_address_statement(data):
   line_one = "INSERT INTO Addresses\n"
   line_two = "(latitude, longitude, streetNumber, streetName, zipcode)\n"
   line_three = "VALUES\n"
-  line_four = "(%(LATITUDE)s,%(LONGITUDE)s,'14','Junk St.',%(ZIPCODE)s);\n" % data
+  line_four = "(%(LATITUDE)s,%(LONGITUDE)s," % data +\
+              "'" + random.randInt(0,100) + "','Junk St.',%(ZIPCODE)s);\n" % data
   return line_one + line_two + line_three + line_four
 
 def build_district_statement(data):
   line_one = "INSERT INTO Districts_D_IN\n"
   line_two = "(avgAttendance, percentRecvPublicAsst, dNumber, bName)\n"
   line_three = "VALUES\n"
-  line_four = "(0.0,0.0,%(DISTRICT)s,'Manhattan');\n" % data
+  line_four = "("+random.random()","+random.random",%(DISTRICT)s,'Manhattan');\n" % data
   return line_one + line_two + line_three + line_four
 
 if __name__ == "__main__":
