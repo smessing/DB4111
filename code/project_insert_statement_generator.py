@@ -73,7 +73,7 @@ def build_district_statement(data):
   line_one = "INSERT INTO Districts_D_IN\n"
   line_two = "(avgAttendance, percentRecvPublicAsst, dNumber, bName)\n"
   line_three = "VALUES\n"
-  line_four = "("+random.random()","+random.random",%(DISTRICT)s,'Manhattan');\n" % data
+  line_four = "("+random.random()+","+random.random+",%(DISTRICT)s,'Manhattan');\n" % data
   return line_one + line_two + line_three + line_four
 
 if __name__ == "__main__":
@@ -105,13 +105,14 @@ if __name__ == "__main__":
     if (valid(data_map)):
       #data = build_address_statement(data_map)
       #address_out.write(data)
-      #data = build_district_statement(data_map)
-      #district_out.write(data)
+      data = build_district_statement(data_map)
+      print data
+      district_out.write(data)
       #data = build_teacher_statement(data_map)
       #print data
       #print data
       #teacher_out.write(data)
-      data = build_school_statement(data_map)
-      school_out.write(data)
+      #data = build_school_statement(data_map)
+      #school_out.write(data)
       #data = build_project_statement(data_map)
       #project_out.write(data)

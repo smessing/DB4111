@@ -138,7 +138,7 @@ create table Addresses(
   check (longitude >= -90 AND longitude <= 90),
   check (REGEXP_LIKE (zipcode, '[0-9]{5}'))
 );
--- DONE
+
 create table Districts_D_IN(
   avgAttendance real,
   percentRecvPublicAsst real,
@@ -156,7 +156,7 @@ create table Boroughs(
 );
 
 create table After_School_Programs_A_HAVE(
-  aid int,
+  aid varchar (50),
   name varchar2 (100) not null,
   programType varchar2 (100),
   agencyName varchar2 (100),
