@@ -43,7 +43,7 @@ def build_teacher_statement(data):
   line_one = "INSERT INTO Teachers\n"
   line_two = "(tid, name)\n"
   line_three = "VALUES\n"
-  line_four = "(%(TEACHER_ACCT_ID)s,'James Smith');\n" % data
+  line_four = "('%(TEACHER_ACCT_ID)s','James Smith');\n" % data
   return line_one + line_two + line_three + line_four
 
 def build_school_statement(data):
@@ -51,14 +51,15 @@ def build_school_statement(data):
   line_two = "(ncesID, name, avgClassSize, povertyLevel, avgMathSATScore," +\
              "avgReadingSATScore, avgWritingSATScore, currentGrade," + \
              "progressGrade, graduationRate, percentAPAbove2, dNumber," + \
-             "latitude, longitude, zipcode)\n"
+             "latitude, longitude)\n"
   line_three = "VALUES\n"
   line_four = "(%(NCES_ID)s,'John Smith School'," % data + \
-              +"'" + random.random() + "','high','" + \
-              + "'" + random.randint(200,800) + "'," + \
-              "784,650,'A'," + \
-              "'B',0.45,0.37,%(DISTRICT)s,%(LATITUDE)s,%(LONGITUDE)s," % data + \
-              "%(ZIPCODE)s);\n" % data
+              str(random.random()) + ",'high'," + \
+              str(random.randint(200,800)) + "," + \
+              str(random.randint(200,800)) + "," + \
+              str(random.randint(200,800)) + ",'A','B'," + \
+              str(random.random()) + "," + str(random.random()) +\
+              ",%(DISTRICT)s,%(LATITUDE)s,%(LONGITUDE)s);\n" % data
   return line_one + line_two + line_three + line_four
 
 def build_address_statement(data):
@@ -66,14 +67,14 @@ def build_address_statement(data):
   line_two = "(latitude, longitude, streetNumber, streetName, zipcode)\n"
   line_three = "VALUES\n"
   line_four = "(%(LATITUDE)s,%(LONGITUDE)s," % data +\
-              "'" + random.randInt(0,100) + "','Junk St.',%(ZIPCODE)s);\n" % data
+              "'" + str(random.randInt(0,100)) + "','Junk St.',%(ZIPCODE)s);\n" % data
   return line_one + line_two + line_three + line_four
 
 def build_district_statement(data):
   line_one = "INSERT INTO Districts_D_IN\n"
   line_two = "(avgAttendance, percentRecvPublicAsst, dNumber, bName)\n"
   line_three = "VALUES\n"
-  line_four = "("+random.random()+","+random.random+",%(DISTRICT)s,'Manhattan');\n" % data
+  line_four = "("+str(random.random())+","+str(random.random())+",%(DISTRICT)s,'Manhattan');\n" % data
   return line_one + line_two + line_three + line_four
 
 if __name__ == "__main__":
@@ -105,13 +106,10 @@ if __name__ == "__main__":
     if (valid(data_map)):
       #data = build_address_statement(data_map)
       #address_out.write(data)
-      data = build_district_statement(data_map)
-      print data
-      district_out.write(data)
-      #data = build_teacher_statement(data_map)
-      #print data
-      #print data
-      #teacher_out.write(data)
+      #data = build_district_statement(data_map)
+      #district_out.write(data)
+      data = build_teacher_statement(data_map)
+      teacher_out.write(data)
       #data = build_school_statement(data_map)
       #school_out.write(data)
       #data = build_project_statement(data_map)
