@@ -1,7 +1,0 @@
-This data is licensed by DonorsChoose.org under the Creative Commons Attribution-NonCommercial 3.0 Unported License (CC BY-NC 3.0). To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/3.0/.
-
-If you'd like to use this data for commercial purposes, drop a note to apiquestions (at) donorschoose {dot} org and tell us a bit about your plans. Our strong preference is to greenlight your commercial application with no licensing fees, and we have never charged for access to our API or data. We just need to make sure that the application won't run contrary to our org's mission or abuse the rich content that our teachers have created.
-
-Documentation for this data is located at http://developer.donorschoose.org/the-data
-
-Copyright 2000-2011 DonorsChoose.org, a 501(c)(3) not-for-profit corporation.

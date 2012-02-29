@@ -66,8 +66,8 @@ create table Users(
 
 
 create table Donations_FUND(
-  tid int not null,
-  pid int not null,
+  tid varchar2 (32) not null,
+  pid varchar2 (32) not null,
   email varchar2 (50) not null,
   amount real not null,
   donationDate date,
