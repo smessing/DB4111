@@ -24,7 +24,7 @@ Authors:
 
 
 create table Projects_PROPOSE_AT(
-  pid integer,
+  pid varchar2 (32),
   fundURL varchar2 (200),
   fundingStatus varchar2 (50),
   fulfillmentTrailer varchar2 (1000),
