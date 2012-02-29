@@ -5,7 +5,7 @@ VALUES
 INSERT INTO Addresses
 (latitude, longitude, streetNumber, streetName, zipcode, bName)
 VALUES
-(40.0,-73.,'202','Warren St.','22101', 'Manhattan');
+(40.0,-73.0,'202','Warren St.','22101', 'Manhattan');
 INSERT INTO Addresses
 (latitude, longitude, streetNumber, streetName, zipcode, bName)
 VALUES
@@ -33,4 +33,4 @@ VALUES
 INSERT INTO Addresses
 (latitude, longitude, streetNumber, streetName, zipcode, bName)
 VALUES
-(31.6,-89.2,'437','Brite St.','a7380', 'Manhattan');
+(31.6,-89.2,'437','Brite St.','07380', 'Manhattan');

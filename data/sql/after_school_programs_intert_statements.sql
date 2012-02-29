@@ -16,7 +16,7 @@ VALUES
 INSERT INTO After_School_Programs_A_HAVE
 (aid, name, programType, agencyName, organizationName, elementaryLevel, middleSchoolLevel, highSchoolLevel, organizationPhoneNumber, latitude, longitude)
 VALUES
-('NYPL33', 'Boys and Girls', 'Education Alliance', 'DOE', 'Town Hall', 'F', 'T', 'T', '212-221-9847', 20.6, -73.0);
+('NYPL33', 'Boys and Girls', 'Education Alliance', 'DOE', 'Town Hall', 'F', 'T', 'T', '212-221-9847', 20.6, -89.2);
 
 INSERT INTO After_School_Programs_A_HAVE
 (aid, name, programType, agencyName, organizationName, elementaryLevel, middleSchoolLevel, highSchoolLevel, organizationPhoneNumber, latitude, longitude)
