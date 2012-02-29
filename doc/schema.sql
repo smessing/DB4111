@@ -53,8 +53,7 @@ create table Teachers(
   name varchar2 (50) not null,
   primary key (tid)
 );
-
-
+-- DONE
 create table Users(
   email varchar2 (50),
   displayName varchar2 (50) not null,
@@ -91,8 +90,8 @@ create table Comments_ABOUT(
 
 create table VOTE(
   vDate date,
-  tid int,
-  pid int,
+  tid varchar2(32),
+  pid varchar2(32),
   email varchar2 (50),
   primary key (tid, pid, email),
   foreign key (email) references Users,
@@ -153,7 +152,7 @@ create table Boroughs(
   bName varchar2 (50),
   primary key(bName)
 );
-
+-- DONE
 create table After_School_Programs_A_HAVE(
   aid varchar2 (50),
   name varchar2 (100) not null,
