@@ -25,6 +25,55 @@ header_map = {
 45:'EXPIRATION_DATE'
 }
 
+first_name_map = {
+0:'Benjamin'
+1:'John',
+2:'Mary',
+3:'Howard',
+4:'Jack',
+5:'Sarah',
+6:'Lee',
+7:'Cathy',
+8:'Fred',
+9:'Hannah',
+10:'Edward'
+}
+
+last_name_map = {
+0:'Olson',
+1:'Jackson',
+2:'Johnson',
+3:'Messing',
+4:'Rapaport',
+5:'Obama',
+6:'Smith',
+7:'Baltair',
+8:'Fieldson',
+9:'Bergman',
+10:'Fieldstein'
+}
+
+street_name_map = {
+0:'Warren',
+1:'Smith',
+2:'High',
+3:'Clapboardtree',
+4:'Martingale',
+5:'Broadway',
+6:'Court',
+7:'Hoyt',
+8:'Osage',
+9:'Pond',
+10:'Buckmaster'
+}
+
+street_type_map = {
+0:'St.',
+1:'Ln.',
+2:'Ave.',
+3:'Rd.'
+}
+
 # Function Definitions:
 def valid(project_map):
   return data_map['CITY'] == "New York" and data_map['STATE'] == 'NY' and \
