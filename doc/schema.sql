@@ -130,7 +130,9 @@ create table Addresses(
   streetNumber varchar2 (25),
   streetName varchar2 (100),
   zipcode varchar2 (5),
+  bName varchar2 (50),
   primary key (latitude, longitude),
+  foreign key (bName) references Boroughs,
   check (latitude >= -90 AND latitude <= 90),
   check (longitude >= -90 AND longitude <= 90),
   check (REGEXP_LIKE (zipcode, '[0-9]{5}'))
@@ -165,5 +167,5 @@ create table After_School_Programs_A_HAVE(
   latitude real not null,
   longitude real not null,
   primary key (aid),
-  foreign key (latitude, longitude) references Addresses (latitude, longitude)
+  foreign key (latitude, longitude) references Addresses (latitude, longitude),
 );
