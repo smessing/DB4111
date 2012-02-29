@@ -26,7 +26,7 @@ header_map = {
 }
 
 first_name_map = {
-0:'Benjamin'
+0:'Benjamin',
 1:'John',
 2:'Mary',
 3:'Howard',
@@ -87,15 +87,18 @@ def build_project_statement(data):
              "proposalURL, percentFunded, imageURL, numStudents, tid, tName," + \
              "ncesId)\n"
   line_three = "VALUES\n"
-  line_four = "('%(PROJECT_ID)s','http://www.getmoneygirl.com/" + \
-              str(random.randint(0,1000)) + "',);\n"
+  line_four = "('%(PROJECT_ID)s'," % data + "'http://www.getmoneygirl.com/" + \
+              str(random.randint(0,1000)) + "','%(TRAILER)s'," % data + \
+              "'%(EXPIRATION_DATE)s',%(TOTAL_PRICE)s,);\n"
   return line_one + line_two + line_three + line_four
 
 def build_teacher_statement(data):
   line_one = "INSERT INTO Teachers\n"
   line_two = "(tid, name)\n"
   line_three = "VALUES\n"
-  line_four = "('%(TEACHER_ACCT_ID)s','James Smith');\n" % data
+  line_four = "('%(TEACHER_ACCT_ID)s'," % data + \
+              "'" + first_name_map[random.randint(0,10)] + " " + \
+              last_name_map[random.randint(0,10)] + "');\n"
   return line_one + line_two + line_three + line_four
 
 def build_school_statement(data):
@@ -105,7 +108,9 @@ def build_school_statement(data):
              "progressGrade, graduationRate, percentAPAbove2, dNumber," + \
              "latitude, longitude)\n"
   line_three = "VALUES\n"
-  line_four = "(%(NCES_ID)s,'John Smith School'," % data + \
+  line_four = "(%(NCES_ID)s,'" % data + \
+              first_name_map[random.randint(0,10)] + " " +\
+              last_name_map[random.randint(0,10)] + " School'," +\
               str(random.random()) + ",'high'," + \
               str(random.randint(200,800)) + "," + \
               str(random.randint(200,800)) + "," + \
@@ -119,7 +124,9 @@ def build_address_statement(data):
   line_two = "(latitude, longitude, streetNumber, streetName, zipcode, bName)\n"
   line_three = "VALUES\n"
   line_four = "(%(LATITUDE)s,%(LONGITUDE)s," % data +\
-              "'" + str(random.randint(0,100)) + "','Junk St.'," + \
+              "'" + str(random.randint(0,100)) + "','" + \
+              street_name_map[random.randint(0,10)] + " " +\
+              street_type_map[random.randint(0,3)]+ "'," + \
               "%(ZIPCODE)s,'Manhattan');\n" % data
   return line_one + line_two + line_three + line_four
 
@@ -133,11 +140,11 @@ def build_district_statement(data):
 if __name__ == "__main__":
 
   data_file = file("../data/src/donorschoose-org-1may2011-v1-projects.csv", "r")
-  project_out = file("../data/sql/project_insert_statements.sql", "w")
-  teacher_out = file("../data/sql/teacher_insert_statements.sql", "w")
-  school_out = file("../data/sql/school_insert_statements.sql", "w")
-  address_out = file("../data/sql/address_insert_statements.sql", "w")
-  district_out = file("../data/sql/district_insert_statements.sql", "w")
+  #project_out = file("../data/sql/project_insert_statements.sql", "w")
+  #teacher_out = file("../data/sql/teacher_insert_statements.sql", "w")
+  #school_out = file("../data/sql/school_insert_statements.sql", "w")
+  #address_out = file("../data/sql/address_insert_statements.sql", "w")
+  #district_out = file("../data/sql/district_insert_statements.sql", "w")
   district_map = {}
 
   # skip header:
@@ -158,12 +165,12 @@ if __name__ == "__main__":
       data_map['DISTRICT'] = random.randint(0,10)
     if (valid(data_map)):
       data = build_address_statement(data_map)
-      address_out.write(data)
+      #address_out.write(data)
       data = build_district_statement(data_map)
-      district_out.write(data)
+      #district_out.write(data)
       data = build_teacher_statement(data_map)
-      teacher_out.write(data)
+      #teacher_out.write(data)
       data = build_school_statement(data_map)
-      school_out.write(data)
+      #school_out.write(data)
       #data = build_project_statement(data_map)
       #project_out.write(data)
