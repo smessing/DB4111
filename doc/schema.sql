@@ -127,8 +127,7 @@ create table Schools_S_IN_S_HAVE(
   check (avgWritingSATScore is null OR (avgWritingSATScore >= 200 AND avgWritingSATScore <= 800)),
   check (percentAPAbove2 is null OR (percentAPAbove2 >= 0 AND percentAPAbove2 <= 1))
 );
-
-
+--DONE
 create table Addresses(
   latitude real,
   longitude real,
@@ -140,7 +139,7 @@ create table Addresses(
   check (longitude >= -90 AND longitude <= 90),
   check (REGEXP_LIKE (zipcode, '[0-9]{5}'))
 );
-
+-- DONE
 create table Districts_D_IN(
   avgAttendance real,
   percentRecvPublicAsst real,
@@ -151,7 +150,7 @@ create table Districts_D_IN(
   check (percentRecvPublicAsst is null OR (percentRecvPublicAsst >= 0 AND percentRecvPublicAsst <= 1)),
   check (avgAttendance is null OR (avgAttendance >= 0 AND avgAttendance <= 1))
 );
-
+-- DONE
 create table Boroughs(
   bName varchar2 (50),
   primary key(bName)

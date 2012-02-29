@@ -101,9 +101,10 @@ if __name__ == "__main__":
     if (valid(data_map)):
       #data = build_address_statement(data_map)
       #address_out.write(data)
-      data = build_district_statement(data_map)
-      district_out.write(data)
+      #data = build_district_statement(data_map)
+      #district_out.write(data)
       data = build_teacher_statement(data_map)
+      print data
       #print data
       #print data
       #teacher_out.write(data)
