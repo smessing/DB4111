@@ -47,8 +47,7 @@ create table Projects_PROPOSE_AT(
   check (percentFunded >= 0 AND percentFunded <= 1),
   check (totalPrice >= 0)
 );
-
-
+-- DONE
 create table Teachers(
   tid varchar2 (32),
   name varchar2 (50) not null,
