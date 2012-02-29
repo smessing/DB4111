@@ -78,8 +78,8 @@ create table Donations_FUND(
 );
 
 create table Comments_ABOUT(
-  tid int not null,
-  pid int not null,
+  tid varchar2(32) not null,
+  pid varchar2(32) not null,
   comments varchar2 (500) not null,
   cDate date,
   email varchar2 (50),
@@ -87,7 +87,7 @@ create table Comments_ABOUT(
   foreign key (email) references Users,
   foreign key (tid, pid) references Projects_PROPOSE_AT(tid, pid)
 );
-
+-- DONE
 create table VOTE(
   vDate date,
   tid varchar2(32),
