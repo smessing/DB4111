@@ -15,14 +15,16 @@ header_map = {
 8:'ZIPCODE',
 10:'DISTRICT',
 11:'BOROUGH',
+23:'SUBJECT',
 27:'POVERTY_LEVEL',
 28:'GRADE_LEVEL',
 32:'TRAILER',
 34:'TOTAL_PRICE',
+35:'NUM_STUDENTS',
 37:'TOTAL_DONATIONS',
 38:'NUM_DONORS',
 41:'FUND_STATUS',
-45:'EXPIRATION_DATE'
+42:'DATE'
 }
 
 first_name_map = {
@@ -74,6 +76,21 @@ street_type_map = {
 3:'Rd.'
 }
 
+months = {
+'01':'jan',
+'02':'feb',
+'03':'mar',
+'04':'apr',
+'05':'may',
+'06':'jun',
+'07':'jul',
+'08':'aug',
+'09':'sep',
+'10':'oct',
+'11':'nov',
+'12':'jan'
+}
+
 # Function Definitions:
 def valid(project_map):
   return data_map['CITY'] == "New York" and data_map['STATE'] == 'NY' and \
@@ -82,14 +99,21 @@ def valid(project_map):
 
 def build_project_statement(data):
   line_one = "INSERT INTO Projects_PROPOSE_AT\n"
-  line_two = "(pid, fundURL, fundingStatus, fulfillmentTrailer," + \
-             "expirationDate, totalPrice, title, subject, shortDescription," + \
-             "proposalURL, percentFunded, imageURL, numStudents, tid, tName," + \
+  line_two = "(pid, fundURL, fundingStatus, fulfillmentTrailer, " + \
+             "expirationDate, totalPrice, title, subject, shortDescription, " + \
+             "proposalURL, percentFunded, imageURL, numStudents, tid, " + \
              "ncesId)\n"
   line_three = "VALUES\n"
-  line_four = "('%(PROJECT_ID)s'," % data + "'http://www.getmoneygirl.com/" + \
-              str(random.randint(0,1000)) + "','%(TRAILER)s'," % data + \
-              "'%(EXPIRATION_DATE)s',%(TOTAL_PRICE)s,);\n"
+  line_four = "('%(PROJECT_ID)s'," % data + "'http://fnd.donorschoose.org/" + \
+              str(random.randint(0,1000)) + "','funding','%(TRAILER)s'," % data + \
+              "'%(DATE)s',%(TOTAL_PRICE)s," % data + \
+              "'Probably the best one ever','Mathematics','" % data + \
+              "This one will make kids smarter and happier than ever.'," + \
+              "'http://www.donorschoose.org/prjcts/%(PROJECT_ID)s'," % data + \
+              str(random.random()) + "," + \
+              "'http://img.donorschoose.org/prjcts/%(PROJECT_ID)s'" % data + \
+              ",%(NUM_STUDENTS)s,'%(TEACHER_ACCT_ID)s'" % data + \
+              ",'%(NCES_ID)s');\n" % data
   return line_one + line_two + line_three + line_four
 
 def build_teacher_statement(data):
@@ -134,13 +158,14 @@ def build_district_statement(data):
   line_one = "INSERT INTO Districts_D_IN\n"
   line_two = "(avgAttendance, percentRecvPublicAsst, dNumber, bName)\n"
   line_three = "VALUES\n"
-  line_four = "("+str(random.random())+","+str(random.random())+",%(DISTRICT)s,'Manhattan');\n" % data
+  line_four = "("+str(random.random())+","+str(random.random())+\
+  ",%(DISTRICT)s,'Manhattan');\n" % data
   return line_one + line_two + line_three + line_four
 
 if __name__ == "__main__":
 
   data_file = file("../data/src/donorschoose-org-1may2011-v1-projects.csv", "r")
-  #project_out = file("../data/sql/project_insert_statements.sql", "w")
+  project_out = file("../data/sql/project_insert_statements.sql", "w")
   #teacher_out = file("../data/sql/teacher_insert_statements.sql", "w")
   #school_out = file("../data/sql/school_insert_statements.sql", "w")
   #address_out = file("../data/sql/address_insert_statements.sql", "w")
@@ -156,10 +181,16 @@ if __name__ == "__main__":
     data_map = {}
     for i in range(len(project)):
       if (header_map.has_key(i)):
-        if (header_map[i] == 'ZIPCODE' or 'CITY'):
-          data_map["%s" % header_map[i]] = project[i].replace('\"', '')
+        if (header_map[i] == 'DATE'):
+          formatting = project[i].rstrip('\n')
+          if (formatting == 'completed' or formatting == 'live' or \
+              formatting == 'expired' or formatting == 'reallocated'):
+            formatting = '2011-03-21'
+          date = formatting.split("-")
+          data_map["%s" % header_map[i]] = date[2] + "-" + months[date[1]] + \
+                                          "-" + date[0][2] + date[0][3]
         else:
-          data_map["%s" % header_map[i]] = project[i]
+          data_map["%s" % header_map[i]] = project[i].replace('\"', '')
       else:
         data_map["%i" % i] = project[i]
       data_map['DISTRICT'] = random.randint(0,10)
@@ -172,5 +203,5 @@ if __name__ == "__main__":
       #teacher_out.write(data)
       data = build_school_statement(data_map)
       #school_out.write(data)
-      #data = build_project_statement(data_map)
+      data = build_project_statement(data_map)
       #project_out.write(data)

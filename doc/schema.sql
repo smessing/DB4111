@@ -22,7 +22,7 @@ Authors:
  learn how to implement.
 */
 
-
+-- DONE
 create table Projects_PROPOSE_AT(
   pid varchar2 (32),
   fundURL varchar2 (200),
@@ -37,7 +37,7 @@ create table Projects_PROPOSE_AT(
   percentFunded real,
   imageURL varchar2 (200),
   numStudents integer,
-  tid varchar2 (32) not null,
+  tid varchar2 (32),
   ncesId varchar2 (50) not null,
   primary key (pid, tid),
   unique (proposalURL),
@@ -155,7 +155,7 @@ create table Boroughs(
 );
 
 create table After_School_Programs_A_HAVE(
-  aid varchar (50),
+  aid varchar2 (50),
   name varchar2 (100) not null,
   programType varchar2 (100),
   agencyName varchar2 (100),
@@ -167,5 +167,5 @@ create table After_School_Programs_A_HAVE(
   latitude real not null,
   longitude real not null,
   primary key (aid),
-  foreign key (latitude, longitude) references Addresses (latitude, longitude),
+  foreign key (latitude, longitude) references Addresses (latitude, longitude)
 );
