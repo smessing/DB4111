@@ -17,9 +17,11 @@ header_map = {
 11:'BOROUGH',
 27:'POVERTY_LEVEL',
 28:'GRADE_LEVEL',
+32:'TRAILER',
 34:'TOTAL_PRICE',
 37:'TOTAL_DONATIONS',
 38:'NUM_DONORS',
+41:'FUND_STATUS',
 45:'EXPIRATION_DATE'
 }
 
@@ -36,7 +38,8 @@ def build_project_statement(data):
              "proposalURL, percentFunded, imageURL, numStudents, tid, tName," + \
              "ncesId)\n"
   line_three = "VALUES\n"
-  line_four = "('%(PROJECT_ID)s','http://www.getmoneygirl.com/',);\n"
+  line_four = "('%(PROJECT_ID)s','http://www.getmoneygirl.com/" + \
+              str(random.randint(0,1000)) + "',);\n"
   return line_one + line_two + line_three + line_four
 
 def build_teacher_statement(data):
@@ -64,10 +67,11 @@ def build_school_statement(data):
 
 def build_address_statement(data):
   line_one = "INSERT INTO Addresses\n"
-  line_two = "(latitude, longitude, streetNumber, streetName, zipcode)\n"
+  line_two = "(latitude, longitude, streetNumber, streetName, zipcode, bName)\n"
   line_three = "VALUES\n"
   line_four = "(%(LATITUDE)s,%(LONGITUDE)s," % data +\
-              "'" + str(random.randint(0,100)) + "','Junk St.',%(ZIPCODE)s);\n" % data
+              "'" + str(random.randint(0,100)) + "','Junk St.'," + \
+              "%(ZIPCODE)s,'Manhattan');\n" % data
   return line_one + line_two + line_three + line_four
 
 def build_district_statement(data):
@@ -79,12 +83,12 @@ def build_district_statement(data):
 
 if __name__ == "__main__":
 
-  data_file = file("../data/donorschoose-org-1may2011-v1-projects.csv", "r")
-  project_out = file("../data/project_insert_statements.sql", "w")
-  teacher_out = file("../data/teacher_insert_statements.sql", "w")
-  school_out = file("../data/school_insert_statements.sql", "w")
-  address_out = file("../data/address_insert_statements.sql", "w")
-  district_out = file("../data/district_insert_statements.sql", "w")
+  data_file = file("../data/src/donorschoose-org-1may2011-v1-projects.csv", "r")
+  project_out = file("../data/sql/project_insert_statements.sql", "w")
+  teacher_out = file("../data/sql/teacher_insert_statements.sql", "w")
+  school_out = file("../data/sql/school_insert_statements.sql", "w")
+  address_out = file("../data/sql/address_insert_statements.sql", "w")
+  district_out = file("../data/sql/district_insert_statements.sql", "w")
   district_map = {}
 
   # skip header:
@@ -110,7 +114,7 @@ if __name__ == "__main__":
       district_out.write(data)
       data = build_teacher_statement(data_map)
       teacher_out.write(data)
-      #data = build_school_statement(data_map)
-      #school_out.write(data)
+      data = build_school_statement(data_map)
+      school_out.write(data)
       #data = build_project_statement(data_map)
       #project_out.write(data)
