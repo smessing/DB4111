@@ -1,0 +1,810 @@
+{
+  "meta" : {
+    "view" : {
+      "id" : "ut9y-2ptp",
+      "name" : "DYCD after-school programs: NDA Educational High School Progams",
+      "attribution" : "Department of Youth and Community Development (DYCD)",
+      "averageRating" : 80,
+      "category" : "Education",
+      "createdAt" : 1314895912,
+      "description" : "Facilities in New York City, by agency and site, that offer “Neighborhood Development Area (NDA) Educational High School Programs” after-school  programs for children in High",
+      "displayType" : "table",
+      "downloadCount" : 14,
+      "numberOfComments" : 0,
+      "oid" : 332346,
+      "publicationAppendEnabled" : false,
+      "publicationDate" : 1314895912,
+      "publicationGroup" : 240013,
+      "publicationStage" : "published",
+      "rowClass" : "",
+      "rowsUpdatedAt" : 1314902007,
+      "rowsUpdatedBy" : "k2fz-tf56",
+      "signed" : false,
+      "tableId" : 240013,
+      "totalTimesRated" : 1,
+      "viewCount" : 34,
+      "viewLastModified" : 1324144474,
+      "viewType" : "tabular",
+      "columns" : [ {
+        "id" : -1,
+        "name" : "sid",
+        "dataTypeName" : "meta_data",
+        "fieldName" : "sid",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "id",
+        "dataTypeName" : "meta_data",
+        "fieldName" : "id",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "position",
+        "dataTypeName" : "meta_data",
+        "fieldName" : "position",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "created_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : "created_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "created_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : "created_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "updated_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : "updated_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "updated_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : "updated_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : "meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : 2827928,
+        "name" : "PROGRAM TYPE",
+        "dataTypeName" : "text",
+        "fieldName" : "program_type",
+        "position" : 2,
+        "renderTypeName" : "text",
+        "tableColumnId" : 1514445,
+        "width" : 244,
+        "cachedContents" : {
+          "non_null" : 160,
+          "smallest" : "After-School Programs",
+          "null" : 0,
+          "largest" : "After-School Programs",
+          "top" : [ {
+            "count" : 160,
+            "item" : "After-School Programs"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 2827929,
+        "name" : "PROGRAM",
+        "dataTypeName" : "text",
+        "fieldName" : "program",
+        "position" : 3,
+        "renderTypeName" : "text",
+        "tableColumnId" : 1514446,
+        "width" : 184,
+        "cachedContents" : {
+          "non_null" : 160,
+          "smallest" : "High School",
+          "null" : 0,
+          "largest" : "High School",
+          "top" : [ {
+            "count" : 160,
+            "item" : "High School"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 2827930,
+        "name" : "SITE NAME",
+        "dataTypeName" : "text",
+        "fieldName" : "site_name",
+        "position" : 4,
+        "renderTypeName" : "text",
+        "tableColumnId" : 1514447,
+        "width" : 208,
+        "cachedContents" : {
+          "non_null" : 158,
+          "smallest" : "Adams & White, PC",
+          "null" : 2,
+          "largest" : "YWCA of Queens",
+          "top" : [ {
+            "count" : 2,
+            "item" : "Bnos Yakov Educational Center"
+          }, {
+            "count" : 2,
+            "item" : "SCO Family of Services"
+          }, {
+            "count" : 2,
+            "item" : "Citizens Advice Bureau, Inc."
+          }, {
+            "count" : 1,
+            "item" : "BCA Education Center "
+          }, {
+            "count" : 1,
+            "item" : "P.S. 12 "
+          }, {
+            "count" : 1,
+            "item" : "Police Athletic League (Brownsville Beacon)"
+          }, {
+            "count" : 1,
+            "item" : "Adams & White, PC"
+          }, {
+            "count" : 1,
+            "item" : "Queens Community Resource Center "
+          }, {
+            "count" : 1,
+            "item" : "LaGuardia Memorial House"
+          }, {
+            "count" : 1,
+            "item" : "Henry Street School for International Studies"
+          }, {
+            "count" : 1,
+            "item" : "Transfiguration School"
+          }, {
+            "count" : 1,
+            "item" : "Harlem PAL Community Center"
+          }, {
+            "count" : 1,
+            "item" : "Trinity Lutheran Church "
+          }, {
+            "count" : 1,
+            "item" : "I.S 228 "
+          }, {
+            "count" : 1,
+            "item" : "St. Dominic's School "
+          }, {
+            "count" : 1,
+            "item" : "Elmcor Youth and Adult Activities, Inc."
+          }, {
+            "count" : 1,
+            "item" : "Erasmus High School"
+          }, {
+            "count" : 1,
+            "item" : "Public School 192 - Jacob H. Schiff Elementary School"
+          }, {
+            "count" : 1,
+            "item" : "Highbridge Community Life Center                            "
+          }, {
+            "count" : 1,
+            "item" : "City Parks Foundation"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 2827931,
+        "name" : "BOROUGH / COMMUNITY",
+        "dataTypeName" : "text",
+        "fieldName" : "borough_community",
+        "position" : 5,
+        "renderTypeName" : "text",
+        "tableColumnId" : 1514448,
+        "width" : 328,
+        "cachedContents" : {
+          "non_null" : 158,
+          "smallest" : "Bronx",
+          "null" : 2,
+          "largest" : "Staten Island",
+          "top" : [ {
+            "count" : 58,
+            "item" : "Brooklyn"
+          }, {
+            "count" : 43,
+            "item" : "Bronx"
+          }, {
+            "count" : 28,
+            "item" : "Queens"
+          }, {
+            "count" : 27,
+            "item" : "New York"
+          }, {
+            "count" : 2,
+            "item" : "Staten Island"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 2827932,
+        "name" : "AGENCY",
+        "dataTypeName" : "text",
+        "fieldName" : "agency",
+        "position" : 6,
+        "renderTypeName" : "text",
+        "tableColumnId" : 1514449,
+        "width" : 172,
+        "cachedContents" : {
+          "non_null" : 158,
+          "smallest" : "Afrikan Poetry Theatre",
+          "null" : 2,
+          "largest" : "YWCA of Queens                                              ",
+          "top" : [ {
+            "count" : 7,
+            "item" : "Police Athletic League, Inc."
+          }, {
+            "count" : 5,
+            "item" : "New York Junior Tennis League"
+          }, {
+            "count" : 4,
+            "item" : "Reading Excellence and Discovery (READ) Foundation"
+          }, {
+            "count" : 4,
+            "item" : "Bronx Arts Ensemble"
+          }, {
+            "count" : 3,
+            "item" : "Research Foundation of CUNY"
+          }, {
+            "count" : 3,
+            "item" : "Community Association of Progressive Dominicans"
+          }, {
+            "count" : 3,
+            "item" : "Groundwork Inc,"
+          }, {
+            "count" : 3,
+            "item" : "Federation Employment & Guidance Services (FEGS)"
+          }, {
+            "count" : 3,
+            "item" : "Sports and Arts In Schools Foundation, Inc."
+          }, {
+            "count" : 3,
+            "item" : "Citizens Advice Bureau, Inc."
+          }, {
+            "count" : 3,
+            "item" : "Turning Point"
+          }, {
+            "count" : 2,
+            "item" : "Covenant House/Under 21"
+          }, {
+            "count" : 2,
+            "item" : "Northside Center For Child Development, Inc."
+          }, {
+            "count" : 2,
+            "item" : "Brooklyn Chinese American Association"
+          }, {
+            "count" : 2,
+            "item" : "Cypress Hills Local Development Corporation"
+          }, {
+            "count" : 2,
+            "item" : "Woodycrest Center For Human Development"
+          }, {
+            "count" : 2,
+            "item" : "Loisaida, Inc."
+          }, {
+            "count" : 2,
+            "item" : "The Child Center of NY"
+          }, {
+            "count" : 2,
+            "item" : "Bnos Yakov Educational Center"
+          }, {
+            "count" : 2,
+            "item" : "Supportive Childrens Advocacy Network (SCAN)"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 2827933,
+        "name" : "Contact Number",
+        "dataTypeName" : "text",
+        "fieldName" : "contact_number",
+        "position" : 7,
+        "renderTypeName" : "text",
+        "tableColumnId" : 1514450,
+        "width" : 268,
+        "cachedContents" : {
+          "non_null" : 158,
+          "smallest" : "212.234.4093",
+          "null" : 2,
+          "largest" : "718 620.0748",
+          "top" : [ {
+            "count" : 5,
+            "item" : "212.477.9450"
+          }, {
+            "count" : 4,
+            "item" : "212.849.6840"
+          }, {
+            "count" : 3,
+            "item" : "718.601.7399"
+          }, {
+            "count" : 3,
+            "item" : "718.293.0727"
+          }, {
+            "count" : 3,
+            "item" : "718.417.8135"
+          }, {
+            "count" : 3,
+            "item" : "212.781.5500"
+          }, {
+            "count" : 2,
+            "item" : "212.426.3400"
+          }, {
+            "count" : 2,
+            "item" : "212.353.0272"
+          }, {
+            "count" : 2,
+            "item" : "212.683.2522"
+          }, {
+            "count" : 2,
+            "item" : "718.353.4553"
+          }, {
+            "count" : 2,
+            "item" : "718.384.8854"
+          }, {
+            "count" : 2,
+            "item" : "212.366.8401"
+          }, {
+            "count" : 2,
+            "item" : "718.604.1358"
+          }, {
+            "count" : 2,
+            "item" : "718.647.2800"
+          }, {
+            "count" : 2,
+            "item" : "718.951.5015"
+          }, {
+            "count" : 2,
+            "item" : "718.786.7110"
+          }, {
+            "count" : 2,
+            "item" : "718.453.3330"
+          }, {
+            "count" : 2,
+            "item" : "718.859.3800"
+          }, {
+            "count" : 2,
+            "item" : "718.651.7770"
+          }, {
+            "count" : 2,
+            "item" : "718.455.1166"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 2827934,
+        "name" : "Grade Level / Age Group ",
+        "dataTypeName" : "text",
+        "fieldName" : "grade_level_age_group_",
+        "position" : 8,
+        "renderTypeName" : "text",
+        "tableColumnId" : 1514451,
+        "width" : 388,
+        "cachedContents" : {
+          "non_null" : 116,
+          "smallest" : "High School",
+          "null" : 44,
+          "largest" : "High School",
+          "top" : [ {
+            "count" : 116,
+            "item" : "High School"
+          } ]
+        },
+        "format" : {
+        }
+      }, {
+        "id" : 2827935,
+        "name" : "Location 1",
+        "dataTypeName" : "location",
+        "fieldName" : "location_1",
+        "position" : 9,
+        "renderTypeName" : "location",
+        "tableColumnId" : 1514452,
+        "width" : 220,
+        "cachedContents" : {
+          "non_null" : 157,
+          "smallest" : {
+            "longitude" : -73.95200031741886,
+            "latitude" : 40.79298338723134,
+            "human_address" : "{\"address\":\"1 104th Street\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10029\"}"
+          },
+          "null" : 3,
+          "largest" : {
+            "longitude" : -73.98479859887618,
+            "latitude" : 40.619055848049015,
+            "human_address" : "{\"address\":\"99 Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11204\"}"
+          },
+          "top" : [ {
+            "count" : 1,
+            "item" : {
+              "longitude" : -73.94723933262884,
+              "latitude" : 40.69557673055322,
+              "human_address" : "{\"address\":\"874 Myrtle Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11206\"}"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "longitude" : -73.91136475443619,
+              "latitude" : 40.847312989377464,
+              "human_address" : "{\"address\":\"55 175th Street\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10453\"}"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "longitude" : -73.82147854789662,
+              "latitude" : 40.7512997969481,
+              "human_address" : "{\"address\":\"42 07\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11355\"}"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "longitude" : -73.95561864336202,
+              "latitude" : 40.80669464442542,
+              "human_address" : "{\"address\":\"441 Manhattan Avenue\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10026\"}"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "longitude" : -73.95561864336202,
+              "latitude" : 40.80669464442542,
+              "human_address" : "{\"address\":\"441 Manhattan Avenue\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10026\"}"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "longitude" : -73.88030387915799,
+              "latitude" : 40.84134504810141,
+              "human_address" : "{\"address\":\"1030 178th Street\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10460\"}"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "longitude" : -74.01395648948358,
+              "latitude" : 40.645290640072034,
+              "human_address" : "{\"address\":\"5220 Fourth Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11220\"}"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "longitude" : -73.93866902925225,
+              "latitude" : 40.74570244980828,
+              "human_address" : "{\"address\":\"10 25 41st Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11101\"}"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "longitude" : -73.93866902925225,
+              "latitude" : 40.74570244980828,
+              "human_address" : "{\"address\":\"10 25 41st Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11101\"}"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "longitude" : -73.92099423399668,
+              "latitude" : 40.704095739826585,
+              "human_address" : "{\"address\":\"480 400 Irving Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11237\"}"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "longitude" : -73.7521789315517,
+              "latitude" : 40.6038795254241,
+              "human_address" : "{\"address\":\"1920 Mott Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11691\"}"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "longitude" : -73.93981755530723,
+              "latitude" : 40.812765068123156,
+              "human_address" : "{\"address\":\"34 134th Street\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10037\"}"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "longitude" : -73.89602321003798,
+              "latitude" : 40.85563091671904,
+              "human_address" : "{\"address\":\"2255 Webster Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10457\"}"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "longitude" : -73.94609482307175,
+              "latitude" : 40.82332310874716,
+              "human_address" : "{\"address\":\"62 Hamilton Terrace\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10031\"}"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "longitude" : -73.91963048073077,
+              "latitude" : 40.67307365825991,
+              "human_address" : "{\"address\":\"430 Howard Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11213\"}"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "longitude" : -73.92085753444195,
+              "latitude" : 40.83108457687954,
+              "human_address" : "{\"address\":\"153 165th Street\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10452\"}"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "longitude" : -73.92463441589643,
+              "latitude" : 40.83872461597058,
+              "human_address" : "{\"address\":\"1248 Nelson Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10452\"}"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "longitude" : -73.88334858436963,
+              "latitude" : 40.70122489161548,
+              "human_address" : "{\"address\":\"62 04 Myrtle Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11385\"}"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "longitude" : -73.92463441589643,
+              "latitude" : 40.83872461597058,
+              "human_address" : "{\"address\":\"1248 Nelson Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10452\"}"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "longitude" : -73.96230212887792,
+              "latitude" : 40.6359962740795,
+              "human_address" : "{\"address\":\"1616 Newkirk Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11226\"}"
+            }
+          } ]
+        },
+        "format" : {
+        },
+        "subColumnTypes" : [ "human_address", "latitude", "longitude", "machine_address", "needs_recoding" ]
+      } ],
+      "grants" : [ {
+        "inherited" : false,
+        "type" : "viewer",
+        "flags" : [ "public" ]
+      } ],
+      "metadata" : {
+        "custom_fields" : {
+          "Update" : {
+            "Update Frequency" : "As needed"
+          }
+        },
+        "renderTypeConfig" : {
+          "visible" : {
+            "table" : true
+          }
+        },
+        "availableDisplayTypes" : [ "table", "fatrow", "page" ],
+        "rdfSubject" : "0",
+        "rowIdentifier" : "0",
+        "rdfClass" : ""
+      },
+      "owner" : {
+        "id" : "k2fz-tf56",
+        "displayName" : "Gary A",
+        "emailUnsubscribed" : true,
+        "privacyControl" : "login",
+        "profileLastModified" : 1322490447,
+        "roleName" : "administrator",
+        "screenName" : "Gary A",
+        "rights" : [ "create_datasets", "edit_others_datasets", "edit_sdp", "edit_site_theme", "moderate_comments", "manage_users", "chown_datasets", "edit_nominations", "approve_nominations", "feature_items", "federations", "manage_stories", "manage_approval", "change_configurations", "view_domain", "view_others_datasets", "edit_pages", "create_pages" ]
+      },
+      "query" : {
+      },
+      "ratings" : {
+        "rating" : 80
+      },
+      "rights" : [ "read" ],
+      "tableAuthor" : {
+        "id" : "k2fz-tf56",
+        "displayName" : "Gary A",
+        "emailUnsubscribed" : true,
+        "privacyControl" : "login",
+        "profileLastModified" : 1322490447,
+        "roleName" : "administrator",
+        "screenName" : "Gary A",
+        "rights" : [ "create_datasets", "edit_others_datasets", "edit_sdp", "edit_site_theme", "moderate_comments", "manage_users", "chown_datasets", "edit_nominations", "approve_nominations", "feature_items", "federations", "manage_stories", "manage_approval", "change_configurations", "view_domain", "view_others_datasets", "edit_pages", "create_pages" ]
+      },
+      "tags" : [ "education", "services", "youth", "community", "development", "community development", "school", "child", "children", "after-school", "nda", "neighborhood development area", "neighborhood", "high school" ],
+      "flags" : [ "default" ]
+    }
+  },
+  "data" : [ [ 1, "5B5F1F96-0294-4410-BAE2-D6B7E8F3566D", 1, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Seward Park High School - H.S. 445 ", "New York", "Chinese American Planning Council", "212.941.0920", "High School", [ "{\"address\":\"350 Grand Street\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10002\"}", "40.716852373698316", "-73.98959502962896", null, false ] ]
+, [ 2, "2CC1A8BC-EABB-433A-AC8C-3A7BA14926C7", 2, 1314895913, "392753", 1314902003, "392753", "{\n}", "After-School Programs", "High School", "Grand Street Settlement, Inc. ", "New York", "Grand Street Settlement, Inc.", "212.674.1740", "High School", [ "{\"address\":\"80 Pitt Street\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10002\"}", "40.718892797836546", "-73.98215902487652", null, false ] ]
+, [ 3, "49F3B63B-EA6A-4B16-BE5C-7E577B2E1B20", 3, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Joy Center", "New York", "Greenwich Village Youth Council", "646.935.1812", "High School", [ "{\"address\":\"213 Eldridge Street\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10002\"}", "40.72209739227883", "-73.98998476242794", null, false ] ]
+, [ 4, "54CEDB10-7525-45AC-94C6-744102047877", 4, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Henry Street Settlement", "New York", "Henry Street Settlement", "212.766.9200", "High School", [ "{\"address\":\"301 Henry Street\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10002\"}", "40.71399949305981", "-73.98339877304709", null, false ] ]
+, [ 5, "4F4F01A9-8945-409D-A91F-1044CFA965D1", 5, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Henry Street School for International Studies", "New York", "Loisaida, Inc.", "212.353.0272", "High School", [ "{\"address\":\"220 Henry Street\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10002\"}", "40.713663660512324", "-73.98651124295314", null, false ] ]
+, [ 6, "AE62440B-C616-4C61-A4DD-9E767E46E58E", 6, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Loisaida, Inc.", "New York", "Loisaida, Inc.", "212.353.0272", "High School", [ "{\"address\":\"710 9th Street\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10009\"}", "40.72513728725892", "-73.9776956836335", null, false ] ]
+, [ 7, "D135783E-EC98-490D-A407-FFD3812D1182", 7, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Trinity Lutheran Church ", "New York", "Lutheran Social Services of New York", "212.784.8960", "High School", [ "{\"address\":\"168 100th Street\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10025\"}", "40.79624990319889", "-73.96758330511928", null, false ] ]
+, [ 8, "10A975F9-6418-45BA-8EF3-1A137EDE6442", 8, 1314895913, "392753", 1314902002, "392753", "{\n}", "After-School Programs", "High School", "Harlem PAL Community Center", "New York", "Police Athletic League, Inc.", "212 665.8699", "High School", [ "{\"address\":\"441 Manhattan Avenue\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10026\"}", "40.80669464442542", "-73.95561864336202", null, false ] ]
+, [ 9, "6663DDD7-600B-44DF-8F48-889A76E4ABDA", 9, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Boys & Girls Harbor, Inc.", "New York", "Boys & Girls Harbor, Inc.", "212.427.2244", "High School", [ "{\"address\":\"1 104th Street\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10029\"}", "40.79298338723134", "-73.95200031741886", null, false ] ]
+, [ 10, "DE25DFD8-E695-4086-81F6-733AF70B08B7", 10, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Northside Center For Child Development, Inc.", "New York", "Northside Center For Child Development, Inc.", "212.426.3400", "High School", [ "{\"address\":\"1301 5th Avenue\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10029\"}", "40.79710479239263", "-73.94902299102804", null, false ] ]
+, [ 11, "58E64408-7645-4A5F-AC11-749A4B1D5092", 11, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Manhattan Center For Science & Math", "New York", "The Childrens Aid Society", "212.860.0299", "High School", [ "{\"address\":\"280 Pleasant Avenue\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10029\"}", "40.79480422455373", "-73.93330103742075", null, false ] ]
+, [ 12, "684C7227-0BE3-43B9-8AF3-489300F54163", 12, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "LaGuardia Memorial House", "New York", "Supportive Childrens Advocacy Network (SCAN)", "212.683.2522", "High School", [ "{\"address\":\"307 116th Street\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10029\"}", "40.79694537628096", "-73.93755161623598", null, false ] ]
+, [ 13, "3A936FE8-3F8C-41BA-A911-5E17EC070795", 13, 1314895913, "392753", 1314902003, "392753", "{\n}", "After-School Programs", "High School", "Central Harlem Services", "New York", "Northside Center For Child Development, Inc.", "212.426.3400", "High School", [ "{\"address\":\"247 249 West 135th Street\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10030\"}", "40.81843517604261", "-73.94276530357587", null, false ] ]
+, [ 14, "EEA680B2-8B82-45EB-96C5-F831D277BC86", 14, 1314895913, "392753", 1314902007, "392753", "{\n}", "After-School Programs", "High School", "Children's Art Carnival ", "New York", "Children's Art Carnival ", "212.234.4093", "High School", [ "{\"address\":\"62 Hamilton Terrace\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10031\"}", "40.82332310874716", "-73.94609482307175", null, false ] ]
+, [ 15, "10BB4220-36AD-4B5B-9CAF-71D5A3958F44", 15, 1314895913, "392753", 1314902002, "392753", "{\n}", "After-School Programs", "High School", "Public School 192 - Jacob H. Schiff Elementary School", "New York", "Washington Heights- Inwood Coalition, Inc", "212.781.6722", "High School", [ "{\"address\":\"500 138th Street\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10031\"}", "40.82157842401034", "-73.952641887445", null, false ] ]
+, [ 16, "891652D2-7151-4786-97AE-A382A049FB9E", 16, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Intermediate School 326/328", "New York", "Community Association of Progressive Dominicans", "212.781.5500", "High School", [ "{\"address\":\"401 164th Street\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10032\"}", "40.83651304740195", "-73.93704560998873", null, false ] ]
+, [ 17, "33C22BA4-B47B-45FA-AD12-40DFAF9CBDFD", 17, 1314895913, "392753", 1314902003, "392753", "{\n}", "After-School Programs", "High School", "Public School 4 - Duke Ellington School", "New York", "Community League of the Heights, Inc", "212.795.4779", "High School", [ "{\"address\":\"500 160th Street\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10032\"}", "40.834727600746845", "-73.94071780237537", null, false ] ]
+, [ 18, "760D6213-CA1D-49B1-943D-B65DF52F2489", 18, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Public School 173 ", "New York", "Childrens Arts & Science Workshops, Inc.", "212.923.7766", "High School", [ "{\"address\":\"306 Fort\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10033\"}", "40.85621992920642", "-73.94585900019268", null, false ] ]
+, [ 19, "F10E259D-EC65-45E6-9A0C-08409D3C230E", 19, 1314895913, "392753", 1314902007, "392753", "{\n}", "After-School Programs", "High School", "Public School 5 - Ellen Lurie School", "New York", "Reading Excellence and Discovery (READ) Foundation", "212.849.6840", "High School", [ "{\"address\":\"3703 10th Avenue\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10034\"}", "40.85899299980833", "-73.92287094387305", null, false ] ]
+, [ 20, "193E6D7E-6AAC-40F5-9013-52B6BF30D20D", 20, 1314895913, "392753", 1314902002, "392753", "{\n}", "After-School Programs", "High School", "Jewish Community Center of Staten Island, Inc.", "Staten Island", "Jewish Community Center of Staten Island, Inc.", "718.981.1500", "High School", [ "{\"address\":\"475 Victory Boulevard\",\"city\":\"Staten Island\",\"state\":\"NEW YORK\",\"zip\":\"10301\"}", "40.630627751644205", "-74.08851956408898", null, false ] ]
+, [ 21, "2B5A29AC-DE06-41C9-BE53-7B65A7D65B74", 21, 1314895913, "392753", 1314902003, "392753", "{\n}", "After-School Programs", "High School", "Intermediate School 27 - Anning S. Prall", "Staten Island", "Sports and Arts In Schools Foundation, Inc.", "347 417.8135", "High School", [ "{\"address\":\"11 Clove Lake Place\",\"city\":\"Staten Island\",\"state\":\"NEW YORK\",\"zip\":\"10310\"}", "40.62819560442818", "-74.11703328220538", null, false ] ]
+, [ 22, "93522A3E-00F2-4CD5-83F6-3A615FF1F82F", 22, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Mullaly Academy ", "Bronx", "Supportive Childrens Advocacy Network (SCAN)", "212.683.2522", "High School", [ "{\"address\":\"40 164th Street\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10450\"}", "40.830483836307955", "-73.92378892578503", null, false ] ]
+, [ 23, "7830C69D-2766-473E-B4BD-21DD45EAAAAA", 23, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Middle School 203", "Bronx", "East Side House, Inc.", "718.665.5250", "High School", [ "{\"address\":\"339 Morris Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10451\"}", "40.813386726364335", "-73.92553701094046", null, false ] ]
+, [ 24, "C47D71C3-13D0-4ECA-9F4A-C376A36F3A86", 24, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Highbridge Community Life Center AfterSchool and Summer Program ", "Bronx", "Highbridge Community Life Center", "718.681.2222", "High School", [ "{\"address\":\"1248 Nelson Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10452\"}", "40.83872461597058", "-73.92463441589643", null, false ] ]
+, [ 25, "85A3CB72-589E-43C0-B6F6-CE20350B0FC1", 25, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "New Settlement Apartments", "Bronx", "New Settlement Apartments", "718.716.8000", "High School", [ "{\"address\":\"1512 Townsend Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10452\"}", "40.842289963686326", "-73.9150263058931", null, false ] ]
+, [ 26, "0824E4D3-C6B3-43CF-82A7-05504B9800CF", 26, 1314895913, "392753", 1314902002, "392753", "{\n}", "After-School Programs", "High School", "Elemetary School 55", "Bronx", "Bronx Arts Ensemble", "718 601.7399", "High School", [ "{\"address\":\"450 St Pauls Place\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10456\"}", "40.836276563944345", "-73.90461113077222", null, false ] ]
+, [ 27, "8F3A4FB9-5003-4623-B32D-DD17107F9F17", 27, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Bronx International H.S.", "Bronx", "Bronx Arts Ensemble", "718.601.7399", "High School", [ "{\"address\":\"1100 Boston Road\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10456\"}", "40.82743805805522", "-73.904676763458", null, false ] ]
+, [ 28, "0870B3F5-AC50-455A-94A9-BDAB1A926A07", 28, 1314895913, "392753", 1314902002, "392753", "{\n}", "After-School Programs", "High School", "Intermediate School 399", "Bronx", "Bronx Arts Ensemble", "718.601.7399", "High School", [ "{\"address\":\"120 184 Street\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10453\"}", "40.859718306516946", "-73.9001023348563", null, false ] ]
+, [ 29, "88ADFCEE-1AB1-43A1-860B-33F368EE2179", 29, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Junior High School 117 - Joseph H. Wade School", "Bronx", "Community Association of Progressive Dominicans", "212.781.5500", "High School", [ "{\"address\":\"1865 Morris Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10453\"}", "40.84854841840716", "-73.90843506819625", null, false ] ]
+, [ 30, "E9922ADA-CE47-44AB-8C77-DCF19527F58F", 30, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Career Development Institute", "Bronx", "Federation Employment & Guidance Services (FEGS)", "212.366.8401", "High School", [ "{\"address\":\"412 147th Street\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10455\"}", "40.81448730256519", "-73.91817521800282", null, false ] ]
+, [ 31, "DAF6D238-7B27-4658-9D53-C55CC0F22B16", 31, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "MS 298", "Bronx", "Urban Youth Alliance International, Inc.", "718.402.6872", "High School", [ "{\"address\":\"778 Forest Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10454\"}", "40.81888494686362", "-73.90589968772917", null, false ] ]
+, [ 32, "F8E94572-F09A-4249-B1B2-2CBEC8C7D6BA", 32, 1314895913, "392753", 1314902007, "392753", "{\n}", "After-School Programs", "High School", "Mott Hall Bronx H.S.", "Bronx", "South Bronx Overall Economic Development Corp.", "718.585.2600", "High School", [ "{\"address\":\"1595 Bathgate Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10457\"}", "40.83963958408137", "-73.9011304410102", null, false ] ]
+, [ 33, "59694CBF-C92E-442C-B9AD-36B27865DD9A", 33, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Citizens Advice Bureau, Inc.", "Bronx", "Citizens Advice Bureau, Inc.", "718.293.0727", "High School", [ "{\"address\":\"632 Southern Boulevard\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10455\"}", "40.812893537386145", "-73.90133270321454", null, false ] ]
+, [ 34, "54BCAA71-3626-4BF8-9E2B-0B39DE0FD86A", 34, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Mid Bronx Community Preservation Coalition, Inc.", "Bronx", "Mid Bronx Community Preservation Coalition, Inc.", "718.590.0655", "High School", [ "{\"address\":\"489 St Pauls Place\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10456\"}", "40.836119255150884", "-73.90381884847041", null, false ] ]
+, [ 35, "423B49D5-53D3-4802-96A3-8C39D545BEB5", 35, 1314895913, "392753", 1314902003, "392753", "{\n}", "After-School Programs", "High School", "Citizens Advice Bureau / Girls Club of New York", "Bronx", "Citizens Advice Bureau, Inc.", "718.293.0727", "High School", [ "{\"address\":\"1130 Grand\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10456\"}", "40.8316941436386", "-73.9160410469591", null, false ] ]
+, [ 36, "AD8A0078-215A-48D6-981B-E975B06A6D0E", 36, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Citizens Advice Bureau, Inc.", "Bronx", "Citizens Advice Bureau, Inc.", "718.293.0727", "High School", [ "{\"address\":\"236 Tremont Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10457\"}", "40.8488976439402", "-73.90498685825524", null, false ] ]
+, [ 37, "FE4E3EF9-CFA4-4000-8CD9-EC0B48ABC1D8", 37, 1314895913, "392753", 1314902007, "392753", "{\n}", "After-School Programs", "High School", "Community Association of Progressive Dominicans", "Bronx", "Community Association of Progressive Dominicans", "212.781.5500", "High School", [ "{\"address\":\"1865 Morris Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10453\"}", "40.84854841840716", "-73.90843506819625", null, false ] ]
+, [ 38, "2A669BF0-4958-48A5-A7E9-D6A5815D0EBD", 38, 1314895913, "392753", 1314902003, "392753", "{\n}", "After-School Programs", "High School", "Columbus Clubhouse ", "Bronx", "Madison Square Boys & Girls Club", "212.760.9600", "High School", [ "{\"address\":\"543 189 Street\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10458\"}", "40.858390156400105", "-73.88786591803597", null, false ] ]
+, [ 39, "0F3198F9-4F6A-4B99-8BF7-D23370BC4C96", 39, 1314895913, "392753", 1314902002, "392753", "{\n}", "After-School Programs", "High School", "Presbyterian Senior Services", "Bronx", "Presbyterian Senior Services", "212.874.6633", "High School", [ "{\"address\":\"951 Prospect Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10459\"}", "40.82215857521681", "-73.90061538899755", null, false ] ]
+, [ 40, "9FFC225D-EDFC-4F3A-9D91-6EC44E1F074F", 40, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Hoe Avenue Clubhouse ", "Bronx", "Madison Square Boys & Girls Club", "212.760.9600", "High School", [ "{\"address\":\"1665 Hoe Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10460\"}", "40.836095735535444", "-73.88743624188753", null, false ] ]
+, [ 41, "8369E2FA-81E1-4B61-A971-39FAB4F32C62", 41, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Bronx River Art Center, Inc.", "Bronx", "Bronx River Art Center, Inc.", "718.589.5819", "High School", [ "{\"address\":\"1087 Tremont Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10460\"}", "40.84006972385026", "-73.87771805339278", null, false ] ]
+, [ 42, "089B6628-0CBC-4A11-A61F-D6B22F859D60", 42, 1314895913, "392753", 1314902002, "392753", "{\n}", "After-School Programs", "High School", "Phipps West Farms Career Center", "Bronx", "Phipps Community Development", "212.243.9090", "High School", [ "{\"address\":\"1030 178th Street\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10460\"}", "40.84134504810141", "-73.88030387915799", null, false ] ]
+, [ 43, "EA982E7E-2277-450D-B742-D6ED00BBD947", 43, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Santa Maria School ", "Bronx", "Reading Excellence and Discovery (READ) Foundation", "212.849.6840", "High School", [ "{\"address\":\"1510 Zerega Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10462\"}", "40.83827636107804", "-73.8488083827675", null, false ] ]
+, [ 44, "00F121A8-72AF-41CC-B7BB-9DD484B78F19", 44, 1314895913, "392753", 1314895913, "392753", "{\n  \"invalidCells\" : {\n    \"1514452\" : \", , New York, \"\n  }\n}", "After-School Programs", "High School", null, null, null, null, "High School", [ null, null, null, null, null ] ]
+, [ 45, "BF00BDE8-D278-4B40-9B3B-2A5326142D70", 45, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "St Raymond Grammar School Annex", "Bronx", "St. Raymond Community Outreach", "718.824.0353", "High School", [ "{\"address\":\"1725 Castle Hill Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10462\"}", "40.84102956902165", "-73.85312184980575", null, false ] ]
+, [ 46, "2E83682E-DD21-401C-BB3A-B84D9A7FF434", 46, 1314895913, "392753", 1314902003, "392753", "{\n}", "After-School Programs", "High School", "St. Dominic's School ", "Bronx", "Reading Excellence and Discovery (READ) Foundation", "212.849.6840", "High School", [ "{\"address\":\"1684 White Plains Road\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10462\"}", "40.84352928468312", "-73.8654751708726", null, false ] ]
+, [ 47, "AC0D5EFF-46F7-4A67-9B42-54DB5BED3EB3", 47, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Unity Neighborhood Center, Inc.", "Bronx", "Unity Neighborhood Center, Inc.", "718.994.8400", "High School", [ "{\"address\":\"3410 DeReiner Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10475\"}", "40.87960219215409", "-73.83666318298415", null, false ] ]
+, [ 48, "ED89F5FF-9F2D-410D-8658-A8C843394262", 48, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "City Parks Foundation", "Bronx", "City Parks Foundation", "212.360.1399", "High School", [ "{\"address\":\"3225 Reservior Oval\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10467\"}", "40.87799269727829", "-73.8790952539838", null, false ] ]
+, [ 49, "F5A45E15-E775-40B2-ACB4-915BF7473760", 49, 1314895913, "392753", 1314902007, "392753", "{\n}", "After-School Programs", "High School", "Mosholu Montefiore Community Center, Inc.", "Bronx", "Mosholu Montefiore Community Center, Inc.", "718.882.4000", "High School", [ "{\"address\":\"3512 Dekalb Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10467\"}", "40.88259098776513", "-73.88011465611547", null, false ] ]
+, [ 50, "B6CCFFC4-1C39-45F6-87F1-86F746B0AF0C", 50, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "The Learning Tree Cultural Center, Inc.", "Bronx", "The Learning Tree Cultural Center, Inc.", "718.944.0958", "High School", [ "{\"address\":\"801 Bartholdi Street\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10467\"}", "40.873859324545734", "-73.86280526090314", null, false ] ]
+, [ 51, "1F76E936-C280-49B0-9AFF-5DD44AD104F2", 51, 1314895913, "392753", 1314902002, "392753", "{\n}", "After-School Programs", "High School", "Public School 89 ", "Bronx", "Reading Excellence and Discovery (READ) Foundation", "212.849.6840", "High School", [ "{\"address\":\"980 Mace Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10469\"}", "40.86303713678554", "-73.85940621398156", null, false ] ]
+, [ 52, "7ABE3930-C6D3-4F68-BE54-2EE3D9BCFCE0", 52, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "PS 119 ", "Bronx", "YMCA of Greater New York/Corporate", "212.792.9736", "High School", [ "{\"address\":\"1075 Pugsley Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10472\"}", "40.82849055646956", "-73.85659199905312", null, false ] ]
+, [ 53, "D5C8D61F-434D-4545-BA86-48E0B4E9096C", 53, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Wildcat High School", "Bronx", "Wildcat Service Corporation", "718 620.0748", "High School", [ "{\"address\":\"1231 Lafayette Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10474\"}", "40.81655388322442", "-73.89020247936504", null, false ] ]
+, [ 54, "19C59582-8B01-4C68-B9F0-33BB6053548F", 54, 1314895913, "392753", 1314902002, "392753", "{\n}", "After-School Programs", "High School", "Jacob A. Riis Neighborhood Settlement, Inc. ", "Queens", "Jacob A. Riis Neighborhood Settlement, Inc.", "718.784.7447", "High School", [ "{\"address\":\"10 25 41st Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11101\"}", "40.74570244980828", "-73.93866902925225", null, false ] ]
+, [ 55, "B95701D9-D804-4AE2-9248-A8FB9F22F69B", 55, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Variety Boys & Girls Club of Queens, Inc.", "Queens", "Variety Boys & Girls Club of Queens, Inc.", "718.728.0946", "High School", [ "{\"address\":\"21 12 30th Road\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11102\"}", "40.77152402451418", "-73.92643545073543", null, false ] ]
+, [ 56, "D8451BC1-4DA0-42DC-906C-4C00E8478271", 56, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Public School 122 - Mamie Fay Elementary School ", "Queens", "Sports and Arts In Schools Foundation, Inc.", "718.417.8135", "High School", [ "{\"address\":\"21 21 Ditmars Boulevard\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11105\"}", "40.780092072491186", "-73.90960650023976", null, false ] ]
+, [ 57, "7E223935-68B2-4223-B29F-DFA23DDFCD34", 57, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Junior High School 204 - Oliver Wendell Holmes Middle", "Queens", "New York Junior Tennis League", "718.417.8135", "High School", [ "{\"address\":\"36 41 28th Street\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11106\"}", "40.761699790013324", "-73.9316632529567", null, false ] ]
+, [ 58, "7204F251-1398-47EA-A374-30ED574BA1EE", 58, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Intermediate School 96 - Seth Low School ", "Brooklyn", "Federation of Italian-American Organizations of Brooklyn", "718.259.2829", "High School", [ "{\"address\":\"99 Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11204\"}", "40.619055848049015", "-73.98479859887618", null, false ] ]
+, [ 59, "D27C84EF-2E03-4977-8C88-72C6DA1717ED", 59, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Public School 247", "Brooklyn", "St. Rosalia-Regina Pacis Neighborhood Improvement", "718.236.5266", "High School", [ "{\"address\":\"7000 21st Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11204\"}", "40.612350730896566", "-73.98666403131371", null, false ] ]
+, [ 60, "FAFBBE76-8E2C-45CE-9563-652C08706BBD", 60, 1314895913, "392753", 1314902007, "392753", "{\n}", "After-School Programs", "High School", "SCO Family of Services", "Brooklyn", "SCO Family of Services", "718.455.1166", "High School", [ "{\"address\":\"75 Lewis Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11206\"}", "40.69500799941421", "-73.93742230252869", null, false ] ]
+, [ 61, "8AFC8F20-84C0-4B09-A061-41327F117F64", 61, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "St. Stephen Outreach Inc.", "Brooklyn", "St. Stephen Outreach Inc.", "718.384.8854", "High School", [ "{\"address\":\"874 Myrtle Ave\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11206\"}", "40.69557673055322", "-73.94723933262884", null, false ] ]
+, [ 62, "0FB80280-5150-4F91-933B-783B268BA782", 62, 1314895913, "392753", 1314902002, "392753", "{\n}", "After-School Programs", "High School", "College S.T.E.P.S.", "Brooklyn", "Cypress Hills Local Development Corporation", "718.647.2800", "High School", [ "{\"address\":\"2836 Fulton Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11207\"}", "40.67826754460563", "-73.88993426086328", null, false ] ]
+, [ 63, "D5780E82-6679-4616-9873-F2F5CE6467DD", 63, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Unity Fiorentino Breukelen", "Brooklyn", "Groundwork Inc,", "718.346.2200", "High School", [ "{\"address\":\"330 Alabama Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11207\"}", "40.668138271519794", "-73.89786239243736", null, false ] ]
+, [ 64, "218A1AD0-00DF-4372-B49C-54DD7BFF1C24", 64, 1314895913, "392753", 1314902002, "392753", "{\n}", "After-School Programs", "High School", "Intermediate School 292- Margaret S.  Douglas School", "Brooklyn", "Groundwork Inc,", "718 346. 2200", "High School", [ "{\"address\":\"301 Vermont Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11207\"}", "40.67232012790976", "-73.89398085584912", null, false ] ]
+, [ 65, "807AC437-9E7B-4B3E-87B3-A9B2DEBC41FF", 65, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Public School 260 - Breuckelen Elementary School", "Brooklyn", "Groundwork Inc,", "7118 346.2200", "High School", [ "{\"address\":\"875 Williams Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11207\"}", "40.65401673691302", "-73.8948296599744", null, false ] ]
+, [ 66, "1297E9F6-6791-4038-B2E6-54D7492C980B", 66, 1314895913, "392753", 1314895913, "392753", "{\n  \"invalidCells\" : {\n    \"1514452\" : \", , New York, \"\n  }\n}", "After-School Programs", "High School", null, null, null, null, "High School", [ null, null, null, null, null ] ]
+, [ 67, "B4EBAF17-C10B-4A6E-AC4E-507924D2DA60", 67, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Schwartz Center ", "Brooklyn", "Police Athletic League, Inc.", "212.477.9450", "High School", [ "{\"address\":\"127 Pennsylvania Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11207\"}", "40.67474021180885", "-73.89657635302484", null, false ] ]
+, [ 68, "C40CF539-9993-4FC6-9353-249D390F2C5F", 68, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Intermediate School 171 - Abraham Lincoln School", "Brooklyn", "Cypress Hills Local Development Corporation", "718.647.2800", "High School", [ "{\"address\":\"528 Ridgewood Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11208\"}", "40.6861530810444", "-73.86966791838911", null, false ] ]
+, [ 69, "415A5121-A9AB-47C7-9302-5145613CD773", 69, 1314895913, "392753", 1314902003, "392753", "{\n}", "After-School Programs", "High School", "Bnos Yakov Educational Center", "Brooklyn", "Bnos Yakov Educational Center", "718.963.1212", "High School", [ "{\"address\":\"62 Harrison Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11211\"}", "40.70509777565483", "-73.95271360115831", null, false ] ]
+, [ 70, "69B8C0B6-1669-4B58-ABCE-6E04C8C8F6BF", 70, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Transfiguration School", "Brooklyn", "Southside Community Mission, Inc.", "718.782.8181", "High School", [ "{\"address\":\"250 Hooper Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11211\"}", "40.70581785170525", "-73.9556640768342", null, false ] ]
+, [ 71, "472E13A2-6646-429C-9C4A-3C529CF0D298", 71, 1314895913, "392753", 1314902003, "392753", "{\n}", "After-School Programs", "High School", "K577 Conselyea Preparatory School", "Brooklyn", "Sports and Arts In Schools Foundation, Inc.", "718.786.7110", "High School", [ "{\"address\":\"320 Manhattan Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11211\"}", "40.71463833332369", "-73.94607320762356", null, false ] ]
+, [ 72, "B9205582-FBB5-446C-8315-FB4358D2536F", 72, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "St. Nicholas Neighborhood Preservation Corporation ", "Brooklyn", "St. Nicholas Neighborhood Preservation Corporation", "718.388.5454", "High School", [ "{\"address\":\"306 Union Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11211\"}", "40.709531299983055", "-73.95084580203302", null, false ] ]
+, [ 73, "14B43395-0EDA-42A8-9490-129FF908A475", 73, 1314895913, "392753", 1314902002, "392753", "{\n}", "After-School Programs", "High School", "Public School / Intermediate School 298 ", "Brooklyn", "Church Avenue Merchants Block Association, Inc.", "718.287.2600", "High School", [ "{\"address\":\"85 Watkins Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11212\"}", "40.67042776691945", "-73.90800436590118", null, false ] ]
+, [ 74, "93D00F99-1E09-4814-A922-7A61A53D7818", 74, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Ralph Lincoln Service Center ", "Brooklyn", "Ralph Lincoln Service Center, Inc.", "718.604.1358", "High School", [ "{\"address\":\"261 Buffalo Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11213\"}", "40.67003864096985", "-73.92540014432034", null, false ] ]
+, [ 75, "F750A226-2194-47C2-92F2-88BF01EB71C7", 75, 1314895913, "392753", 1314902007, "392753", "{\n}", "After-School Programs", "High School", "P.S. 12 ", "Brooklyn", "Ralph Lincoln Service Center, Inc.", "718.604.1358", "High School", [ "{\"address\":\"430 Howard Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11213\"}", "40.67307365825991", "-73.91963048073077", null, false ] ]
+, [ 76, "98C0CD5F-793A-4AF8-92F9-0EF46C4C35E7", 76, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Secondary School of Law Research & Journalism ", "Brooklyn", "Project Reach Youth, Inc.", "718.768.0778", "High School", [ "{\"address\":\"237 7th Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11215\"}", "40.669623280409056", "-73.97924096910276", null, false ] ]
+, [ 77, "047ED7F0-0324-4245-B76B-3AA570666902", 77, 1314895913, "392753", 1314902002, "392753", "{\n}", "After-School Programs", "High School", "Junior High School 258 (K) - David Ruggles School", "Brooklyn", "Vannguard Urban Improvement Association, Inc.", "718.453.3330", "High School", [ "{\"address\":\"141 Macon Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11216\"}", "40.681569834987634", "-73.94559613967623", null, false ] ]
+, [ 78, "2F565C13-6F10-46F6-8CD4-3755ECF3F475", 78, 1314895913, "392753", 1314902003, "392753", "{\n}", "After-School Programs", "High School", "Public School 94 - Henry Longfellow Elementary School", "Brooklyn", "Brooklyn Chinese American Association", "718.438.9312", "High School", [ "{\"address\":\"5010 6th Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11220\"}", "40.64372817395559", "-74.0082060957207", null, false ] ]
+, [ 79, "68D7094E-A07D-4D0F-8920-D653F56B0013", 79, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Public School 314 - Luis Munoz Marin Elementary School", "Brooklyn", "Turning Point", "718.439.0077", "High School", [ "{\"address\":\"330 59th Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11220\"}", "40.64220161479856", "-74.0191758017247", null, false ] ]
+, [ 80, "563C3EA9-4201-4C9C-9E4E-C47B7F1D5E80", 80, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Turning Point", "Brooklyn", "Turning Point", "718 439.0077", "High School", [ "{\"address\":\"5220 Fourth Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11220\"}", "40.645290640072034", "-74.01395648948358", null, false ] ]
+, [ 81, "F3BCD150-1C33-4AA8-AFA1-80FF35A5B78D", 81, 1314895913, "392753", 1314902007, "392753", "{\n}", "After-School Programs", "High School", "Educational Center", "Brooklyn", "Turning Point", "718.439.0077", "High School", [ "{\"address\":\"5013 Seventh Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11220\"}", "40.64235365356344", "-74.00596380753073", null, false ] ]
+, [ 82, "A5F88DBB-966D-46CB-88F2-697C89C6A95F", 82, 1314895913, "392753", 1314895913, "392753", "{\n  \"invalidCells\" : {\n    \"1514452\" : \"1007 Quentin Road, Brooklyn, NY 11223, Brooklyn, New York, 11223\"\n  }\n}", "After-School Programs", "High School", "Kaplan Center for Community Services Annex ", "Brooklyn", "Jewish Board of Family and Children's Services, Inc.", "212.423.6200", "High School", [ null, null, null, null, null ] ]
+, [ 83, "A1A5F841-BB50-4AE8-8EA8-7B2BAB1F0112", 83, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "I.S 228 ", "Brooklyn", "New York Junior Tennis League", "718.417.8135", "High School", [ "{\"address\":\"228 Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11223\"}", "40.596939623165156", "-73.97331147204676", null, false ] ]
+, [ 84, "B6CE0763-958A-4BE7-A726-718890C84CF4", 84, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Associated Beth Rivkah Schools (Elementary/Middle School)", "Brooklyn", "Associated Beth Rivkah Schools, Inc", "718.735.0400", "High School", [ "{\"address\":\"470 Lefferts Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11225\"}", "40.66263900490517", "-73.94564720102588", null, false ] ]
+, [ 85, "B4236191-6ABD-4922-BDF9-AA7928C1917D", 85, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Public School 161", "Brooklyn", "Caribbean American Sports & Cultural Youth Movement", "718.774.7977", "High School", [ "{\"address\":\"330 Crown Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11225\"}", "40.66615564566118", "-73.94885261044026", null, false ] ]
+, [ 86, "02716143-14BA-4609-876B-421774A00473", 86, 1314895913, "392753", 1314902002, "392753", "{\n}", "After-School Programs", "High School", "Prospect Heights High School - H.S. 440", "Brooklyn", "Research Foundation of CUNY", "718.951.5015", "High School", [ "{\"address\":\"883 Classon Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11225\"}", "40.67045865769921", "-73.96162827573441", null, false ] ]
+, [ 87, "CADA0138-B02C-4AD6-BFE5-EACA39F5C2BE", 87, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Erasmus High School", "Brooklyn", "Research Foundation of CUNY", "718.951.5015", "High School", [ "{\"address\":\"911 Flatbush Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11226\"}", "40.649532936565414", "-73.95845755993555", null, false ] ]
+, [ 88, "3719862A-9737-45A7-8AD3-C73C96FA9DF1", 88, 1314895913, "392753", 1314902003, "392753", "{\n}", "After-School Programs", "High School", "Oasis Community Corporation", "Brooklyn", "Oasis Community Corporation", "718.596.4900", "High School", [ "{\"address\":\"180 Chauncey Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11233\"}", "40.68059860511169", "-73.92749843320017", null, false ] ]
+, [ 89, "8F8A5C53-C679-4163-85FB-E99744014FE5", 89, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "The East New York Learning Center, Inc", "Brooklyn", "The East New York Learning Center, Inc", "718.345.4775", "High School", [ "{\"address\":\"1495 Herkimer Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11233\"}", "40.67716592828484", "-73.90400913232205", null, false ] ]
+, [ 90, "B46747A6-3E2B-4BEF-B70A-5964237723B7", 90, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Shorefront YM-YWHA", "Brooklyn", "Shorefront YM-YWHA", "718.646.1444", "High School", [ "{\"address\":\"3300 Coney Island Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11235\"}", "40.575793969703795", "-73.95950745079742", null, false ] ]
+, [ 91, "A23CDB49-5655-4596-804D-B0D27D2DF8E5", 91, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Adams & White, PC", "Brooklyn", "Bronx Arts Ensemble", "718.601.7399", "High School", [ "{\"address\":\"9318 Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11236\"}", "40.64002149379695", "-73.90112193992553", null, false ] ]
+, [ 92, "A7384E9B-DB44-49BA-A50F-07AC0D1F372A", 92, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Intermediate School 211 - John Wilson School ", "Brooklyn", "New York Junior Tennis League", "718.786.7110", "High School", [ "{\"address\":\"1001 100th Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11236\"}", "40.64348164485336", "-73.89642371322941", null, false ] ]
+, [ 93, "B716DF3F-34DE-49AF-9531-4C6DD8A59E09", 93, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Make the Road by Walking", "Brooklyn", "Make the Road by Walking", "718.418.7690", "High School", [ "{\"address\":\"301 Grove Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11237\"}", "40.698428502523264", "-73.91562347499381", null, false ] ]
+, [ 94, "46918BE9-B532-4037-900E-00E3EF5DE262", 94, 1314895913, "392753", 1314902003, "392753", "{\n}", "After-School Programs", "High School", "Bushwick High School - H.S. ", "Brooklyn", "Research Foundation of CUNY", "347.417.8135", "High School", [ "{\"address\":\"480 400 Irving Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11237\"}", "40.704095739826585", "-73.92099423399668", null, false ] ]
+, [ 95, "0097B34F-EA09-41C7-921F-ACF77A2DBCB0", 95, 1314895913, "392753", 1314902002, "392753", "{\n}", "After-School Programs", "High School", "Martha Udell Early Childhood Academy", "Brooklyn", "Faith Hope and Charity", "718.649.8610", "High School", [ "{\"address\":\"505 St Marks Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11238\"}", "40.67626428747749", "-73.95745326633335", null, false ] ]
+, [ 96, "F5186138-D67C-42D8-A748-5E52E33A3D6C", 96, 1314895913, "392753", 1314902007, "392753", "{\n}", "After-School Programs", "High School", "The Young Womens Christian Association of Queens (YWCA) ", "Queens", "YWCA of Queens", "718.353.4553", "High School", [ "{\"address\":\"42 07\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11355\"}", "40.7512997969481", "-73.82147854789662", null, false ] ]
+, [ 97, "78040EB6-3958-4D82-85F1-3F6A28B6BF53", 97, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "P.S. 92", "Queens", "La Asociaci�n Ben�fica Cultural Father Billini", "718.651.8427", "High School", [ "{\"address\":\"99 01 34th Ave\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11368\"}", "40.749678220373596", "-73.85304068857687", null, false ] ]
+, [ 98, "777F73FF-C734-49DC-8DD7-D6B6A77371BD", 98, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Intermediate School 61", "Queens", "New York Junior Tennis League", "347 417.8135", "High School", [ "{\"address\":\"98 50 50th Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11368\"}", "40.749678220373596", "-73.85304068857687", null, false ] ]
+, [ 99, "52631267-7817-4BCC-B459-DB20F370FDA1", 99, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Elmcor Youth and Adult Activities, Inc.", "Queens", "Elmcor Youth and Adult Activities, Inc.", "718.651.0096", "High School", [ "{\"address\":\"33 16 108th Street\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11369\"}", "40.76341327370369", "-73.8723788986672", null, false ] ]
+, [ 100, "422C0105-31B4-40BB-A39E-6490DD7A8261", 100, 1314895913, "392753", 1314902003, "392753", "{\n}", "After-School Programs", "High School", "Asian Outreach", "Queens", "Queens Child Guidance Center", "718.651.7770", "High School", [ "{\"address\":\"87 08 Justice Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11373\"}", "40.73871040256307", "-73.87835115518163", null, false ] ]
+, [ 101, "8F6F6FB9-6EDA-41A7-AB4E-80081AE84396", 101, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Intermediate School 5 - Walter H. Crowley School", "Queens", "Sunnyside Community Service, Inc.", "718.784.6173", "High School", [ "{\"address\":\"50 40 Jacobus Street\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11373\"}", "40.73871040256307", "-73.87835115518163", null, false ] ]
+, [ 102, "CF542450-B0EA-44A9-9C97-278F8FA63416", 102, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "St. Sebastians Parochial School", "Queens", "Woodside On The Move, Inc.", "718.476.8449", "High School", [ "{\"address\":\"39 76 58th Street\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11377\"}", "40.74519376448069", "-73.9048471440804", null, false ] ]
+, [ 103, "448DC7C4-2B16-4A77-86D3-46E2CD218913", 103, 1314895913, "392753", 1314902003, "392753", "{\n}", "After-School Programs", "High School", "P.S 88", "Queens", "Greater Ridgewood Youth Council, Inc.", "718.456.5437", "High School", [ "{\"address\":\"60 85 Catalpa Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11385\"}", "40.70122489161548", "-73.88334858436963", null, false ] ]
+, [ 104, "28C1C057-62E5-4668-BF2C-4954D65758F9", 104, 1314895913, "392753", 1314902003, "392753", "{\n}", "After-School Programs", "High School", "G.R.Y.C. Headquarters", "Queens", "Greater Ridgewood Youth Council, Inc.", "718.456.5437", "High School", [ "{\"address\":\"62 04 Myrtle Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11385\"}", "40.70122489161548", "-73.88334858436963", null, false ] ]
+, [ 105, "AECFC7C3-ECF8-4514-B6CE-1D354C6889C4", 105, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Intermediate School 238 - Susan B. Anthony School", "Queens", "New York Junior Tennis League", "347.417.8135", "High School", [ "{\"address\":\"88 15 182nd Street\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11423\"}", "40.71722229567246", "-73.7671414999802", null, false ] ]
+, [ 106, "EE13EBE1-7E29-4F36-9E2A-0ED414106264", 106, 1314895913, "392753", 1314902007, "392753", "{\n}", "After-School Programs", "High School", "New Visions Abstinence Education Program", "Queens", "Catholic Charities Neighborhood Services, Inc.", "718.726.9790", "High School", [ "{\"address\":\"161 06 89th Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11432\"}", "40.71311535449007", "-73.79282099978928", null, false ] ]
+, [ 107, "7CF83179-48CF-4162-BF4A-5E458FFC6568", 107, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Southern Queens Park Association", "Queens", "Southern Queens Park Association", "718.276.4630", "High School", [ "{\"address\":\"177th Street\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11434\"}", "40.66403098983331", "-73.77064992208444", null, false ] ]
+, [ 108, "93825D35-1454-48BE-B35A-BF17B1FEF9CF", 108, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "The South Jamacia Child Guidance Clinic ", "Queens", "Queens Child Guidance Center", "718.651.7770", "High School", [ "{\"address\":\"114 14 Sutphin Boulevard\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11436\"}", "40.67571820912809", "-73.79646501494847", null, false ] ]
+, [ 109, "C464EB74-6028-4524-BAE8-6012ECF369C3", 109, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Intermediate School 43", "Queens", "Federation Employment & Guidance Services (FEGS)", "718.471.7875", "High School", [ "{\"address\":\"160 Beach 29th Street\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11691\"}", "40.594515128003", "-73.76182654029463", null, false ] ]
+, [ 110, "EAED2AA6-735C-47A1-862B-28D2E85AD483", 110, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Jewish Services Coalition, Inc", "Queens", "Jewish Services Coalition, Inc", "718.327.6060", "High School", [ "{\"address\":\"1525 Central Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11691\"}", "40.60566235698948", "-73.75132461159502", null, false ] ]
+, [ 111, "778C51B5-56E9-44CD-9B73-26E0E9F4CC48", 111, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Children's Arts & Science Workshops", "New York", "Children's Arts & Science Workshops, Inc.                    ", "212.923.7766", "High School", [ "{\"address\":\"4271 Broadway\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10032\"}", "40.84542028778276", "-73.93872543942075", null, false ] ]
+, [ 112, "9616117F-F5BE-478E-BB0E-48AE1FC5F456", 112, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Highbridge Community Life Center                            ", "Bronx", "Highbridge Community Life Center                            ", "718.293.6103", "High School", [ "{\"address\":\"1248 Nelson Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10452\"}", "40.83872461597058", "-73.92463441589643", null, false ] ]
+, [ 113, "4B5FCA80-9FBB-4D22-B9E7-0E2890797CB3", 113, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Make the Road New York -Brooklyn", "Brooklyn", "Make the Road New York", "718.418.7690 ", "High School", [ "{\"address\":\"301 Grove Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11237\"}", "40.698428502523264", "-73.91562347499381", null, false ] ]
+, [ 114, "05D73034-DC24-47B6-9FD9-B10CD6152C7A", 114, 1314895913, "392753", 1314902002, "392753", "{\n}", "After-School Programs", "High School", "Southside Community Mission", "Brooklyn", "Southside Community Mission, Inc.                           ", "718.541.9555", "High School", [ "{\"address\":\"280 Marcy Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11211\"}", "40.70499449388848", "-73.95589166067984", null, false ] ]
+, [ 115, "3DA6A334-C23A-4365-88B8-76F83D4C85A7", 115, 1314895913, "392753", 1314902003, "392753", "{\n}", "After-School Programs", "High School", "Asian Outreach Clinic", "Queens", "The Child Center of NY", "718.458.4243", "High School", [ "{\"address\":\"87 08 Justice Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11373\"}", "40.73871040256307", "-73.87835115518163", null, false ] ]
+, [ 116, "FF861590-FD76-4A8C-9F5B-CE2F8F9F27D5", 116, 1314895913, "392753", 1314902007, "392753", "{\n}", "After-School Programs", "High School", "South Jamaica Outreach Clinic", "Queens", "The Child Center of NY", "717.659.4000", "High School", [ "{\"address\":\"115 15 Sutphin Boulevard\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11436\"}", "40.67571820912809", "-73.79646501494847", null, false ] ]
+, [ 117, "C472FDB5-0B14-4BE6-9AB1-3FBF915D2AB6", 117, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "YWCA of Queens", "Queens", "YWCA of Queens                                              ", "718.353.4553", null, [ "{\"address\":\"42 07 Parsons Boulevard\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11355\"}", "40.7512997969481", "-73.82147854789662", null, false ] ]
+, [ 118, "5B42FAA2-0875-4FE3-9AE2-5E89BB2016C6", 118, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "The Children's Aid Society", "New York", "The Children's Aid Society", "212.865.6337", null, [ "{\"address\":\"885 Columbus Avenue\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10025\"}", "40.79771334863237", "-73.963944750805", null, false ] ]
+, [ 119, "66C6CF28-FBED-4376-86AD-C51D4C49EDFA", 119, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "ECDO Community Partnership Center ", "New York", "Ecumenical Community Development Organization", "212.678.0037", null, [ "{\"address\":\"413 125th Street\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10027\"}", "40.811640915586565", "-73.95464737557035", null, false ] ]
+, [ 120, "8BC5D39E-DEC9-4BED-BFF9-134B2D9AB9D1", 120, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Boys & Girls Harbor, Inc", "New York", "Boys & Girls Harbor, Inc", "212.427.2244", null, [ "{\"address\":\"1 104th Street\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10029\"}", "40.79298338723134", "-73.95200031741886", null, false ] ]
+, [ 121, "8A0B607D-B10C-4283-AB34-C7E11A2C333B", 121, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Harlem RBI (Reviving Baseball in Inner Cities)", "New York", "Harlem RBI (Reviving Baseball in Inner Cities)", "212.722.1608", null, [ "{\"address\":\"333 100 Street\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10029\"}", "40.7864951475855", "-73.94439880643534", null, false ] ]
+, [ 122, "98848155-57B7-4935-9575-7E6BE3994359", 122, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "STEPS, Inc ", "New York", "Support For Training and Educational Services, Inc.", "212.831.9080", null, [ "{\"address\":\"1325 5th Avenue\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10029\"}", "40.79757895315326", "-73.94866453390082", null, false ] ]
+, [ 123, "86BCF9C2-5117-4734-8F6F-6973337A9E63", 123, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Police Athletic League PAL\\Harlem Center ", "New York", "Police Athletic League, Inc.", "212 665-8699", null, [ "{\"address\":\"441 Manhattan Avenue\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10026\"}", "40.80669464442542", "-73.95561864336202", null, false ] ]
+, [ 124, "F4B22DBB-BC60-482E-B987-64D612F030E5", 124, 1314895913, "392753", 1314902007, "392753", "{\n}", "After-School Programs", "High School", "Lt. Joseph P. Kennedy Jr. Memorial Community Center", "New York", "Catholic Charities Community Service, Archdiocese of N.Y.", "212.371.1000", null, [ "{\"address\":\"34 134th Street\",\"city\":\"New York\",\"state\":\"NEW YORK\",\"zip\":\"10037\"}", "40.812765068123156", "-73.93981755530723", null, false ] ]
+, [ 125, "F39B162D-731C-4CB4-83C0-C21A1C99A4A0", 125, 1314895913, "392753", 1314902007, "392753", "{\n}", "After-School Programs", "High School", "Mid-Bronx Council Services, Inc.", "Bronx", "Mid-Bronx Council Services, Inc.", "718.588.8200", null, [ "{\"address\":\"1125 Grand\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10452\"}", "40.83772426336412", "-73.9233322114124", null, false ] ]
+, [ 126, "88C495D8-8BE9-434C-BE55-8926E6BD0D3B", 126, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Woodycrest Center", "Bronx", "Woodycrest Center For Human Development", "718.992.2178", null, [ "{\"address\":\"153 165th Street\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10452\"}", "40.83108457687954", "-73.92085753444195", null, false ] ]
+, [ 127, "473A9FF8-932E-435A-B73C-3B8FE75FA32B", 127, 1314895913, "392753", 1314902003, "392753", "{\n}", "After-School Programs", "High School", "Bronx Community Resource Center", "Bronx", "Covenant House/Under 21", "718 294. 7182", null, [ "{\"address\":\"81 83C Featherbed Lane\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10452\"}", "40.83772426336412", "-73.9233322114124", null, false ] ]
+, [ 128, "A91E049B-208E-4BB6-A840-0EF040B6974D", 128, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Project Ready Headquarters", "Bronx", "Mount Hope Housing Company", "718 466.3600", null, [ "{\"address\":\"55 175th Street\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10453\"}", "40.847312989377464", "-73.91136475443619", null, false ] ]
+, [ 129, "F74302AA-8295-4B27-94BA-1E8029FE37EE", 129, 1314895913, "392753", 1314902007, "392753", "{\n}", "After-School Programs", "High School", "Claremont Neighborhood Centers, Inc.", "Bronx", "Claremont Neighborhood Centers, Inc.", "718.588.1000", null, [ "{\"address\":\"489 169th Street\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10456\"}", "40.83300943887456", "-73.90573521731622", null, false ] ]
+, [ 130, "EFE7AB29-9362-4380-8D61-C2B2977D53D5", 130, 1314895913, "392753", 1314902007, "392753", "{\n}", "After-School Programs", "High School", "Southeast Bronx Neighborhood Center, Inc. (SEBNC)", "Bronx", "Southeast Bronx Neighborhood Center, Inc. (SEBNC)", "718.542.2727", null, [ "{\"address\":\"751 163rd Street\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10456\"}", "40.82293544110214", "-73.90393806191068", null, false ] ]
+, [ 131, "DD226C31-35CD-4615-B20F-873732ECC4CA", 131, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "William H. Taft High School - H.S. 410 ", "Bronx", "Woodycrest Center For Human Development", "718.992.2178", null, [ "{\"address\":\"240 172nd Street\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10457\"}", "40.84038797720987", "-73.9108816444482", null, false ] ]
+, [ 132, "41310407-ED49-4DB7-980C-407F3FEB931D", 132, 1314895913, "392753", 1314902003, "392753", "{\n}", "After-School Programs", "High School", "Police Athletic League PAL-Webster Center ", "Bronx", "Police Athletic League, Inc.", "212.477.9450", null, [ "{\"address\":\"2255 Webster Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10457\"}", "40.85563091671904", "-73.89602321003798", null, false ] ]
+, [ 133, "79B5DA4E-CBEA-4FB4-982E-D3CC933247AF", 133, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Rafael Academy School ", "Bronx", "Simpson Street Development Association, Inc.", "718.589.1510", null, [ "{\"address\":\"977 Fox Street\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10459\"}", "40.822428225918", "-73.89392410102988", null, false ] ]
+, [ 134, "A45B69AC-5FAF-4803-98B1-265BA2E1D762", 134, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Youth Employment Program ", "Bronx", "Mosholu Montefiore Community Center, Inc.", "718.652.1471", null, [ "{\"address\":\"3400 Reservoir Oval\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10467\"}", "40.87877505492227", "-73.87563356258636", null, false ] ]
+, [ 135, "F7A3CA2A-7C20-463A-ACBB-89CBA25F6AEB", 135, 1314895913, "392753", 1314902007, "392753", "{\n}", "After-School Programs", "High School", "Riverdale Neighborhood House, Inc.", "Bronx", "Riverdale Neighborhood House, Inc.", "718.549.8100", null, [ "{\"address\":\"5521 Mosholu Avenue\",\"city\":\"Bronx\",\"state\":\"NEW YORK\",\"zip\":\"10471\"}", "40.90296572432813", "-73.90384240450045", null, false ] ]
+, [ 136, "EDE2C796-5D51-4755-A23F-83453B874ECE", 136, 1314895913, "392753", 1314902007, "392753", "{\n}", "After-School Programs", "High School", "Jacob A. Riis Neighborhood Settlement, Inc.", "Queens", "Jacob A. Riis Neighborhood Settlement, Inc.", "718.784.7447", null, [ "{\"address\":\"10 25 41st Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11101\"}", "40.74570244980828", "-73.93866902925225", null, false ] ]
+, [ 137, "7C9AEE14-D95C-4FC4-8C2E-69627D4855BB", 137, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Intermediate School 232 - WInthrop School", "Brooklyn", "Sesame Flyers International, Inc.", "718.693.0500", null, [ "{\"address\":\"905 Winthrop Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11203\"}", "40.65845142217417", "-73.92913135988232", null, false ] ]
+, [ 138, "B227AE0C-86EF-4474-88F1-961FFCA1A251", 138, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Samuel J. Tilden High School - H.S. 415", "Brooklyn", "Church Avenue Merchants Block Association, Inc.", "718.629.4523", null, [ "{\"address\":\"5800 Tilden Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11203\"}", "40.648631368632266", "-73.92228549725635", null, false ] ]
+, [ 139, "3710ABA6-1D90-4F5D-8CE5-0B5DEFE1B7BA", 139, 1314895913, "392753", 1314902003, "392753", "{\n}", "After-School Programs", "High School", "SCO Family of Services", "Brooklyn", "SCO Family of Services", "718.455.1166", null, [ "{\"address\":\"75 Lewis Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11206\"}", "40.69500799941421", "-73.93742230252869", null, false ] ]
+, [ 140, "81270E9F-FBBA-4B13-9AA9-B654D6175901", 140, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "St. Stephen Outreach", "Brooklyn", "St. Stephen Outreach", "718.384.8854", null, [ "{\"address\":\"874 Myrtle Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11206\"}", "40.69557673055322", "-73.94723933262884", null, false ] ]
+, [ 141, "5D443FD3-F235-4865-AA3B-B5CCDE6CB4E3", 141, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Concord Family Services, Inc.", "Brooklyn", "Concord Family Services, Inc.", "718.398.3499", null, [ "{\"address\":\"583 593 Vermont Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11207\"}", "40.670802431187326", "-73.89384115004901", null, false ] ]
+, [ 142, "17AE0B1A-24E8-4F58-998F-D39180A560F7", 142, 1314895913, "392753", 1314902002, "392753", "{\n}", "After-School Programs", "High School", "East NY Development Corporation", "Brooklyn", "East NY Development Corporation", "718.566.2127", null, [ "{\"address\":\"2644 Atlantic Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11207\"}", "40.67565526230447", "-73.89675297527339", null, false ] ]
+, [ 143, "B95DFEC7-CA0D-4F19-8355-B1A1BD71521F", 143, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Police Athletic League #1A (PAL) ", "Brooklyn", "Police Athletic League, Inc.", "212.477.9450", null, [ "{\"address\":\"127 Pennsylvania Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11207\"}", "40.67474021180885", "-73.89657635302484", null, false ] ]
+, [ 144, "8D6ED135-6C34-49EF-A1B6-39AAEEB29E12", 144, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Bnos Yakov Educational Center", "Brooklyn", "Bnos Yakov Educational Center", "718.963.1212", null, [ "{\"address\":\"62 Harrison Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11211\"}", "40.70509777565483", "-73.95271360115831", null, false ] ]
+, [ 145, "178BF6D3-E5EE-4CBF-A7EB-DDC36E1EA7B5", 145, 1314895913, "392753", 1314902002, "392753", "{\n}", "After-School Programs", "High School", "Project Care of Brooklyn, Inc", "Brooklyn", "Project Care of Brooklyn, Inc", "718.387.4500", null, [ "{\"address\":\"164 Clymer Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11211\"}", "40.70663220083857", "-73.96345063704595", null, false ] ]
+, [ 146, "CF71394C-4234-4BD1-8580-45A8D2381CA3", 146, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Police Athletic League (Brownsville Beacon)", "Brooklyn", "Police Athletic League, Inc.", "212.477.9450", null, [ "{\"address\":\"985 Rockaway Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11212\"}", "40.656451255408264", "-73.90732282830548", null, false ] ]
+, [ 147, "5D9478D2-607B-418B-B5AA-36C6518A0CD0", 147, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Junior High School 258 (K) - David Ruggles School ", "Brooklyn", "Vannguard Urban Improvement Association, Inc.", "718.453.3330", null, [ "{\"address\":\"141 Macon Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11216\"}", "40.681569834987634", "-73.94559613967623", null, false ] ]
+, [ 148, "D7F97BBD-3251-434A-AE38-E9FC2932D7A5", 148, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "BCA Education Center ", "Brooklyn", "Brooklyn Chinese American Association", "718.438.9312", null, [ "{\"address\":\"5000 8th Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11220\"}", "40.641104606526014", "-74.0037599239347", null, false ] ]
+, [ 149, "6DA55835-2455-4B40-8AB7-A9EF48AA30C6", 149, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Flatbush Development Corporation", "Brooklyn", "Flatbush Development Corporation", "718.859.3800", null, [ "{\"address\":\"1616 Newkirk Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11226\"}", "40.6359962740795", "-73.96230212887792", null, false ] ]
+, [ 150, "5FCE0CB5-25DF-4597-A676-0D6F3B3C4633", 150, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Youth for Education and Sports", "Brooklyn", "Youth for Education and Sports", "718.941.7532", null, [ "{\"address\":\"681 Ocean Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11226\"}", "40.64618768082565", "-73.96023613104816", null, false ] ]
+, [ 151, "8FF15EEB-42E6-4C5C-A697-7FEF731ED7B8", 151, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Public School 217 - Col. David Marcus Elementary School ", "Brooklyn", "Flatbush Development Corporation", "718.859.3800", null, [ "{\"address\":\"1100 Newkirk Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11230\"}", "40.63396096439908", "-73.96650550631493", null, false ] ]
+, [ 152, "0A6773C4-34BF-474F-821D-A3BFBCF1DBC9", 152, 1314895913, "392753", 1314902002, "392753", "{\n}", "After-School Programs", "High School", "Miccio Center ", "Brooklyn", "Police Athletic League, Inc.", "212.477.9450", null, [ "{\"address\":\"110 9th Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11231\"}", "40.67578212491029", "-74.0015232923829", null, false ] ]
+, [ 153, "94569A6F-7FDB-42C0-AA15-A93867E16916", 153, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Intermediate School 68 - Isaac Bildersee School", "Brooklyn", "Sesame Flyers International, Inc.", "718.693.0500", null, [ "{\"address\":\"956 82nd Street\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11236\"}", "40.63549167783704", "-73.91076105116055", null, false ] ]
+, [ 154, "63B592DD-0530-4839-8386-9AEE84292D4C", 154, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Italian American Civil Rights League (Italian American Civil)", "Brooklyn", "Italian American Civil Rights League (Italian American Civil)", "718.642.2180", null, [ "{\"address\":\"1460 Pennsylvania Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11239\"}", "40.64607779528712", "-73.87995018190169", null, false ] ]
+, [ 155, "B2F0D897-C87E-402A-A013-C8A0D95C51FC", 155, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Queens Community Resource Center ", "Queens", "Covenant House/Under 21", "718.725.9851", null, [ "{\"address\":\"159 17 Hillside Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11432\"}", "40.71311535449007", "-73.79282099978928", null, false ] ]
+, [ 156, "4EF2802F-8E71-4648-A341-D3587B8FAAE0", 156, 1314895913, "392753", 1314902004, "392753", "{\n}", "After-School Programs", "High School", "Afrikan Poetry Theatre ", "Queens", "Afrikan Poetry Theatre", "718.523.3312", null, [ "{\"address\":\"176 03 Jamaica Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11432\"}", "40.71311535449007", "-73.79282099978928", null, false ] ]
+, [ 157, "145BE3E3-2E0E-473C-B052-FA8D8E3BB163", 157, 1314895913, "392753", 1314902002, "392753", "{\n}", "After-School Programs", "High School", "ChaRosa Foundation Corporation", "Queens", "ChaRosa Foundation Corporation", "718.723.0218", null, [ "{\"address\":\"161 10 Jamaica Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11432\"}", "40.71311535449007", "-73.79282099978928", null, false ] ]
+, [ 158, "C0A7C0EE-5623-449B-A0B9-94870A88EC5F", 158, 1314895913, "392753", 1314902006, "392753", "{\n}", "After-School Programs", "High School", "Intermediate School 43 ", "Queens", "Federation Employment & Guidance Services (FEGS)", "212.366.8401", null, [ "{\"address\":\"160 Beach 29th Street\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11691\"}", "40.594515128003", "-73.76182654029463", null, false ] ]
+, [ 159, "425A5233-DD02-4F29-A046-8931D2123DCB", 159, 1314895913, "392753", 1314902003, "392753", "{\n}", "After-School Programs", "High School", "Rockaway Development & Revitalization Corporation", "Queens", "Rockaway Development & Revitalization Corporation", "718.327.5300", null, [ "{\"address\":\"1920 Mott Avenue\",\"city\":\"Queens\",\"state\":\"NEW YORK\",\"zip\":\"11691\"}", "40.6038795254241", "-73.7521789315517", null, false ] ]
+, [ 160, "A8A69F64-82AA-4225-860B-31A56E126577", 160, 1314895913, "392753", 1314902005, "392753", "{\n}", "After-School Programs", "High School", "Flatbush Development Corp.", "Brooklyn", "Flatbush Development Corporation                            ", "718.859.4763", null, [ "{\"address\":\"1616 Newkirk Avenue\",\"city\":\"Brooklyn\",\"state\":\"NEW YORK\",\"zip\":\"11226\"}", "40.6359962740795", "-73.96230212887792", null, false ] ]
+ ]
+}
