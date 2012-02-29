@@ -37,7 +37,7 @@ create table Projects_PROPOSE_AT(
   percentFunded real,
   imageURL varchar2 (200),
   numStudents integer,
-  tid int not null,
+  tid varchar2 (32) not null,
   ncesId varchar2 (50) not null,
   primary key (pid, tid),
   unique (proposalURL),
