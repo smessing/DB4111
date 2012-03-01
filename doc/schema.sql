@@ -63,7 +63,7 @@ create table Users(
   check (REGEXP_LIKE (email, '\w+@\w+(\.\w+)+'))
 );
 
-
+-- INSERT STATEMENTS WRITTEN
 create table Donations_FUND(
   tid varchar2 (32) not null,
   pid varchar2 (32) not null,
@@ -77,6 +77,7 @@ create table Donations_FUND(
   check (amount >= 0)
 );
 
+-- INSERT STATEMENTS WRITTEN
 create table Comments_ABOUT(
   tid varchar2(32) not null,
   pid varchar2(32) not null,
@@ -87,6 +88,7 @@ create table Comments_ABOUT(
   foreign key (email) references Users,
   foreign key (tid, pid) references Projects_PROPOSE_AT(tid, pid)
 );
+
 -- DONE
 create table VOTE(
   vDate date,
@@ -97,6 +99,7 @@ create table VOTE(
   foreign key (email) references Users,
   foreign key (tid, pid) references Projects_PROPOSE_AT(tid, pid)
 );
+
 -- DONE
 create table Schools_S_IN_S_HAVE(
   ncesId varchar2 (50),
@@ -122,6 +125,7 @@ create table Schools_S_IN_S_HAVE(
   check (avgWritingSATScore is null OR (avgWritingSATScore >= 200 AND avgWritingSATScore <= 800)),
   check (percentAPAbove2 is null OR (percentAPAbove2 >= 0 AND percentAPAbove2 <= 1))
 );
+
 --DONE
 create table Addresses(
   latitude real,
@@ -136,6 +140,7 @@ create table Addresses(
   check (longitude >= -90 AND longitude <= 90),
   check (REGEXP_LIKE (zipcode, '[0-9]{5}'))
 );
+
 -- DONE
 create table Districts_D_IN(
   avgAttendance real,
@@ -147,11 +152,13 @@ create table Districts_D_IN(
   check (percentRecvPublicAsst is null OR (percentRecvPublicAsst >= 0 AND percentRecvPublicAsst <= 1)),
   check (avgAttendance is null OR (avgAttendance >= 0 AND avgAttendance <= 1))
 );
+
 -- DONE
 create table Boroughs(
   bName varchar2 (50),
   primary key(bName)
 );
+
 -- DONE
 create table After_School_Programs_A_HAVE(
   aid varchar2 (50),
