@@ -22,13 +22,13 @@ SQL> select s.name
 
 NAME                          AVGMATHSATSCORE
 ---------------------------------------------
-Sarah Bergman School	            770
-Hannah Johnson School		    759
-Benjamin Messing School		    786
-Cathy Fieldson School		    787
-John Johnson School		    763
-Mary Messing School		    750
-Lee Obama School		    784
+Sarah Bergman School              770
+Hannah Johnson School             759
+Benjamin Messing School           786
+Cathy Fieldson School             787
+John Johnson School               763
+Mary Messing School               750
+Lee Obama School                  784
 
 7 rows selected.
 
