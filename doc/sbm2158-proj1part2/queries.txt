@@ -1,0 +1,59 @@
+1. Count all votes for projects taking place at schools where the graduation
+   rate is less than or equal to 30%:
+
+select count(*) 
+from vote v 
+where v.pid in (select p.pid 
+                from projects_propose_at p 
+                where p.ncesID in (select s.ncesID 
+                                   from schools_s_in_s_have s 
+                                   where s.graduationRate <= 0.3));
+
+ COUNT(*)
+----------
+      895
+
+2. Find the names of all schools where the average math SAT score is above 750.
+   NOTE: output was modified slightly (not copied verbatim) to aid readability.
+
+select s.name, s.avgMathSATScore 
+from schools_s_in_s_have s 
+where s.avgMathSATScore >= 750;
+
+NAME                          AVGMATHSATSCORE
+---------------------------------------------
+Sarah Bergman School              770
+Hannah Johnson School             759
+Benjamin Messing School           786
+Cathy Fieldson School             787
+John Johnson School               763
+Mary Messing School               750
+Lee Obama School                  784
+
+7 rows selected.
+
+3. Find the donation URLs for all projects focused on math, that affect at
+   least 30 students and are hosted at schools with an average math SAT score
+   less than or equal to 300:
+
+select p.fundURL 
+from projects_propose_at p 
+where p.subject = 'Mathematics' and 
+      p.numStudents >= 30 and p.ncesID in (select s.ncesID 
+                                           from schools_s_in_s_have s 
+                                           where s.avgMathSATScore <= 300);
+
+FUNDURL
+--------------------------------------------------------------------------------
+http://fnd.donorschoose.org/55
+http://fnd.donorschoose.org/0
+http://fnd.donorschoose.org/723
+http://fnd.donorschoose.org/439
+http://fnd.donorschoose.org/747
+http://fnd.donorschoose.org/851
+http://fnd.donorschoose.org/955
+http://fnd.donorschoose.org/966
+http://fnd.donorschoose.org/459
+http://fnd.donorschoose.org/837
+
+10 rows selected.
