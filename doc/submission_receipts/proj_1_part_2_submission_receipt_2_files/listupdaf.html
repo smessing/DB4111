@@ -1,0 +1,53 @@
+
+<!-- saved from url=(0201)https://courseworks.columbia.edu/cms/input/files/listupdaf.cfm?user_key=51876137&whois=000E1D6F-256F-1F51-84988361BC37D2FF&iruyxd=114824192&lkjrty=83&link=shared&uploadsuccess=Project%201%2C%20Part%202 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>CourseWorks</title>
+	
+	
+
+<script language="javascript">
+//  Set up event capture and route mouseup to selection grabber NS only.
+
+	document.captureEvents(Event.MOUSEUP);
+	document.onmouseup = getSel;
+
+
+//  grab the selected text and send it to global var
+var sel = "undefined";
+function getSel(e)
+{	if (document.getSelection)
+	{	sel = escape(document.getSelection());
+	}
+	else if (document.selection && document.selection.createRange)
+	{	if (document.selection.type == "Text")
+		{	var seli = document.selection;
+			var rng = seli.createRange();
+			sel = new String(rng.text);
+		}
+	}
+	else
+	{	// does nothing because it isnt supported
+	}
+	return true;
+} 
+
+function goHelper(whichy)
+{	var theDict = "/cms/input/dictionary/dictionary.cfm?user_key=51876137&whois=000E1D6F-256F-1F51-84988361BC37D2FF&book=dictionary&syll=yup&word=" + sel + "&type=window";
+	var dictWindow = window.open(theDict,"dictWindow","width=800,height=600,scrolling=yes,status=no,toolbar=yes,menubar=no,resizable=yes,scrollbars=yes");
+}
+</script>
+
+</head>
+
+	<frameset rows="80,*" frameborder="0" border="0" framespacing="0">
+
+
+	<frame src="listupdatop.html" name="top" scrolling="no" marginheight="0"> 
+
+
+		<frame src="listupda.html" name="bottom">
+	
+</frameset>
+
+
+
+</html>

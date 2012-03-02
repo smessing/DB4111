@@ -47,12 +47,14 @@ create table Projects_PROPOSE_AT(
   constraint projectsPercent_ck check (percentFunded >= 0 AND percentFunded <= 1),
   constraint projectsPrice_ck check (totalPrice >= 0)
 );
+
 -- DONE
 create table Teachers(
   tid varchar2 (32),
   name varchar2 (50) not null,
   primary key (tid)
 );
+
 -- DONE
 create table Users(
   email varchar2 (50),
@@ -60,7 +62,7 @@ create table Users(
   password varchar2 (50) not null,
   passwordSalt varchar2 (50) not null,
   primary key (email),
-  constraint usersEmail_ck check (REGEXP_LIKE (email, '^[\w+\-.]@[\w\d\-.]+\.[\w]+$'))
+  constraint usersEmail_ck check (REGEXP_LIKE (email, '^[a-zA-Z0-9\._\-\+]+@[a-zA-Z0-9\._\-]+\.[a-zA-Z]{2,4}$'))
 );
 
 -- DONE
