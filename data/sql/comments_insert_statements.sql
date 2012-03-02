@@ -42,7 +42,7 @@ VALUES
 INSERT INTO Comments_ABOUT
 (tid, pid, comments, cDate, email)
 VALUES
-('8','98e6156cf61ded411bc49b44b81917af','crazy stuff','08-apr-11','ben@fun.com' );
+('d75e2122dcdf69bec7059840bb8e81ee','98e6156cf61ded411bc49b44b81917af','crazy stuff','08-apr-11','ben@fun.com' );
 
 
 INSERT INTO Comments_ABOUT
