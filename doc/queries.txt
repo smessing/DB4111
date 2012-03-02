@@ -41,7 +41,7 @@ SQL> select p.fundURL
 3    where p.subject = 'Mathematics' and 
 4    p.numStudents >= 30 and p.ncesID in (select s.ncesID 
 5                                         from schools_s_in_s_have s 
-6					  where s.avgMathSATScore <= 300);
+6                                         where s.avgMathSATScore <= 300);
 
 FUNDURL
 --------------------------------------------------------------------------------
