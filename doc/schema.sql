@@ -62,7 +62,7 @@ create table Users(
   primary key (email),
   check (REGEXP_LIKE (email, '^[a-zA-Z0-9._%-\+]+@[a-zA-Z0-9._%-]+\.[a-zA-Z]{2,4}$')));
 
--- INSERT STATEMENTS WRITTEN
+-- DONE
 create table Donations_FUND(
   tid varchar2 (32) not null,
   pid varchar2 (32) not null,
@@ -76,7 +76,7 @@ create table Donations_FUND(
   check (amount >= 0)
 );
 
--- INSERT STATEMENTS WRITTEN
+-- DONE
 create table Comments_ABOUT(
   tid varchar2(32) not null,
   pid varchar2(32) not null,

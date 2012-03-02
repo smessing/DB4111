@@ -1,0 +1,664 @@
+
+<!-- saved from url=(0200)https://courseworks.columbia.edu/cms/input/files/listupda.cfm?user_key=51874709&whois=000EC784-1729-1F51-84A08361BBD38000&iruyxd=124508160&lkjrty=90&link=shared&uploadsuccess=Project%201%2C%20Part%202 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>File Sharing</title>
+	
+
+
+<script language="javascript">
+//  Set up event capture and route mouseup to selection grabber NS only.
+
+	document.captureEvents(Event.MOUSEUP);
+	document.onmouseup = getSel;
+
+
+//  grab the selected text and send it to global var
+var sel = "undefined";
+function getSel(e)
+{	if (document.getSelection)
+	{	sel = escape(document.getSelection());
+	}
+	else if (document.selection && document.selection.createRange)
+	{	if (document.selection.type == "Text")
+		{	var seli = document.selection;
+			var rng = seli.createRange();
+			sel = new String(rng.text);
+		}
+	}
+	else
+	{	// does nothing because it isnt supported
+	}
+	return true;
+} 
+
+function goHelper(whichy)
+{	var theDict = "/cms/input/dictionary/dictionary.cfm?user_key=51874709&whois=000EC784-1729-1F51-84A08361BBD38000&book=dictionary&syll=yup&word=" + sel + "&type=window";
+	var dictWindow = window.open(theDict,"dictWindow","width=800,height=600,scrolling=yes,status=no,toolbar=yes,menubar=no,resizable=yes,scrollbars=yes");
+}
+</script>
+
+	<script type="text/javascript" language="Javascript">
+		
+		function presentEr(fileTopass, height, width, directory) {
+	var winHeight = height + 75;
+	var winWidth = width + 325;
+
+
+
+
+window.open('mmplayer.cfm?filename='+fileTopass+'&user_key=51874709&iruyxd=124508160&lkjrty=90&whois=000EC784-1729-1F51-84A08361BBD38000&item_number='+fileTopass,'name','width='+winWidth+',height='+winHeight+',scrollbars=No,location=No,left=10,top=10,menubar=No,alwaysRaised=Yes,resizable=Yes,toolbar=No');
+}
+
+	</script>
+	
+<script language="JavaScript1.1">
+	function swapIn(pk, linknum, imgtype)
+	{	var image = eval("document.docimg_" + pk);
+		var linkimage = eval("document.linkimg" + linknum + "_" + pk);
+		switch(imgtype)
+		{	case "folder_open_children":
+				image.src = "/cms/images/gui/folders/folder_open_children_sel.gif";
+				break;
+			case "folder_open_no_children":
+				image.src = "/cms/images/gui/folders/folder_open_no_children_sel.gif";
+				break;
+			case "folder_closed":
+				image.src = "/cms/images/gui/folders/folder_closed_sel.gif";
+				break;
+			case "file":
+				image.src = "/cms/images/gui/folders/file_sel.gif";
+				break;
+		}
+		switch(linknum)
+		{	case 1:
+				linkimage.src = "/cms/images/gui/folders/newfolder2.gif";
+				window.status = "Create a new folder inside this folder.";
+				break;
+			case 2:
+				linkimage.src = "/cms/images/gui/folders/trash2.gif";
+				window.status = "Delete this item from CourseWorks.";
+				break;
+			case 3:
+				linkimage.src = "/cms/images/gui/folders/visibility_on2.gif";
+				window.status = "Hide this item, to prevent students from viewing it.";
+				break;
+			case 4:
+				linkimage.src = "/cms/images/gui/folders/visibility_off2.gif";
+				window.status = "Unhide this item, to allow students to view it.";
+				break;
+			case 5:
+				linkimage.src = "/cms/images/gui/folders/edit2.gif";
+				window.status = "Edit information about this item.";
+				break;
+			case 6:
+				linkimage.src = "/cms/images/gui/folders/move2.gif";
+				window.status = "Move this item to another folder.";
+				break;
+			case 7:
+				linkimage.src = "/cms/images/gui/folders/copy2.gif";
+				window.status = "Place a copy of this item in another folder.";
+				break;
+		}
+		return true;
+	}
+	function swapOut(pk, linknum, imgtype)
+	{	var image = eval("document.docimg_" + pk);
+		var linkimage = eval("document.linkimg" + linknum + "_" + pk);
+		switch(imgtype)
+		{	case "folder_open_children":
+				image.src = "/cms/images/gui/folders/folder_open_children.gif";
+				break;
+			case "folder_open_no_children":
+				image.src = "/cms/images/gui/folders/folder_open_no_children.gif";
+				break;
+			case "folder_closed":
+				image.src = "/cms/images/gui/folders/folder_closed.gif";
+				break;
+			case "file":
+				image.src = "/cms/images/gui/folders/file.gif";
+				break;
+		}
+		switch(linknum)
+		{	case 1:
+				linkimage.src = "/cms/images/gui/folders/newfolder1.gif";
+				break;
+			case 2:
+				linkimage.src = "/cms/images/gui/folders/trash1.gif";
+				break;
+			case 3:
+				linkimage.src = "/cms/images/gui/folders/visibility_on1.gif";
+				break;
+			case 4:
+				linkimage.src = "/cms/images/gui/folders/visibility_off1.gif";
+				break;
+			case 5:
+				linkimage.src = "/cms/images/gui/folders/edit1.gif";
+				break;
+			case 6:
+				linkimage.src = "/cms/images/gui/folders/move1.gif";
+				break;
+			case 7:
+				linkimage.src = "/cms/images/gui/folders/copy1.gif";
+				break;
+		}
+		window.status = '';
+		return true;
+	}
+</script>
+
+</head>
+
+<body bgcolor="#FFFFFF" alink="#FFCD00">
+<form name="multifileForm" method="post" action="https://courseworks.columbia.edu/cms/input/files/multifile.cfm">
+<input type="Hidden" name="user_key" value="51874709">
+<input type="Hidden" name="whois" value="000EC784-1729-1F51-84A08361BBD38000">
+<input type="Hidden" name="iruyxd" value="124508160">
+<input type="Hidden" name="lkjrty" value="90">
+<!-- begin: container table -->
+<table cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" width="95%">
+<tbody><tr><td>
+
+	<!-- begin: structure table -->
+	<table cellpadding="0" cellspacing="5" border="0" width="100%">
+	<tbody><tr><td>
+
+
+		
+
+ 	
+		
+		<!-- begin: content table -->
+		<table cellpadding="0" cellspacing="0" border="0">
+		
+		
+<tbody><tr><td colspan="6" align="left"><br><img src="classfiles.gif" width="200" height="20" alt="" border="0"><br></td></tr>
+		
+		<tr>
+			<td bgcolor="#FFFFFF"><a href="https://courseworks.columbia.edu/cms/input/files/listupdaf.cfm?user_key=51874709&whois=000EC784-1729-1F51-84A08361BBD38000&iruyxd=124508160&lkjrty=90&link=shared" onmouseover=" if (document.images) {document[&#39;img886303&#39;].src = &#39;/cms/images/gui/files/buttons/files2.gif&#39;}; self.status=&#39;Return to the main files page.&#39;; return true;" onmouseout=" if (document.images) {document[&#39;img886303&#39;].src = &#39;/cms/images/gui/files/buttons/files1.gif&#39;}; self.status=&#39;&#39;; return true;" target="main"><img src="files1.gif" name="img886303" alt="Files" height="15" width="100" border="0"></a></td>
+	
+			<td><img src="clear.gif" width="5" height="1" alt=""></td>
+			<td bgcolor="#FFFFFF"><a href="https://courseworks.columbia.edu/cms/input/files/listupdaf.cfm?user_key=51874709&whois=000EC784-1729-1F51-84A08361BBD38000&iruyxd=124508160&lkjrty=90&link=post" onmouseover=" if (document.images) {document[&#39;img116599&#39;].src = &#39;/cms/images/gui/files/buttons/postfile2.gif&#39;}; self.status=&#39;Post a new file.&#39;; return true;" onmouseout=" if (document.images) {document[&#39;img116599&#39;].src = &#39;/cms/images/gui/files/buttons/postfile1.gif&#39;}; self.status=&#39;&#39;; return true;" target="main"><img src="postfile1.gif" name="img116599" alt="Post File" height="15" width="100" border="0"></a></td>
+	
+			<td><img src="clear.gif" width="5" height="1" alt=""></td>
+			<td bgcolor="#FFFFFF"> <a href="https://courseworks.columbia.edu/cms/input/files/listupdaf.cfm?user_key=51874709&whois=000EC784-1729-1F51-84A08361BBD38000&iruyxd=124508160&lkjrty=90&link=log" onmouseover=" if (document.images) {document[&#39;img171197&#39;].src = &#39;/cms/images/gui/files/buttons/biglog2.gif&#39;}; self.status=&#39;View a list of the files you have uploaded.&#39;; return true;" onmouseout=" if (document.images) {document[&#39;img171197&#39;].src = &#39;/cms/images/gui/files/buttons/biglog1.gif&#39;}; self.status=&#39;&#39;; return true;" target="main"><img src="biglog1.gif" name="img171197" alt="View Log" height="15" width="100" border="0"></a></td>
+
+			
+			
+			
+
+
+	</tr>
+		</tbody></table>
+		<!-- end: content table -->
+		
+
+
+		<!-- begin: content table -->
+		<table cellpadding="3" cellspacing="0" border="0" width="100%">
+		<tbody><tr valign="top" bgcolor="#FFFFFF">
+			<td>
+			<b><font face="Arial, Helvetica" size="-1" color="#000000">Files</font></b><br>
+			<font face="Arial, Helvetica" size="-1" color="#000000">Listing of files associated with this course and your personal files.</font>
+	
+			<br><br><b><font face="Arial, Helvetica" size="-1" color="#000000"><font size="+1">Your file "Project 1, Part 2" was posted successfully.</font></font></b>
+	
+			</td></tr>
+			</tbody></table>
+			<!-- end: content table -->
+
+	</td></tr>
+	<tr><td>
+
+		
+
+	</td></tr>
+	</tbody></table>
+	<!-- end: structure table -->
+
+</td></tr>
+</tbody></table>
+<!-- end: container table -->
+
+<!-- begin: container table -->
+<table cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" width="95%">
+<tbody><tr><td>
+
+	<!-- begin: structure table -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td><img src="clear(1).gif" height="1" width="5" alt=""></td>
+
+		<td width="100%">
+
+		<!-- begin: content table -->
+		<table cellpadding="2" cellspacing="0" border="0" width="100%">
+		<tbody><tr bgcolor="#FFFFFF">
+			<td valign="top" align="left">
+				<font face="Arial, Helvetica" size="-1" color="#000000">Folders: </font><a href="https://courseworks.columbia.edu/cms/input/files/listupda.cfm?user_key=51874709&whois=000EC784-1729-1F51-84A08361BBD38000&iruyxd=124508160&lkjrty=90&expandAll=true&requesttimeout=200" onmouseover="window.status=&#39;new text 252&#39;; return true;" onmouseoout="window.status=&#39;&#39;; return true;"><font face="Arial, Helvetica" size="-1" color="#0000FF">Expand all</font></a>
+				<font face="Arial, Helvetica" size="-1" color="#000000"> | </font>
+				<a href="https://courseworks.columbia.edu/cms/input/files/listupda.cfm?user_key=51874709&whois=000EC784-1729-1F51-84A08361BBD38000&iruyxd=124508160&lkjrty=90&closeAll=true&requesttimeout=200" onmouseover="window.status=&#39;&#39;; return true;" onmouseoout="window.status=&#39;&#39;; return true;"><font face="Arial, Helvetica" size="-1" color="#0000FF">Collapse all</font></a>
+				<br>
+				<font face="Arial, Helvetica" size="-1" color="#000000">Files: </font>
+					<a href="javascript:void(0);" onclick="selectAllFiles(true);">
+					<font face="Arial, Helvetica" size="-1" color="#0000FF">Select All</font></a><font face="Arial, Helvetica" size="-1" color="#000000"> | </font><a href="javascript:void(0)" onclick="selectAllFiles(false);"><font face="Arial, Helvetica" size="-1" color="#0000FF">Deselect All</font></a>
+					<script language="JavaScript">
+					<!--
+						function selectAllFiles(b) {
+							if (document.forms[0].pklist) {
+								if (document.forms[0].pklist.length) {
+									// 2+ files
+									for (i = 0; i < document.forms[0].pklist.length; i++) {
+										document.forms[0].pklist[i].checked = b;
+									}
+								}
+								else {
+									// 1 file
+									document.forms[0].pklist.checked = b;
+								}
+							}
+							else {
+								// 0 files
+								if (b) {
+									alert ("There are no files to select.");
+								}
+							}7
+							return true;
+						}
+
+						function submitHandler(t) {
+							document.forms[0].multifileAction.value = t;
+							if (document.forms[0].pklist) {
+								if (document.forms[0].pklist.length) {
+									// 2+ files
+									for (i = 0; i < document.forms[0].pklist.length; i++) {
+										if (document.forms[0].pklist[i].checked) {
+											document.forms[0].submit();
+											return true;
+										}
+									}
+									alert("You must choose at least one file to " + t + ".");
+									return false;
+								}
+								else {
+									// 1 file
+									if (document.forms[0].pklist.checked) {
+										document.forms[0].submit();
+										return true;
+									}
+									else {
+										alert("You must choose at least one file to " + t + ".");
+										return false;
+									}
+								}
+							}
+							else {
+								// 0 files
+								alert("There are no files to " + t + ".");
+								return false;
+							}
+						}
+					// -->
+					</script>
+					<br>
+				
+					<font face="Arial, Helvetica" size="-1" color="#000000">For selected files:</font>
+					<input type="Hidden" name="multifileAction" value="">
+					
+					<a href="javascript:submitHandler('move'); void(0);" onmouseover="self.status=&#39;Move all selected files to a different folder.&#39;; return true;" onmouseout="self.status=&#39;&#39;; return true;"><font face="Arial, Helvetica" size="-1" color="#0000FF">Move</font></a>
+					<font face="Arial, Helvetica" size="-1" color="#000000"> | </font>
+					<a href="javascript:submitHandler('copy'); void(0);" onmouseover="self.status=&#39;Copy all selected files to a different folder.&#39;; return true;" onmouseout="self.status=&#39;&#39;; return true;"><font face="Arial, Helvetica" size="-1" color="#0000FF">Copy</font></a>
+					<font face="Arial, Helvetica" size="-1" color="#000000"> | </font>
+					<a href="javascript:submitHandler('delete'); void(0);" onmouseover="self.status=&#39;&#39;; return true;" onmouseout="self.status=&#39;Delete all of the selected files from CourseWorks.&#39;; return true;"><font face="Arial, Helvetica" size="-1" color="#0000FF">Delete</font></a>
+				
+			
+
+
+	
+
+
+					 
+			</td>
+			<td valign="top" align="right">
+				<font face="Arial, Helvetica" size="-1" color="#000000">Sort by:</font>
+				
+						<b><font face="Arial, Helvetica" size="-1" color="#000000">Title</font></b>
+						<a href="https://courseworks.columbia.edu/cms/input/files/listupda.cfm?user_key=51874709&whois=000EC784-1729-1F51-84A08361BBD38000&iruyxd=124508160&lkjrty=90&sortOrder=uppertitle%20DESC&requesttimeout=600" onmouseover="window.status=&#39;Sort by Title in reverse alphabeticle order&#39;; return true;" onmouseoout="window.status=&#39;&#39;; return true;"><img src="descending1.gif" width="12" height="12" alt="" border="0"></a>
+						<font face="Arial, Helvetica" color="#000000"> | </font>
+						<a href="https://courseworks.columbia.edu/cms/input/files/listupda.cfm?user_key=51874709&whois=000EC784-1729-1F51-84A08361BBD38000&iruyxd=124508160&lkjrty=90&sortOrder=datepublished%20ASC&requesttimeout=600" onmouseover="window.status=&#39;Sort by date posted, oldest first&#39;; return true;" onmouseoout="window.status=&#39;&#39;; return true;"><font face="Arial, Helvetica" size="-1" color="#0000FF">Date Posted</font></a>
+						<font face="Arial, Helvetica" color="#000000"> | </font>
+						<a href="https://courseworks.columbia.edu/cms/input/files/listupda.cfm?user_key=51874709&whois=000EC784-1729-1F51-84A08361BBD38000&iruyxd=124508160&lkjrty=90&sortOrder=upperauthor%20ASC&requesttimeout=600" onmouseover="window.status=&#39;Sort by posted BY in alphabetical order&#39;; return true;" onmouseoout="window.status=&#39;&#39;; return true;"><font face="Arial, Helvetica" size="-1" color="#0000FF">Posted By</font></a>
+					
+				<br>
+				<font face="Arial, Helvetica" size="-1" color="#000000">Display:</font>
+				
+					<a href="https://courseworks.columbia.edu/cms/input/files/listupda.cfm?user_key=51874709&whois=000EC784-1729-1F51-84A08361BBD38000&iruyxd=124508160&lkjrty=90&nonCourse=1&requesttimeout=600" onmouseover="window.status=&#39;Display all files which you can access&#39;; return true;" onmouseoout="window.status=&#39;&#39;; return true;"><font face="Arial, Helvetica" size="-1" color="#0000FF">All courses</font></a>
+					<font face="Arial, Helvetica" color="#000000"> | </font>
+					<b><font face="Arial, Helvetica" size="-1" color="#000000">This course</font></b>
+				
+			</td>
+		</tr>
+
+		<tr bgcolor="#FFFFFF">
+			<td colspan="2"><img src="clear(1).gif" height="3" width="1" alt=""></td>
+		</tr>
+		</tbody></table>
+		<!-- end: content table -->
+
+		<!-- begin: content table -->
+		<table cellpadding="2" cellspacing="0" border="0" width="100%">
+		<tbody><tr bgcolor="#D8E5F2">
+			<td>
+			<font face="Arial, Helvetica" size="-1" color="#000000">Course files for COMS W4111.001 - INTRODUCTION TO DATABASES&nbsp;&nbsp;&nbsp;&nbsp;</font></td>
+		</tr>
+		</tbody></table>
+		<!-- end: content table -->
+
+		</td>
+
+		<td><img src="clear(1).gif" height="1" width="5" alt=""></td>
+	</tr>
+	</tbody></table>
+	<!-- end: structure table -->
+
+</td></tr>
+</tbody></table>
+<!-- end: container table -->
+
+	
+<!-- begin: container table -->
+<table cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" width="95%">
+<tbody><tr><td>
+
+	<!-- begin: structure table -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td><img src="clear(1).gif" height="1" width="5" alt=""></td>
+
+		<td width="100%">
+
+		
+		
+		
+
+	
+	
+<script language="JavaScript1.1">
+	function swapIn(pk, linknum, imgtype)
+	{	var image = eval("document.docimg_" + pk);
+		var linkimage = eval("document.linkimg" + linknum + "_" + pk);
+		switch(imgtype)
+		{	case "folder_open_children":
+				image.src = "/cms/images/gui/folders/folder_open_children_sel.gif";
+				break;
+			case "folder_open_no_children":
+				image.src = "/cms/images/gui/folders/folder_open_no_children_sel.gif";
+				break;
+			case "folder_closed":
+				image.src = "/cms/images/gui/folders/folder_closed_sel.gif";
+				break;
+			case "file":
+				image.src = "/cms/images/gui/folders/file_sel.gif";
+				break;
+		}
+		switch(linknum)
+		{	case 1:
+				linkimage.src = "/cms/images/gui/folders/newfolder2.gif";
+				window.status = "Create a new folder inside this folder.";
+				break;
+			case 2:
+				linkimage.src = "/cms/images/gui/folders/trash2.gif";
+				window.status = "Delete this item from CourseWorks.";
+				break;
+			case 3:
+				linkimage.src = "/cms/images/gui/folders/visibility_on2.gif";
+				window.status = "Hide this item, to prevent students from viewing it.";
+				break;
+			case 4:
+				linkimage.src = "/cms/images/gui/folders/visibility_off2.gif";
+				window.status = "Unhide this item, to allow students to view it.";
+				break;
+			case 5:
+				linkimage.src = "/cms/images/gui/folders/edit2.gif";
+				window.status = "Edit information about this item.";
+				break;
+			case 6:
+				linkimage.src = "/cms/images/gui/folders/move2.gif";
+				window.status = "Move this item to another folder.";
+				break;
+			case 7:
+				linkimage.src = "/cms/images/gui/folders/copy2.gif";
+				window.status = "Place a copy of this item in another folder.";
+				break;
+		}
+		return true;
+	}
+	function swapOut(pk, linknum, imgtype)
+	{	var image = eval("document.docimg_" + pk);
+		var linkimage = eval("document.linkimg" + linknum + "_" + pk);
+		switch(imgtype)
+		{	case "folder_open_children":
+				image.src = "/cms/images/gui/folders/folder_open_children.gif";
+				break;
+			case "folder_open_no_children":
+				image.src = "/cms/images/gui/folders/folder_open_no_children.gif";
+				break;
+			case "folder_closed":
+				image.src = "/cms/images/gui/folders/folder_closed.gif";
+				break;
+			case "file":
+				image.src = "/cms/images/gui/folders/file.gif";
+				break;
+		}
+		switch(linknum)
+		{	case 1:
+				linkimage.src = "/cms/images/gui/folders/newfolder1.gif";
+				break;
+			case 2:
+				linkimage.src = "/cms/images/gui/folders/trash1.gif";
+				break;
+			case 3:
+				linkimage.src = "/cms/images/gui/folders/visibility_on1.gif";
+				break;
+			case 4:
+				linkimage.src = "/cms/images/gui/folders/visibility_off1.gif";
+				break;
+			case 5:
+				linkimage.src = "/cms/images/gui/folders/edit1.gif";
+				break;
+			case 6:
+				linkimage.src = "/cms/images/gui/folders/move1.gif";
+				break;
+			case 7:
+				linkimage.src = "/cms/images/gui/folders/copy1.gif";
+				break;
+		}
+		window.status = '';
+		return true;
+	}
+</script>
+
+
+		<!-- begin: content table -->
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tbody><tr valign="top" bgcolor="#FFFFFF">
+	
+			<td width="20" nowrap="" align="right"><a href="https://courseworks.columbia.edu/cms/input/files/listupda.cfm?user_key=51874709&whois=000EC784-1729-1F51-84A08361BBD38000&iruyxd=124508160&lkjrty=90&openfolder=Inbox%20%28COMS%20W4111%2E001%29&requesttimeout=600" onmouseover="window.status=&#39;Open the folder Dropbox .&#39;; return true;" onmouseout="window.status=&#39;&#39;; return true;"><img src="control_closed_neither.gif" height="22" width="16" alt="Open the folder Dropbox ." border="0"></a></td>
+			<td width="0" nowrap=""><img name="docimg_title1" src="folder_closed.gif" height="22" width="16" alt="Folder"></td>
+		
+			<td colspan="1" width="100%" bgcolor="#FFFFFF"><font face="Arial, Helvetica" size="-1" color="#000000">&nbsp;Dropbox </font></td>
+			<td bgcolor="#FFFFFF" width="0" align="right" nowrap="">
+		
+			
+			<img src="clear(1).gif" height="12" width="1" border="0" align="absmiddle" alt="" =""="">
+		
+			&nbsp;
+		
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- end: content table -->
+
+		
+
+		</td>
+
+		<td><img src="clear(1).gif" height="1" width="5" alt=""></td>
+	</tr>
+	</tbody></table>
+	<!-- end: structure table -->
+
+</td></tr>
+</tbody></table>
+<!-- end: container table -->
+
+<!-- begin: container table -->
+<table cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" width="95%">
+<tbody><tr><td>
+
+	<!-- begin: structure table -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td><img src="clear(1).gif" height="1" width="5" alt=""></td>
+
+		<td width="100%">
+
+		<!-- begin: content table -->
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tbody><tr bgcolor="#FFFFFF">
+			<td><img alt="" src="clear(1).gif" height="3" width="1"></td>
+		</tr>
+		</tbody></table>
+		<!-- end: content table -->
+
+		</td>
+
+		<td><img src="clear(1).gif" height="1" width="5" alt=""></td>
+	</tr>
+	</tbody></table>
+	<!-- end: structure table -->
+
+</td></tr>
+</tbody></table>
+<!-- end: container table -->
+	
+
+<!-- begin: container table -->
+<table cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" width="95%">
+<tbody><tr><td>
+
+	<!-- begin: structure table -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td><img src="clear(1).gif" height="1" width="5" alt=""></td>
+
+		<td width="100%">
+
+
+
+		<!-- begin: content table -->
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tbody><tr valign="top" bgcolor="#FFFFFF">
+	
+			<td width="20" nowrap="" align="right"><a href="https://courseworks.columbia.edu/cms/input/files/listupda.cfm?user_key=51874709&whois=000EC784-1729-1F51-84A08361BBD38000&iruyxd=124508160&lkjrty=90&openfolder=Collaborative%20Files&requesttimeout=600" onmouseover="window.status=&#39;Open the folder Shared Files (Viewed by class).&#39;; return true;" onmouseout="window.status=&#39;&#39;; return true;"><img src="control_closed_neither.gif" height="22" width="16" alt="Open the folder Shared Files (Viewed by class)." border="0"></a></td>
+			<td width="0" nowrap=""><img name="docimg_title2" src="folder_closed.gif" height="22" width="16" alt="Folder"></td>
+		
+			<td colspan="1" width="100%" bgcolor="#FFFFFF"><font face="Arial, Helvetica" size="-1" color="#000000">&nbsp;Shared Files (Viewed by class)</font></td>
+			<td bgcolor="#FFFFFF" width="0" align="right" nowrap="">
+		
+			
+			<img src="clear(1).gif" height="12" width="1" border="0" align="absmiddle" alt="" =""="">
+		
+			&nbsp;
+		
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- end: content table -->
+
+
+
+		</td>
+
+		<td><img src="clear(1).gif" height="1" width="5" alt=""></td>
+	</tr>
+	</tbody></table>
+	<!-- end: structure table -->
+
+</td></tr>
+</tbody></table>
+<!-- end: container table -->
+
+<!-- begin: container table -->
+<table cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" width="95%">
+<tbody><tr><td>
+
+	<!-- begin: structure table -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td><img src="clear(1).gif" height="1" width="5" alt=""></td>
+
+		<td width="100%">
+
+		<!-- begin: content table -->
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tbody><tr bgcolor="#FFFFFF">
+			<td><img alt="" src="clear(1).gif" height="3" width="1"></td>
+		</tr>
+		</tbody></table>
+		<!-- end: content table -->
+
+		</td>
+
+		<td><img src="clear(1).gif" height="1" width="5" alt=""></td>
+	</tr>
+	</tbody></table>
+	<!-- end: structure table -->
+
+</td></tr>
+</tbody></table>
+<!-- end: container table -->
+
+	
+
+
+
+<!-- begin: container table -->
+<table cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" width="95%">
+<tbody><tr><td>
+
+	<!-- begin: structure table -->
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tbody><tr>
+		<td><img src="clear(1).gif" height="1" width="5" alt=""></td>
+
+		<td width="100%">
+
+		<!-- begin: content table -->
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tbody><tr bgcolor="#FFFFFF">
+			<td><img alt="" src="clear(1).gif" height="3" width="1"></td>
+		</tr>
+		</tbody></table>
+		<!-- end: content table -->
+
+		</td>
+
+		<td><img src="clear(1).gif" height="1" width="5" alt=""></td>
+	</tr>
+	</tbody></table>
+	<!-- end: structure table -->
+
+</td></tr>
+</tbody></table>
+<!-- end: container table -->
+
+<!-- begin: container table -->
+<table cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" width="95%">
+<tbody><tr><td><img src="clear(1).gif" height="5" width="5" alt=""></td></tr>
+</tbody></table>
+<!-- end: container table -->
+
+</form>
+
+
+</body></html>
