@@ -13,7 +13,7 @@ where v.pid in (select p.pid
 ----------
       895
 
-2. Find the names of all schools where the average MATH SAT score is above 750.
+2. Find the names of all schools where the average math SAT score is above 750.
    NOTE: output was modified slightly (not copied verbatim) to aid readability.
 
 select s.name, s.avgMathSATScore 
