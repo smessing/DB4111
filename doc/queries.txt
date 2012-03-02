@@ -1,13 +1,13 @@
 1. Count all votes for projects taking place at schools where the graduation
    rate is less than or equal to 30%:
 
-SQL> select count(*) 
-2    from vote v 
-3    where v.pid in (select p.pid 
-4                    from projects_propose_at p 
-5                    where p.ncesID in (select s.ncesID 
-6                                       from schools_s_in_s_have s 
-7                                       where s.graduationRate <= 0.3));
+select count(*) 
+from vote v 
+where v.pid in (select p.pid 
+                from projects_propose_at p 
+                where p.ncesID in (select s.ncesID 
+                                   from schools_s_in_s_have s 
+                                   where s.graduationRate <= 0.3));
 
  COUNT(*)
 ----------
@@ -16,9 +16,9 @@ SQL> select count(*)
 2. Find the names of all schools where the average MATH SAT score is above 750.
    NOTE: output was modified slightly (not copied verbatim) to aid readability.
 
-SQL> select s.name 
-2    from schools_s_in_s_have s 
-3    where s.avgMathSATScore >= 750;
+select s.name, s.avgMathSATScore 
+from schools_s_in_s_have s 
+where s.avgMathSATScore >= 750;
 
 NAME                          AVGMATHSATSCORE
 ---------------------------------------------
@@ -36,12 +36,12 @@ Lee Obama School                  784
    least 30 students and are hosted at schools with an average math SAT score
    less than or equal to 300:
 
-SQL> select p.fundURL 
-2    from projects_propose_at p 
-3    where p.subject = 'Mathematics' and 
-4    p.numStudents >= 30 and p.ncesID in (select s.ncesID 
-5                                         from schools_s_in_s_have s 
-6                                         where s.avgMathSATScore <= 300);
+select p.fundURL 
+from projects_propose_at p 
+where p.subject = 'Mathematics' and 
+      p.numStudents >= 30 and p.ncesID in (select s.ncesID 
+                                           from schools_s_in_s_have s 
+                                           where s.avgMathSATScore <= 300);
 
 FUNDURL
 --------------------------------------------------------------------------------
