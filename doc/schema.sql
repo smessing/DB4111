@@ -60,8 +60,7 @@ create table Users(
   password varchar2 (50) not null,
   passwordSalt varchar2 (50) not null,
   primary key (email),
-  check (REGEXP_LIKE (email, '\w+@\w+(\.\w+)+'))
-);
+  check (REGEXP_LIKE (email, '^[a-zA-Z0-9._%-\+]+@[a-zA-Z0-9._%-]+\.[a-zA-Z]{2,4}$')));
 
 -- INSERT STATEMENTS WRITTEN
 create table Donations_FUND(
