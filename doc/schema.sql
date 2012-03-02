@@ -41,11 +41,11 @@ create table Projects_PROPOSE_AT(
   ncesId varchar2 (50) not null,
   primary key (pid, tid),
   unique (proposalURL),
-  constraint fk_Teachers foreign key (tid) references Teachers (tid),
-  constraint fk_Schools foreign key (ncesId) references Schools_S_IN_S_HAVE (ncesId),
-  check (numStudents >= 0),
-  check (percentFunded >= 0 AND percentFunded <= 1),
-  check (totalPrice >= 0)
+  constraint projectTeachers_fk foreign key (tid) references Teachers (tid),
+  constraint projectSchools_fk foreign key (ncesId) references Schools_S_IN_S_HAVE (ncesId),
+  constraint projectsStudents_ck check (numStudents >= 0),
+  constraint projectsPercent_ck check (percentFunded >= 0 AND percentFunded <= 1),
+  constraint projectsPrice_ck check (totalPrice >= 0)
 );
 -- DONE
 create table Teachers(
@@ -60,7 +60,8 @@ create table Users(
   password varchar2 (50) not null,
   passwordSalt varchar2 (50) not null,
   primary key (email),
-  check (REGEXP_LIKE (email, '^[a-zA-Z0-9._%-\+]+@[a-zA-Z0-9._%-]+\.[a-zA-Z]{2,4}$')));
+  constraint usersEmail_ck check (REGEXP_LIKE (email, '^[\w+\-.]@[\w\d\-.]+\.[\w]+$'))
+);
 
 -- DONE
 create table Donations_FUND(
@@ -71,9 +72,9 @@ create table Donations_FUND(
   donationDate date,
   did int,
   primary key (did),
-  foreign key (tid, pid) references Projects_PROPOSE_AT(tid, pid),
-  foreign key (email) references Users,
-  check (amount >= 0)
+  constraint donationsProjects_fk foreign key (tid, pid) references Projects_PROPOSE_AT(tid, pid),
+  constraint donationsUsers_fk foreign key (email) references Users,
+  constraint donationsAmt_ck check (amount >= 0)
 );
 
 -- DONE
@@ -84,8 +85,8 @@ create table Comments_ABOUT(
   cDate date,
   email varchar2 (50),
   primary key (cDate, email),
-  foreign key (email) references Users,
-  foreign key (tid, pid) references Projects_PROPOSE_AT(tid, pid)
+  constraint commentsUsers_fk foreign key (email) references Users,
+  constraint commentsProjects_fk foreign key (tid, pid) references Projects_PROPOSE_AT(tid, pid)
 );
 
 -- DONE
@@ -95,8 +96,8 @@ create table VOTE(
   pid varchar2(32),
   email varchar2 (50),
   primary key (tid, pid, email),
-  foreign key (email) references Users,
-  foreign key (tid, pid) references Projects_PROPOSE_AT(tid, pid)
+  constraint voteUsers_fk foreign key (email) references Users,
+  constraint voteProjects_fk foreign key (tid, pid) references Projects_PROPOSE_AT(tid, pid)
 );
 
 -- DONE
@@ -116,13 +117,13 @@ create table Schools_S_IN_S_HAVE(
   latitude real not null,
   longitude real not null,
   primary key (ncesId),
-  foreign key (dNumber) references Districts_D_IN,
-  foreign key (latitude, longitude) references Addresses (latitude, longitude),
-  check (avgClassSize is null OR avgClassSize >= 0),
-  check (avgMathSATScore is null OR (avgMathSATScore >= 200 AND avgMathSATScore <= 800)),
-  check (avgReadingSATScore is null OR (avgReadingSATScore >= 200 AND avgReadingSATScore <= 800)),
-  check (avgWritingSATScore is null OR (avgWritingSATScore >= 200 AND avgWritingSATScore <= 800)),
-  check (percentAPAbove2 is null OR (percentAPAbove2 >= 0 AND percentAPAbove2 <= 1))
+  constraint schoolsDistricts_fk foreign key (dNumber) references Districts_D_IN,
+  constraint schoolsAddresses_fk foreign key (latitude, longitude) references Addresses (latitude, longitude),
+  constraint schoolsSize_ck check (avgClassSize is null OR avgClassSize >= 0),
+  constraint schoolsMath_ck check (avgMathSATScore is null OR (avgMathSATScore >= 200 AND avgMathSATScore <= 800)),
+  constraint schoolsRead_ck check (avgReadingSATScore is null OR (avgReadingSATScore >= 200 AND avgReadingSATScore <= 800)),
+  constraint schoolsWrite_ck check (avgWritingSATScore is null OR (avgWritingSATScore >= 200 AND avgWritingSATScore <= 800)),
+  constraint schoolsAP_ck check (percentAPAbove2 is null OR (percentAPAbove2 >= 0 AND percentAPAbove2 <= 1))
 );
 
 --DONE
@@ -134,10 +135,10 @@ create table Addresses(
   zipcode varchar2 (5),
   bName varchar2 (50),
   primary key (latitude, longitude),
-  foreign key (bName) references Boroughs,
-  check (latitude >= -90 AND latitude <= 90),
-  check (longitude >= -90 AND longitude <= 90),
-  check (REGEXP_LIKE (zipcode, '[0-9]{5}'))
+  constraint addrBorough_fk foreign key (bName) references Boroughs,
+  constraint addrLat_ck check (latitude >= -90 AND latitude <= 90),
+  constraint addrLong_ck check (longitude >= -90 AND longitude <= 90),
+  constraint addrZip_ck check (REGEXP_LIKE (zipcode, '[0-9]{5}'))
 );
 
 -- DONE
@@ -147,9 +148,9 @@ create table Districts_D_IN(
   dNumber int,
   bName varchar2 (50) not null,
   primary key (dNumber),
-  foreign key (bName) references Boroughs,
-  check (percentRecvPublicAsst is null OR (percentRecvPublicAsst >= 0 AND percentRecvPublicAsst <= 1)),
-  check (avgAttendance is null OR (avgAttendance >= 0 AND avgAttendance <= 1))
+  constraint distBorough_fk foreign key (bName) references Boroughs,
+  constraint distPublicassist_ck check (percentRecvPublicAsst is null OR (percentRecvPublicAsst >= 0 AND percentRecvPublicAsst <= 1)),
+  constraint distAttendance_ck check (avgAttendance is null OR (avgAttendance >= 0 AND avgAttendance <= 1))
 );
 
 -- DONE
@@ -172,5 +173,5 @@ create table After_School_Programs_A_HAVE(
   latitude real not null,
   longitude real not null,
   primary key (aid),
-  foreign key (latitude, longitude) references Addresses (latitude, longitude)
+  constraint afterAddress_fk foreign key (latitude, longitude) references Addresses (latitude, longitude)
 );
