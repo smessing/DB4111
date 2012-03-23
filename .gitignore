@@ -1,5 +1,9 @@
 # Java ignores:
 *.class
 
+# Vim
 *.sql~
 *~
+
+# OSX:
+*.DS_STORE
