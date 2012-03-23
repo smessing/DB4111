@@ -4,9 +4,11 @@
 # Vim
 *.sql~
 *~
+*.swp
 
 # OSX:
 *.DS_STORE
 
 # Project specific
 code/lib/resin-pro-4.0.26/*
+code/*.metadata
