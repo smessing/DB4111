@@ -10,7 +10,12 @@ function parseToXML($htmlStr) {
 
 }
 
-function generateXML($requestStr) {
+function generateSchoolXML() {
+
+	$requestStr = "select s.name, s.latitude, s.longitude, a.streetNumber, " .
+			"a.streetname, a.zipcode, a.bname " .
+			"from schools_s_in_s_have s, addresses a " .
+			"where s.latitude=a.latitude and s.longitude=a.longitude";
 
 	// Connect to DB
 
@@ -27,9 +32,11 @@ function generateXML($requestStr) {
 	oci_execute($stmt, OCI_DEFAULT);
 	while($res = oci_fetch_row($stmt)) {
 		echo '<marker ';
-		echo 'name="' . parseToXML($res[1]) . '" ';
-		echo 'lat="' . $res[12] . '" ';
-		echo 'lng="' . $res[13] . '" ';
+		echo 'name="' . parseToXML($res[0]) . '" ';
+		echo 'lat="' . $res[1] . '" ';
+		echo 'lng="' . $res[2] . '" ';
+		echo 'address="' . $res[3] . " " . $res[4] . ", " 
+			. $res[5] . ", " . $res[6] . '" ';
 		echo '/>';
 	}
 
@@ -41,6 +48,6 @@ function generateXML($requestStr) {
 }
 
 // test function:
-generateXML("select * from schools_s_in_s_have");
+generateSchoolXML();
 
 ?>
