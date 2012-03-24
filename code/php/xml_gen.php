@@ -13,7 +13,9 @@ function parseToXML($htmlStr) {
 function generateSchoolXML() {
 
 	$requestStr = "select s.name, s.latitude, s.longitude, a.streetNumber, " .
-			"a.streetname, a.zipcode, a.bname " .
+			"a.streetname, a.zipcode, a.bname, s.avgclasssize, " .
+			"s.povertylevel, s.avgmathsatscore, s.avgreadingsatscore, " .
+			"s.avgwritingsatscore, s.graduationrate, s.percentapabove2 " .
 			"from schools_s_in_s_have s, addresses a " .
 			"where s.latitude=a.latitude and s.longitude=a.longitude";
 
@@ -37,6 +39,13 @@ function generateSchoolXML() {
 		echo 'lng="' . $res[2] . '" ';
 		echo 'address="' . $res[3] . " " . $res[4] . ", " 
 			. $res[5] . ", " . $res[6] . '" ';
+		echo 'avgclasssize="' . $res[7] . '" ';
+		echo 'povertylevel="'. parseToXML($res[8]) . '" ';
+		echo 'avgmathsat="' . $res[9] . '" ';
+		echo 'avgreadingsat="' . $res[10] . '" ';
+		echo 'avgwritingsat="' . $res[11] . '" ';
+		echo 'graduationrate="' . $res[12] . '" ';
+		echo 'percentAPabove2="' . $res[13] . '" ';
 		echo '/>';
 	}
 
