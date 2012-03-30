@@ -56,15 +56,18 @@
       oci_execute($stmt, OCI_DEFAULT);
       echo "<ul>\n";
       while($res = oci_fetch_row($stmt)) {
-         echo "<li><b>" . $res[6] . "</b>";
-             echo "<ul class='toc'>\n";
-    
-             echo "</ul>\n";
-	 echo "</li>\n";
+       echo "<li><b><a href='../projects/index.php?id=" . $res[0] . "'>" . $res[6] . "</a></b>";
+         echo "<ul class='toc'>\n";
+           echo "<li><span><b>Expiration Date</b></span><span>" . $res[4] . "</span></li>\n";          
+           echo "<li><span><b>Amount Requested</b></span><span>" . $res[5] . "</span></li>\n";
+         echo "</ul>\n";
+       echo "</li>\n";
       }
       echo "</ul>\n";
-
     }
+    
+    // cleanup
+    oci_close($conn);
   ?>
 <footer>
   <hr noshade/>

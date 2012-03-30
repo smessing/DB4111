@@ -9,6 +9,7 @@ body{
 	border: none;
 	line-height: 1.5;
 	margin: auto;
+        margin-bottom: 2em;
 	max-width: 42em;
 	text-align:left;
 }
