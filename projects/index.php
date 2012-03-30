@@ -29,10 +29,10 @@
       $stmt = oci_parse($conn, $requestStr);
       oci_execute($stmt, OCI_DEFAULT);
       while($res = oci_fetch_row($stmt)) {
-        echo '<h1>' . $res[0] . '</h1>\n';
-        echo '<h2>Project Details</h2>\n';
-        echo '<b>Subject:</b>' . $res[1] . '\n';
-        echo '<b>Project Description:</b>' . $res[2] . '\n';
+        echo "<h1>" . $res[0] . "</h1>" . "\n";
+        echo "<h2>Project Details</h2>" . "\n";
+        echo "<b>Subject:</b>" . $res[1] . "\n";
+        echo "<b>Project Description:</b>" . $res[2] . "\n";
       }
 
     }
