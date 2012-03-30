@@ -37,5 +37,8 @@
 
     }
   ?>
+<footer>
+  <hr noshade/>
+  <a href="../index.html">Main Page</a>
 </body>
 </html>
