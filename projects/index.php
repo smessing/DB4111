@@ -14,7 +14,7 @@
 
       $requestStr= "select p.title, p.subject, t.name, p.shortDescription, " . 
                            "p.expirationDate, p.totalPrice, p.percentFunded, " . 
-                           "p.numStudents, p.ncesid "
+                           "p.numStudents, p.ncesid " . 
                    "from Projects_PROPOSE_AT p, Schools_S_IN_S_HAVE s, " .
                          "addresses a " .
                    "where p.pid='" . $id . "' and p.ncesid=s.ncesid " .
@@ -51,5 +51,6 @@
 <footer>
   <hr noshade/>
   <a href="../index.html">Main Page</a>
+</footer>
 </body>
 </html>
