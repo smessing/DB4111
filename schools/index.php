@@ -35,13 +35,13 @@
 	echo '<b>Address</b>: ' . $res[3] . ' ' . $res[4] . ', ' . $res[5] . ', ' . $res[6] . "\n";
 	echo "<br/>\n";
 	echo "<ul class='toc'>\n";
-        echo '<li><span><b>Average Class Size</b></span><span>' . $res[7] . "</span></li>\n";
+        echo '<li><span><b>Average Class Size</b></span><span>' . number_format($res[7] * 100, 0, ".", "") . " Students</span></li>\n";
 	echo '<li><span><b>Poverty Level</b></span><span>' . $res[8] . "</span></li>\n";
 	echo '<li><span><b>Average Math SAT Score</b></span><span>' . $res[9] . "/800</span></li>\n";
 	echo '<li><span><b>Average Reading SAT Score</b></span><span>' . $res[10] . "/800</span></li>\n";
 	echo '<li><span><b>Average Writing SAT Score</b></span><span>' . $res[11] . "/800</span></li>\n";
-	echo '<li><span><b>Graduation Rate</b></span><span>' . $res[12] . "</span></li>\n";
-	echo '<li><span><b>Percent of AP Scores Above 2</b></span><span>' . $res[13] . "</span></li>\n";
+	echo '<li><span><b>Graduation Rate</b></span><span>' . number_format($res[12] * 100, 0, ".", "") . "%</span></li>\n";
+	echo '<li><span><b>Percent of AP Scores Above 2</b></span><span>' . number_format($res[13] * 100, 0, ".", "") . "%</span></li>\n";
         echo "</ul>\n";	
       }
 
@@ -58,14 +58,17 @@
       while($res = oci_fetch_row($stmt)) {
        // check if project is less than 5% funded:
        echo "<li><b><a href='../projects/index.php?id=" . $res[0] . "'>" . $res[6] . "</a></b>";
-       if ($res[10] < 0.05) {
-         echo  " (". trim((string) number_format($res[10], 2, ".", ""), "0.") . "% Funded)";
+       if ($res[10] < 0.15) {
+         echo  " (<font color='red'>". number_format($res[10]*100, 0, ".", "") . "% Funded</font>)";
        } else {
-         echo " (". trim((string) number_format($res[10], 2, ".", ""), "0.") . "% Funded)";  
+         echo " (". number_format($res[10]*100, 0, ".", "") . "% Funded)";  
        }
          echo "<ul class='toc'>\n";
            echo "<li><span><b>Expiration Date</b></span><span>" . $res[4] . "</span></li>\n";          
-           echo "<li><span><b>Amount Requested</b></span><span>" . $res[5] . "</span></li>\n";
+           echo "<li><span><b>Number of Students Involved</b></span><span>" . $res[12] . "</span></li>\n";
+           if (!empty($res[7])) {
+             echo "<li><span><b>Subject</b></span><span>" . str_replace("  ", " & ", $res[7]) . "</span></li>\n";
+           }
          echo "</ul>\n";
        echo "</li>\n";
       }
@@ -75,9 +78,6 @@
     // cleanup
     oci_close($conn);
   ?>
-<footer>
-  <hr noshade/>
-  <a href="../index.html">Main Page</a>
-</footer>
+<?php include("../static/php/footer.php"); ?>
 </body>
 </html>

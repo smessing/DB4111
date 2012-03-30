@@ -36,22 +36,9 @@
               parseFloat(markers[i].getAttribute("lat")),
               parseFloat(markers[i].getAttribute("lng")));
 	  var address = markers[i].getAttribute("address");
-	  var classSize = markers[i].getAttribute("avgclasssize");
-	  var povertyLevel = markers[i].getAttribute("povertylevel");
-	  var mathSAT = markers[i].getAttribute("avgmathsat");
-	  var readingSAT = markers[i].getAttribute("avgreadingsat");
-	  var writingSAT = markers[i].getAttribute("avgwritingsat");
-	  var graduationRate = markers[i].getAttribute("graduationrate");
-	  var AP = markers[i].getAttribute("percentAPabove2");
 	  var nces = markers[i].getAttribute("nces");
           var html = "<h2><a href=\"schools/index.php?id=" + nces + "\">" + name + "</a></h2><b>" + address +
-		     "</b><br/><br/> Average Class Size: " + classSize +
-		     "<br/> Poverty Level: " + povertyLevel +
-		     "<br/> Average Math SAT Score: " + mathSAT +
-		     "<br/> Average Reading SAT Score: " + readingSAT +
-		     "<br/> Average Writing SAT Score: " + writingSAT +
-		     "<br/> Graduation Rate: " + graduationRate +
-		     "<br/> Pecent of AP Above 2: " + AP;
+		     "</b><br/><br/>";
           var marker = new google.maps.Marker({
             map: map,
             position: point,
