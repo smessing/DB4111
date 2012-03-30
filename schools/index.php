@@ -37,6 +37,9 @@
 	echo '<ul class=\'toc\'>';
         echo '<li><span><b>Average Class Size</b></span><span>' . $res[7] . '</span></li>';
 	echo '<li><span><b>Poverty Level</b></span><span>' . $res[8] . '</span></li>';
+	echo '<li><span><b>Average Math SAT Score</b></span><span>' . $res[9] . '/800';
+	echo '<li><span><b>Average Reading SAT Score</b></span><span>' . $res[10] . '/800';
+	echo '<li><span><b>Average Writing SAT Score</b></span><span>' . $res[11] . '/800';
         echo '</ul>';	
       }
 
