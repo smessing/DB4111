@@ -35,7 +35,7 @@
         echo "<h2>Project Overview</h2>\n"; 
         echo "<ul>\n";
         echo "<li><b>Teacher: </b>" . $res[2] . "</li>\n"; // t.name
-        if(!empty($res[1]) {
+        if(!empty($res[1])) {
            echo "<li><b>Subject: </b>" . $res[1] . "</li>\n"; // p.subject
         }
         echo "<li><b>Project Description: </b>" . $res[3] . "</li>\n"; // p.shortDescription
