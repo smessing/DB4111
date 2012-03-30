@@ -35,7 +35,7 @@
         echo "<h2>Project Overview</h2>\n"; 
         echo "<ul>\n";
         echo "<li><b>Teacher: </b>" . $res[2] . "</li>\n"; // t.name
-        echo "<li><b>School: </b><a href=\"..schools/index.php?id=" . $res[8] . "\">" . $res[9] . "</a></li>\n"; // s.name
+        echo "<li><b>School: </b><a href=\"../schools/index.php?id=" . $res[8] . "\">" . $res[9] . "</a></li>\n"; // s.name
         if(!empty($res[1])) {
            echo "<li><b>Subject: </b>" . $res[1] . "</li>\n"; // p.subject
         }
@@ -48,7 +48,7 @@
         if($res[6] < 0.15) {
            echo "<li><b><font color=\"red\">Percent Funded: </b></font>$" .  number_format($res[6]*100,0,".","") . "</li>\n"; // p.percentFunded
         } else {
-           echo "<li><b>Percent Funded: </b>" .  number_format($res[6]*100,0,".","") . "</li>\n"; // p.percentFunded
+           echo "<li><b>Percent Funded: </b>%" .  number_format($res[6]*100,0,".","") . "</li>\n"; // p.percentFunded
         }
         echo "<li><b>Total Funding Requested: </b>$" . $res[5] . "</li>\n"; // p.totalPrice
         echo "<li><b>Last Day to Donate: </b>" . $res[4] . "</li>\n"; // p.expirationDate
