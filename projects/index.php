@@ -35,12 +35,19 @@
         echo "<h2>Project Overview</h2>\n"; 
         echo "<ul>\n";
         echo "<li><b>Teacher: </b>" . $res[2] . "</li>\n"; // t.name
-        echo "<li><b>Subject: </b>" . $res[1] . "</li>\n"; // p.subject
-        echo "<li><b>Project Description:</b>" . $res[3] . "</li>\n"; // p.shortDescription
+        if(!isempty($res[1]) {
+           echo "<li><b>Subject: </b>" . $res[1] . "</li>\n"; // p.subject
+        }
+        echo "<li><b>Project Description: </b>" . $res[3] . "</li>\n"; // p.shortDescription
         echo "</ul>\n";
         echo "<h2>Funding</h2>\n"; 
         echo "<ul>\n";
-        echo "<li><b>Total Funding Requested: </b>" . $res[6] . "</li>\n"; // p.totalPrice
+        // red font if funding below 15%
+        if($res[6] < 0.15) {
+           echo "<li><b><font color=\"red\"> Total Funding Requested: </b></font>" .  number_format($res[6]*100,0,".","") . "</li>\n"; // p.totalPrice 
+        } else {
+           echo "<li><b>Total Funding Requested: </b>" .  number_format($res[6]*100,0,".","") . "</li>\n"; // p.totalPrice
+        }
         echo "</ul>\n";
       }
 
