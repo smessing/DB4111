@@ -2,7 +2,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <title>Google Maps AJAX + mySQL/PHP Example</title>
-    <link rel="stylesheet" href="code/css/style.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="code/css/map.css" type="text/css" media="screen"/>
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDy9NCdMzkcQkBXUDYsKa1xzsdc6IbKq8k&sensor=true" type="text/javascript"></script>
     <script type="text/javascript">
     //<![CDATA[
@@ -44,7 +44,7 @@
 	  var graduationRate = markers[i].getAttribute("graduationrate");
 	  var AP = markers[i].getAttribute("percentAPabove2");
 	  var nces = markers[i].getAttribute("nces");
-          var html = "<h2><a href=\"schools/index.html?id=" + nces + "\">" + name + "</a></h2><b>" + address +
+          var html = "<h2><a href=\"schools/index.php?id=" + nces + "\">" + name + "</a></h2><b>" + address +
 		     "</b><br/><br/> Average Class Size: " + classSize +
 		     "<br/> Poverty Level: " + povertyLevel +
 		     "<br/> Average Math SAT Score: " + mathSAT +
