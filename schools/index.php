@@ -48,5 +48,6 @@
 <footer>
   <hr noshade/>
   <a href="../index.html">Main Page</a>
+</footer>
 </body>
 </html>
