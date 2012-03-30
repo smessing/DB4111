@@ -46,7 +46,7 @@
         echo "<ul>\n";
         // red font if funding below 15%
         if($res[6] < 0.15) {
-           echo "<li><b><font color=\"red\">Percent Funded: </b></font>$" .  number_format($res[6]*100,0,".","") . "</li>\n"; // p.percentFunded
+           echo "<li><b>Percent Funded: </b><font color=\"red\">%" .  number_format($res[6]*100,0,".","") . "</font></li>\n"; // p.percentFunded
         } else {
            echo "<li><b>Percent Funded: </b>%" .  number_format($res[6]*100,0,".","") . "</li>\n"; // p.percentFunded
         }
