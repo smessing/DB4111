@@ -5,6 +5,20 @@
 <body>
   <?php
     $id=$_REQUEST['id'];
+
+    if(empty($id)) {
+
+    }
+
+    $requestStr = "select * " .
+		  "from schools_s_in_s_have s " .
+                  "where s.ncesid=" . $id;
+
+    // Connect to DB
+
+    ini_set('display_errors', 'On');
+    $db = 
+
     echo $id;
   ?>
 <h2>Test</h2>
