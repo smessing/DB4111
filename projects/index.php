@@ -14,8 +14,10 @@
 
       $requestStr= "select p.title, p.subject, p.shortDescription " . 
                    "from Projects_PROPOSE_AT p, Schools_S_IN_S_HAVE s, " .
-                         "Addresses a " .
-                   "where p.pid=" . $id;
+                         "addresses a " .
+                   "where p.pid='" . $id . "' and p.ncesid=s.ncesid " .
+                          "and s.latitude=a.latitude and " .
+                          "s.longitude=a.longitude";
 
       // Connect to DB
 
