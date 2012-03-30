@@ -32,7 +32,12 @@
       while($res = oci_fetch_row($stmt)) {
         echo '<h1>' . $res[0] . '</h1>';   
 	echo '<h2>Profile</h2>';
-	echo '<h3>' . $res[3] . ' ' . $res[4] . ', ' . $res[5] . ', ' . $res[6] . '</h3>';
+	echo '<b>Address</b>: ' . $res[3] . ' ' . $res[4] . ', ' . $res[5] . ', ' . $res[6];
+	echo '<br/>';
+	echo '<b>Average Class Size</b>: ' . $res[7] . ' Students';
+	echo '<br/>';
+	echo '<b>Poverty Level</b>: ' . $res[8];
+	
       }
 
     }
