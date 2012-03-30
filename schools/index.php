@@ -35,10 +35,8 @@
 	echo '<b>Address</b>: ' . $res[3] . ' ' . $res[4] . ', ' . $res[5] . ', ' . $res[6];
 	echo '<br/>';
 	echo '<ul class=\'toc\'>';
-        echo '<li><span>Average Class Size</span><span>' . $res[7] . '</span></li>';
-	echo '<b>Average Class Size</b>: ' . $res[7] . ' Students';
-	echo '<br/>';
-	echo '<b>Poverty Level</b>: ' . $res[8];
+        echo '<li><span><b>Average Class Size</b></span><span>' . $res[7] . '</span></li>';
+	echo '<li><span><b>Poverty Level</b></span><span>' . $res[8] . '</span></li>';
         echo '</ul>';	
       }
 
