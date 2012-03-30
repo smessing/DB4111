@@ -12,7 +12,9 @@
 
     if (!empty($id)) {
 
-      $requestStr= "select p.title, p.subject, p.shortDescription " . 
+      $requestStr= "select p.title, p.subject, t.name, p.shortDescription, " . 
+                           "p.expirationDate, p.totalPrice, p.percentFunded, " . 
+                           "p.numStudents, p.ncesid "
                    "from Projects_PROPOSE_AT p, Schools_S_IN_S_HAVE s, " .
                          "addresses a " .
                    "where p.pid='" . $id . "' and p.ncesid=s.ncesid " .
@@ -29,10 +31,16 @@
       $stmt = oci_parse($conn, $requestStr);
       oci_execute($stmt, OCI_DEFAULT);
       while($res = oci_fetch_row($stmt)) {
-        echo "<h1>" . $res[0] . "</h1>" . "\n";
-        echo "<h2>Project Details</h2>" . "\n";
-        echo "<b>Subject:</b>" . $res[1] . "\n";
-        echo "<b>Project Description:</b>" . $res[2] . "\n";
+        echo "<h1>" . $res[0] . "</h1>\n"; // p.title
+        echo "<h2>Project Overview</h2>\n"; 
+        echo "<ul>\n";
+        echo "<li><b>Teacher: </b>" . $res[2] . "</li>\n"; // t.name
+        echo "<li><b>Subject: </b>" . $res[1] . "</li>\n"; // p.subject
+        echo "<li><b>Project Description:</b>" . $res[3] . "</li>\n"; // p.shortDescription
+        echo "</ul>\n";
+        echo "<h2>Funding</h2>\n"; 
+        echo "<ul>\n";
+        echo "<li><b>Total Funding Requested: </b>" . $res[1] . "</li>\n"; // p.subject
       }
 
     }
