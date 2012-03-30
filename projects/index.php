@@ -12,11 +12,11 @@
 
     if (!empty($id)) {
 
-      $requestStr= "select p.title, p.subject, p.shortDescription" . 
-                   "from projects_propose_at p, schools s_in_s_have s," .
-                   "addresses a" .
+      $requestStr= "select p.title, p.subject, p.shortDescription " . 
+                   "from projects_propose_at p, schools s_in_s_have s, " .
+                   "addresses a " .
                    "where p.pid=" . $id .
-                   "p.ncesid = s.ncesid and s.lattitude = a.lattitude and" .
+                   "p.ncesid = s.ncesid and s.lattitude = a.lattitude and " .
                    "s.longitude = a.longitude;";
 
       // Connect to DB
