@@ -13,11 +13,9 @@
     if (!empty($id)) {
 
       $requestStr= "select p.title, p.subject, p.shortDescription " . 
-                   "from projects_propose_at p, schools_s_in_s_have s, " .
-                         "addresses a " .
-                   "where p.pid=" . $id . " and p.ncesid=s.ncesid " .
-                          "and s.latitude=a.latitude and " .
-                          "s.longitude=a.longitude";
+                   "from Projects_PROPOSE_AT p, Schools_S_IN_S_HAVE s, " .
+                         "Addresses a " .
+                   "where p.pid=" . $id;
 
       // Connect to DB
 
