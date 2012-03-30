@@ -43,8 +43,9 @@
 	  var writingSAT = markers[i].getAttribute("avgwritingsat");
 	  var graduationRate = markers[i].getAttribute("graduationrate");
 	  var AP = markers[i].getAttribute("percentAPabove2");
-          var html = "<b>" + name + "</b> <br/>" + address +
-		     "<br/> <br/> Average Class Size: " + classSize +
+	  var nces = markers[i].getAttribute("nces");
+          var html = "<h2><a href=\"schools/index.html?id=" + nces + "\">" + name + "</a></h2><b>" + address +
+		     "</b><br/><br/> Average Class Size: " + classSize +
 		     "<br/> Poverty Level: " + povertyLevel +
 		     "<br/> Average Math SAT Score: " + mathSAT +
 		     "<br/> Average Reading SAT Score: " + readingSAT +
