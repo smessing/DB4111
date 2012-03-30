@@ -15,7 +15,7 @@
       $requestStr= "select p.title, p.subject, p.shortDescription " . 
                    "from projects_propose_at p, schools_s_in_s_have s, " .
                    "addresses a " .
-                   "where p.pid=" . $id .
+                   "where p.pid=" . $id . " and "
                    "p.ncesid = s.ncesid and s.lattitude = a.lattitude and " .
                    "s.longitude = a.longitude;";
 
