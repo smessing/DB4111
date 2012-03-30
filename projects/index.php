@@ -14,7 +14,7 @@
 
       $requestStr= "select p.title, p.subject, t.name, p.shortDescription, " . 
                            "p.expirationDate, p.totalPrice, p.percentFunded, " . 
-                           "p.numStudents, p.ncesid " . 
+                           "p.numStudents, p.ncesid, s.name " . 
                    "from Projects_PROPOSE_AT p, Schools_S_IN_S_HAVE s, " .
                          "addresses a, teachers t " .
                    "where p.pid='" . $id . "' and p.ncesid=s.ncesid " .
@@ -35,11 +35,12 @@
         echo "<h2>Project Overview</h2>\n"; 
         echo "<ul>\n";
         echo "<li><b>Teacher: </b>" . $res[2] . "</li>\n"; // t.name
+        echo "<li><b>School: </b><a href=\"..schools/index.php?id=" . $res[8] . "\">" . $res[9] . "</a></li>\n"; // s.name
         if(!empty($res[1])) {
            echo "<li><b>Subject: </b>" . $res[1] . "</li>\n"; // p.subject
         }
         echo "<li><b>Project Description: </b>" . $res[3] . "</li>\n"; // p.shortDescription
-        echo "<li><b>Number of Students: </b>" . $res[8] . "</li>\n"; // p.numStudents
+        echo "<li><b>Number of Students: </b>" . $res[7] . "</li>\n"; // p.numStudents
         echo "</ul>\n";
         echo "<h2>Funding</h2>\n"; 
         echo "<ul>\n";
