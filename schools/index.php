@@ -65,8 +65,8 @@
        }
          echo "<ul class='toc'>\n";
            echo "<li><span><b>Expiration Date</b></span><span>" . $res[4] . "</span></li>\n";          
-           echo "<li><span><b>Amount Requested</b></span><span>" . $res[5] . "</span></li>\n";
            echo "<li><span><b>Number of Students Involved</b></span><span>" . $res[12] . "</span></li>\n";
+           echo "<li><span><b>Subject</b></span><span>" . $res[7] . "</span></li>\n";
          echo "</ul>\n";
        echo "</li>\n";
       }
