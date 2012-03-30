@@ -8,8 +8,7 @@ body{
 	background-color: #fff;
 	border: none;
 	line-height: 1.5;
-	margin: auto;
-	max-width: 42em;
+	margin: 0.4em 0.4em;
 	text-align:left;
 }
 pre{
