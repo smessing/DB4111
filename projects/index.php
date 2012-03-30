@@ -49,8 +49,8 @@
         } else {
            echo "<li><b>Percent Funded: </b>" .  number_format($res[7]*100,0,".","") . "</li>\n"; // p.percentFunded
         }
-        echo "<li><b>Total Funding Requested: </b>$" . $red[6] . "</li>\n"; // p.totalPrice
-        echo "<li><b>Last Day to Donate: </b>" . $red[5] . "</li>\n"; // p.expirationDate
+        echo "<li><b>Total Funding Requested: </b>$" . $res[6] . "</li>\n"; // p.totalPrice
+        echo "<li><b>Last Day to Donate: </b>" . $res[5] . "</li>\n"; // p.expirationDate
         echo "</ul>\n";
       }
 
