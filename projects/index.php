@@ -17,7 +17,7 @@
                    "addresses a" .
                    "where p.pid=" . $id .
                    "p.ncesid = s.ncesid and s.lattitude = a.lattitude and" .
-                   "s.longitude = a.longitude;"
+                   "s.longitude = a.longitude;";
 
       // Connect to DB
 
