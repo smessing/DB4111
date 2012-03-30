@@ -16,8 +16,8 @@
                    "from projects_propose_at p, schools_s_in_s_have s, " .
                    "addresses a " .
                    "where p.pid=" . $id . " and "
-                   "p.ncesid = s.ncesid and s.lattitude = a.lattitude and " .
-                   "s.longitude = a.longitude;";
+                   "p.ncesid=s.ncesid and s.latitude=a.latitude and " .
+                   "s.longitude=a.longitude;";
 
       // Connect to DB
 
