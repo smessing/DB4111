@@ -40,9 +40,12 @@
         echo "</ul>\n";
         echo "<h2>Funding</h2>\n"; 
         echo "<ul>\n";
-        echo "<li><b>Total Funding Requested: </b>" . $res[1] . "</li>\n"; // p.subject
+        echo "<li><b>Total Funding Requested: </b>" . $res[6] . "</li>\n"; // p.totalPrice
+        echo "</ul>\n";
       }
 
+      // cleanup
+      oci_close($conn);
     }
   ?>
 <footer>
