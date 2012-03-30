@@ -56,8 +56,13 @@
       oci_execute($stmt, OCI_DEFAULT);
       echo "<ul>\n";
       while($res = oci_fetch_row($stmt)) {
-       echo "<li><b><a href='../projects/index.php?id=" . $res[0] . "'>" . $res[6] . "</a></b>" .
-            " (". trim((string) number_format($res[10], 2, ".", ""), "0.") . "% Funded)";
+       // check if project is less than 5% funded:
+       echo "<li><b><a href='../projects/index.php?id=" . $res[0] . "'>" . $res[6] . "</a></b>";
+       if ($res[10] < 0.05) {
+         echo  " (". trim((string) number_format($res[10], 2, ".", ""), "0.") . "% Funded)";
+       } else {
+         echo " (". trim((string) number_format($res[10], 2, ".", ""), "0.") . "% Funded)";  
+       }
          echo "<ul class='toc'>\n";
            echo "<li><span><b>Expiration Date</b></span><span>" . $res[4] . "</span></li>\n";          
            echo "<li><span><b>Amount Requested</b></span><span>" . $res[5] . "</span></li>\n";
