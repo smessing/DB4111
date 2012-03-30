@@ -39,15 +39,18 @@
            echo "<li><b>Subject: </b>" . $res[1] . "</li>\n"; // p.subject
         }
         echo "<li><b>Project Description: </b>" . $res[3] . "</li>\n"; // p.shortDescription
+        echo "<li><b>Number of Students: </b>" . $res[8] . "</li>\n"; // p.numStudents
         echo "</ul>\n";
         echo "<h2>Funding</h2>\n"; 
         echo "<ul>\n";
         // red font if funding below 15%
-        if($res[6] < 0.15) {
-           echo "<li><b><font color=\"red\"> Total Funding Requested: </b></font>" .  number_format($res[6]*100,0,".","") . "</li>\n"; // p.totalPrice 
+        if($res[7] < 0.15) {
+           echo "<li><b><font color=\"red\">Percent Funded: </b></font>$" .  number_format($res[7]*100,0,".","") . "</li>\n"; // p.percentFunded
         } else {
-           echo "<li><b>Total Funding Requested: </b>" .  number_format($res[6]*100,0,".","") . "</li>\n"; // p.totalPrice
+           echo "<li><b>Percent Funded: </b>" .  number_format($res[7]*100,0,".","") . "</li>\n"; // p.percentFunded
         }
+        echo "<li><b>Total Funding Requested: </b>$" . $red[6] . "</li>\n"; // p.totalPrice
+        echo "<li><b>Last Day to Donate: </b>" . $red[5] . "</li>\n"; // p.expirationDate
         echo "</ul>\n";
       }
 
