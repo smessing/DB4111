@@ -6,25 +6,39 @@
   <?php
     $id=$_REQUEST['id'];
 
-    if(empty($id)) {
-
+    if (empty($id)) {
+	echo 'ERROR: Must specify a project id!';
     }
 
-    $requestStr = "select * " .
-		  "from projects_propose_at p " .
-                  "where p.pid=" . $id;
+    if (!empty($id)) {
 
-    // Connect to DB
+      $requestStr= "select p.title, p.subject, p.shortDescription" . 
+                   "from projects_propose_at p, schools s_in_s_have s," .
+                   "addresses a" .
+                   "where p.pid=" . $id .
+                   "p.ncesid = s.ncesid and s.lattitude = a.lattitude and" .
+                   "s.longitude = a.longitude;"
 
-    ini_set('display_errors', 'On');
-    $db = "w4111f.cs.columbia.edu:1521/adb";
-    $conn = oci_connect("sbm2158", "donorschoose", $db);
+      // Connect to DB
 
-    
+      ini_set('display_errors', 'On');
+      $db = 'w4111f.cs.columbia.edu:1521/adb'; 
+      $conn = oci_connect("sbm2158", "donorschoose", $db);
 
+      header("Content-type: text/html");
+      $stmt = oci_parse($conn, $requestStr);
+      oci_execute($stmt, OCI_DEFAULT);
+      while($res = oci_fetch_row($stmt)) {
+        echo '<h1>' . $res[0] . '</h1>\n';
+        echo '<h2>Project Details</h2>\n';
+        echo '<b>Subject:</b>' . $res[1] . '\n';
+        echo '<b>Project Description:</b>' . $res[2] . '\n';
+      }
 
-    echo $id;
+    }
   ?>
-<h2>Test</h2>
+<footer>
+  <hr noshade/>
+  <a href="../index.html">Main Page</a>
 </body>
 </html>
