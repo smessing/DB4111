@@ -16,10 +16,10 @@
                            "p.expirationDate, p.totalPrice, p.percentFunded, " . 
                            "p.numStudents, p.ncesid " . 
                    "from Projects_PROPOSE_AT p, Schools_S_IN_S_HAVE s, " .
-                         "addresses a " .
+                         "addresses a, teachers t " .
                    "where p.pid='" . $id . "' and p.ncesid=s.ncesid " .
                           "and s.latitude=a.latitude and " .
-                          "s.longitude=a.longitude";
+                          "s.longitude=a.longitude and t.tid = p.tid";
 
       // Connect to DB
 
