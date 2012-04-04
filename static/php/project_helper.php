@@ -9,7 +9,7 @@
     if (is_null($resp[0])) {
       $amountFunded = 0.0;
     } else {
-      $amountFunded = $fundingResp[0];
+      $amountFunded = $resp[0];
     }
     return $amountFunded;
   }
