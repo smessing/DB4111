@@ -28,14 +28,16 @@
                             "from comments_ABOUT c, users u " . 
                             "where c.pid='" . $id . "' and u.email=c.email";
                             
-      $donationsRequestStr = "select u.displayName " .
+
+      $donationsRequestStr = "select u.displayName, u.email " .
                              "from Donations_FUND d, Users u " .
                              "where d.pid='" . $id . "' and d.email=u.email";
 
       header("Content-type: text/html");
       
       // Connect to DB
-      require_once "../static/php/connection.php";
+      require_once "../static/php/db.php";
+      require_once "../static/php/project_helper.php";
        
       // get vote count for this project
       $voteCountStmt = oci_parse($conn, $countVotesRequestStr);
@@ -88,39 +90,44 @@
     
         // p.percentFunded
         // red font if funding below 15%
-        if($res[6] < 0.15) {
-          echo "<li><span><b>Percent Funded: </b></span><span><font color=\"red\">" .  number_format($res[6]*100,0,".","") . "%</font></span></li>\n"; }
+        $percentFunded = getPercentFunded($id, $conn);
+        if($percentFunded < 0.15) {
+          echo "<li><span><b>Percent Funded: </b></span><span><font color=\"red\">" .  number_format($percentFunded*100,0,".","") . "%</font></span></li>\n"; }
         else {
-          echo "<li><span><b>Percent Funded: </b></span><span>" .  number_format($res[6]*100,0,".","") . "%</span></li>\n"; }
+          echo "<li><span><b>Percent Funded: </b></span><span>" .  number_format($percentFunded*100,0,".","") . "%</span></li>\n"; }
 
         // p.totalPrice
         $totalPriceFormatted = "$".number_format($res[5], 2, '.', ',');
         echo "<li><span><b>Total Funding Requested: </b></span><span>" . $totalPriceFormatted . "</span></li>\n"; 
         // p.expirationDate
         echo "<li><span><b>Last Day to Donate: </b></span><span>" . $res[4] . "</span></li>\n"; 
+
+        echo "</ul>\n";
         
         // List all donators
-        $donCpount = 0;
+        $donCount = 0;
         while($donRes = oci_fetch_row($donationsStmt)) {
           $donCount = $donCount + 1;
-          // if first, put row header
+          
+          // if first, put header and <p> tag
           if($donCount == 1) {
-            echo "<li><b>Donators: </b>"; }
-          // put comma after last one
+            echo "<h3>Donators</h3>\n"; 
+            echo "<p>";
+          }
+            
+          // if not the first one, put comma after last one
           else {
             echo ", ";}
           // then list display name
-          echo $donRes[0];
+          echo "<a href=\"../users/index.php?id=" . $donRes[1] . "\"> " . $donRes[0] . "</a>";
         }
-        // if there were any donators, close out the tag
+        // if there were any donators, close out the <p> tag
         if($donCount != 0) {
-          echo "</li>";
+          echo "<p>";
         }
           
       }
-
-      echo "</ul>\n";
-        
+              
       // PROJECT FEEDBACK SECTION
       echo "<h2>Project Feedback</h2>\n";
       echo "<p><b>Votes: </b>" . number_format($vc,0, "", ",") . "</p>\n";
