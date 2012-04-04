@@ -163,6 +163,7 @@ div.message {
   text-align: center;
   font-size:24px;
   color: green;
+  z-index: 10001;
 }
 
 div.error {
@@ -178,5 +179,6 @@ div.error {
 footer {
   text-align: center;
 }
+
 
 }

@@ -17,6 +17,8 @@ if (!empty($_REQUEST['error'])) {
     echo "Invalid password/username pair.";
   } else if ($error == 'short_pass') {
     echo "Password is too short! Must be at least 5 chars.";
+  } else if ($error == 'nonexistent') {
+    echo "E-mail wasn't found! Please try again, or <a href='sign_up.php'>register</a>.";
   } 
   echo "</p></div>";
 }

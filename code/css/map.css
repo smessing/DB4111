@@ -149,3 +149,32 @@ ul.toc span + span {
   float:right;
 }
 
+
+div.message {
+  position: fixed;
+  height: 66px;
+  background-color: #D1EAD2;
+  border: 1px solid green;
+  text-align: center;
+  font-size:24px;
+  color: green;
+  z-index: 10001;
+  width: 100%;
+}
+
+div.error {
+  position: relative;
+  height: 66px;
+  background-color: #FFEBE8;
+  border: 1px solid red;
+  text-align: center;
+  font-size:24px;
+  color: red;
+}
+
+footer {
+  text-align: center;
+}
+
+
+}
