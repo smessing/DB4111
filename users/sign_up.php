@@ -3,9 +3,8 @@
   <link href="../code/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
-<h2>Create an Account</h2>
 <?php include("../static/php/error.php"); ?>
+<h2>Create an Account</h2>
 
 <form action="create_user.php" method="post" align="center">
 E-mail: <input type="text" name="email" /> <br/>

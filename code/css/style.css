@@ -155,7 +155,7 @@ ul.toc span + span {
   float:right;
 }
 
-div.header {
+div.message {
   position: relative;
   height: 36px;
   background-color: #D1EAD2;
@@ -172,6 +172,10 @@ div.error {
   border: 1px solid #DD3C10;
   text-align: center;
   font-size:24px;
+}
+
+footer {
+  text-align: center;
 }
 
 }

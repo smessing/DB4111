@@ -19,7 +19,7 @@
 
   // check that e-mail is valid e-mail:
   if (0 == preg_match($regex, $submitted_email)) {
-    header("Location:sign_up.php?error=email");
+    header("Location:log_in.php?error=email");
     exit;
   }
   

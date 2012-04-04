@@ -2,7 +2,7 @@
 // check for errors on this page, print helpful error messages:
 if (!empty($_REQUEST['error'])) {
   $error = $_REQUEST['error'];
-  echo "<div class=error><p><font color='red'>";
+  echo "<div class=error><p>";
   if ($error == 'critical') {
     echo "An internal error has occurred, please contact sys admin!";
   } else if ($error == 'email') {
@@ -18,7 +18,7 @@ if (!empty($_REQUEST['error'])) {
   } else if ($error == 'short_pass') {
     echo "Password is too short! Must be at least 5 chars.";
   } 
-  echo "</font></p></div>";
+  echo "</p></div>";
 }
 
 ?>
