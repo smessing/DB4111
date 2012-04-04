@@ -93,7 +93,7 @@
         
         // PROJECT FEEDBACK SECTION
         echo "<h2>Project Feedback</h2>\n";
-        echo "<p><b>Votes: </b>" . number_format($res[13],0, "", ",") . "</p>\n";
+        echo "<p><b>Votes: </b>" . number_format($vc,0, "", ",") . "</p>\n";
       }
 
       // cleanup
