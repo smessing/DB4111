@@ -15,7 +15,7 @@
       
       $requestStr= "select p.title, p.subject, t.name, p.shortDescription, " . 
                            "p.expirationDate, p.totalPrice, p.percentFunded, " . 
-                           "p.numStudents, p.ncesid, s.name " .
+                           "p.numStudents, p.ncesid, s.name, t.tid " .
                    "from Projects_PROPOSE_AT p, Schools_S_IN_S_HAVE s, " .
                          "addresses a, teachers t " .
                    "where p.pid='" . $id . "' and p.ncesid=s.ncesid " .
@@ -71,7 +71,7 @@
         echo "<ul class ='toc'>\n";
 
         // t.name
-        echo "<li><span><b>Teacher: </b></span><span>" . $res[2] . "</span></li>\n";
+        echo "<li><span><b>Teacher: </b></span><span><a href=\"../teachers/index.php?id=" . $res[10] . "\">" . $res[2] . "</a></span></li>\n";
         // s.name
         echo "<li><span><b>School: </b></span><span><a href=\"../schools/index.php?id=" . $res[8] . "\">" . $res[9] . "</a></span></li>\n";
 
