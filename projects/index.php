@@ -27,6 +27,10 @@
       $commentsRequestStr = "select c.comments, c.cDate, u.displayName " . 
                             "from comments_ABOUT c, users u " . 
                             "where c.pid='" . $id . "' and u.email=c.email";
+                            
+      $donationsRequestStr = "select u.displayName " .
+                             "from Donations_FUND d, Users u " .
+                             "where d.pid='" . $id . "' and d.email=u.email";
 
       header("Content-type: text/html");
       
@@ -41,6 +45,12 @@
       while($tempCount = oci_fetch_row($voteCountStmt)) {
         $vc = $tempCount;
       }
+      
+      // make request for donations
+      $donationsStmt = oci_parse($conn, $donationsRequestStr);
+      oci_execute($donationsStmt);
+      $donCount = 0;
+      
       
       // make main request on project
       $stmt = oci_parse($conn, $requestStr);
@@ -88,15 +98,34 @@
         echo "<li><span><b>Total Funding Requested: </b></span><span>" . $totalPriceFormatted . "</span></li>\n"; 
         // p.expirationDate
         echo "<li><span><b>Last Day to Donate: </b></span><span>" . $res[4] . "</span></li>\n"; 
-
-        echo "</ul>\n";
         
-        // PROJECT FEEDBACK SECTION
-        echo "<h2>Project Feedback</h2>\n";
-        echo "<p><b>Votes: </b>" . number_format($vc,0, "", ",") . "</p>\n";
+        // List all donators
+        $donCpount = 0;
+        while($donRes = oci_fetch_row($donationsStmt)) {
+          $donCount = $donCount + 1;
+          // if first, put row header
+          if($donCount == 1) {
+            echo "<li><b>Donators: </b>"; }
+          // put comma after last one
+          else {
+            echo ", ";}
+          // then list display name
+          echo $donRes[0];
+        }
+        // if there were any donators, close out the tag
+        if($donCount != 0) {
+          echo "</li>";
+        }
+          
       }
+
+      echo "</ul>\n";
+        
+      // PROJECT FEEDBACK SECTION
+      echo "<h2>Project Feedback</h2>\n";
+      echo "<p><b>Votes: </b>" . number_format($vc,0, "", ",") . "</p>\n";
       
-      // make main request on project
+      // make request for comments
       $commentStmt = oci_parse($conn, $commentsRequestStr);
       oci_execute($commentStmt);
             
@@ -111,7 +140,7 @@
         
         echo "<p>\"" . $commRes[0] . "\"</br>      -" . $commRes[2] . ", " . $commRes[1] . "</p>";
       }
-    
+         
 
       // cleanup
       oci_close($conn);
