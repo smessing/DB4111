@@ -155,18 +155,28 @@ ul.toc span + span {
   float:right;
 }
 
-div.header {
+div.message {
   position: relative;
   height: 66px;
-  background-color: #F4F4F4;
-  border-bottom: 1px solid #CCC;
-  border-right: 1px solid #CCC;
+  background-color: #D1EAD2;
+  border: 1px solid green;
+  text-align: center;
+  font-size:24px;
+  color: green;
 }
 
-div.header p {
+div.error {
+  position: relative;
+  height: 66px;
+  background-color: #FFEBE8;
+  border: 1px solid red;
   text-align: center;
-  color: #33E;
-  font-size: 48px;
+  font-size:24px;
+  color: red;
+}
+
+footer {
+  text-align: center;
 }
 
 }
