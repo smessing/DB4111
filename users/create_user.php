@@ -66,6 +66,7 @@
 
   // first, compute salt:
   $salt = $name . date('Y-m-d-h-s');
+  // then, hash salted password:
   $hashed_pass = hash('md5', $pass . $salt);
   $requestStr = "insert into users" .
                 "(email, displayName, password, passwordSalt)" .
@@ -73,8 +74,6 @@
                 "('" . $email . "','" . $name . "','" . $hashed_pass . "','" . 
                        $salt . "')";
   $stmt = oci_parse($conn, $requestStr);
-  $success = oci_execute($stmt, OCI_DEFAULT);
-  var_dump($success);
   if (oci_execute($stmt, OCI_DEFAULT)) {
     header("Location:log_in.php?msg=welcome");
     exit;
