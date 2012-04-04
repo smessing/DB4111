@@ -155,4 +155,17 @@ ul.toc span + span {
   float:right;
 }
 
+div.header {
+  position: relative;
+  height: 66px;
+  background-color: #F4F4F4;
+  border-bottom: 1px solid #CCC;
+}
+
+div.header p {
+  text-align: center;
+  color: #33E;
+  font-size: 48px;
+}
+
 }
