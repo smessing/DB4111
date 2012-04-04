@@ -42,6 +42,12 @@
     exit;
   }
 
+  // check that pass is >= 5 chars long:
+  if (strlen($pass) < 5) {
+    header("Location:sign_up.php?error=short_pass");
+    exit;
+  }
+
   // now, check if email is already taken:
 
   ini_set('display_errors', 'On');
@@ -57,7 +63,16 @@
   }
 
   // if we're here, then email isn't taken, time to insert:
-  $requestStr = ""; // YOU'RE HERE!
+
+  // first, compute salt:
+  $salt = $name . date('Y-m-d-h-s');
+  $hashed_pass = hash('md5', $pass . $salt);
+  $requestStr = "insert into users" .
+                "(email, displayName, password, passwordSalt)" .
+                " values " .
+                "('" . $email . "','" . $name . "','" . $hashed_pass . "','" . 
+                       $salt . "')'";
+  var_dump($requestStr);
 
 ?>
 
