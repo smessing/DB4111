@@ -117,3 +117,35 @@ h3{
 .vg { color: #dd7700 } /* Name.Variable.Global */
 .vi { color: #3333bb } /* Name.Variable.Instance */
 .il { color: #0000DD; font-weight: bold } /* Literal.Number.Integer.Long */
+
+ul.toc {
+  list-style: none;
+  overflow-x: hidden;
+  padding: 0;
+  max-width=42em;
+}
+
+ul.toc li:before {
+  content: "................"
+           "................"
+	   "................"
+           "................"
+           "................"
+           "................"
+           "................";
+  float: left;
+  white-space: nowrap;
+  width: 0;
+}
+
+ul.toc span:first-child {
+  background: white;
+  padding-right: 0.33em;
+}
+
+ul.toc span + span {
+  background: white;
+  padding-left: 0.53em;
+  float:right;
+}
+

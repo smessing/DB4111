@@ -41,6 +41,7 @@
         // PROJECT OVERVIEW SECTION
         echo "<h2>Project Overview</h2>\n"; 
         echo "<ul class ='toc'>\n";
+
         // t.name
         echo "<li><span><b>Teacher: </b></span><span>" . $res[2] . "</span></li>\n";
         // s.name
@@ -71,6 +72,7 @@
         echo "<li><span><b>Total Funding Requested: </b></span><span>" . $totalPriceFormatted . "</span></li>\n"; 
         // p.expirationDate
         echo "<li><span><b>Last Day to Donate: </b></span><span>" . $res[4] . "</span></li>\n"; 
+
         echo "</ul>\n";
       }
 
