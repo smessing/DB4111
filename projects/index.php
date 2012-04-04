@@ -12,14 +12,20 @@
 
     if (!empty($id)) {
 
+      $voteCountQuery = "select count(*) from vote v where v.pid='" . $id . "'";
       $requestStr= "select p.title, p.subject, t.name, p.shortDescription, " . 
                            "p.expirationDate, p.totalPrice, p.percentFunded, " . 
-                           "p.numStudents, p.ncesid, s.name " . 
+                           "p.numStudents, p.ncesid, s.name, " .
+                           "c.comments, c.cDate, u.displayName, vc.count" .
                    "from Projects_PROPOSE_AT p, Schools_S_IN_S_HAVE s, " .
-                         "addresses a, teachers t " .
+                         "addresses a, teachers t, comments_ABOUT c, " .
+                         "users u, " .
+                         "(select count(*) as count from vote v where v.pid='" . $id . "') vc"
                    "where p.pid='" . $id . "' and p.ncesid=s.ncesid " .
                           "and s.latitude=a.latitude and " .
-                          "s.longitude=a.longitude and t.tid = p.tid";
+                          "s.longitude=a.longitude and t.tid = p.tid " .
+                          "and c.pid = p.pid and c.email = u.email " .
+                          "and v.pid = p.pid";
 
       // Connect to DB
 
@@ -74,7 +80,14 @@
         echo "<li><span><b>Last Day to Donate: </b></span><span>" . $res[4] . "</span></li>\n"; 
 
         echo "</ul>\n";
+        
+        // PROJECT FEEDBACK SECTION
+        echo "<h2>Project Feedback</h2>\n";
+        echo "<p><b>Votes: </b>" . number_format($res[13],0, "", ","); . "</p>\n";
       }
+      
+
+
 
       // cleanup
       oci_close($conn);
