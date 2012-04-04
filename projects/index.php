@@ -31,9 +31,7 @@
       header("Content-type: text/html");
       
       // Connect to DB
-      ini_set('display_errors', 'On');
-      $db = 'w4111f.cs.columbia.edu:1521/adb'; 
-      $conn = oci_connect("sbm2158", "donorschoose", $db);
+      require_once "../static/php/connection.php"
       
       // get vote count for this project
       $voteCountStmt = oci_parse($conn, $countVotesRequestStr);
