@@ -6,12 +6,13 @@
 
 <?php
   require_once "../static/php/connection.php";
+  /*
   echo "DEBUG INFO<br/>";
   echo "email: " . $_POST['email'] . "<br/>";
   echo "name: " . $_POST['name'] . "<br/>";
   echo "pass: " . $_POST['pass'] . "<br/>";
   echo "cpass: " . $_POST['cpass'] . "<br/>";
-
+  */
   $email = $_POST['email'];
   $name = $_POST['name'];
   $pass = $_POST['pass'];
