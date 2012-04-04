@@ -25,6 +25,9 @@ Display Name: <input type="text" name="name"/> <br/>
   if ($_REQUEST['error'] == 'pass') {
      echo "<font color='red'>Password fields must match.</font><br/>";
   }
+  if ($_REQUEST['error'] == 'short_pass') {
+    echo "<font color='red'>Password is too short! Must be at least 5 chars.</font><br/>";
+  }
 ?>
 Password: <input type="password" name="pass" /> <br/>
 Password (confirmation): <input type="password" name="cpass" /> <br/>
