@@ -119,9 +119,6 @@
       oci_close($conn);
     }
   ?>
-<footer>
-  <hr noshade/>
-  <a href="../index.html">Main Page</a>
-</footer>
+<?php include("../static/php/footer.php"); ?>
 </body>
 </html>
