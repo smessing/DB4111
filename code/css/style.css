@@ -160,6 +160,7 @@ div.header {
   height: 66px;
   background-color: #F4F4F4;
   border-bottom: 1px solid #CCC;
+  border-right: 1px solid #CCC;
 }
 
 div.header p {
