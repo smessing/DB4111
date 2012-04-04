@@ -107,7 +107,7 @@
         $donCount = 0;
         while($donRes = oci_fetch_row($donationsStmt)) {
           $donCount = $donCount + 1;
-          var_dump($donCount);
+          
           // if first, put header and <p> tag
           if($donCount == 1) {
             echo "<h3>Donators</h3>\n"; 
