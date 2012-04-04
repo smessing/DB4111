@@ -16,25 +16,36 @@
       $requestStr= "select p.title, p.subject, t.name, p.shortDescription, " . 
                            "p.expirationDate, p.totalPrice, p.percentFunded, " . 
                            "p.numStudents, p.ncesid, s.name, " .
-                           "c.comments, c.cDate, u.displayName, vc.vcount " .
+                           "c.comments, c.cDate, u.displayName " .
                    "from Projects_PROPOSE_AT p, Schools_S_IN_S_HAVE s, " .
                          "addresses a, teachers t, comments_ABOUT c, " .
-                         "users u, " .
-                         "(select count(*) as vcount from vote v where v.pid='" . $id . "') vc " . 
+                         "users u " .
                    "where p.pid='" . $id . "' and p.ncesid=s.ncesid " .
                           "and s.latitude=a.latitude and " .
                           "s.longitude=a.longitude and t.tid = p.tid " .
-                          "and c.pid = p.pid and c.email = u.email ";                        
+                          "and c.pid = p.pid and c.email = u.email ";
+      $countVotesRequestStr = "select count(*) as vcount from vote v where v.pid='" . $id . "'";
 
+      header("Content-type: text/html");
+      
       // Connect to DB
-
       ini_set('display_errors', 'On');
       $db = 'w4111f.cs.columbia.edu:1521/adb'; 
       $conn = oci_connect("sbm2158", "donorschoose", $db);
-
-      header("Content-type: text/html");
+      
+      // get vote count for this project
+      $voteCountStmt = oci_parse($conn, $countVotesRequestStr);
+      oci_execute($voteCountStmt, OCI_DEFAULT);
+      
+      $vc = 0;
+      while($tempCount = oci_fetch_row($voteCountStmt)) {
+        $vc = $tempCount;
+      }
+      
+      // make main request on project
       $stmt = oci_parse($conn, $requestStr);
-      oci_execute($stmt, OCI_DEFAULT);
+      oci_execute($stmt);
+            
       while($res = oci_fetch_row($stmt)) {
 
         // HEADER SECTION
@@ -84,9 +95,6 @@
         echo "<h2>Project Feedback</h2>\n";
         echo "<p><b>Votes: </b>" . number_format($res[13],0, "", ",") . "</p>\n";
       }
-      
-
-
 
       // cleanup
       oci_close($conn);
