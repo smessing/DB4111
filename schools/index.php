@@ -4,7 +4,8 @@
 </head>
 <body>
   <?php
-    require_once "../static/php/connection.php";
+    require_once "../static/php/db.php";
+    require_once "../static/php/project_helper.php";
     $id=$_REQUEST['id'];
 
     if (empty($id)) {
@@ -26,7 +27,7 @@
       header("Content-type: text/html");
       $stmt = oci_parse($conn, $requestStr);
       oci_execute($stmt, OCI_DEFAULT);
-      while($res = oci_fetch_row($stmt)) {
+      $res = oci_fetch_row($stmt);
         echo '<h1>' . $res[0] . "</h1>\n";   
 	echo "<h2>Profile</h2>\n";
 	echo '<b>Address</b>: ' . $res[3] . ' ' . $res[4] . ', ' . $res[5] . ', ' . $res[6] . "\n";
@@ -40,7 +41,6 @@
 	echo '<li><span><b>Graduation Rate</b></span><span>' . number_format($res[12] * 100, 0, ".", "") . "%</span></li>\n";
 	echo '<li><span><b>Percent of AP Scores Above 2</b></span><span>' . number_format($res[13] * 100, 0, ".", "") . "%</span></li>\n";
         echo "</ul>\n";	
-      }
 
       echo "<h2>Projects</h2>\n";
 
@@ -50,15 +50,16 @@
                     "from projects_propose_at p " .
                     "where p.ncesID=" . $id;
       $stmt = oci_parse($conn, $requestStr);
-      oci_execute($stmt, OCI_DEFAULT);
+      oci_execute($stmt);
       echo "<ul>\n";
       while($res = oci_fetch_row($stmt)) {
        // check if project is less than 5% funded:
        echo "<li><b><a href='../projects/index.php?id=" . $res[0] . "'>" . $res[6] . "</a></b>";
-       if ($res[10] < 0.15) {
-         echo  " (<font color='red'>". number_format($res[10]*100, 0, ".", "") . "% Funded</font>)";
+       $percentFunded = getPercentFunded($res[0], $conn);
+       if ($percentFunded < 0.15) {
+         echo  " (<font color='red'>". number_format($percentFunded*100, 0, ".", "") . "% Funded</font>)";
        } else {
-         echo " (". number_format($res[10]*100, 0, ".", "") . "% Funded)";  
+         echo " (". number_format($percentFunded*100, 0, ".", "") . "% Funded)";  
        }
          echo "<ul class='toc'>\n";
            echo "<li><span><b>Expiration Date</b></span><span>" . $res[4] . "</span></li>\n";          

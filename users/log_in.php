@@ -5,13 +5,9 @@
 </head>
 <body>
 
-<?php 
-  if ($_REQUEST['msg'] == 'welcome') {
-    echo '<div class="header">';
-    echo '<p>Welcome to the site!</p>';
-    echo '</div>';
-  }
-?>
+<?php include("../static/php/message.php"); ?>
+<?php include("../static/php/error.php"); ?>
+
 <h2>Log in</h2>
 
 <form action="log_in_user.php" method="post" align="center">
