@@ -103,7 +103,7 @@
       oci_execute($commentStmt);
             
       $commCount = 0;
-      while($comRes = oci_fetch_row($commentStmt)) {
+      while($commRes = oci_fetch_row($commentStmt)) {
         $commCount = $commCount + 1;
         
         // if first comment, put the header on the section
