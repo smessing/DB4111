@@ -92,9 +92,9 @@
         // red font if funding below 15%
         $percentFunded = getPercentFunded($id, $conn);
         if($percentFunded < 0.15) {
-          echo "<li><span><b>Percent Funded: </b></span><span><font color=\"red\">" .  number_format($res[6]*100,0,".","") . "%</font></span></li>\n"; }
+          echo "<li><span><b>Percent Funded: </b></span><span><font color=\"red\">" .  number_format($percentFunded*100,0,".","") . "%</font></span></li>\n"; }
         else {
-          echo "<li><span><b>Percent Funded: </b></span><span>" .  number_format($res[6]*100,0,".","") . "%</span></li>\n"; }
+          echo "<li><span><b>Percent Funded: </b></span><span>" .  number_format($percentFunded*100,0,".","") . "%</span></li>\n"; }
 
         // p.totalPrice
         $totalPriceFormatted = "$".number_format($res[5], 2, '.', ',');
