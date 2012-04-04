@@ -5,6 +5,7 @@
 <body>
 
 <?php
+  require_once "../static/php/connection.php";
   echo "DEBUG INFO<br/>";
   echo "email: " . $_POST['email'] . "<br/>";
   echo "name: " . $_POST['name'] . "<br/>";
@@ -55,7 +56,7 @@
   $conn = oci_connect("sbm2158", "donorschoose", $db);
   $requestStr = "select * from users u where u.email=" . "'" . $email . "'";
   $stmt = oci_parse($conn, $requestStr);
-  oci_execute($stmt, OCI_DEFAULT);
+  oci_execute($stmt);
   $user = oci_fetch_row($stmt);
   if (!empty($user)) {
     header("Location:sign_up.php?error=used");
@@ -74,7 +75,7 @@
                 "('" . $email . "','" . $name . "','" . $hashed_pass . "','" . 
                        $salt . "')";
   $stmt = oci_parse($conn, $requestStr);
-  if (oci_execute($stmt, OCI_DEFAULT)) {
+  if (oci_execute($stmt)) {
     header("Location:log_in.php?msg=welcome");
     exit;
   } else {
