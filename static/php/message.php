@@ -7,6 +7,8 @@ if (!empty($_REQUEST['msg'])) {
     echo "Welcome to the site!";
   } else if ($msg == 'loggedin') {
     echo "You were successfully logged in.";
+  } else if ($msg == 'logout') {
+    echo "You were successfully logged out.";
   }
 
   echo "</p></div>";

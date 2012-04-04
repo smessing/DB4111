@@ -16,7 +16,7 @@
 <form action="log_in_user.php" method="post" align="center">
 E-mail: <input type="text" name="email" /> <br/>
 Password: <input type="password" name="pass" /> <br/>
-<input type="submit"/>
+<input value="Log in" type="submit"/>
 </form>
 
 <?php include("../static/php/footer.php"); ?>
