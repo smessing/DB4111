@@ -28,7 +28,7 @@
                             "from comments_ABOUT c, users u " . 
                             "where c.pid='" . $id . "' and u.email=c.email";
                             
-      $donationsRequestStr = "select u.displayName " .
+      $donationsRequestStr = "select u.displayName, u.email " .
                              "from Donations_FUND d, Users u " .
                              "where d.pid='" . $id . "' and d.email=u.email";
 
@@ -98,28 +98,33 @@
         echo "<li><span><b>Total Funding Requested: </b></span><span>" . $totalPriceFormatted . "</span></li>\n"; 
         // p.expirationDate
         echo "<li><span><b>Last Day to Donate: </b></span><span>" . $res[4] . "</span></li>\n"; 
+        echo "</ul>\n";
         
         // List all donators
         $donCpount = 0;
         while($donRes = oci_fetch_row($donationsStmt)) {
           $donCount = $donCount + 1;
-          // if first, put row header
+          
+          // if first, put header and <p> tag
           if($donCount == 1) {
-            echo "<li><b>Donators: </b>"; }
-          // put comma after last one
+            echo "<h3><Donators</h3>"; 
+            echo "<p>";
+          }
+            
+          // if not the first one, put comma after last one
           else {
             echo ", ";}
           // then list display name
-          echo $donRes[0];
+          echo "<a href=\"../users/index.php?id=" . $donRes[1] . "\"> " . $donRes[0] . "</a>";
         }
-        // if there were any donators, close out the tag
+        // if there were any donators, close out the <p> tag
         if($donCount != 0) {
-          echo "</li>";
+          echo "<p>";
         }
           
       }
 
-      echo "</ul>\n";
+      
         
       // PROJECT FEEDBACK SECTION
       echo "<h2>Project Feedback</h2>\n";
