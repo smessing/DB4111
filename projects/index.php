@@ -31,7 +31,7 @@
       header("Content-type: text/html");
       
       // Connect to DB
-      require_once "../static/php/connection.php"
+      require_once "../static/php/connection.php";
        
       // get vote count for this project
       $voteCountStmt = oci_parse($conn, $countVotesRequestStr);
