@@ -10,6 +10,9 @@
   if ($_REQUEST['error'] == 'email') {
     echo "<font color='red'>Please enter a valid e-mail.</font><br/>";
   }
+  if ($_REQUEST['error'] == 'used') {
+    echo "<font color='red'>E-mail is already registered!</font><br/>";
+  }
 ?>
 E-mail: <input type="text" name="email" /> <br/>
 <?php

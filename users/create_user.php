@@ -42,15 +42,22 @@
     exit;
   }
 
-  // now, check if username is already taken:
+  // now, check if email is already taken:
 
   ini_set('display_errors', 'On');
   $db = 'w4111f.cs.columbia.edu:1521/adb'; 
   $conn = oci_connect("sbm2158", "donorschoose", $db);
-
-  $requestStr = "select * from users u where u.email=" . $email;
+  $requestStr = "select * from users u where u.email=" . "'" . $email . "'";
   $stmt = oci_parse($conn, $requestStr);
   oci_execute($stmt, OCI_DEFAULT);
+  $user = oci_fetch_row($stmt);
+  if (!empty($user)) {
+    header("Location:sign_up.php?error=used");
+    exit;
+  }
+
+  // if we're here, then email isn't taken, time to insert:
+  $requestStr = ""; // YOU'RE HERE!
 
 ?>
 
