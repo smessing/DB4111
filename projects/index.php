@@ -28,6 +28,7 @@
                             "from comments_ABOUT c, users u " . 
                             "where c.pid='" . $id . "' and u.email=c.email";
                             
+
       $donationsRequestStr = "select u.displayName, u.email " .
                              "from Donations_FUND d, Users u " .
                              "where d.pid='" . $id . "' and d.email=u.email";
@@ -99,6 +100,7 @@
         echo "<li><span><b>Total Funding Requested: </b></span><span>" . $totalPriceFormatted . "</span></li>\n"; 
         // p.expirationDate
         echo "<li><span><b>Last Day to Donate: </b></span><span>" . $res[4] . "</span></li>\n"; 
+
         echo "</ul>\n";
         
         // List all donators
@@ -108,7 +110,7 @@
           var_dump($donCount);
           // if first, put header and <p> tag
           if($donCount == 1) {
-            echo "<h3><Donators</h3>"; 
+            echo "<h3>Donators</h3>\n"; 
             echo "<p>";
           }
             
@@ -124,9 +126,7 @@
         }
           
       }
-
-      
-        
+              
       // PROJECT FEEDBACK SECTION
       echo "<h2>Project Feedback</h2>\n";
       echo "<p><b>Votes: </b>" . number_format($vc,0, "", ",") . "</p>\n";
