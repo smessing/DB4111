@@ -12,24 +12,50 @@
 
     if (!empty($id)) {
 
+      
       $requestStr= "select p.title, p.subject, t.name, p.shortDescription, " . 
                            "p.expirationDate, p.totalPrice, p.percentFunded, " . 
-                           "p.numStudents, p.ncesid, s.name " . 
+                           "p.numStudents, p.ncesid, s.name " .
                    "from Projects_PROPOSE_AT p, Schools_S_IN_S_HAVE s, " .
                          "addresses a, teachers t " .
                    "where p.pid='" . $id . "' and p.ncesid=s.ncesid " .
                           "and s.latitude=a.latitude and " .
-                          "s.longitude=a.longitude and t.tid = p.tid";
-
-      // Connect to DB
-
-      ini_set('display_errors', 'On');
-      $db = 'w4111f.cs.columbia.edu:1521/adb'; 
-      $conn = oci_connect("sbm2158", "donorschoose", $db);
+                          "s.longitude=a.longitude and t.tid = p.tid ";
+                          
+      $countVotesRequestStr = "select count(*) as vcount from vote v where v.pid='" . $id . "'";
+      
+      $commentsRequestStr = "select c.comments, c.cDate, u.displayName " . 
+                            "from comments_ABOUT c, users u " . 
+                            "where c.pid='" . $id . "' and u.email=c.email";
+                            
+      $donationsRequestStr = "select u.displayName " .
+                             "from Donations_FUND d, Users u " .
+                             "where d.pid='" . $id . "' and d.email=u.email";
 
       header("Content-type: text/html");
+      
+      // Connect to DB
+      require_once "../static/php/connection.php";
+       
+      // get vote count for this project
+      $voteCountStmt = oci_parse($conn, $countVotesRequestStr);
+      oci_execute($voteCountStmt);
+      
+      $vc = 0;
+      while($tempCount = oci_fetch_row($voteCountStmt)) {
+        $vc = $tempCount;
+      }
+      
+      // make request for donations
+      $donationsStmt = oci_parse($conn, $donationsRequestStr);
+      oci_execute($donationsStmt);
+      $donCount = 0;
+      
+      
+      // make main request on project
       $stmt = oci_parse($conn, $requestStr);
-      oci_execute($stmt, OCI_DEFAULT);
+      oci_execute($stmt);
+            
       while($res = oci_fetch_row($stmt)) {
 
         // HEADER SECTION
@@ -72,17 +98,54 @@
         echo "<li><span><b>Total Funding Requested: </b></span><span>" . $totalPriceFormatted . "</span></li>\n"; 
         // p.expirationDate
         echo "<li><span><b>Last Day to Donate: </b></span><span>" . $res[4] . "</span></li>\n"; 
-
-        echo "</ul>\n";
+        
+        // List all donators
+        $donCpount = 0;
+        while($donRes = oci_fetch_row($donationsStmt)) {
+          $donCount = $donCount + 1;
+          // if first, put row header
+          if($donCount == 1) {
+            echo "<li><b>Donators: </b>"; }
+          // put comma after last one
+          else {
+            echo ", ";}
+          // then list display name
+          echo $donRes[0];
+        }
+        // if there were any donators, close out the tag
+        if($donCount != 0) {
+          echo "</li>";
+        }
+          
       }
+
+      echo "</ul>\n";
+        
+      // PROJECT FEEDBACK SECTION
+      echo "<h2>Project Feedback</h2>\n";
+      echo "<p><b>Votes: </b>" . number_format($vc,0, "", ",") . "</p>\n";
+      
+      // make request for comments
+      $commentStmt = oci_parse($conn, $commentsRequestStr);
+      oci_execute($commentStmt);
+            
+      $commCount = 0;
+      while($commRes = oci_fetch_row($commentStmt)) {
+        $commCount = $commCount + 1;
+        
+        // if first comment, put the header on the section
+        if($commCount == 1) {
+          echo "<h3>User Comments</h3>";
+        }
+        
+        echo "<p>\"" . $commRes[0] . "\"</br>      -" . $commRes[2] . ", " . $commRes[1] . "</p>";
+      }
+         
 
       // cleanup
       oci_close($conn);
     }
   ?>
-<footer>
-  <hr noshade/>
-  <a href="../index.html">Main Page</a>
-</footer>
+<?php include("../static/php/footer.php"); ?>
 </body>
 </html>
