@@ -5,6 +5,12 @@
 <body>
 <h2>Create an Account</h2>
 
+<?php
+  if ($_REQUEST['error'] == 'critical') {
+    echo "<font color='red' size=20>An internal error has occurred, please contact sys admin!</font>";
+  }
+?>
+
 <form action="create_user.php" method="post" align="center">
 <?php
   if ($_REQUEST['error'] == 'email') {

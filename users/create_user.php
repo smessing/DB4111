@@ -71,9 +71,18 @@
                 "(email, displayName, password, passwordSalt)" .
                 " values " .
                 "('" . $email . "','" . $name . "','" . $hashed_pass . "','" . 
-                       $salt . "')'";
-  var_dump($requestStr);
-
+                       $salt . "')";
+  $stmt = oci_parse($conn, $requestStr);
+  $success = oci_execute($stmt, OCI_DEFAULT);
+  var_dump($success);
+  if (oci_execute($stmt, OCI_DEFAULT)) {
+    header("Location:log_in.php?msg=welcome");
+    exit;
+  } else {
+    header("Location:sign_up.php?error=critical");
+    exit;
+  }
+  oci_close($conn);
 ?>
 
 </body>
