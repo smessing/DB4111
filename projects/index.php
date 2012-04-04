@@ -69,7 +69,7 @@
         // p.totalPrice
         setlocale(LC_MONETARY, 'en_US');
         $totalPriceFormatted = money_format('$%i', $res[5]);
-        echo "<li><span><b>Total Funding Requested: </b></span><span>$" . $totalPriceFormatted . "</span></li>\n"; 
+        echo "<li><span><b>Total Funding Requested: </b></span><span>" . $totalPriceFormatted . "</span></li>\n"; 
         // p.expirationDate
         echo "<li><span><b>Last Day to Donate: </b></span><span>" . $res[4] . "</span></li>\n"; 
         echo "</ul>\n";
