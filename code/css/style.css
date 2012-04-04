@@ -157,16 +157,21 @@ ul.toc span + span {
 
 div.header {
   position: relative;
-  height: 66px;
-  background-color: #F4F4F4;
-  border-bottom: 1px solid #CCC;
-  border-right: 1px solid #CCC;
+  height: 36px;
+  background-color: #D1EAD2;
+  border-bottom: 1px solid #BBD2BC;
+  border-right: 1px solid #BBD2BC;
+  text-align: center;
+  font-size:24px;
 }
 
-div.header p {
+div.error {
+  position: relative;
+  height: 66px;
+  background-color:#FFEBE8;
+  border: 1px solid #DD3C10;
   text-align: center;
-  color: #33E;
-  font-size: 48px;
+  font-size:24px;
 }
 
 }
