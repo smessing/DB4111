@@ -67,7 +67,7 @@
           echo "<li><span><b>Percent Funded: </b></span><span>" .  number_format($res[6]*100,0,".","") . "%</span></li>\n"; }
 
         // p.totalPrice
-        $totalPriceFormatted = "$".number_format($res[5], 2, '.', ',')
+        $totalPriceFormatted = "$".number_format($res[5], 2, '.', ',');
         echo "<li><span><b>Total Funding Requested: </b></span><span>" . $totalPriceFormatted . "</span></li>\n"; 
         // p.expirationDate
         echo "<li><span><b>Last Day to Donate: </b></span><span>" . $res[4] . "</span></li>\n"; 
