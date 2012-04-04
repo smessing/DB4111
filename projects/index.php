@@ -107,7 +107,7 @@
         $commCount = $commCount + 1;
         
         // if first comment, put the header on the section
-        if(commCount == 1) {
+        if($commCount == 1) {
           echo "<h3>User Comments</h3>";
         }
         
