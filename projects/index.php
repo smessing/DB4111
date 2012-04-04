@@ -1,3 +1,6 @@
+<?php
+  include("../static/php/header.php");
+?>
 <html>
 <head>
   <link href="../code/css/style.css" rel="stylesheet" type="text/css" />
@@ -127,6 +130,18 @@
         }
           
       }
+      
+      if(isset($_SESSION['email'])) {
+      
+        echo "<h3>Please Donate</h3>";
+        echo "<form action=\"donate.php\" method=\"post\">\n";
+        echo "Amount: <input type=\"text\" name=\"donation\" />\n";
+        echo "<input value=\"donate!\" type=\"submit\" />\n";
+        echo "</form>\n";
+        
+      }
+
+      
               
       // PROJECT FEEDBACK SECTION
       echo "<h2>Project Feedback</h2>\n";
