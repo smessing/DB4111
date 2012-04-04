@@ -1,3 +1,4 @@
+<?php include("../static/php/header.php"); ?>
 <html>
 <head>
   <link href="../code/css/style.css" rel="stylesheet" type="text/css" />
@@ -15,6 +16,12 @@
   echo "<br/>";
   echo "---submitted_pass" . var_dump($submitted_pass);
   echo "<br/>";
+
+  // check if we're already logged in:
+  if (isset($_SESSION['email'])) {
+    header("Location:log_in.php?error=loggedin");
+    exit;
+  }
   
   $regex = "/^[a-zA-Z0-9\._\-\+]+@[a-zA-Z0-9\._\-]+\.[a-zA-Z]{2,4}$/";
 
@@ -42,7 +49,6 @@
     session_start();
     $_SESSION['email'] = $user[0]; 
     header("Location:../index.php?msg=loggedin");
-    exit;
   } else {
     header("Location:log_in.php?error=invalid_pass");
     exit;

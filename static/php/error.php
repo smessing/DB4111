@@ -19,6 +19,8 @@ if (!empty($_REQUEST['error'])) {
     echo "Password is too short! Must be at least 5 chars.";
   } else if ($error == 'nonexistent') {
     echo "E-mail wasn't found! Please try again, or <a href='sign_up.php'>register</a>.";
+  } else if ($error == 'loggedin') {
+    echo "You're already logged in!";
   } 
   echo "</p></div>";
 }
