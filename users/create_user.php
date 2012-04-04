@@ -36,6 +36,12 @@
     exit;
   }
 
+  // check that pass isn't empty:
+  if (empty($pass)) {
+    header("Location:sign_up.php?error=pass");
+    exit;
+  }
+
   // now, check if username is already taken:
 
   ini_set('display_errors', 'On');
