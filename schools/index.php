@@ -4,6 +4,7 @@
 </head>
 <body>
   <?php
+    require_once "../static/php/connection.php";
     $id=$_REQUEST['id'];
 
     if (empty($id)) {
@@ -21,10 +22,6 @@
                            "and s.ncesid=" . $id;
 
       // Connect to DB
-
-      ini_set('display_errors', 'On');
-      $db = 'w4111f.cs.columbia.edu:1521/adb'; 
-      $conn = oci_connect("sbm2158", "donorschoose", $db);
 
       header("Content-type: text/html");
       $stmt = oci_parse($conn, $requestStr);
