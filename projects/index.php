@@ -101,7 +101,7 @@
         echo "</ul>\n";
         
         // List all donators
-        $donCpount = 0;
+        $donCount = 0;
         while($donRes = oci_fetch_row($donationsStmt)) {
           $donCount = $donCount + 1;
           
