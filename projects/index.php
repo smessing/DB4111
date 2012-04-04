@@ -18,13 +18,16 @@
                            "p.numStudents, p.ncesid, s.name, " .
                            "c.comments, c.cDate, u.displayName " .
                    "from Projects_PROPOSE_AT p, Schools_S_IN_S_HAVE s, " .
-                         "addresses a, teachers t, comments_ABOUT c, " .
-                         "users u " .
+                         "addresses a, teachers t " .
                    "where p.pid='" . $id . "' and p.ncesid=s.ncesid " .
                           "and s.latitude=a.latitude and " .
-                          "s.longitude=a.longitude and t.tid = p.tid " .
-                          "and c.pid = p.pid and c.email = u.email ";
+                          "s.longitude=a.longitude and t.tid = p.tid ";
+                          
       $countVotesRequestStr = "select count(*) as vcount from vote v where v.pid='" . $id . "'";
+      
+      $commentsRequestStr = "select c.comments, c.date, u.displayName " . 
+                            "from comments_ABOUT c, users u " . 
+                            "where c.pid='" . $id . "' and u.email=c.email";
 
       header("Content-type: text/html");
       
@@ -95,6 +98,23 @@
         echo "<h2>Project Feedback</h2>\n";
         echo "<p><b>Votes: </b>" . number_format($vc,0, "", ",") . "</p>\n";
       }
+      
+      // make main request on project
+      $commentStmt = oci_parse($conn, $commentsRequestStr);
+      oci_execute($commentStmt);
+            
+      $commCount = 0;
+      while($comRes = oci_fetch_row($commentStmt)) {
+        $commCount = $commCount + 1;
+        
+        // if first comment, put the header on the section
+        if(commCount == 1) {
+          echo "<h3>User Comments</h3>";
+        }
+        
+        echo "<p>\"" . $commRes[0] . "\"\n-" . $commRes[1] . ", " . $commRes[2] . "</p>";
+      }
+    
 
       // cleanup
       oci_close($conn);
