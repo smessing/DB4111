@@ -32,10 +32,10 @@
       
       // Connect to DB
       require_once "../static/php/connection.php"
-      
+       
       // get vote count for this project
       $voteCountStmt = oci_parse($conn, $countVotesRequestStr);
-      oci_execute($voteCountStmt, OCI_DEFAULT);
+      oci_execute($voteCountStmt);
       
       $vc = 0;
       while($tempCount = oci_fetch_row($voteCountStmt)) {
