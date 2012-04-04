@@ -24,7 +24,7 @@
                           
       $countVotesRequestStr = "select count(*) as vcount from vote v where v.pid='" . $id . "'";
       
-      $commentsRequestStr = "select c.comments, c.date, u.displayName " . 
+      $commentsRequestStr = "select c.comments, c.cDate, u.displayName " . 
                             "from comments_ABOUT c, users u " . 
                             "where c.pid='" . $id . "' and u.email=c.email";
 
