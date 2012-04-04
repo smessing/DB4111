@@ -35,7 +35,8 @@
       header("Content-type: text/html");
       
       // Connect to DB
-      require_once "../static/php/connection.php";
+      require_once "../static/php/db.php";
+      require_once "../static/php/project_helper.php";
        
       // get vote count for this project
       $voteCountStmt = oci_parse($conn, $countVotesRequestStr);
@@ -104,7 +105,7 @@
         $donCount = 0;
         while($donRes = oci_fetch_row($donationsStmt)) {
           $donCount = $donCount + 1;
-          
+          var_dump($donCount);
           // if first, put header and <p> tag
           if($donCount == 1) {
             echo "<h3><Donators</h3>"; 
