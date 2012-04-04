@@ -111,7 +111,7 @@
           echo "<h3>User Comments</h3>";
         }
         
-        echo "<p>\"" . $commRes[0] . "\"\n-" . $commRes[2] . ", " . $commRes[1] . "</p>";
+        echo "<p>\"" . $commRes[0] . "\" \n-" . $commRes[2] . ", " . $commRes[1] . "</p>";
       }
     
 
