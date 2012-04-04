@@ -22,12 +22,8 @@
                    "where s.latitude=a.latitude and s.longitude=a.longitude " .
                            "and s.ncesid=" . $id;
 
-      // Connect to DB
-
+      $res = getOneRow($requestStr, $conn);
       header("Content-type: text/html");
-      $stmt = oci_parse($conn, $requestStr);
-      oci_execute($stmt, OCI_DEFAULT);
-      $res = oci_fetch_row($stmt);
         echo '<h1>' . $res[0] . "</h1>\n";   
 	echo "<h2>Profile</h2>\n";
 	echo '<b>Address</b>: ' . $res[3] . ' ' . $res[4] . ', ' . $res[5] . ', ' . $res[6] . "\n";
