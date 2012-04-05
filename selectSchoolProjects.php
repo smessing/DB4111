@@ -191,7 +191,8 @@
                    
    $_SESSION['searchQuery'] = $fullQueryStr;
    
-   header("location: main.php");
+   header("location: index.php");
+   //header("location: static/php/school_xml_gen.php");
           
     //echo $fullQueryStr;   
 
