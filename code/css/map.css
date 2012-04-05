@@ -188,10 +188,10 @@ div.query {
 
 div.title {
   position: fixed;
-  height: 66px;
   background-color: white;
-  max-width: 40em;
-  left: 8%;
+  width: 25em;
+  height: 23em;
+  left: 6%;
   top: 5%;
   z-index: 10001;
   text-align: center;
@@ -200,9 +200,17 @@ div.title {
 }
 
 div.title p {
-  background-color: white;
-  padding: 1em 1em;
-  border-radius: 5px;
+  text-align: justify;
 }
 
+div.query {
+  position: fixed;
+  background-color: white;
+  border-radius: 5px;
+  width: 23em;
+  height: 25em;
+  left: 75%;
+  top: 50%;
 }
+
+

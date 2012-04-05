@@ -12,6 +12,8 @@
   } 
 ?>
 <?php
+    include("../static/php/error.php");
+    include("../static/php/message.php");
     require_once '../static/php/db.php';
     require_once '../static/php/sanitize.php';
     $email = $_REQUEST['email'];
