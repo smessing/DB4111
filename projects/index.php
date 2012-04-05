@@ -143,7 +143,7 @@
         }
           
       
-      
+      // MAKE A DONATION
       if(isset($_SESSION['email'])) {
       
         echo "<h3>Please Donate</h3>";
@@ -164,14 +164,16 @@
       // PROJECT FEEDBACK SECTION
       echo "<h2>Project Feedback</h2>\n";
       
-      // AREA TO MAKE A COMMENT
       
+      // AREA TO MAKE A COMMENT
       if (isset($_SESSION['email'])) {
         echo "<form action=\"comment.php\" method=\"post\">\n";
         echo "<textarea cols=\"75\" rows=\"5\" name =\"userComment\">";
         echo "Leave feedback about the project.";        
         echo "</textarea>";
         echo "<br><br>";
+        echo "<input type=\"hidden\" name=\"pid\" value=\"" . $id . "\"/>";
+        echo "<input type=\"hidden\" name=\"tid\" value=\"" . $res[10] . "\"/>"; 
         echo "<input value =\"comment\" type=\"submit\" />\n";
         echo "</form>\n";
       }

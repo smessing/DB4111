@@ -1,6 +1,7 @@
 <?php
   include("../static/php/header.php");
-  require_once "../static/php/connection.php";
+  require_once "../static/php/db.php";
+  
   
   $amountString = $_POST['donation'];
   $pid = $_POST['pid'];
@@ -21,7 +22,7 @@
     exit;
   }
   
-  // query to get the largest current did value
+  // query to get the largest current did value to set this one to one larger
   $maxDidQuery = "select max(d.did) as maxDid from Donations_FUND d";
   
   // make query
@@ -42,9 +43,10 @@
                          "'" . $_SESSION['email'] . "', " . $currentDid . ")";
   
   // run insert statement
-  $stmt = oci_parse($conn, $donateInsertionStr);
-  oci_execute($stmt);
-  oci_commit($conn);
+  insert($donateInsertionStr, $conn);
+  //$stmt = oci_parse($conn, $donateInsertionStr);
+  //oci_execute($stmt);
+  //oci_commit($conn);
   //var_dump($donateInsertionStr);
   header("Location:index.php?id=" . $pid . "&msg=donated");
   
