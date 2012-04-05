@@ -13,6 +13,7 @@
 ?>
 <?php
     require_once '../static/php/db.php';
+    require_once '../static/php/sanitize.php';
     $email = $_REQUEST['email'];
     $requestStr = "select u.email, u.displayname from users u where u.email='" . 
                   $email . "'";
