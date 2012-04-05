@@ -6,6 +6,8 @@
   <link href="../code/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<?php include('../static/php/error.php'); ?>
+<?php include('../static/php/message.php'); ?>
   <?php
     require_once "../static/php/db.php";
     require_once "../static/php/project_helper.php";
@@ -16,7 +18,6 @@
     }
 
     if (!empty($id)) {
-
       $requestStr= "select s.name, s.latitude, s.longitude, a.streetNumber, " .
                            "a.streetname, a.zipcode, a.bname, s.avgclasssize, " .
                            "s.povertylevel, s.avgmathsatscore, s.avgreadingsatscore, " .
