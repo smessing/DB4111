@@ -12,7 +12,7 @@
   $id = $_REQUEST['aid'];
  
   if (empty($id)) {
-    header('Location:../index.php?error=program_id');
+    header('Location:../main.php?error=program_id');
     exit;
   }
  
@@ -29,7 +29,7 @@
   $address = getOneRow($requestStr, $conn);
 
   if (empty($program) || empty($address)) {
-    header('Location:../index.php?error=critical');
+    header('Location:../main.php?error=critical');
     exit;
   }
 
