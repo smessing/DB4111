@@ -27,12 +27,13 @@ function generateProgramXML($conn) {
     echo "<marker ";
     echo "name='" . $programs['NAME'][$count] . "' ";  
     echo "phone='" . $programs['ORGANIZATIONPHONENUMBER'][$count] . "' ";
-    echo "latitude='" . $programs['LATITUDE'][$count] . "' ";
-    echo "longitude='" . $programs['LONGITUDE'][$count] . "' ";
+    echo "lat='" . $programs['LATITUDE'][$count] . "' ";
+    echo "lng='" . $programs['LONGITUDE'][$count] . "' ";
     echo "address='" . $programs['STREETNUMBER'][$count] . " " .
                        $programs['STREETNAME'][$count] . ", " .
                        $programs['BNAME'][$count] . " " .
                        $programs['ZIPCODE'][$count] . "' ";
+    echo "aid='" . $prog . "' ";
     echo "type='program'";
     echo "/>";
     $count = $count + 1;
