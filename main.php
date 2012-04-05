@@ -5,6 +5,10 @@
     <title>Team 7 Final Project</title>
     <link rel="stylesheet" href="code/css/map.css" type="text/css" media="screen"/>
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDy9NCdMzkcQkBXUDYsKa1xzsdc6IbKq8k&sensor=true" type="text/javascript"></script>
+    <!-- NOTE: what comes below was adapated from a Google Maps API tutorial,
+               https://developers.google.com/maps/articles/phpsqlajax
+               our code for school_xml_generator.php and programs_xml_generator.php
+               was also based on this example. -->
     <script type="text/javascript">
     //<![CDATA[
 
@@ -119,6 +123,9 @@
     </div>
     <div class="query">
       <h1>Ben put shit here.</h1>
+    </div>
+    <div style='display: none;'>
+     <?php include('static/php/footer.php'); ?>
     </div>
     <div id="map" style="width: 100%; height: 100%; position: fixed;"></div>
   </body>
