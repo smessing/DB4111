@@ -19,7 +19,7 @@
     $requestStr = "select p.totalprice from projects_propose_at p where " .
                   "p.pid='" . $pid . "'";
     $resp = getOneRow($requestStr, $conn); 
-    if (is_null($resp[0])) {
+    if (is_null($resp[0]) || $resp[0] == 0) {
       $percentFunded = 100.0;
     } else {
       $percentFunded = $amountFunded / $resp[0];
