@@ -118,7 +118,61 @@
      ?>
     </div>
     <div class="query">
-      <h1>Ben put shit here.</h1>
+    <h2>Project Search</h2>
+    <form action="selectSchoolProjects.php" method="post">
+      
+      <p><b>School Poverty Level:</b>
+      <br>
+      <input type="checkbox" name="povertyLevel[]" value="low" checked>low</input> 
+      <input type="checkbox" name="povertyLevel[]" value="medium" checked>medium</input> 
+      <input type="checkbox" name="povertyLevel[]" value="high" checked>high</input> 
+      <br>
+      
+      <b>Graduation Rate:</b>
+      <br>
+      <input type="checkbox" name="gradRate[]" value=" (s.graduationRate<=.25) " checked>0-25%</input> 
+      <input type="checkbox" name="gradRate[]" value=" (s.graduationRate > .25 and s.graduationRate <= .5) " checked>25-50%</input> 
+      <input type="checkbox" name="gradRate[]" value=" (s.graduationRate > .5 and s.graduationRate <= .75) " checked>50-75%</input> 
+      <input type="checkbox" name="gradRate[]" value=" (s.graduationRate > .75) " checked>75-100%</input> 
+      <br>
+      
+      <b>Avg. Class Size (# of students):</b>
+      <br>
+      <input type="checkbox" name="classSize[]" value=" (s.avgClassSize < 20) " checked>&lt; 20 </input> 
+      <input type="checkbox" name="classSize[]" value=" (s.avgClassSize > 20 and s.avgClassSize <= 40) " checked>20 - 40 </input> 
+      <input type="checkbox" name="classSize[]" value=" (s.avgClassSize > 40) " checked>over 40 </input>
+      
+      <br>
+      <b>NYC Gov Progress Report Grade</b>
+      <br>
+      <input type="checkbox" name="progress[]" value="s.progressGrade='A'" checked>A</input> 
+      <input type="checkbox" name="progress[]" value="s.progressGrade='B'" checked>B</input> 
+      <input type="checkbox" name="progress[]" value="s.progressGrade='C'" checked>C</input> 
+      <input type="checkbox" name="progress[]" value="s.progressGrade='D'" checked>D</input> 
+      <input type="checkbox" name="progress[]" value="s.progressGrade='F'" checked>F</input> 
+      
+      <br>
+      <b>Attendance Rates (%)</b>
+      <br>
+      <input type="checkbox" name="attendance[]" value=" (d.avgAttendance <= .25) " checked>0-25%</input> 
+      <input type="checkbox" name="attendance[]" value=" (d.avgAttendance > .25 and d.avgAttendance <= .5) " checked>25-50%</input> 
+      <input type="checkbox" name="attendance[]" value=" (d.avgAttendance > .5 and d.avgAttendance <= .75) " checked>50-75%</input> 
+      <input type="checkbox" name="attendance[]" value=" (d.avgAttendance > .75) " checked>75-100%</input> 
+      
+      <br>
+      <b>Local Residents Receiving Public Assistance (%)</b>
+      <br>
+      <input type="checkbox" name="pubAss[]" value=" (d.percentRecvPublicAsst <= .25) " checked>0-25%</input> 
+      <input type="checkbox" name="pubAss[]" value=" (d.percentRecvPublicAsst > .25 and d.percentRecvPublicAsst <= .5) " checked>25-50%</input> 
+      <input type="checkbox" name="pubAss[]" value=" (d.percentRecvPublicAsst > .5 and d.percentRecvPublicAsst <= .75) " checked>50-75%</input> 
+      <input type="checkbox" name="pubAss[]" value=" (d.percentRecvPublicAsst > .75) " checked>75-100%</input> 
+      
+      <br>
+      <input type="submit" value="Search">
+
+      
+    </form>
+
     </div>
     <div id="map" style="width: 100%; height: 100%; position: fixed;"></div>
   </body>
