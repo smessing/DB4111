@@ -1,5 +1,6 @@
 <?php
   include("../static/php/header.php");
+  include("../static/php/error.php");
 ?>
 <html>
 <head>
@@ -60,6 +61,7 @@
       // make main request on project
       $stmt = oci_parse($conn, $requestStr);
       oci_execute($stmt);
+            
             
       while($res = oci_fetch_row($stmt)) {
 
@@ -122,7 +124,7 @@
           else {
             echo ", ";}
           // then list display name
-          echo "<a href=\"../users/index.php?id=" . $donRes[1] . "\"> " . $donRes[0] . "</a>";
+          echo "<a href=\"../users/profile.php?email=" . $donRes[1] . "\"> " . $donRes[0] . "</a>";
         }
         // if there were any donators, close out the <p> tag
         if($donCount != 0) {
@@ -137,6 +139,8 @@
         echo "<form action=\"donate.php\" method=\"post\">\n";
         echo "Amount: <input type=\"text\" name=\"donation\" />\n";
         echo "<input value=\"donate!\" type=\"submit\" />\n";
+        echo "<input type=\"hidden\" name=\"pid\" value=\"" . $id . "\"/>";
+        echo "<input type=\"hidden\" name=\"tid\" value=\"" . $res[10] . "\"/>"; 
         echo "</form>\n";
         
       }
