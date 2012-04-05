@@ -10,7 +10,7 @@
     }
     echo "<a href='http://www.donorschoose.org/'>Donors Choose</a><br/>";
     if (isset($_SESSION['email'])) {
-      echo "Logged in as: <a href='profile.php?email=" . $_SESSION['email'] .
+      echo "Logged in as: <a href='../users/profile.php?email=" . $_SESSION['email'] .
            "'>" . $_SESSION['email'] . "</a>";
     }
   ?>
