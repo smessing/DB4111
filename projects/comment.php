@@ -2,14 +2,11 @@
   include("../static/php/header.php");
   require_once "../static/php/db.php";
 ?>
-
 <html>
 <head>
   <link href="../code/css/style.css" rel="stylesheet" type="text/css" />
-  <p> test </p>
 </head>
 <body>
-
 <?php
   
   // catch variables from form and get date
@@ -37,11 +34,13 @@
   
   // construct insert statement
   $insertString = "insert into comments_ABOUT (tid, pid, comments, cDate, email) " . 
-                  "values ('" . $tid . "', '" . $pid . "', '" $commentString . "', '" . $today . ", '" . $email . "')";
+                  "values ('" . $tid . "', '" . $pid . "', '" . $commentString . "', '" . $today . "', '" . $email . "')";
+  //var_dump($insertString);
   // insert
   insert($insertString, $conn);
   
   header("Location:index.php?id=" . $pid . "&msg=commented");
+  
   
 //  INSERT INTO Comments_ABOUT
 //  (tid, pid, comments, cDate, email)
