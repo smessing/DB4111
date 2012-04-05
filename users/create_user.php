@@ -54,7 +54,7 @@
 
   $requestStr = "select * from users u where u.email=" . "'" . $email . "'";
   $user = getOneRow($requestStr, $conn);
-  if (!empty($user)) {
+  if (!empty($user[0])) {
     header("Location:sign_up.php?error=used");
     exit;
   }
