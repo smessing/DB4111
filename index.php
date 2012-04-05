@@ -78,6 +78,7 @@
   </head>
 
   <body onload="load()" style="background: grey;">
+    <?php include('static/php/message.php'); ?>
     <div id="map" style="width: 100%; height: 100%; position: fixed;"></div>
   </body>
 </html>
