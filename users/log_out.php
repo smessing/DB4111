@@ -4,7 +4,12 @@
     session_destroy();
   }
   if (isset($_SERVER['HTTP_REFERER'])) {
-    header("Location:" . $_SERVER['HTTP_REFERER'] . '&msg=logout');
+    if (False === strpos($_SERVER['HTTP_REFERER'],"?")) {
+      header("Location:" . $_SERVER['HTTP_REFERER'] . '?msg=logout');
+    }
+    else {
+      header("Location:" . $_SERVER['HTTP_REFERER'] . '&msg=logout');
+    }
   } else {
     header("Location:../index.php?msg=logout");
   }
