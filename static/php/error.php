@@ -17,7 +17,9 @@ if (!empty($_REQUEST['error'])) {
     echo "Invalid password/username pair.";
   } else if ($error == 'short_pass') {
     echo "Password is too short! Must be at least 5 chars.";
-  } 
+  } else if ($error == 'invalid_donation') {
+    echo "Donation must be a valid dollar amount.";
+  }    
   echo "</p></div>";
 }
 
