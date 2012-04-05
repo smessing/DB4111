@@ -180,5 +180,24 @@ footer {
   text-align: center;
 }
 
+div.wrapper ul {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 0;
+  width: 45em;
+}
 
+div.wrapper ul li {
+  float: left;
+  width: 15em;
+}
+
+div.wrapper br {
+  clear: left;
+}
+
+div.wrapper {
+  margin-left: 0;
+  margin-bottom: 1em;
+}
 }
