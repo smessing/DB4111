@@ -17,5 +17,11 @@
     oci_fetch_all($stmt, $resp);
     return $resp;
   }
+  
+  function insert($requestStr, $conn) {
+    $stmt = oci_parse($conn, $requestStr);
+    oci_execute($stmt);
+    oci_commit($conn);
+  }
 
 ?>

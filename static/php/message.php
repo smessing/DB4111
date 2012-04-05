@@ -11,6 +11,8 @@ if (!empty($_REQUEST['msg'])) {
     echo "You were successfully logged out.";
   } else if ($msg == 'donated') {
     echo "Thank you for donating!";
+  } else if ($msg == 'commented') {
+    echo "Thank you for leaving feedback!";
   }
     
 
