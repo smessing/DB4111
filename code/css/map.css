@@ -8,7 +8,7 @@ body{
 	background-color: #fff;
 	border: none;
 	line-height: 1.5;
-	margin: 0.4em 0.4em;
+	margin: 0 0;
 	text-align:left;
 }
 pre{
@@ -176,5 +176,41 @@ footer {
   text-align: center;
 }
 
-
+div.query {
+  position:fixed;
+  height: 66px;
+  left: 75%;
+  top: 50%;
+  background-color:#FFEBE8;
+  max-width:30em;
+  z-index: 10001;
 }
+
+div.title {
+  position: fixed;
+  background-color: white;
+  width: 25em;
+  height: 23em;
+  left: 6%;
+  top: 5%;
+  z-index: 10001;
+  text-align: center;
+  border-radius: 5px;
+  padding: 1em 1em;
+}
+
+div.title p {
+  text-align: justify;
+}
+
+div.query {
+  position: fixed;
+  background-color: white;
+  border-radius: 5px;
+  width: 23em;
+  height: 25em;
+  left: 75%;
+  top: 50%;
+}
+
+

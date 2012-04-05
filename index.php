@@ -1,3 +1,4 @@
+<?php include('static/php/header.php'); ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
@@ -103,6 +104,22 @@
   <body onload="load()" style="background: grey;">
     <?php include('static/php/message.php'); ?>
     <?php include('static/php/error.php'); ?>
+    <div class="title">
+     <h1>Help improve NYC education</h1>
+    <p>This site was designed to help improve education in New York City. On this site you can look for and donate to projects hosted by <a href="http://wwww.donorschoose.com/">Donors Choose</a>, a website for teachers to get funding for lesson plans. If you'd rather donate your time, you can browse the maps for after school programs to volunteer with. </p>
+     <?php
+        if (!isset($_SESSION['email'])) {
+          echo "If you have an account, please <a href='users/log_in.php'>log in</a>.<br/>";
+          echo "Otherwise, please <a href='users/sign_up.php'>create an account</a>.";
+        } else {
+          echo "You're logged in as <a href='users/profile.php?email=" . 
+               $_SESSION['email'] . "'>" . $_SESSION['email'] . "</a>";
+        }
+     ?>
+    </div>
+    <div class="query">
+      <h1>Ben put shit here.</h1>
+    </div>
     <div id="map" style="width: 100%; height: 100%; position: fixed;"></div>
   </body>
 </html>
