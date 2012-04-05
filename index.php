@@ -26,8 +26,8 @@
       });
       var infoWindow = new google.maps.InfoWindow;
 
-      // Change this depending on the name of your PHP file
-      downloadUrl("code/php/xml_gen.php", function(data) {
+      // download school markers:
+      downloadUrl("static/php/school_xml_gen.php", function(data) {
         var xml = data.responseXML;
         var markers = xml.documentElement.getElementsByTagName("marker");
         for (var i = 0; i < markers.length; i++) {
@@ -42,6 +42,29 @@
           var marker = new google.maps.Marker({
             map: map,
             position: point,
+            title: name,
+          });
+          bindInfoWindow(marker, map, infoWindow, html);
+        }
+      });
+
+      // download after-school program markers:
+      downloadUrl("static/php/program_xml_gen.php", function(data) {
+        var xml = data.responseXML;
+        var markers = xml.documentElement.getElementsByTagName("marker");
+        for (var i = 0; i < markers.length; i++) {
+          var name = markers[i].getAttribute("name");
+          var aid = markers[i].getAttribute("aid");
+          var point = new google.maps.LatLng(
+              parseFloat(markers[i].getAttribute("lat")),
+              parseFloat(markers[i].getAttribute("lng")));
+          var address = markers[i].getAttribute("address");
+          var aid = markers[i].getAttribute("aid");
+          var html = "<h2><a href=\"programs/profile.php?aid=" + aid + "\">" + name + "</a></h2><b>" + address + "</b><br/><br/>";
+          var marker = new google.maps.Marker({
+              map: map,
+              position: point,
+              title: name,
           });
           bindInfoWindow(marker, map, infoWindow, html);
         }

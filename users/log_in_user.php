@@ -51,7 +51,17 @@
   if ($hashed_password == $user[2]) {
     session_start();
     $_SESSION['email'] = $user[0]; 
-    header("Location:../index.php?msg=loggedin");
+    if (isset($_SESSION['log_in_redirect'])) {
+      $redirect = $_SESSION['log_in_redirect'];
+      unset($_SESSION['log_in_redirect']);
+      if (False === strpos($redirect, "?")) {
+        header("Location:" . $redirect . '?msg=loggedin');
+      } else {
+        header("Location:" . $redirect . '&msg=loggedin');
+      }
+    } else {
+      header("Location:../index.php?msg=loggedin");
+    }
   } else {
     header("Location:log_in.php?error=invalid_pass");
     exit;

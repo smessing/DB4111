@@ -1,6 +1,9 @@
 <footer>
   <hr noshade/>
   <?php
+    if (False === strpos($_SERVER['REQUEST_URI'], 'log_in')) {
+      $_SESSION['log_in_redirect'] = $_SERVER['REQUEST_URI'];
+    }
     echo "<a href='../index.php'>Main Page</a> | ";
     if (isset($_SESSION['email'])) {
       echo "<a href='../users/log_out.php'>Log Out</a> | ";
