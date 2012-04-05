@@ -18,7 +18,8 @@ function generateSchoolXML() {
 	$requestStr = "select s.name, s.latitude, s.longitude, a.streetNumber, " .
 			"a.streetname, a.zipcode, a.bname, s.avgclasssize, " .
 			"s.povertylevel, s.avgmathsatscore, s.avgreadingsatscore, " .
-			"s.avgwritingsatscore, s.graduationrate, s.percentapabove2, s.ncesid " .
+			"s.avgwritingsatscore, s.graduationrate, s.percentapabove2, " .
+                        "s.ncesid " .
 			"from schools_s_in_s_have s, addresses a " .
 			"where s.latitude=a.latitude and s.longitude=a.longitude";
 
