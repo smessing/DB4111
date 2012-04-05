@@ -29,6 +29,8 @@ if (!empty($_REQUEST['error'])) {
     echo "You must be logged in to leave feedback.";
   } else if ($error == 'program_id') {
     echo "Must specify a program id!";
+  } else if ($error == 'already_voted') {
+    echo "You can only vote once per project.";
   }
   echo "</p></div>";
 }

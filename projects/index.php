@@ -32,7 +32,8 @@
       
       $commentsRequestStr = "select c.comments, c.cDate, u.displayName, c.email " . 
                             "from comments_ABOUT c, users u " . 
-                            "where c.pid='" . $id . "' and u.email=c.email";
+                            "where c.pid='" . $id . "' and u.email=c.email " . 
+                            "order by c.cDate desc";
                             
 
       $donationsRequestStr = "select u.displayName, u.email " .
@@ -51,7 +52,7 @@
       
       $vc = 0;
       if($tempCount = oci_fetch_row($voteCountStmt)) {
-        $vc = intval($tempCount); // cast to into
+        $vc = intval($tempCount[0]); // cast to into
       }
           
       
@@ -82,6 +83,15 @@
 
         // p.shortDescription
         echo "<p>" . $res[3] . "</p>\n"; 
+        
+        // VOTE BUTTON
+        if (isset($_SESSION['email'])) {
+        echo "<form action=\"vote.php\" method=\"post\">\n";   
+        echo "<input type=\"hidden\" name=\"pid\" value=\"" . $id . "\"/>\n";
+        echo "<input type=\"hidden\" name=\"tid\" value=\"" . $res[10] . "\"/>\n"; 
+        echo "<center><input class=\"button\" value =\"Vote for this project\" type=\"submit\" /></center>\n";
+        echo "</form>\n";
+        }
 
         // PROJECT OVERVIEW SECTION
         echo "<h2>Project Overview</h2>\n"; 
