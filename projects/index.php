@@ -49,9 +49,10 @@
       oci_execute($voteCountStmt);
       
       $vc = 0;
-      while($tempCount = oci_fetch_row($voteCountStmt)) {
-        $vc = $tempCount;
+      if($tempCount = oci_fetch_row($voteCountStmt)) {
+        $vc = intval($tempCount); // cast to into
       }
+          
       
       // make request for donations
       $donationsStmt = oci_parse($conn, $donationsRequestStr);
@@ -67,8 +68,17 @@
       $res = oci_fetch_row($stmt); 
 
         // HEADER SECTION
-        // p.title
-        echo "<h1>" . $res[0] . "</h1>\n";
+        // p.title (# votes)
+        // pluralize votes if votes != 1
+
+        if ($vc == 1) {
+          
+          echo "<h1>" . $res[0] . " (" . number_format($vc, 0, "", ",") . " vote)</h1>\n";
+        }
+        else {
+          echo "<h1>" . $res[0] . " (" . number_format($vc, 0, "", ",") . " votes)</h1>\n";
+        }
+
         // p.shortDescription
         echo "<p>" . $res[3] . "</p>\n"; 
 
@@ -145,12 +155,31 @@
         echo "</form>\n";
         
       }
+      else {
+        echo "<p>Please <a href='../users/log_in.php'>log in</a> to make a donation.</p>";
+      }
 
       
               
       // PROJECT FEEDBACK SECTION
       echo "<h2>Project Feedback</h2>\n";
-      echo "<p><b>Votes: </b>" . number_format($vc,0, "", ",") . "</p>\n";
+      
+      // AREA TO MAKE A COMMENT
+      
+      if (isset($_SESSION['email'])) {
+        echo "<form action=\"comment.php\" method=\"post\">\n";
+        echo "<textarea cols=\"75\" rows=\"5\" name =\"userComment\">";
+        echo "Leave feedback about the project.";        
+        echo "</textarea>";
+        echo "<br><br>";
+        echo "<input value =\"comment\" type=\"submit\" />\n";
+        echo "</form>\n";
+      }
+      else {
+        echo "<p>Please <a href='../users/log_in.php'>log in</a> to leave project feedback.</p>";
+      }
+      
+      
       
       // make request for comments
       $commentStmt = oci_parse($conn, $commentsRequestStr);

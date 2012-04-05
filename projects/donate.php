@@ -1,13 +1,5 @@
 <?php
   include("../static/php/header.php");
-?>
-<html>
-<head>
-  <link href="../code/css/style.css" rel="stylesheet" type="text/css" />
-<head>
-<body>
-
-<?php
   require_once "../static/php/connection.php";
   
   $amountString = $_POST['donation'];
@@ -52,14 +44,16 @@
   // run insert statement
   $stmt = oci_parse($conn, $donateInsertionStr);
   oci_execute($stmt);
+  oci_commit($conn);
   //var_dump($donateInsertionStr);
   header("Location:index.php?id=" . $pid . "&msg=donated");
+  
                          
 //INSERT INTO Donations_FUND
 //(tid, pid, amount, donationDate, email, did)
 //VALUES
 //('a89af066d9553a4aff50b0dc5c3650ea','83e5cc1b9c24f749b19e923cfd082faa',100,'24-apr-11','clarence@fun.com', 1);
 
-
+?>
   
 
