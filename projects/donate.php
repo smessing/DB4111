@@ -42,20 +42,10 @@
                          "('" . $tid . "', '" . $pid . "', " . $amountString . ", '" . $today . "', " .
                          "'" . $_SESSION['email'] . "', " . $currentDid . ")";
   
-  // run insert statement
   insert($donateInsertionStr, $conn);
-  //$stmt = oci_parse($conn, $donateInsertionStr);
-  //oci_execute($stmt);
-  //oci_commit($conn);
-  //var_dump($donateInsertionStr);
   header("Location:index.php?id=" . $pid . "&msg=donated");
   
                          
-//INSERT INTO Donations_FUND
-//(tid, pid, amount, donationDate, email, did)
-//VALUES
-//('a89af066d9553a4aff50b0dc5c3650ea','83e5cc1b9c24f749b19e923cfd082faa',100,'24-apr-11','clarence@fun.com', 1);
-
 ?>
   
 

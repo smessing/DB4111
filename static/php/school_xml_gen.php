@@ -1,6 +1,7 @@
 <?php
 
 require_once 'db.php';
+include('header.php');
 header("Content-type: text/xml");
 
 function parseToXML($htmlStr) {
@@ -13,27 +14,31 @@ function parseToXML($htmlStr) {
 
 }
 
-function generateSchoolXML() {
+function generateSchoolXML($conn) {
 
-	$requestStr = "select s.name, s.latitude, s.longitude, a.streetNumber, " .
+        if (isset($_SESSION['searchQuery'])) {
+          $requestStr = $_SESSION['searchQuery'];
+          unset($_SESSION['searchQuery']);
+        } else {
+
+	  $requestStr = "select s.name, s.latitude, s.longitude, a.streetNumber, " .
 			"a.streetname, a.zipcode, a.bname, s.avgclasssize, " .
 			"s.povertylevel, s.avgmathsatscore, s.avgreadingsatscore, " .
-			"s.avgwritingsatscore, s.graduationrate, s.percentapabove2, s.ncesid " .
+			"s.avgwritingsatscore, s.graduationrate, s.percentapabove2, " .
+                        "s.ncesid " .
 			"from schools_s_in_s_have s, addresses a " .
 			"where s.latitude=a.latitude and s.longitude=a.longitude";
 
-	// Connect to DB
+        }
 
-	ini_set('display_errors', 'On');
-	$db = "w4111f.cs.columbia.edu:1521/adb";
-	$conn = oci_connect("sbm2158", "donorschoose", $db);
+        // Prepare and execute SQL statment:
 
-	echo '<markers>';
-
-	// Prepare and execute SQL statement
-
-	$stmt = oci_parse($conn, $requestStr);
+        $stmt = oci_parse($conn, $requestStr);
 	oci_execute($stmt, OCI_DEFAULT);
+ 
+        // Build XML doc:
+
+        echo "<markers>";
 	while($res = oci_fetch_row($stmt)) {
 		echo '<marker ';
 		echo 'name="' . parseToXML($res[0]) . '" ';
@@ -58,6 +63,6 @@ function generateSchoolXML() {
 	oci_close($conn);
 
 }
-generateSchoolXML();
+generateSchoolXML($conn);
 
 ?>

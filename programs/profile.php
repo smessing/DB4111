@@ -4,7 +4,8 @@
   <link href='../code/css/style.css' rel='stylesheet' type='text/css'/>
 </head>
 <body>
-
+<?php include('../static/php/message.php'); ?>
+<?php include('../static/php/error.php'); ?>
 <?php
   require_once "../static/php/db.php";
   // get project data:
