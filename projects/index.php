@@ -2,6 +2,7 @@
   include("../static/php/header.php");
   include("../static/php/error.php");
   include("../static/php/message.php");
+  include("../static/php/time_helper.php");
 ?>
 <html>
 <head>
@@ -29,7 +30,7 @@
                           
       $countVotesRequestStr = "select count(*) as vcount from vote v where v.pid='" . $id . "'";
       
-      $commentsRequestStr = "select c.comments, c.cDate, u.displayName " . 
+      $commentsRequestStr = "select c.comments, c.cDate, u.displayName, c.email " . 
                             "from comments_ABOUT c, users u " . 
                             "where c.pid='" . $id . "' and u.email=c.email";
                             
@@ -168,17 +169,17 @@
       // AREA TO MAKE A COMMENT
       if (isset($_SESSION['email'])) {
         echo "<form action=\"comment.php\" method=\"post\">\n";
-        echo "<textarea cols=\"75\" rows=\"5\" name =\"userComment\">";
+        echo "<textarea cols=\"75\" rows=\"5\" name =\"userComment\">\n";
         echo "Leave feedback about the project.";        
-        echo "</textarea>";
-        echo "<br><br>";
-        echo "<input type=\"hidden\" name=\"pid\" value=\"" . $id . "\"/>";
-        echo "<input type=\"hidden\" name=\"tid\" value=\"" . $res[10] . "\"/>"; 
+        echo "</textarea>\n";
+        echo "<br><br>\n";
+        echo "<input type=\"hidden\" name=\"pid\" value=\"" . $id . "\"/>\n";
+        echo "<input type=\"hidden\" name=\"tid\" value=\"" . $res[10] . "\"/>\n"; 
         echo "<input value =\"comment\" type=\"submit\" />\n";
         echo "</form>\n";
       }
       else {
-        echo "<p>Please <a href='../users/log_in.php'>log in</a> to leave project feedback.</p>";
+        echo "<p>Please <a href='../users/log_in.php'>log in</a> to leave project feedback.</p>\n";
       }
       
       
@@ -193,10 +194,14 @@
         
         // if first comment, put the header on the section
         if($commCount == 1) {
-          echo "<h3>User Comments</h3>";
+          echo "<h3>User Comments</h3>\n";
         }
         
-        echo "<p>\"" . $commRes[0] . "\"</br>      -" . $commRes[2] . ", " . $commRes[1] . "</p>";
+        echo "<p>\"" . $commRes[0] . "\"\n" . 
+             "</br>" .
+             "-<a href='../users/profile.php?email=" . $commRes[3] . "'>" . $commRes[2] . "</a>" .
+             ", " . time2date($commRes[1]) . 
+             "</p>";
       }
          
 

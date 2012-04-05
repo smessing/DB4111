@@ -1,21 +1,14 @@
 <?php
   include("../static/php/header.php");
   require_once "../static/php/db.php";
-?>
-<html>
-<head>
-  <link href="../code/css/style.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-<?php
+
   
   // catch variables from form and get date
-  echo "<p>test</p>";
   
   $commentString = $_POST['userComment'];
   $pid = $_POST['pid'];
   $tid = $_POST['tid'];
-  $today = date("d-M-y"); 
+  $today = time(); 
   
   var_dump($today);
   
@@ -51,5 +44,4 @@
   
   
 ?>
-</body>
-</html>
+
