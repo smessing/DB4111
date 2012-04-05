@@ -35,13 +35,6 @@
   header("Location:index.php?id=" . $pid . "&msg=commented");
   
   
-//  INSERT INTO Comments_ABOUT
-//  (tid, pid, comments, cDate, email)
-//  VALUES
-//  ('a89af066d9553a4aff50b0dc5c3650ea','83e5cc1b9c24f749b19e923cfd082faa','I hate this project\!','24-apr-11','clarence@fun.com' );
-  
-  
-  
   
 ?>
 

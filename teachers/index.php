@@ -1,5 +1,7 @@
 <?php
   include("../static/php/header.php");
+  include('../static/php/message.php');
+  include('../static/php/error.php');
 ?>
 <html>
 <head>
