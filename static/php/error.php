@@ -25,6 +25,8 @@ if (!empty($_REQUEST['error'])) {
     echo "You're already logged in!";
   } else if ($error == 'not_logged_in_donation') {
     echo "You must be logged in to make a donation.";
+  } else if ($error == 'program_id') {
+    echo "Must specify a program id!";
   }
   echo "</p></div>";
 }
