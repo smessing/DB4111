@@ -5,7 +5,7 @@
 <body>
 
 <?php
-  require_once "../static/php/connection.php";
+  require_once "../static/php/db.php";
   /*
   echo "DEBUG INFO<br/>";
   echo "email: " . $_POST['email'] . "<br/>";
@@ -52,13 +52,8 @@
 
   // now, check if email is already taken:
 
-  ini_set('display_errors', 'On');
-  $db = 'w4111f.cs.columbia.edu:1521/adb'; 
-  $conn = oci_connect("sbm2158", "donorschoose", $db);
   $requestStr = "select * from users u where u.email=" . "'" . $email . "'";
-  $stmt = oci_parse($conn, $requestStr);
-  oci_execute($stmt);
-  $user = oci_fetch_row($stmt);
+  $user = getOneRow($requestStr, $conn);
   if (!empty($user)) {
     header("Location:sign_up.php?error=used");
     exit;
@@ -77,13 +72,15 @@
                        $salt . "')";
   $stmt = oci_parse($conn, $requestStr);
   if (oci_execute($stmt)) {
+    oci_close($conn);
+    oci_commit($conn);
     header("Location:log_in.php?msg=welcome");
     exit;
   } else {
+    oci_close($conn);
     header("Location:sign_up.php?error=critical");
     exit;
   }
-  oci_close($conn);
 ?>
 
 </body>

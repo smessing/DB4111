@@ -27,6 +27,8 @@ if (!empty($_REQUEST['error'])) {
     echo "You must be logged in to make a donation.";
   } else if ($error == 'not_logged_in_comment') {
     echo "You must be logged in to leave feedback.";
+  } else if ($error == 'program_id') {
+    echo "Must specify a program id!";
   }
   echo "</p></div>";
 }

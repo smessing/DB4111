@@ -7,15 +7,18 @@
 
 <?php
   require_once "../static/php/db.php";
+  require_once "../static/php/sanitize.php";
   $submitted_email = $_POST['email'];
   $submitted_pass = $_POST['pass'];
 
+  /*
   echo "DEBUG INFO";
   echo "<br/>";
   echo "---submitted_email" . var_dump($submitted_email);
   echo "<br/>";
   echo "---submitted_pass" . var_dump($submitted_pass);
   echo "<br/>";
+  */
 
   // check if we're already logged in:
   if (isset($_SESSION['email'])) {
@@ -32,9 +35,9 @@
   }
 
   // check that user exists:
-  $requestStr = "select u.email, u.passwordsalt, u.password " .
-                "from users u " .
-                "where u.email='" . $submitted_email . "'"; 
+  $requestStr = sprintf("select u.email, u.passwordsalt, u.password " .
+                        "from users u " .
+                        "where u.email='%s'", sanitize($submitted_email)); 
   $user = getOneRow($requestStr, $conn);
 
   if (empty($user)) {
