@@ -49,13 +49,13 @@ function generateSchoolXML() {
 		echo 'graduationrate="' . $res[12] . '" ';
 		echo 'percentAPabove2="' . $res[13] . '" ';
 		echo 'nces="' . $res[14] . '" ';
+                echo "type='school' ";
 		echo '/>';
 	}
 
 	// Cleanup
 
 	oci_close($conn);
-	echo '</markers>';
 
 }
 
@@ -66,7 +66,6 @@ function generateProgramXML($conn) {
                 "from after_school_programs_a_have a, addresses ad " .
                 "where a.latitude=ad.latitude and a.longitude=ad.longitude";
   $programs = getMultipleRows($requestStr, $conn);
-  echo "<markers>";
   $count = 0;
   foreach($programs['AID'] as $prog) {
     echo "<marker ";
@@ -78,6 +77,7 @@ function generateProgramXML($conn) {
                        $programs['STREETNAME'][$count] . ", " .
                        $programs['BNAME'][$count] . " " .
                        $programs['ZIPCODE'][$count] . "' ";
+    echo "type='program'";
     echo "/>";
     $count = $count + 1;
   }
@@ -89,7 +89,7 @@ function generateProgramXML($conn) {
 }
 
 // test function:
-//generateSchoolXML();
+generateSchoolXML();
 generateProgramXML($conn);
 
 ?>
