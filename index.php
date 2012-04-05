@@ -103,6 +103,10 @@
   <body onload="load()" style="background: grey;">
     <?php include('static/php/message.php'); ?>
     <?php include('static/php/error.php'); ?>
+    <div class="title">
+     <h1>Help improve NYC education</h1>
+     <p>This site was designed to help improve education in New York City.</p>
+    </div>
     <div id="map" style="width: 100%; height: 100%; position: fixed;"></div>
   </body>
 </html>
