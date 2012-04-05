@@ -42,7 +42,7 @@
               parseFloat(markers[i].getAttribute("lng")));
 	  var address = markers[i].getAttribute("address");
 	  var nces = markers[i].getAttribute("nces");
-          var html = "<h2><a href=\"schools/index.php?id=" + nces + "\">" + name + "</a></h2><b>" + address +
+          var html = "<h2><a href=\"schools/profile.php?id=" + nces + "\">" + name + "</a></h2><b>" + address +
 		     "</b><br/><br/>";
           var marker = new google.maps.Marker({
             map: map,
