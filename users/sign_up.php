@@ -7,6 +7,7 @@
 </head>
 <body>
 <?php include("../static/php/error.php"); ?>
+<?php include("../static/php/message.php"); ?>
 <h2>Create an Account</h2>
 
 <form action="create_user.php" method="post" align="center">
