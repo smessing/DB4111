@@ -83,6 +83,15 @@
 
         // p.shortDescription
         echo "<p>" . $res[3] . "</p>\n"; 
+        
+        // VOTE BUTTON
+        if (isset($_SESSION['email'])) {
+        echo "<form action=\"vote.php\" method=\"post\">\n";   
+        echo "<input type=\"hidden\" name=\"pid\" value=\"" . $id . "\"/>\n";
+        echo "<input type=\"hidden\" name=\"tid\" value=\"" . $res[10] . "\"/>\n"; 
+        echo "<input value =\"Vote for this project\" type=\"submit\" />\n";
+        echo "</form>\n";
+        }
 
         // PROJECT OVERVIEW SECTION
         echo "<h2>Project Overview</h2>\n"; 
