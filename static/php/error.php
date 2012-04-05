@@ -18,12 +18,14 @@ if (!empty($_REQUEST['error'])) {
   } else if ($error == 'short_pass') {
     echo "Password is too short! Must be at least 5 chars.";
   } else if ($error == 'invalid_donation') {
-    echo "Donation must be a valid dollar amount.";}    
+    echo "Donation must be a valid dollar amount.";   
   } else if ($error == 'nonexistent') {
     echo "E-mail wasn't found! Please try again, or <a href='sign_up.php'>register</a>.";
   } else if ($error == 'loggedin') {
     echo "You're already logged in!";
-  } 
+  } else if ($error == 'not_logged_in_donation') {
+    echo "You must be logged in to make a donation.";
+  }
   echo "</p></div>";
 }
 

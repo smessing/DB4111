@@ -1,3 +1,6 @@
+<?php
+  include("../static/php/header.php");
+?>
 <html>
 <head>
   <link href="../code/css/style.css" rel="stylesheet" type="text/css" />
@@ -10,19 +13,19 @@
   $amountString = $_POST['donation'];
   $pid = $_POST['pid'];
   $tid = $_POST['tid'];
-  $today = date("d-m-y"); 
+  $today = date("d-M-y"); 
   
   
   // check if we're already logged in:
-  if (isset($_SESSION['email'])) {
-    header("Location:index.php?error=loggedin");
+  if (0 == isset($_SESSION['email'])) {
+    header("Location:index.php?error=not_logged_in_donation");
     exit;
   }
   
   // check if its a valid donation value
   $currencyRegex = "/^[0-9]+(?:\.[0-9]+)?$/im";
   if (0 == preg_match($currencyRegex, $amountString)) {
-    header("Location:index.php?error=invalid_donation");
+    header("Location:index.php?id=" . $pid . "&error=invalid_donation");
     exit;
   }
   
@@ -32,7 +35,7 @@
   // make query
   $maxDidStmt = oci_parse($conn, $maxDidQuery);
   oci_execute($maxDidStmt);
-  if($res = oci_get_row($maxDidStmt)) 
+  if($res = oci_fetch_row($maxDidStmt)) 
     $maxDid = $res[0]; // set maxDid to result
   else
     $maxDid = 0; // if no donations, set maxDid to 0
@@ -43,14 +46,14 @@
   $donateInsertionStr =  "insert into Donations_FUND " .
                          "(tid, pid, amount, donationDate, email, did) " . 
                          "VALUES " . 
-                         "'" . $tid . "', '" . $pid . "', " . $amountString . ", '" . $today . "', " .
+                         "('" . $tid . "', '" . $pid . "', " . $amountString . ", '" . $today . "', " .
                          "'" . $_SESSION['email'] . "', " . $currentDid . ")";
   
   // run insert statement
   $stmt = oci_parse($conn, $donateInsertionStr);
   oci_execute($stmt);
-  
-  header("Location:../index.php?msg=donated");
+  //var_dump($donateInsertionStr);
+  header("Location:index.php?id=" . $pid . "&msg=donated");
                          
 //INSERT INTO Donations_FUND
 //(tid, pid, amount, donationDate, email, did)

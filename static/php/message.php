@@ -9,7 +9,10 @@ if (!empty($_REQUEST['msg'])) {
     echo "You were successfully logged in.";
   } else if ($msg == 'logout') {
     echo "You were successfully logged out.";
+  } else if ($msg == 'donated') {
+    echo "Thank you for donating!";
   }
+    
 
   echo "</p></div>";
 }

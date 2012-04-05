@@ -1,6 +1,7 @@
 <?php
   include("../static/php/header.php");
   include("../static/php/error.php");
+  include("../static/php/message.php");
 ?>
 <html>
 <head>
@@ -63,7 +64,7 @@
       oci_execute($stmt);
             
             
-      while($res = oci_fetch_row($stmt)) {
+      $res = oci_fetch_row($stmt); 
 
         // HEADER SECTION
         // p.title
@@ -131,7 +132,7 @@
           echo "<p>";
         }
           
-      }
+      
       
       if(isset($_SESSION['email'])) {
       
