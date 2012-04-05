@@ -18,6 +18,7 @@
   }
 
   function getMultipleRows($requestStr, $conn) {
+    // !TODO! handle sanitation
     $stmt = oci_parse($conn, $requestStr);
     oci_execute($stmt);
     oci_fetch_all($stmt, $resp);
