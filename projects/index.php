@@ -32,7 +32,8 @@
       
       $commentsRequestStr = "select c.comments, c.cDate, u.displayName, c.email " . 
                             "from comments_ABOUT c, users u " . 
-                            "where c.pid='" . $id . "' and u.email=c.email";
+                            "where c.pid='" . $id . "' and u.email=c.email " . 
+                            "order by c.cDate desc";
                             
 
       $donationsRequestStr = "select u.displayName, u.email " .
