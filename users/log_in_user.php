@@ -60,7 +60,7 @@
         header("Location:" . $redirect . '&msg=loggedin');
       }
     } else {
-      header("Location:../index.php?msg=loggedin");
+      header("Location:../main.php?msg=loggedin");
     }
   } else {
     header("Location:log_in.php?error=invalid_pass");

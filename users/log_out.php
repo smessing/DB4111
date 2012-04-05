@@ -11,7 +11,7 @@
       header("Location:" . $_SERVER['HTTP_REFERER'] . '&msg=logout');
     }
   } else {
-    header("Location:../index.php?msg=logout");
+    header("Location:../main.php?msg=logout");
   }
   exit;
 

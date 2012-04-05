@@ -46,7 +46,7 @@
       echo "<h1>" . $res[0] . " (teacher)</h1>\n";
       
       // PROJECTS
-      $linkToProjects = "../projects/index.php?id=";
+      $linkToProjects = "../projects/profile.php?id=";
       echo "<h2>Projects</h2>\n";
       
       while($res = oci_fetch_row($projectStmt)) {

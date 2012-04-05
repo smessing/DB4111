@@ -98,9 +98,9 @@
         echo "<ul class ='toc'>\n";
 
         // t.name
-        echo "<li><span><b>Teacher: </b></span><span><a href=\"../teachers/index.php?id=" . $res[10] . "\">" . $res[2] . "</a></span></li>\n";
+        echo "<li><span><b>Teacher: </b></span><span><a href=\"../teachers/profile.php?id=" . $res[10] . "\">" . $res[2] . "</a></span></li>\n";
         // s.name
-        echo "<li><span><b>School: </b></span><span><a href=\"../schools/index.php?id=" . $res[8] . "\">" . $res[9] . "</a></span></li>\n";
+        echo "<li><span><b>School: </b></span><span><a href=\"../schools/profile.php?id=" . $res[8] . "\">" . $res[9] . "</a></span></li>\n";
 
         // p.subject, if there is one
         if(!empty($res[1])) {

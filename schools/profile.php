@@ -77,7 +77,7 @@
       echo "<ul>\n";
       while($res = oci_fetch_row($stmt)) {
        // check if project is less than 5% funded:
-       echo "<li><b><a href='../projects/index.php?id=" . $res[0] . "'>" . $res[6] . 
+       echo "<li><b><a href='../projects/profile.php?id=" . $res[0] . "'>" . $res[6] . 
             "</a></b>";
        $percentFunded = getPercentFunded($res[0], $conn);
        if ($percentFunded < 0.15) {

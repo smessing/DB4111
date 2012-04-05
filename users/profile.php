@@ -7,7 +7,7 @@
 <body>
 <?php
   if (!isset($_REQUEST['email'])) {
-    header('Location:../index.php');
+    header('Location:../main.php');
     exit;
   } 
 ?>
@@ -36,7 +36,7 @@
         $requestStr = "select p.title from projects_propose_at p where p.pid='" .
                       $proj . "'";
         $title = getOneRow($requestStr, $conn);
-        echo "<li><a href='../projects/index.php?id=" . $proj . "'>" . $title[0] .
+        echo "<li><a href='../projects/profile.php?id=" . $proj . "'>" . $title[0] .
              "</a></li>";
       }
       echo "</ul><br/></div>";
@@ -53,7 +53,7 @@
         $requestStr = "select p.title from projects_propose_at p where p.pid='" .
                       $proj . "'";
         $title = getOneRow($requestStr, $conn);
-        echo "<li><a href='../projects/index.php?id=" . $proj . "'>" . $title[0] .
+        echo "<li><a href='../projects/profile.php?id=" . $proj . "'>" . $title[0] .
              "</a></li> ";
       }
       echo "</ul><br/></div>";
@@ -71,7 +71,7 @@
         $requestStr = "select p.title from projects_propose_at p where p.pid='" .
                       $proj . "'";
         $title = getOneRow($requestStr, $conn);
-        echo "<h4><a href='../projects/index.php?id=" . $proj . "'>" . $title[0] .
+        echo "<h4><a href='../projects/profile.php?id=" . $proj . "'>" . $title[0] .
              "</a></h4>"; 
         echo "<p><blockquote><i>\"" . $comments['COMMENTS'][$count] . "\"</i></blockquote></p>";
         $count = $count + 1;
