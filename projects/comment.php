@@ -14,7 +14,7 @@
   
   // check if we're already logged in:
   if (0 == isset($_SESSION['email'])) {
-    header("Location:index.php?error=not_logged_in_comment");
+    header("Location:profile.php?error=not_logged_in_comment");
     exit;
   }
   else {
@@ -32,7 +32,7 @@
   // insert
   insert($insertString, $conn);
   
-  header("Location:index.php?id=" . $pid . "&msg=commented");
+  header("Location:profile.php?id=" . $pid . "&msg=commented");
   
   
   

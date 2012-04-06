@@ -9,7 +9,7 @@
   
   // check if we're already logged in:
   if (0 == isset($_SESSION['email'])) {
-    header("Location:index.php?error=not_logged_in_comment");
+    header("Location:profile.php?error=not_logged_in_comment");
     exit;
   }
   else {
@@ -21,7 +21,7 @@
   $resp = getOneRow($votedQueryStr, $conn);
   //var_dump(empty($resp[0]));
   if(!empty($resp[0])) {
-    header("Location:index.php?id=" . $pid . "&error=already_voted");
+    header("Location:profile.php?id=" . $pid . "&error=already_voted");
     exit;
   }
   
@@ -33,7 +33,7 @@
   //var_dump($insertString);
   insert($insertString, $conn);
   
-  header("Location:index.php?id=" . $pid . "&msg=voted");
+  header("Location:profile.php?id=" . $pid . "&msg=voted");
 
 ?>
   

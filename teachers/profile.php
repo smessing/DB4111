@@ -5,7 +5,7 @@
 ?>
 <html>
 <head>
-  <link href="../code/css/style.css" rel="stylesheet" type="text/css" />
+  <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
   <?php
@@ -46,7 +46,7 @@
       echo "<h1>" . $res[0] . " (teacher)</h1>\n";
       
       // PROJECTS
-      $linkToProjects = "../projects/index.php?id=";
+      $linkToProjects = "../projects/profile.php?id=";
       echo "<h2>Projects</h2>\n";
       
       while($res = oci_fetch_row($projectStmt)) {
@@ -56,9 +56,9 @@
           
           $percentFunded = getPercentFunded($res[0], $conn);
           if ($percentFunded < 0.15) {
-            echo  " (<font color='red'>". number_format($percentFunded*100, 0, ".", "") . "% Funded</font>)"; }
+            echo  " (<font color='red'>". number_format($percentFunded*100, 2, ".", "") . "% Funded</font>)"; }
           else {
-            echo " (". number_format($percentFunded*100, 0, ".", "") . "% Funded)"; }
+            echo " (". number_format($percentFunded*100, 2, ".", "") . "% Funded)"; }
           echo " </dt>\n";
           // project description
           echo "<dt>" . $res[2] . "</dt>"; 

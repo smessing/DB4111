@@ -17,7 +17,6 @@ if (!empty($_REQUEST['msg'])) {
     echo "Thank you for voting!";
   }
     
-
   echo "</p></div>";
 }
 ?>

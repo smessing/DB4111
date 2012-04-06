@@ -11,14 +11,14 @@
   
   // check if we're already logged in:
   if (0 == isset($_SESSION['email'])) {
-    header("Location:index.php?error=not_logged_in_donation");
+    header("Location:profile.php?error=not_logged_in_donation");
     exit;
   }
   
   // check if its a valid donation value
   $currencyRegex = "/^[0-9]+(?:\.[0-9]+)?$/im";
   if (0 == preg_match($currencyRegex, $amountString)) {
-    header("Location:index.php?id=" . $pid . "&error=invalid_donation");
+    header("Location:profile.php?id=" . $pid . "&error=invalid_donation");
     exit;
   }
   
@@ -43,7 +43,7 @@
                          "'" . $_SESSION['email'] . "', " . $currentDid . ")";
   
   insert($donateInsertionStr, $conn);
-  header("Location:index.php?id=" . $pid . "&msg=donated");
+  header("Location:profile.php?id=" . $pid . "&msg=donated");
   
                          
 ?>
