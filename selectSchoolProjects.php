@@ -167,6 +167,32 @@
   }
   //var_dump($subQueryArr);
   
+  $borough = $_POST['borough'];
+  $n = count($borough);
+  
+  // select s.ncesid from schools_s_in_s_have s, districts_d_in d, boroughs b
+  // where b.bName='manhattan' or b.bName='brooklyn' and s.dNumber=d.dNumber and d.bName=b.bName
+  
+  if ($n == 0)
+    $boroughTable = "";
+  else {
+    $boroughTable = "(select s.ncesid from schools_s_in_s_have s, addresses a where (";
+    $whereTemp = "";
+    $whereCounter = 0;
+    
+    for($i=0; $i<$n; $i++) {
+      $whereCounter++;
+      if($whereCounter != 1) {
+        $whereTemp .= " or ";
+      }
+      
+      $whereTemp .= "a.bName = '" . $borough[$i] . "' ";
+    }
+    $boroughTable .= $whereTemp . " ) and s.latitude=a.latitude and s.longitude=a.longitude )"; 
+    $subQueryArr[] = $boroughTable;
+    //echo $boroughTable;
+  }
+  
 
   // BUILD FULL QUERY
   $tableNames = array('first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth');
@@ -194,19 +220,9 @@
    header("location: main.php");
    //header("location: static/php/school_xml_gen.php");
           
-    //echo $fullQueryStr;   
+   //echo $fullQueryStr;   
+      
 
-          
-  //echo $ueryStr;
-  
-  /*
-  s.name, s.latitude, s.longitude, a.streetNumber, " .
-                       "a.streetname, a.zipcode, a.bname, s.avgclasssize, " .
-                       "s.povertylevel, s.avgmathsatscore, s.avgreadingsatscore, " .
-                       "s.avgwritingsatscore, s.graduationrate, s.percentapabove2, " .
-                       "s.ncesid " .
-                       "from schools_s_in_s_have s, addresses a " .
-   */
 ?>  
 
 
