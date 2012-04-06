@@ -128,73 +128,59 @@
       <div align=center>  
       <b>School Poverty Level</b></br>
       <?php
-      if (!isset($_SESSION['poverty_low'])) {
+      if (isset($_SESSION['poverty_low'])) {
         echo '<input type="checkbox" name="povertyLevel[]" value="low" checked>low</input>';
+        unset($_SESSION['poverty_low']);
       } else {
         echo '<input type="checkbox" name="povertyLevel[]" value="low">low</input>';
-        unset($_SESSION['poverty_low']);
       }
-      if (!isset($_SESSION['poverty_mid'])) {
+      if (isset($_SESSION['poverty_medium'])) {
         echo '<input type="checkbox" name="povertyLevel[]" value="medium" checked>medium</input>';
       } else {
         echo '<input type="checkbox" name="povertyLevel[]" value="medium">medium</input>';
-        unset($_SESSION['poverty_mid']);
       }
-      if (!isset($_SESSION['poverty_high'])) {
+      unset($_SESSION['poverty_medium']);
+      if (isset($_SESSION['poverty_high'])) {
         echo '<input type="checkbox" name="povertyLevel[]" value="high" checked>high</input>';
       } else {
         echo '<input type="checkbox" name="povertyLevel[]" value="high">high</input>';
-        unset($_SESSION['poverty_high']);
       }
+      unset($_SESSION['poverty_high']);
       ?> 
       <br><b>Graduation Rate</b></br>
       <?php
-      if (!isset($_SESSION['grad_zero'])) {
+      if (isset($_SESSION['grad_zero'])) {
          echo '<input type="checkbox" name="gradRate[]" value=" (s.graduationRate<=.25) " checked>0-25%</input>';
       } else {
          echo '<input type="checkbox" name="gradRate[]" value=" (s.graduationRate<=.25) ">0-25%</input>';
-         unset($_SESSION['grad_zero']);
       }
-      if (!isset($_SESSION['grad_25'])) {
+      unset($_SESSION['grad_zero']);
+      if (isset($_SESSION['grad_25'])) {
         echo '<input type="checkbox" name="gradRate[]" value=" (s.graduationRate > .25 and s.graduationRate <= .5) " checked>25-50%</input>';
       } else {
         echo '<input type="checkbox" name="gradRate[]" value=" (s.graduationRate > .25 and s.graduationRate <= .5) " >25-50%</input>';
-        unset($_SESSION['grad_25']);
       }
-      if (!isset($_SESSION['grad_50'])) {
+      unset($_SESSION['grad_25']);
+      if (isset($_SESSION['grad_50'])) {
         echo '<input type="checkbox" name="gradRate[]" value=" (s.graduationRate > .5 and s.graduationRate <= .75) " checked>50-75%</input>';
       } else {
         echo '<input type="checkbox" name="gradRate[]" value=" (s.graduationRate > .5 and s.graduationRate <= .75) " >50-75%</input>';
-        unset($_SESSION['grad_50']);
       }
-      if (!isset($_SESSION['grad_75'])) {
+      unset($_SESSION['grad_50']);
+      if (isset($_SESSION['grad_75'])) {
         echo '<input type="checkbox" name="gradRate[]" value=" (s.graduationRate > .75) " checked>75-100%</input>';
       } else {
         echo '<input type="checkbox" name="gradRate[]" value=" (s.graduationRate > .75) " >75-100%</input>';
-        unset($_SESSION['grad_75']);
       }
+      unset($_SESSION['grad_75']);
       ?>
       
       <br><b>Avg. Class Size</b></br>
       <?php
-      if (!isset($_SESSION['class_0'])) {
         echo '<input type="checkbox" name="classSize[]" value="s.avgClassSize < 20) " checked>&lt; 20 </input> ';
-      } else {
-        echo '<input type="checkbox" name="classSize[]" value="s.avgClassSize < 20) ">&lt; 20 </input> ';
-        unset($_SESSION['class_0']);
-      }
-      if (!isset($_SESSION['class_20'])) {
+      unset($_SESSION['class_0']);
         echo '<input type="checkbox" name="classSize[]" value="s.avgClassSize > 20 and s.avgClassSize <= 40) " checked>20 - 40 </input> ';
-      } else {
-        echo '<input type="checkbox" name="classSize[]" value="s.avgClassSize > 20 and s.avgClassSize <= 40) " checked>20 - 40 </input> ';
-        unset($_SESSION['class_20']);
-      }
-      if (!isset($_SESSION['class_40'])) {
         echo '<input type="checkbox" name="classSize[]" value="s.avgClassSize > 40) " checked>over 40 </input>';
-      } else {
-        echo '<input type="checkbox" name="classSize[]" value="s.avgClassSize > 40) ">over 40 </input>';
-        unset($_SESSION['class_40']);
-      }
       ?>
       <br><b>NYC Gov Progress Report Grade</b><br>
       <?php

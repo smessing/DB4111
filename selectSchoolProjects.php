@@ -5,7 +5,7 @@
   
   $povertyLevel = $_POST['povertyLevel'];
   $n = count($povertyLevel);
-  
+
   // if empty, set to empty string
   if ($n == 0) {
     $povertyTable = "";
@@ -23,7 +23,7 @@
       if ($whereCounter != 1) {
         $whereTemp .= " or ";
       }
-
+      $_SESSION['poverty_' . $povertyLevel[$i]] = True;
       $whereTemp .= " s.povertyLevel='" . $povertyLevel[$i] . "' ";
     }
     $povertyTable .=  $whereTemp . ")";
@@ -53,6 +53,15 @@
       }
       
       $whereTemp .=  $gradRate[$i];
+      if (0 < strpos($gradRate[$i], '(s.graduationRate<=.25)')) {
+        $_SESSION['grad_zero'] = True;
+      } else if (0 < strpos($gradRate[$i], 's.graduationRate > .25')) {
+        $_SESSION['grad_25'] = True;
+      } else if (0 < strpos($gradRate[$i], 's.graduationRate > .5')) {
+        $_SESSION['grad_50'] = True; 
+      } else if (0 < strpos($gradRate[$i], 's.graduationRate > .75')) {
+        $_SESSION['grad_75'] = True;
+      }
     }
     $gradRateTable .= $whereTemp . ") ";
     $subQueryArr[] = $gradRateTable;
@@ -81,6 +90,13 @@
       }
       
       $whereTemp .=  " (100*". $classSize[$i] ;
+      if (0 < strpos($classSize[$i], 's.avgClassSize < 20')) {
+         $_SESSION['class_0'] = True;
+      } else if (0 < strpos($classSize[$i], 's.avgClassSize > 20')) {
+         $_SESSION['class_20'] = True;
+      } else if (0 < strpos($classSize[$i], 's.avgClassSize > 40')) {
+         $_SESSION['class_40'] = True;
+      }
     }
     $classSizeTable .= $whereTemp . ") ";
     $subQueryArr[] = $classSizeTable;
