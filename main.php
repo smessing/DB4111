@@ -294,12 +294,43 @@
       <br>
       <b>Borough</b>
       <br>
-      <input type="checkbox" name="borough[]" value="Manhattan" checked>Manhattan</input> 
-      <input type="checkbox" name="borough[]" value="Brooklyn" checked>Brooklyn</input> 
-      <input type="checkbox" name="borough[]" value="Queens" checked>Queens</input> 
-      <input type="checkbox" name="borough[]" value="The Bronx" checked>The Bronx</input> 
-      <input type="checkbox" name="borough[]" value="Staten Island" checked>Staten Island</input> 
-      
+      <?php
+      if (!isset($_SESSION['b_man'])) {
+        $checked = 'checked';
+      } else {
+        $checked = '';
+        unset($_SESSION['b_man']);
+      }
+      echo '<input type="checkbox" name="borough[]" value="Manhattan" '.$checked.'>Manhattan</input> ';
+      if (!isset($_SESSION['b_brook'])) {
+        $checked = 'checked';
+      } else {
+        $checked = '';
+        unset($_SESSION['b_brook']);
+      }
+      echo '<input type="checkbox" name="borough[]" value="Brooklyn" '.$checked.'>Brooklyn</input> ';
+      if (!isset($_SESSION['b_queens'])) {
+        $checked = 'checked';
+      } else {
+        $checked = '';
+        unset($_SESSION['b_queens']);
+      }
+      echo '<input type="checkbox" name="borough[]" value="Queens" '.$checked.'>Queens</input> ';
+      if (!isset($_SESSION['b_bronx'])) {
+        $checked = 'checked';
+      } else {
+        $checked = '';
+        unset($_SESSION['b_bronx']);
+      }
+      echo '<input type="checkbox" name="borough[]" value="The Bronx" '.$checked.'>The Bronx</input> ';
+      if (!isset($_SESSION['b_staten'])) {
+        $checked = 'checked';
+      } else {
+        $checked = '';
+        unset($_SESSION['b_staten']);
+      }
+      echo '<input type="checkbox" name="borough[]" value="Staten Island" '.$checked.'>Staten Island</input>';
+      ?>
       <br>
       <input type="submit" value="Search">
       </div>
