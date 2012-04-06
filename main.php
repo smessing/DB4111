@@ -199,33 +199,33 @@
       <br><b>NYC Gov Progress Report Grade</b><br>
       <?php
       if (!isset($_SESSION['progress_a'])) {
-        echo '<input type="checkbox" name="progress[]" value="s.progressGrade='A'" checked>A</input>';
+        echo '<input type="checkbox" name="progress[]" value="s.progressGrade=\'A\'" checked>A</input>';
       } else {
-        echo '<input type="checkbox" name="progress[]" value="s.progressGrade='A'">A</input>';
+        echo '<input type="checkbox" name="progress[]" value="s.progressGrade=\'A\'">A</input>';
         unset($_SESSION['progress_a']);
       }
       if (!isset($_SESSION['progress_b'])) {
-        echo '<input type="checkbox" name="progress[]" value="s.progressGrade='B'" checked>B</input> ';
+        echo '<input type="checkbox" name="progress[]" value="s.progressGrade=\'B\'" checked>B</input> ';
       } else {
-        echo '<input type="checkbox" name="progress[]" value="s.progressGrade='B'" >B</input> ';
+        echo '<input type="checkbox" name="progress[]" value="s.progressGrade=\'B\'" >B</input> ';
         unset($_SESSION['progress_b']);
       }
       if (!isset($_SESSION['progress_c'])) {
-        echo '<input type="checkbox" name="progress[]" value="s.progressGrade='C'" checked>C</input> ';
+        echo '<input type="checkbox" name="progress[]" value="s.progressGrade=\'C\'" checked>C</input> ';
       } else {
-        echo '<input type="checkbox" name="progress[]" value="s.progressGrade='C'">C</input> ';
+        echo '<input type="checkbox" name="progress[]" value="s.progressGrade=\'C\'">C</input> ';
         unset($_SESSION['progress_c']);
       }
       if (!isset($_SESSION['progress_d'])) {
-        echo '<input type="checkbox" name="progress[]" value="s.progressGrade='D'" checked>D</input> ';
+        echo '<input type="checkbox" name="progress[]" value="s.progressGrade=\'D\'" checked>D</input> ';
       } else {
-        echo '<input type="checkbox" name="progress[]" value="s.progressGrade='D'">D</input> ';
+        echo '<input type="checkbox" name="progress[]" value="s.progressGrade=\'D\'">D</input> ';
         unset($_SESSION['progress_d']);
       }
       if (!isset($_SESSION['progress_f'])) {
-        echo '<input type="checkbox" name="progress[]" value="s.progressGrade='F'" checked>F</input> ';
+        echo '<input type="checkbox" name="progress[]" value="s.progressGrade=\'F\'" checked>F</input> ';
       } else {
-        echo '<input type="checkbox" name="progress[]" value="s.progressGrade='F'" checked>F</input> ';
+        echo '<input type="checkbox" name="progress[]" value="s.progressGrade=\'F\'" checked>F</input> ';
         unset($_SESSION['progress_f']);
       }
       ?> 
