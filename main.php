@@ -232,7 +232,7 @@
       <br>
       <b>Attendance Rates</b><br>
       <?php
-      if (!isset(_$SESSION['attend_0'])) {
+      if (!isset($_SESSION['attend_0'])) {
         echo '<input type="checkbox" name="attendance[]" value=" (d.avgAttendance <= .25) " checked>0-25%</input> ';
       } else {
         echo '<input type="checkbox" name="attendance[]" value=" (d.avgAttendance <= .25) " >0-25%</input> ';
