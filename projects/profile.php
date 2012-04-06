@@ -179,7 +179,7 @@
       // AREA TO MAKE A COMMENT
       if (isset($_SESSION['email'])) {
         echo "<form action=\"comment.php\" method=\"post\">\n";
-        echo "<textarea cols=\"75\" rows=\"5\" name =\"userComment\">\n";
+        echo "<textarea cols=\"67\" rows=\"5\" name =\"userComment\">\n";
         echo "Leave feedback about the project.";        
         echo "</textarea>\n";
         echo "<br><br>\n";
