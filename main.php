@@ -110,7 +110,7 @@
     <?php include('static/php/error.php'); ?>
     <div class="title">
      <h1>Help improve NYC education</h1>
-    <p>This site was designed to help improve education in New York City. On this site you can look for and donate to projects hosted by <a href="http://wwww.donorschoose.com/">Donors Choose</a>, a website for teachers to get funding for lesson plans. If you'd rather donate your time, you can browse the maps for after school programs to volunteer with. </p>
+    <p>This site was designed to help improve education in New York City. On this site you can look for and donate to projects hosted by <a href="http://www.donorschoose.com/">Donors Choose</a>, a website for teachers to get funding for lesson plans. If you'd rather donate your time, you can browse the maps for after school programs to volunteer with. </p>
      <?php
         if (!isset($_SESSION['email'])) {
           echo "If you have an account, please <a href='users/log_in.php'>log in</a>.<br/>";
