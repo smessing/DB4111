@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <title>Team 7 Final Project</title>
-    <link rel="stylesheet" href="code/css/map.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="static/css/map.css" type="text/css" media="screen"/>
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDy9NCdMzkcQkBXUDYsKa1xzsdc6IbKq8k&sensor=true" type="text/javascript"></script>
     <!-- NOTE: what comes below was adapated from a Google Maps API tutorial,
                https://developers.google.com/maps/articles/phpsqlajax
@@ -117,7 +117,8 @@
           echo "Otherwise, please <a href='users/sign_up.php'>create an account</a>.";
         } else {
           echo "You're logged in as <a href='users/profile.php?email=" . 
-               $_SESSION['email'] . "'>" . $_SESSION['email'] . "</a>";
+               $_SESSION['email'] . "'>" . $_SESSION['email'] . "</a><br/>";
+          echo "<a href='users/log_out.php'>Click here to log out</a>.";
         }
      ?>
     </div>

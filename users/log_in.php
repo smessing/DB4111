@@ -3,7 +3,7 @@
 ?>
 <html>
 <head>
-  <link href="../code/css/style.css" rel="stylesheet" type="text/css" />
+  <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
   <title>Log In</title>
 </head>
 <body>

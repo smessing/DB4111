@@ -1,7 +1,7 @@
 <?php include("../static/php/header.php"); ?>
 <html>
 <head>
-  <link href="../code/css/style.css" rel="stylesheet" type="text/css" />
+  <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
   <title><?php echo $_REQUEST['email']; ?></title>
 </head>
 <body>
