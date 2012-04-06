@@ -1,8 +1,12 @@
 <footer>
   <hr noshade/>
   <?php
-    if (False === strpos($_SERVER['REQUEST_URI'], 'log_in')) {
-      $_SESSION['log_in_redirect'] = $_SERVER['REQUEST_URI'];
+    if ((False === strpos($_SERVER['REQUEST_URI'], 'log_in')) &&
+        (False === strpos($_SERVER['REQUEST_URI'], 'sign_up'))) {
+      $redirect = array_shift(array_values(explode('&', $_SERVER['REQUEST_URI'])));
+      $redirect = str_replace('msg', '', $redirect);
+      $redirect = str_replace('error', '', $redirect);
+      $_SESSION['log_in_redirect'] = $redirect;
     }
     echo "<a href='../main.php'>Main Page</a> | ";
     if (isset($_SESSION['email'])) {

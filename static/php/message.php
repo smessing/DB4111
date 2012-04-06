@@ -15,8 +15,7 @@ if (!empty($_REQUEST['msg'])) {
     echo "Thank you for leaving feedback!";
   } else if ($msg == 'voted') {
     echo "Thank you for voting!";
-  }
-    
+  }    
   echo "</p></div>";
 }
 ?>
