@@ -173,6 +173,15 @@
       <input type="checkbox" name="pubAss[]" value=" (d.percentRecvPublicAsst > .75) " checked>75-100%</input> 
       
       <br>
+      <b>Borough</b>
+      <br>
+      <input type="checkbox" name="borough[]" value="Manhattan" checked>Manhattan</input> 
+      <input type="checkbox" name="borough[]" value="Brooklyn" checked>Brooklyn</input> 
+      <input type="checkbox" name="borough[]" value="Queens" checked>Queens</input> 
+      <input type="checkbox" name="borough[]" value="The Bronx" checked>The Bronx</input> 
+      <input type="checkbox" name="borough[]" value="Staten Island" checked>Staten Island</input> 
+      
+      <br>
       <input type="submit" value="Search">
 
       
