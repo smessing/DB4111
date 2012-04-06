@@ -80,7 +80,7 @@
         $whereTemp .= " or ";
       }
       
-      $whereTemp .=  $classSize[$i];
+      $whereTemp .=  " (100*". $classSize[$i] ;
     }
     $classSizeTable .= $whereTemp . ") ";
     $subQueryArr[] = $classSizeTable;
@@ -195,32 +195,45 @@
   
 
   // BUILD FULL QUERY
-  $tableNames = array('first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth');
-  $queryStr = "select unique s.ncesid from schools_s_in_s_have s ";
-  for($i=0; $i<count($subQueryArr); $i++) {
-    $queryStr .= " , " . $subQueryArr[$i] . " " . $tableNames[$i] . " ";
-  }
+  // if all unchecked
+  if(!isset($subQueryArr[0])) {
+    $fullQueryStr = "select s2.name, s2.latitude, s2.longitude, a.streetNumber, " .
+                    "a.streetname, a.zipcode, a.bname, s2.avgclassSize, " .
+                    "s2.povertylevel, s2.avgmathsatscore, s2.avgreadingsatscore, " .
+                    "s2.avgwritingsatscore, s2.graduationrate, s2.percentapabove2, ".
+                    "s2.ncesid " .
+                    "from schools_s_in_s_have s2, addresses a ".
+                    "where s2.latitude=a.latitude and s2.longitude=a.longitude ";
+  } 
+  else {
   
-  $queryStr .= "where s.ncesid=first.ncesid ";
-  for($i=1; $i<count($subQueryArr); $i++) {
-    $queryStr .= "and " . $tableNames[$i-1] . ".ncesid=" . $tableNames[$i] . ".ncesid ";
-  }
+    $tableNames = array('first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth');
+    $queryStr = "select unique s.ncesid from schools_s_in_s_have s ";
+    for($i=0; $i<count($subQueryArr); $i++) {
+      $queryStr .= " , " . $subQueryArr[$i] . " " . $tableNames[$i] . " ";
+    }
   
-  $fullQueryStr = "select s2.name, s2.latitude, s2.longitude, a.streetNumber, " .
-                  "a.streetname, a.zipcode, a.bname, s2.avgclassSize, " .
-                  "s2.povertylevel, s2.avgmathsatscore, s2.avgreadingsatscore, " .
-                  "s2.avgwritingsatscore, s2.graduationrate, s2.percentapabove2, ".
-                   "s2.ncesid " .
-                   "from schools_s_in_s_have s2, addresses a ".
-                   "where s2.latitude=a.latitude and s2.longitude=a.longitude " .
-                   "and s2.ncesid in (" . $queryStr . ")";
+    $queryStr .= "where s.ncesid=first.ncesid ";
+    for($i=1; $i<count($subQueryArr); $i++) {
+      $queryStr .= "and " . $tableNames[$i-1] . ".ncesid=" . $tableNames[$i] . ".ncesid ";
+    }
+  
+    $fullQueryStr = "select s2.name, s2.latitude, s2.longitude, a.streetNumber, " .
+                    "a.streetname, a.zipcode, a.bname, s2.avgclassSize, " .
+                    "s2.povertylevel, s2.avgmathsatscore, s2.avgreadingsatscore, " .
+                    "s2.avgwritingsatscore, s2.graduationrate, s2.percentapabove2, ".
+                    "s2.ncesid " .
+                    "from schools_s_in_s_have s2, addresses a ".
+                    "where s2.latitude=a.latitude and s2.longitude=a.longitude " .
+                    "and s2.ncesid in (" . $queryStr . ")";
+    }
                    
-   $_SESSION['searchQuery'] = $fullQueryStr;
+  $_SESSION['searchQuery'] = $fullQueryStr;
    
-   header("location: main.php");
-   //header("location: static/php/school_xml_gen.php");
+  //header("location: main.php");
+  //header("location: static/php/school_xml_gen.php");
           
-   //echo $fullQueryStr;   
+  echo $fullQueryStr;   
       
 
 ?>  
