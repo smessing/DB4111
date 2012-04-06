@@ -176,15 +176,59 @@
       ?>
       
       <br><b>Avg. Class Size</b></br>
-      <input type="checkbox" name="classSize[]" value=" (s.avgClassSize < 20) " checked>&lt; 20 </input> 
-      <input type="checkbox" name="classSize[]" value=" (s.avgClassSize > 20 and s.avgClassSize <= 40) " checked>20 - 40 </input> 
-      <input type="checkbox" name="classSize[]" value=" (s.avgClassSize > 40) " checked>over 40 </input>
+      <?php
+      if (!isset($_SESSION['class_0'])) {
+        echo '<input type="checkbox" name="classSize[]" value=" (s.avgClassSize < 20) " checked>&lt; 20 </input> ';
+      } else {
+        echo '<input type="checkbox" name="classSize[]" value=" (s.avgClassSize < 20) ">&lt; 20 </input> ';
+        unset($_SESSION['class_0']);
+      }
+      if (!isset($_SESSION['class_20'])) {
+        echo '<input type="checkbox" name="classSize[]" value=" (s.avgClassSize > 20 and s.avgClassSize <= 40) " checked>20 - 40 </input> ';
+      } else {
+        echo '<input type="checkbox" name="classSize[]" value=" (s.avgClassSize > 20 and s.avgClassSize <= 40) " checked>20 - 40 </input> ';
+        unset($_SESSION['class_20']);
+      }
+      if (!isset($_SESSION['class_40'])) {
+        echo '<input type="checkbox" name="classSize[]" value=" (s.avgClassSize > 40) " checked>over 40 </input>';
+      } else {
+        echo '<input type="checkbox" name="classSize[]" value=" (s.avgClassSize > 40) ">over 40 </input>';
+        unset($_SESSION['class_40']);
+      }
+      ?>
       <br><b>NYC Gov Progress Report Grade</b><br>
-      <input type="checkbox" name="progress[]" value="s.progressGrade='A'" checked>A</input> 
-      <input type="checkbox" name="progress[]" value="s.progressGrade='B'" checked>B</input> 
-      <input type="checkbox" name="progress[]" value="s.progressGrade='C'" checked>C</input> 
-      <input type="checkbox" name="progress[]" value="s.progressGrade='D'" checked>D</input> 
-      <input type="checkbox" name="progress[]" value="s.progressGrade='F'" checked>F</input> 
+      <?php
+      if (!isset($_SESSION['progress_a'])) {
+        echo '<input type="checkbox" name="progress[]" value="s.progressGrade='A'" checked>A</input>';
+      } else {
+        echo '<input type="checkbox" name="progress[]" value="s.progressGrade='A'">A</input>';
+        unset($_SESSION['progress_a']);
+      }
+      if (!isset($_SESSION['progress_b'])) {
+        echo '<input type="checkbox" name="progress[]" value="s.progressGrade='B'" checked>B</input> ';
+      } else {
+        echo '<input type="checkbox" name="progress[]" value="s.progressGrade='B'" >B</input> ';
+        unset($_SESSION['progress_b']);
+      }
+      if (!isset($_SESSION['progress_c'])) {
+        echo '<input type="checkbox" name="progress[]" value="s.progressGrade='C'" checked>C</input> ';
+      } else {
+        echo '<input type="checkbox" name="progress[]" value="s.progressGrade='C'">C</input> ';
+        unset($_SESSION['progress_c']);
+      }
+      if (!isset($_SESSION['progress_d'])) {
+        echo '<input type="checkbox" name="progress[]" value="s.progressGrade='D'" checked>D</input> ';
+      } else {
+        echo '<input type="checkbox" name="progress[]" value="s.progressGrade='D'">D</input> ';
+        unset($_SESSION['progress_d']);
+      }
+      if (!isset($_SESSION['progress_f'])) {
+        echo '<input type="checkbox" name="progress[]" value="s.progressGrade='F'" checked>F</input> ';
+      } else {
+        echo '<input type="checkbox" name="progress[]" value="s.progressGrade='F'" checked>F</input> ';
+        unset($_SESSION['progress_f']);
+      }
+      ?> 
       <br>
       <b>Attendance Rates</b><br>
       <input type="checkbox" name="attendance[]" value=" (d.avgAttendance <= .25) " checked>0-25%</input> 
