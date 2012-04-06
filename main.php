@@ -127,10 +127,24 @@
     <form action="selectSchoolProjects.php" method="post">
       <div align=center>  
       <b>School Poverty Level</b></br>
-      <?php 
-      echo '<input type="checkbox" name="povertyLevel[]" value="low" checked>low</input>';
-      echo '<input type="checkbox" name="povertyLevel[]" value="medium" checked>medium</input>';
-      echo '<input type="checkbox" name="povertyLevel[]" value="high" checked>high</input>';
+      <?php
+      if (!isset($_SESSION['poverty_low'])) {
+        echo '<input type="checkbox" name="povertyLevel[]" value="low" checked>low</input>';
+      } else {
+        echo '<input type="checkbox" name="povertyLevel[]" value="low">low</input>';
+        unset($_SESSION['poverty_low']);
+      }
+      if (!isset($_SESSION['poverty_mid'])) {
+        echo '<input type="checkbox" name="povertyLevel[]" value="medium" checked>medium</input>';
+      } else {
+        echo '<input type="checkbox" name="povertyLevel[]" value="medium">medium</input>';
+        unset($_SESSION['poverty_mid']);
+      }
+      if (!isset($_SESSION['poverty_high'])) {
+        echo '<input type="checkbox" name="povertyLevel[]" value="high" checked>high</input>';
+      } else {
+        echo '<input type="checkbox" name="povertyLevel[]" value="high">high</input>';
+      }
       ?> 
       <br><b>Graduation Rate</b></br>
       <input type="checkbox" name="gradRate[]" value=" (s.graduationRate<=.25) " checked>0-25%</input> 
