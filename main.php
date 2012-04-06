@@ -127,10 +127,11 @@
     <form action="selectSchoolProjects.php" method="post">
       <div align=center>  
       <b>School Poverty Level</b></br>
-      <input type="checkbox" name="povertyLevel[]" value="low" checked>low</input> 
-      <input type="checkbox" name="povertyLevel[]" value="medium" checked>medium</input> 
-      <input type="checkbox" name="povertyLevel[]" value="high" checked>high</input> 
-       
+      <?php 
+      echo '<input type="checkbox" name="povertyLevel[]" value="low" checked>low</input>';
+      echo '<input type="checkbox" name="povertyLevel[]" value="medium" checked>medium</input>';
+      echo '<input type="checkbox" name="povertyLevel[]" value="high" checked>high</input>';
+      ?> 
       <br><b>Graduation Rate</b></br>
       <input type="checkbox" name="gradRate[]" value=" (s.graduationRate<=.25) " checked>0-25%</input> 
       <input type="checkbox" name="gradRate[]" value=" (s.graduationRate > .25 and s.graduationRate <= .5) " checked>25-50%</input> 
