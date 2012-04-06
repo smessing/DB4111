@@ -241,7 +241,7 @@
       if (!isset(_$SESSION['attend_25'])) {
         echo '<input type="checkbox" name="attendance[]" value=" (d.avgAttendance > .25 and d.avgAttendance <= .5) " checked>25-50%</input>';
       } else {
-        echo '<input type="checkbox" name="attendance[]" value=" (d.avgAttendance > .25 and d.avgAttendance <= .5) ">25-50%</input>'
+        echo '<input type="checkbox" name="attendance[]" value=" (d.avgAttendance > .25 and d.avgAttendance <= .5) ">25-50%</input>';
         unset($_SESSION['attend_25']);
       }
       if (!isset(_$SESSION['attend_50'])) {
