@@ -195,6 +195,7 @@ div.title {
   top: 5%;
   z-index: 10001;
   text-align: center;
+  border: 1px solid gray;
   border-radius: 5px;
   padding: 1em 1em;
 }
@@ -206,6 +207,7 @@ div.title p {
 div.query {
   position: fixed;
   background-color: white;
+  border: 1px solid gray;
   border-radius: 5px;
   width: 23em;
   height: 25em;

@@ -200,5 +200,6 @@ div.wrapper br {
 div.wrapper {
   margin-left: 0;
   margin-bottom: 1em;
+  padding: 1em 1em;
 }
 }
