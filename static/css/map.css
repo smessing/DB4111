@@ -209,10 +209,11 @@ div.query {
   background-color: white;
   border: 1px solid gray;
   border-radius: 5px;
+  text-align: justify;
   width: 23em;
-  height: 25em;
-  left: 75%;
-  top: 50%;
+  height: 31em;
+  left: 73%;
+  top: 35%;
+  padding: 1em 1em;
 }
-
 

@@ -84,9 +84,9 @@ create table Comments_ABOUT(
   tid varchar2(32) not null,
   pid varchar2(32) not null,
   comments varchar2 (500) not null,
-  cDate date,
+  cDate int,
   email varchar2 (50),
-  primary key (cDate, email),
+  primary key (cid),
   constraint commentsUsers_fk foreign key (email) references Users,
   constraint commentsProjects_fk foreign key (tid, pid) references Projects_PROPOSE_AT(tid, pid)
 );

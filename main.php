@@ -125,47 +125,50 @@
     <div class="query">
     <h2>Project Search</h2>
     <form action="selectSchoolProjects.php" method="post">
-      
-      <p><b>School Poverty Level:</b>
-      <br>
-      <input type="checkbox" name="povertyLevel[]" value="low" checked>low</input> 
-      <input type="checkbox" name="povertyLevel[]" value="medium" checked>medium</input> 
-      <input type="checkbox" name="povertyLevel[]" value="high" checked>high</input> 
-      <br>
-      
-      <b>Graduation Rate:</b>
-      <br>
+      <div align=center>  
+      <b>School Poverty Level</b></br>
+      <?php
+      if (!isset($_SESSION['poverty_low'])) {
+        echo '<input type="checkbox" name="povertyLevel[]" value="low" checked>low</input>';
+      } else {
+        echo '<input type="checkbox" name="povertyLevel[]" value="low">low</input>';
+        unset($_SESSION['poverty_low']);
+      }
+      if (!isset($_SESSION['poverty_mid'])) {
+        echo '<input type="checkbox" name="povertyLevel[]" value="medium" checked>medium</input>';
+      } else {
+        echo '<input type="checkbox" name="povertyLevel[]" value="medium">medium</input>';
+        unset($_SESSION['poverty_mid']);
+      }
+      if (!isset($_SESSION['poverty_high'])) {
+        echo '<input type="checkbox" name="povertyLevel[]" value="high" checked>high</input>';
+      } else {
+        echo '<input type="checkbox" name="povertyLevel[]" value="high">high</input>';
+      }
+      ?> 
+      <br><b>Graduation Rate</b></br>
       <input type="checkbox" name="gradRate[]" value=" (s.graduationRate<=.25) " checked>0-25%</input> 
       <input type="checkbox" name="gradRate[]" value=" (s.graduationRate > .25 and s.graduationRate <= .5) " checked>25-50%</input> 
       <input type="checkbox" name="gradRate[]" value=" (s.graduationRate > .5 and s.graduationRate <= .75) " checked>50-75%</input> 
       <input type="checkbox" name="gradRate[]" value=" (s.graduationRate > .75) " checked>75-100%</input> 
-      <br>
       
-      <b>Avg. Class Size (# of students):</b>
-      <br>
+      <br><b>Avg. Class Size</b></br>
       <input type="checkbox" name="classSize[]" value=" (s.avgClassSize < 20) " checked>&lt; 20 </input> 
       <input type="checkbox" name="classSize[]" value=" (s.avgClassSize > 20 and s.avgClassSize <= 40) " checked>20 - 40 </input> 
       <input type="checkbox" name="classSize[]" value=" (s.avgClassSize > 40) " checked>over 40 </input>
-      
-      <br>
-      <b>NYC Gov Progress Report Grade</b>
-      <br>
+      <br><b>NYC Gov Progress Report Grade</b><br>
       <input type="checkbox" name="progress[]" value="s.progressGrade='A'" checked>A</input> 
       <input type="checkbox" name="progress[]" value="s.progressGrade='B'" checked>B</input> 
       <input type="checkbox" name="progress[]" value="s.progressGrade='C'" checked>C</input> 
       <input type="checkbox" name="progress[]" value="s.progressGrade='D'" checked>D</input> 
       <input type="checkbox" name="progress[]" value="s.progressGrade='F'" checked>F</input> 
-      
       <br>
-      <b>Attendance Rates (%)</b>
-      <br>
+      <b>Attendance Rates</b><br>
       <input type="checkbox" name="attendance[]" value=" (d.avgAttendance <= .25) " checked>0-25%</input> 
       <input type="checkbox" name="attendance[]" value=" (d.avgAttendance > .25 and d.avgAttendance <= .5) " checked>25-50%</input> 
       <input type="checkbox" name="attendance[]" value=" (d.avgAttendance > .5 and d.avgAttendance <= .75) " checked>50-75%</input> 
       <input type="checkbox" name="attendance[]" value=" (d.avgAttendance > .75) " checked>75-100%</input> 
-      
-      <br>
-      <b>Local Residents Receiving Public Assistance (%)</b>
+      <b>Local Residents Receiving Public Assistance</b>
       <br>
       <input type="checkbox" name="pubAss[]" value=" (d.percentRecvPublicAsst <= .25) " checked>0-25%</input> 
       <input type="checkbox" name="pubAss[]" value=" (d.percentRecvPublicAsst > .25 and d.percentRecvPublicAsst <= .5) " checked>25-50%</input> 
@@ -183,7 +186,7 @@
       
       <br>
       <input type="submit" value="Search">
-
+      </div>
       
     </form>
 

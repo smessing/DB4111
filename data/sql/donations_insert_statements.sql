@@ -56,3 +56,8 @@ INSERT INTO Donations_FUND
 VALUES
 ('b69c5a29518b74cd8d762edc5f9d1f42','874cd2d6ec1efea4896ed5a400b3eb64',250,'03-apr-11','Hannah@fun.com', 10 );
 
+
+INSERT INTO Donations_FUND
+(tid, pid, amount, donationDate, email, did)
+VALUES
+('b69c5a29518b74cd8d762edc5f9d1f42','874cd2d6ec1efea4896ed5a400b3eb64',250,'03-apr-11','hannahkdiamond@gmail.com', 11 );
