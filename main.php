@@ -261,11 +261,36 @@
       ?>
       <b>Local Residents Receiving Public Assistance</b>
       <br>
-      <input type="checkbox" name="pubAss[]" value=" (d.percentRecvPublicAsst <= .25) " checked>0-25%</input> 
-      <input type="checkbox" name="pubAss[]" value=" (d.percentRecvPublicAsst > .25 and d.percentRecvPublicAsst <= .5) " checked>25-50%</input> 
-      <input type="checkbox" name="pubAss[]" value=" (d.percentRecvPublicAsst > .5 and d.percentRecvPublicAsst <= .75) " checked>50-75%</input> 
-      <input type="checkbox" name="pubAss[]" value=" (d.percentRecvPublicAsst > .75) " checked>75-100%</input> 
-      
+      <?php
+      if (!isset($_SESSION['assist_0'])) {
+        $checked = 'checked';
+      } else {
+        $checked = '';
+        unset($_SESSION['assist_0']);
+      }
+      echo '<input type="checkbox" name="pubAss[]" value=" (d.percentRecvPublicAsst <= .25) " '.$checked.'>0-25%</input>';
+      if (!isset($_SESSION['assist_25'])) {
+        $checked = 'checked';
+      } else {
+        $checked = '';
+        unset($_SESSION['assist_25']);
+      }
+      echo '<input type="checkbox" name="pubAss[]" value=" (d.percentRecvPublicAsst > .25 and d.percentRecvPublicAsst <= .5) " '.$checked.'>25-50%</input>';
+      if (!isset($_SESSION['assist_50'])) {
+        $checked = 'checked';
+      } else {
+        $checked = '';
+        unset($_SESSION['assist_50']);
+      }
+      echo '<input type="checkbox" name="pubAss[]" value=" (d.percentRecvPublicAsst > .5 and d.percentRecvPublicAsst <= .75) " '.$checked.'>50-75%</input>';
+      if (!isset($_SESSION['assist_75'])) {
+        $checked = 'checked';
+      } else {
+        $checked = '';
+        unset($_SESSION['assist_75']);
+      }
+      echo '<input type="checkbox" name="pubAss[]" value=" (d.percentRecvPublicAsst > .75) " '.$checked.'>75-100%</input>';
+      ?>
       <br>
       <b>Borough</b>
       <br>
