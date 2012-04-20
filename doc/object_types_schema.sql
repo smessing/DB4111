@@ -1,20 +1,58 @@
-create type author_varray_type as
-  varray(30) of book_type;/
+create type author_list as
+  varray(10) of varchar(50);
+/
 
-create type book_typ as object(
-isbn  varchar(10),
+create type book_typ as object (
+isbn varchar(10),
 title  varchar(100),
 subtitle varchar(100),
-authors varchar(50) array[10],
+authors author_list,
 type varchar(50),
 year date,
 edition number,
-map member function get_title return varchar(100),
-map member function get_edition return number,
-map member function get_atuhors return varchar(50) varray[10],
-map member function get_year return date,
-map member function get_isbn return varchar(10)
-);/
+member function get_authors return author_list,
+member function get_year return date,
+member function get_title return varchar,
+map member function get_isbn return varchar,
+member function get_edition return number
+);
+/
 
-create type author_varray_type as
-  varray(30) of book_type;/
+create type body book_typ as
+  member function get_authors return author_list is
+   begin
+     return authors;
+  end;
+  member function get_year return date is
+  begin
+    return year;
+  end;
+  member function get_title return varchar is
+  begin
+    return title;
+  end;
+  map member function get_isbn return varchar is
+  begin
+    return isbn;
+  end;
+  member function get_edition return number is
+  begin
+    return edition;
+  end;
+end;
+/
+
+-- book table:
+
+create table book_typ_table of book_typ;
+
+-- request table
+create table projects_request(
+  pid varchar2(32),
+  tid varchar2 (32),
+  book ref book_typ scope is book_typ_table,
+  requestDate int,
+  requestQuant int,
+  primary key (pid, tid, requestDate),
+  constraint projects_request_project_fk foreign key (pid, tid) references Projects_Propose_At (pid, tid)
+);
