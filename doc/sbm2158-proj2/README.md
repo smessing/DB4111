@@ -34,7 +34,7 @@ decided on an array instead of a string field since different books will have a
 different number of authors. By creating the book type, we were able to greatly
 simplify the construction of the `Projects_Request` table (see below).  
 
-We added the following covenience methods to our book type:
+We added the following methods to our book type:
 
 * `get_authors()`
 * `get_year()`
