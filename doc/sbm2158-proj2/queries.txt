@@ -1,0 +1,44 @@
+1. On a project page, this would let us know which books this teacher requested, so a user could get books to donate to a interesting project.
+    
+    select unique b.get_title()
+    from book_typ_table b, projects_request p
+    where p.book.get_isbn() = b.get_isbn();
+
+
+    B.GET_TITLE()
+    -------------------------------------------------
+    Harry Potter I
+    Introduction to Algorithms
+    C Programming Language
+    Harry Potter II
+    
+
+2. If a user had a copy of 'C Programming Language' she wanted to donate, this would allow her to find a project she could donate her book to. 
+    
+    select unique p.pid, p.tid, p.title
+    from projects_request pr, projects_propose_at p
+    where pr.book.get_title()='C Programming Language' AND p.pid=pr.pid;
+    
+    
+          PID				     TID                    TITLE
+    --------------------------------------------------------------------------------
+    752asdfasdfe93fdsdfs	   1111111     How Can You Paint without Paint
+    
+
+3. Find the title and total copies requested for the book that has the most copies requested.
+    
+    select b.get_title(), requestCounts.count
+    from   book_typ_table b,
+           (select p.book.get_isbn() as isbn, sum(p.requestQuant) as count
+            from   projects_request p
+            group by p.book.get_isbn()) requestCounts
+    where b.get_isbn() = requestCounts.isbn and
+          requestCounts.count >= all( select sum(p2.requestQuant)
+                                      from   projects_request p2
+                                      group by p2.book.get_isbn());
+                                      
+    B.GET_TITLE()         COUNT
+   ------------------------------------
+    Harry Potter II        565
+
+
