@@ -43,7 +43,7 @@ We added the following covenience methods to our book type:
 * `get_edition()`
 
 Using this new object type, we created the new relation `Projects_Request`
-which records requests for books that can be made by projects seeking funding.
+which records requests for books that can be made by projects.
 This relation holds the following attributes:
 
 * primary key of associated project (pid - project id, tid - teacher id)
